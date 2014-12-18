@@ -37,11 +37,12 @@ header, section, footer, nav {
 									   Selectores por CLASE 
 ***********************************************************************************************/
 
-/* Layout */
-.container{
+/* Botón login */
 
-	width: 100%;
+.btn-login{
 
+	cursor: pointer;
+	margin: 0px;
 }
 
 
@@ -66,8 +67,7 @@ header, section, footer, nav {
 
 }
 
-/* Controles del slider */
-.btn { 
+.slider .btn { 
 
 	height: 80px; 
 	width: 60px; 
@@ -80,37 +80,49 @@ header, section, footer, nav {
 /* ************************************************************************************************
 											Selectores por ID
 ************************************************************************************************ */
+
+/* Layout */
+#container{
+
+	width: 100%;
+
+}
+
 /* Encabezado ************************************/
 #header{
+
 	position: relative;
 	z-index: 2;
-	/*border: 4px solid blue;*/
 	display: -webkit-box; /* Chrome*/
 	-webkit-box-orient: horizontal; /* encabezado en horizontal */
 	height: 50px;
 }
 
+#menu_header{
+
+	border: 2px solid red;
+	display: -webkit-box;
+	-webkit-box-none: 0;
+
+}
+
 /* Imagen corporativa */
 #logo{
 
-	border: 3px solid green;
-	width: 40%;
+	/*border: 3px solid green;*/
+	width: 63%;
 
 }
 
 /* Menú */
-#menu_nav{
+#menu_nav > nav{
 
-	border: 3px solid black;
-	width: 59%;
+	/*border: 3px solid black;*/
+	width: 29%;
 
 }
 
-/* Item de las listas desordenadas */
-#menu_nav ul{
-	float: right;
-}
-#menu_nav li{  /* Pseudo selectores *************************************************** */
+#menu_nav li{ 
 
 	display: inline-block; /* Para poner el menú en horizontal */
 
@@ -226,21 +238,11 @@ header, section, footer, nav {
 
 }
 
-/*
-.clearfix:after,
-.clearfix:before{
-  content: "";
-  display: table;
-}
-.clearfix:after{
-    clear: both;
-}
-*/
-
 
 /* ************************************************************************************************
                                             RESPONSIVE
 ************************************************************************************************ */
+
 /*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 700px){
 
@@ -278,12 +280,12 @@ header, section, footer, nav {
 	#logo{
 
 		border: 3px solid green;
-		width: 100%; /* Ocupa toda la pantalla */
+		width: 100%; 
 
 	}
 
 	/* Menú */
-	#menu_nav{
+	#menu_nav {
 
 		border: 3px solid black;
 		width: 100%; /* Ocupa toda la pantalla */
@@ -291,24 +293,24 @@ header, section, footer, nav {
 	}
 
 	/* Item de las listas desordenadas */
-	#menu_nav li {
+	#menu_nav li{
 
 		display: block; 
 
 	}
 
 	/* Desaparecen los elementos ul del menú y los botones (login + registro) */
-	nav ul, #botones ul{
+	nav ul {
 
        display: none;
        height: auto;
+
     }
 
     /* Aparece el botón para desplegar el menú */
     #pull {
 
         display: block;
-        width: 100%;
         position: relative;
 
     }
@@ -325,5 +327,11 @@ header, section, footer, nav {
         right: 15px;
 
     }
+
+    #logo li{ 
+
+		display: inline-block; /* Para poner el menú en horizontal */
+
+	}
 
 } 

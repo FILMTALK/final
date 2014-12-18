@@ -69,7 +69,7 @@
 	<body>	
 
 		<!-- Engloba todas las etiquetas -->
-		<div class="container"> 
+		<div id="container"> 
 
             <!-- Encabezado de toda la página -->
                     
@@ -77,10 +77,14 @@
                     
                     <!-- Imagen corporativa -->
                     <div id="logo">
-                    
-                        <img href="/inicio" src="../public/images/logotxiki.png" />
 
-                        <a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a>
+                        <ul>
+                    
+                            <li><img href="/inicio" src="../public/images/logotxiki.png" /></li>
+
+                            <li><a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a></li>
+
+                        </ul>
 
                     </div> <!-- Cierre del logo -->
 
@@ -128,59 +132,9 @@
 
                             <!-- Item 5, Login --> 
                             <li>
-                                 <div class="container" style="margin-top:60px;">
-            
-                                    <button class="btn btn-info" data-toggle="modal" data-target="#miventana">
-                                         Login
-                                    </button>  
 
-                                    <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h4>Login</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                     
-                                                            
-                                                                <div class="panel-body">
-                                                                    <form role="form">
-                                                                        <div class="form-group">
-                                                                                <label for="exampleInputEmail1">Email or Username</label>
-                                                                                <div class="input-group">
-                                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                                <label for="exampleInputPassword1">Password</label>
-                                                                                <div class="input-group">
-                                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
-                                                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                                            </div>
-                                                                        </div>
-                                                                        <br/>
-                                                                        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span> Back</button>
-                                                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Login</button>
-                                                                        <p><br/></p>
-                                                                    </form>
-                                                                </div>
-                                                            
-                                                        
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
-                                <script type="text/javascript" src="../views/dist/js/bootstrap.min.js"></script>
+                                <a class="btn-login" data-toggle="modal" data-target="#miventana"> Login </a> 
+                                
                                <!-- <a href="views/login.php"> Login </a> -->
 
                             </li> <!-- Cierre de la Login -->
@@ -249,8 +203,59 @@
 
 			</footer> <!-- Ciere del pie de página -->
 
+
+
+            <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4>Login</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                             
+                                    
+                                        <div class="panel-body">
+                                            <form role="form" action="../model/login.php">
+                                                <div class="form-group">
+                                                        <label for="exampleInputEmail1">Email or Username</label>
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                        <label for="exampleInputPassword1">Password</label>
+                                                        <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span> Back</button>
+                                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Login</button>
+                                                <p><br/></p>
+                                            </form>
+                                        </div>
+                                    
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
              
          <div> <!-- Cierre div del container -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
+        <script type="text/javascript" src="../views/dist/js/bootstrap.min.js"></script>
 
 	</body>
 	
