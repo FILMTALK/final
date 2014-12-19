@@ -98,27 +98,28 @@ header, section, footer, nav {
 	height: 50px;
 }
 
-#menu_header{
-
-	border: 2px solid red;
-	display: -webkit-box;
-	-webkit-box-none: 0;
-
-}
-
 /* Imagen corporativa */
 #logo{
 
 	/*border: 3px solid green;*/
-	width: 63%;
+	width: 200px;
+	min-width: 100px;
 
 }
 
-/* Menú */
-#menu_nav > nav{
 
+/* Menú */
+#menu_nav{
+	border: 3px solid purple;
+	position: absolute;
+	right: 0;
+	width: 480px;
+}
+
+#menu_nav > nav{
+	width: 475px;
 	/*border: 3px solid black;*/
-	width: 29%;
+	
 
 }
 
@@ -224,7 +225,7 @@ header, section, footer, nav {
 }
 
 #search input[type="text"]:focus {
-    width: 250px;
+    width: 175px;
 }
 
 /* Footer */
@@ -271,7 +272,7 @@ header, section, footer, nav {
 	/* Encabezado ************************************/
 	#header{
 
-		height: 180px;
+		
 		display: block;
 		background-color: #A9E2F3;
 	}
@@ -279,7 +280,7 @@ header, section, footer, nav {
 	/* Imagen corporativa */
 	#logo{
 
-		width: 100%; 
+		width: 300px; 
 
 
 	}
@@ -321,7 +322,9 @@ header, section, footer, nav {
     #pull {
 
         display: block;
-        position: relative;
+        position: absolute;
+        right: 0px;
+        top: 0px;
 
     }
 
