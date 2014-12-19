@@ -181,8 +181,9 @@
             <section id="cartelera">
                 <!-- Boton para ir hacia abajo -->
                 <div id="div_abajo">
+                    <center><img id="logoTxiki" href="/inicio" src="../public/images/scroll.gif" style="width:70px;" /></center>
                     
-                    <center> <button id="btn_abajo"></button> </center>
+                   <!--<center> <button id="btn_abajo"></button> </center>*/-->
 
                 </div> <!-- Cierre del btn_abajo -->
 
