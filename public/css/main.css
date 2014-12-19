@@ -3,7 +3,6 @@
 ************************************************************************************************ */
 
 *{
-
 	margin: 0px;
 	padding: 0px;
 
@@ -50,7 +49,7 @@ header, section, footer, nav {
 .slider{
 	z-index: 1;
 	width: 100%;
-	border: 4px solid yellow;
+	/*border: 4px solid yellow;*/
 	height: 600px;
 	position: absolute;
     top: 0px;
@@ -90,7 +89,7 @@ header, section, footer, nav {
 
 /* Encabezado ************************************/
 #header{
-	border: 3px solid red;
+	/*border: 3px solid red;*/
 	position: relative;
 	z-index: 2;
 	display: -webkit-box; /* Chrome*/
@@ -98,35 +97,42 @@ header, section, footer, nav {
 	height: 50px;
 }
 
+
+/* Menú */
+
 /* Imagen corporativa */
 #logo{
-
+	padding-left: 15px;
+	padding-top: 15px;
 	/*border: 3px solid green;*/
 	width: 200px;
 	min-width: 100px;
-
+	opacity: 0.9;
 }
-
-
-/* Menú */
 #menu_nav{
-	border: 3px solid purple;
+	padding-top: 15px;
+	/*border: 3px solid purple;*/
 	position: absolute;
 	right: 0;
-	width: 480px;
-}
-
-#menu_nav > nav{
-	width: 475px;
-	/*border: 3px solid black;*/
-	
-
+	width: 555px;
 }
 
 #menu_nav li{ 
 
 	display: inline-block; /* Para poner el menú en horizontal */
 
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #bebebe;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: grey;
+	text-decoration: none;
 }
 
 /* Botón oculto para aparecer el menú */
@@ -204,14 +210,16 @@ header, section, footer, nav {
 
 /* Buscador */
 #buscador{
-
+	padding-right: 15px;
 }
 
 #search input[type="text"] {
-
-    background: url(../images/busca2.png) no-repeat 10px 6px #fcfcfc;
-    border: 1px solid #fff;
-    font: bold 12px Arial,Helvetica,Sans-serif;
+	outline: none;
+    background:   url(../images/busca.png) no-repeat 10px 6px #fcfcfc;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #bebebe;
+    opacity: 0.9
+    font-size: 13px;
     color: #bebebe;
     width: 150px;
     padding: 6px 15px 6px 35px;
@@ -225,7 +233,7 @@ header, section, footer, nav {
 }
 
 #search input[type="text"]:focus {
-    width: 175px;
+    width: 156px;
 }
 
 /* Footer */
@@ -246,7 +254,6 @@ header, section, footer, nav {
 
 /*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 700px){
-
 	.slider{
 
 		left: 0px;
@@ -298,15 +305,15 @@ header, section, footer, nav {
 
 	/* Menú */
 	#menu_nav {
-
-		border: 3px solid black;
+		padding-left: 20px;
+		background-color: yellow;
 		width: 100%; /* Ocupa toda la pantalla */
 
 	}
 
 	/* Item de las listas desordenadas */
 	#menu_nav li{
-
+		padding: 10px;
 		display: block; 
 
 	}
@@ -323,8 +330,8 @@ header, section, footer, nav {
 
         display: block;
         position: absolute;
-        right: 0px;
-        top: 0px;
+        right: 5px;
+        top: 10px;
 
     }
 

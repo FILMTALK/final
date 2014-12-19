@@ -97,14 +97,14 @@
                             <!-- Item 1, Cartelera --> 
                             <li>
 
-                                <a href="#" id="linkCartel"> Cartelera </a>
+                                <a href="#" class="link"> Cartelera </a>
 
                             </li> <!-- Cierre de la Cartelera -->
 
                             <!-- Item 2, Próximamente --> 
                             <li>
 
-                                <a href="#" id="linkProx"> Próximamente </a>
+                                <a href="#" class="link"> Próximamente </a>
 
                             </li> <!-- Cierre de la Próximamente -->
 
@@ -125,14 +125,19 @@
                             <!-- Item 4, Registro --> 
                             <li>
 
-                                <a href="views/registro.php"> Registro </a>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#miventana" 
+                                style="background-color:#bebebe; border:none; opacity:0.7; padding-left:5px;margin-right:10px;
+                                outline:none;">Sign in</button> 
 
                             </li> <!-- Cierre de la Registro -->
 
                             <!-- Item 5, Login --> 
                             <li>
 
-                                <a class="btn-login" data-toggle="modal" data-target="#miventana"> Login </a> 
+                                <button class="btn btn-info" id="btn_menu" data-toggle="modal" data-target="#miventana" 
+                                style="background-color:#bebebe; border:none; opacity:0.7;outline:none;">Login</button>  
+
+                                <!--<a class="btn-login" data-toggle="modal" data-target="#miventana"> Login </a> -->
                                 
                                <!-- <a href="views/login.php"> Login </a> -->
 
