@@ -18,18 +18,13 @@ ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin
 
 /* Cuerpo de toda la página */
 body{
-	
 	width: 100%; /* Para que ocupe toda la pantalla */
-
 }
 
 /* Etiquetas en bloque */
 header, section, footer, nav {
-
 	display: block;
-
 }
-
 
 
 /***********************************************************************************************
@@ -103,14 +98,14 @@ header, section, footer, nav {
 /* Imagen corporativa */
 #logo{
 	padding-left: 15px;
-	padding-top: 15px;
+	padding-top: 13px;
 	/*border: 3px solid green;*/
 	width: 200px;
 	min-width: 100px;
 	opacity: 0.9;
 }
 #menu_nav{
-	padding-top: 15px;
+	margin-top: 17px;
 	/*border: 3px solid purple;*/
 	position: absolute;
 	right: 0;
@@ -177,33 +172,73 @@ header, section, footer, nav {
 /* Botón para ir hacia abajo */
 #div_abajo{
 	/*border: 2px solid brown;*/
+	margin: 0px;
 	height: 80px;
 }
 
 
 /* Cartelera */
 #cartelera{
-
+	padding: 12px;
+	padding-left: 100px;
 	width: 100%;
 	position: absolute;
 	top: 600px;
 	left: 0px;
 	/*border: 3px solid green;*/
-	height: 450px;
+	height: 600px;
 	background-color: #eeeeee;
 
 }
 
+#cartelera h3{
+	color: #333333;
+	margin-left: 30px;
+}
+
+.peli{
+	position: relative;
+	float: left;
+	margin: 30px;
+}
+
+.descrip{
+	width: 160px;
+}
+
+.descrip p{
+	color: #333333;
+	font-size: 13px;
+}
+
+.descrip h4{
+	color: #00B8E6;
+}
+
+
+.vermas{
+	clear: both;
+	float: right;
+	margin-top: 0px;
+}
+
 /* Próximamente */
 #proximamente{
-
+	background-color: #cccccc;
+	padding: 12px;
+	padding-left: 100px;
 	width: 100%;
 	position: absolute;
-	top: 1050px;
+	top: 1200px;
 	left: 0px;
 	/*border: 3px solid orange;*/
-	height: 400px;
+	height: 500px;
 
+}
+
+#proximamente h3{
+	color: #333333;
+	margin-left: 30px;
 }
 
 /* Buscador */
@@ -219,7 +254,7 @@ header, section, footer, nav {
     opacity: 0.9
     font-size: 13px;
     color: #bebebe;
-    width: 150px;
+    width: 160px;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -235,15 +270,21 @@ header, section, footer, nav {
 }
 
 /* Footer */
-#footer{
-
+footer{
+	background-color: #cccccc;
 	width: 100%;
 	position: absolute;
-	top: 1450px;
-	border: 3px solid grey;
+	top: 254%;
 	height: 50px;
 
 }
+
+.red{
+	float: right;
+	width: 20px;
+}
+
+
 
 
 /* ************************************************************************************************
@@ -252,16 +293,16 @@ header, section, footer, nav {
 
 /*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 700px){
-	.slider{
 
-		left: 0px;
-		top: 0px;
+	#div_abajo{
 		display: none;
+	}
 
+	.slider{
+		display: none;
 	}
 
 	#cartelera, #proximamente, #footer{
-
 		position: relative;
 		left: 0px;
 		top: 0px;
@@ -276,10 +317,8 @@ header, section, footer, nav {
 
 	/* Encabezado ************************************/
 	#header{
-
-		
 		display: block;
-		background-color: #A9E2F3;
+		background-color: #191919;
 	}
 
 	/* Imagen corporativa */
@@ -302,11 +341,12 @@ header, section, footer, nav {
 	}
 
 	/* Menú */
-	#menu_nav {
-		padding-left: 20px;
-		background-color: yellow;
-		width: 100%; /* Ocupa toda la pantalla */
 
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #3F3F3F;
+		width: 100%; /* Ocupa toda la pantalla */
 	}
 
 	/* Item de las listas desordenadas */
@@ -325,12 +365,10 @@ header, section, footer, nav {
 
     /* Aparece el botón para desplegar el menú */
     #pull {
-
         display: block;
         position: absolute;
-        right: 5px;
-        top: 10px;
-
+        right: 15px;
+        top: 13px;
     }
 
     /*Después de aparecer el menú, aparece el icono */
@@ -345,5 +383,27 @@ header, section, footer, nav {
         right: 15px;
 
     }
+
+    /* Cartelera */
+	#cartelera{
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 3px solid green;*/
+		height: 100%;
+		background-color: #eeeeee;
+
+	}
+
+	#cartelera h3{
+		margin-left: 0px;
+	}
+
+	.peli{
+		position: relative;
+		float: left;
+		margin: 10px;
+	}
+
 
 } 

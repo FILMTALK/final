@@ -1,4 +1,4 @@
-/*!
+mo/*!
  * Bootstrap v3.3.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -5499,8 +5499,8 @@ button.close {
   margin: 10px;
 }
 .modal-content {
-  margin-top: 20%;
-  margin-left: 26%;
+  margin-top: 18%;
+  margin-left: 25%;
   width: 260px;
   height: 350px;
   position: relative;
