@@ -279,9 +279,20 @@ header, section, footer, nav {
 	/* Imagen corporativa */
 	#logo{
 
-		border: 3px solid green;
 		width: 100%; 
 
+
+	}
+	#logoTxiki{
+
+		width: 50%;
+
+	}
+
+	#logo a{
+
+    	clear: both;
+    	float: right;
 	}
 
 	/* Menú */
@@ -299,7 +310,6 @@ header, section, footer, nav {
 
 	}
 
-	/* Desaparecen los elementos ul del menú y los botones (login + registro) */
 	nav ul {
 
        display: none;
@@ -327,11 +337,5 @@ header, section, footer, nav {
         right: 15px;
 
     }
-
-    #logo li{ 
-
-		display: inline-block; /* Para poner el menú en horizontal */
-
-	}
 
 } 

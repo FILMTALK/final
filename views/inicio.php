@@ -52,6 +52,7 @@
 
                     //Eliminamos el atributo style del menú
                     menu.removeAttr('style');
+
         
                   }
 
@@ -78,13 +79,10 @@
                     <!-- Imagen corporativa -->
                     <div id="logo">
 
-                        <ul>
-                    
-                            <li><img href="/inicio" src="../public/images/logotxiki.png" /></li>
-
-                            <li><a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a></li>
-
-                        </ul>
+                        <center><img id="logoTxiki" href="/inicio" src="../public/images/logotxiki.png" /></center>
+                        <!-- Botón del menú -->
+                        <a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a>
+                       
 
                     </div> <!-- Cierre del logo -->
 
