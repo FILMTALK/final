@@ -175,11 +175,25 @@ header, section, footer, nav {
 }
 
 /* Botón para ir hacia abajo */
+#div_abajo{
+
+	/*border: 2px solid brown;*/
+	height: 70px;
+	padding-top: 20px;
+
+}
+
 #btn_abajo{
 
-	border: 2px solid brown;
-	height: 40px;
-
+	border:none;
+	outline: none;
+	width: 50px;
+	height: 50px;
+	background:url("../images/abajo.png") no-repeat; 
+}
+#btn_abajo:hover{
+	
+	background:url("../images/abajo2.png") no-repeat; 
 }
 
 
@@ -190,9 +204,9 @@ header, section, footer, nav {
 	position: absolute;
 	top: 600px;
 	left: 0px;
-	border: 3px solid green;
+	/*border: 3px solid green;*/
 	height: 450px;
-	background-color: #A9E2F3;
+	background-color: #bebebe;
 
 }
 
@@ -203,7 +217,7 @@ header, section, footer, nav {
 	position: absolute;
 	top: 1050px;
 	left: 0px;
-	border: 3px solid orange;
+	/*border: 3px solid orange;*/
 	height: 400px;
 
 }

@@ -6,25 +6,25 @@ var slideshowSpeed = 6000;
 var photos = [ {
 
 		"title" : "Stairs",
-		"image" : "slider1.jpg",
+		"image" : "loreak.jpg",
 		"url" : "http://www.sxc.hu/photo/1271909",
 		"firstline" : "Going on",
 		"secondline" : "vacation?"
 	}, {
 		"title" : "Office Appartments",
-		"image" : "slider2.jpg",
+		"image" : "slider1.jpg",
 		"url" : "http://www.sxc.hu/photo/1265695",
 		"firstline" : "Or still busy at",
 		"secondline" : "work?"
 	}, {
 		"title" : "Mountainbiking",
-		"image" : "slider3.jpg",
+		"image" : "loreak.jpg",
 		"url" : "http://www.sxc.hu/photo/1221065",
 		"firstline" : "Get out and be",
 		"secondline" : "active"
 	}, {
 		"title" : "Mountains Landscape",
-		"image" : "slider4.jpg",
+		"image" : "slider1.jpg",
 		"url" : "http://www.sxc.hu/photo/1271915",
 		"firstline" : "Take a fresh breath of",
 		"secondline" : "nature"

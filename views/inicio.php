@@ -179,11 +179,10 @@
 
             <!-- Representa el apartado de Cartelera -->
             <section id="cartelera">
-
                 <!-- Boton para ir hacia abajo -->
-                <div id="btn_abajo">
+                <div id="div_abajo">
                     
-                    <center> V </center>
+                    <center> <button id="btn_abajo"></button> </center>
 
                 </div> <!-- Cierre del btn_abajo -->
 
