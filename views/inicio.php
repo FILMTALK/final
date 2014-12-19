@@ -79,7 +79,7 @@
                     <!-- Imagen corporativa -->
                     <div id="logo">
 
-                        <center><img id="logoTxiki" href="/inicio" src="../public/images/logotxiki.png" /></center>
+                        <img id="logoTxiki" href="/inicio" src="../public/images/logotxiki.png" />
                         <!-- Botón del menú -->
                         <a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a>
                        

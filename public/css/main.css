@@ -90,7 +90,7 @@ header, section, footer, nav {
 
 /* Encabezado ************************************/
 #header{
-
+	border: 3px solid red;
 	position: relative;
 	z-index: 2;
 	display: -webkit-box; /* Chrome*/
