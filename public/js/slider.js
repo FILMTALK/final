@@ -18,7 +18,7 @@ var photos = [ {
 		"secondline" : "work?"
 	}, {
 		"title" : "Mountainbiking",
-		"image" : "loreak.jpg",
+		"image" : "slider.jpg",
 		"url" : "http://www.sxc.hu/photo/1221065",
 		"firstline" : "Get out and be",
 		"secondline" : "active"

@@ -172,15 +172,28 @@ header, section, footer, nav {
 /* Botón para ir hacia abajo */
 #div_abajo{
 	/*border: 2px solid brown;*/
-	margin: 0px;
 	height: 80px;
+	margin-left: 0px;
 }
+
+
+/*icono animado*/
+.glyphicon-refresh-animate {
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: translate(0px,0px);}
+    to { -webkit-transform: translate(0px,50px);}
+}
+
+
 
 
 /* Cartelera */
 #cartelera{
-	padding: 12px;
-	padding-left: 100px;
+	padding: 5px;
+	padding-left: 50px;
 	width: 100%;
 	position: absolute;
 	top: 600px;
@@ -225,14 +238,14 @@ header, section, footer, nav {
 /* Próximamente */
 #proximamente{
 	background-color: #cccccc;
-	padding: 12px;
-	padding-left: 100px;
+	padding: 5px;
+	padding-left: 50px;
 	width: 100%;
 	position: absolute;
 	top: 1200px;
 	left: 0px;
 	/*border: 3px solid orange;*/
-	height: 500px;
+	height: 650px;
 
 }
 
@@ -274,17 +287,29 @@ footer{
 	background-color: #cccccc;
 	width: 100%;
 	position: absolute;
-	top: 254%;
-	height: 50px;
-
+	top: 275%;
+	height: 66px;
+	padding: 3px;
 }
 
-.red{
+footer a{
+	position: relative;
+	top: 16px;
+	color: #eeeeee;
+	padding-right:18px;
 	float: right;
-	width: 20px;
 }
 
-
+footer a:hover{
+	color: grey;
+	text-decoration: none;
+}
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
+}
 
 
 /* ************************************************************************************************
@@ -292,7 +317,7 @@ footer{
 ************************************************************************************************ */
 
 /*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
-@media all and (max-width: 700px){
+@media all and (max-width: 750px){
 
 	#div_abajo{
 		display: none;
@@ -386,13 +411,21 @@ footer{
 
     /* Cartelera */
 	#cartelera{
+		position: relative;
+		float: left;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
 		/*border: 3px solid green;*/
-		height: 100%;
-		background-color: #eeeeee;
+	}
 
+	#proximamente{
+		float: right;
+		position: relative;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 3px solid green;*/
 	}
 
 	#cartelera h3{
@@ -403,6 +436,10 @@ footer{
 		position: relative;
 		float: left;
 		margin: 10px;
+	}
+
+	footer a{
+		position: relative;
 	}
 
 

@@ -177,7 +177,7 @@
             <section id="cartelera">
                 <!-- Boton para ir hacia abajo -->
                 <div id="div_abajo">
-                    <center><img id="logoTxiki" href="#" src="../public/images/scroll.gif" style="width:80px;" /></center>
+                    <center><span style="font-size:20px;color:grey;" class="glyphicon glyphicon-chevron-down glyphicon-refresh-animate"></span></center>
                  </div> <!-- Cierre del btn_abajo -->
 
                 <h3> Cartelera </h3>
@@ -285,8 +285,15 @@
 
             <!-- Pie de toda la página -->
              <footer>
-             
-                <!--<img class="red" href="#" src="../public/images/you.png" style="width:80px;" />-->
+
+                <img class="red" style="padding-right:170px;" href="#" src="../public/images/red1.png"/>
+                <img class="red" href="#" src="../public/images/red2.png"/>
+                <img class="red" href="#" src="../public/images/red3.png"/>
+                <img class="red"  href="#" src="../public/images/red4.png"/>
+
+                <a href="#"> Contacto </a>
+                <a href="#"> Política de privacidad </a>
+                <a href="#"> © CopyRight 2014 </a>
 
 			</footer> <!-- Ciere del pie de página -->
 
