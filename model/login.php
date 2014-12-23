@@ -45,7 +45,12 @@ if(isset($_POST['login'])){
 			// Se comprueba si la contraseña coincide
 			if(comprobarPassword($_POST['email'],md5($_POST['password']))==true){ //Si la contraseña coindice
 
-				// Se obtiene el usuario del usuario desde la base
+				if($_POST['email']=="admin@admin.com"){
+					// Redirecciona al perfil del usuario
+					header("location: ../views/admin.php");
+
+				}else{
+					// Se obtiene el usuario del usuario desde la base
 				$usuario=obtenerUsuario($_POST['email']);
 
 				// Se establece la variable de sesión del usuario obtenienda desde la bd
@@ -64,7 +69,9 @@ if(isset($_POST['login'])){
 
 				// Redirecciona al perfil del usuario
 				header("location: ../views/profile.php");
+				}
 
+			
 			}
 			else{ // Si la contraseña no coincide
 
