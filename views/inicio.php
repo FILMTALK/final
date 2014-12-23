@@ -335,7 +335,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="login" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
+                                                <button type="submit" name="login" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>
@@ -354,7 +354,7 @@
 
                 <div class="modal-dialog">
 
-                    <div class="modal-content"  style="height:500px;">
+                    <div class="modal-content"  style="height:500px;margin-top:10%;">
                         
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -398,7 +398,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="registro" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>      

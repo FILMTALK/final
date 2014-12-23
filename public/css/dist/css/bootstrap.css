@@ -2419,6 +2419,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  width:240px;
 }
 .radio,
 .checkbox {
@@ -5493,7 +5494,7 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
-
+  width:500px;
   position: relative;
   width: auto;
   margin: 10px;
@@ -5501,7 +5502,7 @@ button.close {
 .modal-content {
   margin-top: 18%;
   margin-left: 25%;
-  width: 260px;
+  width: 300px;
   height: 350px;
   position: relative;
   background-color: #fff;
@@ -5567,12 +5568,20 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
+
+@media (max-width: 768px){
+  .modal-content {
+      margin-left: 3%;
+    }
+}
 @media (min-width: 768px) {
   .modal-dialog {
     width: 600px;
     margin: 30px auto;
   }
+
   .modal-content {
+
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
