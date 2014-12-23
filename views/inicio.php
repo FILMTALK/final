@@ -4,7 +4,7 @@
 	<!-- Cabecera de toda la página -->
 	<head>
 
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title> filmdate </title>
 		<link rel="stylesheet" href="../public/css/main.css" /> <!-- El diseño está en un archivo externo -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script> <!-- jQuery -->
@@ -315,19 +315,19 @@
                              
                                     
                                         <div class="panel-body">
-                                            <form role="form" action="../model/login.php">
+                                            <form role="form" method="post" action="../model/login.php">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Contraseña</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
                                                     </div>
                                                 </div>
                                                 <br/>
@@ -335,7 +335,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
+                                                <button type="submit" name="login" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>
@@ -364,33 +364,33 @@
                         <div class="modal-body">
                             <div class="row">
                                         <div class="panel-body">
-                                            <form role="form" action="../model/registro.php">
+                                            <form role="form" method="post" action="../model/registro.php">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Email</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nombre de usuario</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
+                                                        <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Contraseña</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Repite la contraseña</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repite Contraseña">
+                                                        <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Repite Contraseña">
                                                     </div>
                                                 </div>
                                                 <br/>
@@ -398,7 +398,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                                                <button type="submit" name="registro" class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>      

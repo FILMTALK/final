@@ -11,7 +11,7 @@ session_start();
 
 // Se comprueba si el login está definida
 if(isset($_POST['login'])){
-
+	
 	// Si los campos username o password están vacíos
 	if($_POST['email']==NULL or $_POST['password']==NULL){
 

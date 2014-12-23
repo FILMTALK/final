@@ -11,7 +11,6 @@ session_start();
 
 // Se comprueba si el registro está definida
 if(isset($_POST['registro'])){
-
 	// Si los campos email, username, password o password2 están vacíos
 	if($_POST['email']==NULL or $_POST['username']==NULL or $_POST['password']==NULL or $_POST['password2']==NULL){
 
