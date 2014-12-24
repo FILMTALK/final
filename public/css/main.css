@@ -179,14 +179,22 @@ header, section, footer, nav {
 
 /*icono animado*/
 .glyphicon-refresh-animate {
-    -webkit-animation: spin2 1s infinite linear;
+    -webkit-animation: spinDos 1.5s infinite linear;
+    /*para cambiar color
+    -webkit-animation: camColor 1.5s infinite linear;*/
+
 }
 
-@-webkit-keyframes spin2 {
-    from { -webkit-transform: translate(0px,0px);}
-    to { -webkit-transform: translate(0px,50px);}
+@-webkit-keyframes spinDos {
+    from { -webkit-transform: translate(0px,5px);}
+    to { -webkit-transform: translate(0px,30px);}
 }
 
+/*@-webkit-keyframes spinDos {
+	0%{color:red;}
+	50%{color:blue;}
+	100%{color:red;}
+}*/
 
 
 
