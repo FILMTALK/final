@@ -26,14 +26,14 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 		<title> Perfil de Usuario</title>
 
 		<!-- El diseño está en un archivo externo -->
-        <link rel="stylesheet" href="../public/css/main.css" /> 
-		<link rel="stylesheet" href="../public/css/perfilUsuario.css" /> 
+        <link rel="stylesheet" href="../css/main.css" /> 
+		<link rel="stylesheet" href="../css/perfilUsuario.css" /> 
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
 
         <!--CSS bootstrap-->
-        <link rel="stylesheet" type="text/css" href="../public/css/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         
 
          <!-- jQuery para menu respontive -->
@@ -72,9 +72,9 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
         <header id="header"> 
             <!-- Imagen corporativa -->
             <div id="logo">
-                <img id="logoTxiki" href="/inicio" src="../public/images/logotxiki_gris.png" />
+                <a href="/index.php"><img id="logoTxiki" src="../images/logotxiki_gris.png" /></a>
                 <!-- Botón del menú -->
-                <a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a>
+                <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
             </div> <!-- Cierre del logo -->
             <!-- Menú -->
             <nav id="menu_nav">
@@ -98,17 +98,31 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
                         </div> <!-- Cierre de la caja del buscador -->
                     </li> <!-- Cierre de la Buscador -->
                     <!-- Item 4, Registro --> 
-                    <li>
+                    <!-- <li>
                         <button class="btn btn-info" data-toggle="modal" data-target="#miregistro" 
                         style="background-color:#bebebe; border:none; opacity:0.7; padding-left:5px;margin-right:10px;
                         outline:none;">Sign in</button> 
-                    </li> <!-- Cierre de la Registro -->
-                    <!-- Item 5, Login --> 
+                    </li> <!-- Cierre de la Registro 
+                    <!-- Item 5, Login 
                     <li>
             
                         <button class="btn btn-info" id="btn_menu" data-toggle="modal" data-target="#milogin" 
                         style="background-color:#bebebe; border:none; opacity:0.7;outline:none;">Log in</button>  
-                    </li> <!-- Cierre de la Login -->
+                    </li> <!-- Cierre de la Login --> 
+                    <li>
+                        <?php
+                            // Se importa database.php para mantener la conexión
+                            require_once("../config/database.php");
+                            // Se importan para utilizar las sesiones
+                            require_once("../model/registro.php");
+                            require_once("../model/login.php");
+                            print("Hola, <b>".$_SESSION["usuario"]."</b>! <br>\n");
+                        ?>
+                    </li> 
+                    <li>
+                        <button class="btn btn-info" id="btn_menu" style="background-color:#bebebe; 
+                        border:none; opacity:0.7;outline:none;" onclick="location.href='salir.php'">Salir</button>  
+                    </li> <!-- Cierre de la Login -->   
                 </ul> <!-- Cierre de la lista desordenada -->
             </nav> <!-- Cierre del menú -->
         </header> <!-- Cierre del encabezado -->
@@ -122,7 +136,7 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
         <div class="profile">
 
             <div class="profile-avatar-wrap">
-                <img src="../public/images/256.jpg" id="profile-avatar" alt="Image for Profile">
+                <img src="../images/256.jpg" id="profile-avatar" alt="Image for Profile">
             </div>
 
             <h2>Eli Amasa Iniwo</h2>
@@ -157,8 +171,8 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 		?>
 
     <!--Jquery que necesita-->
-    <script src="../public/js/resample.js"></script>
-    <script src="../public/js/avatar.js"></script>
+    <script src="../js/resample.js"></script>
+    <script src="../js/avatar.js"></script>
 
 	</body>
 

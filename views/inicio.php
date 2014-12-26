@@ -8,15 +8,15 @@
 
 		<title> filmdate </title>
 
-		<link rel="stylesheet" href="../public/css/main.css" /> <!-- El diseño está en un archivo externo -->
+		<link rel="stylesheet" href="../css/main.css" /> <!-- El diseño está en un archivo externo -->
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script> 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
         <!-- jQuery de slider -->
-        <script type="text/javascript" src="../public/js/slider.js"></script> <!-- jQuery slider -->
+        <script type="text/javascript" src="../js/slider.js"></script> <!-- jQuery slider -->
         <!--CSS bootstrap-->
-        <link rel="stylesheet" type="text/css" href="../public/css/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         
 
         <!-- jQuery para menu respontive -->
@@ -82,9 +82,9 @@
             <header id="header"> 
                     <!-- Imagen corporativa -->
                     <div id="logo">
-                        <img id="logoTxiki" href="/inicio" src="../public/images/logotxiki.png" />
+                        <img id="logoTxiki" href="/inicio" src="../images/logotxiki.png" />
                         <!-- Botón del menú -->
-                        <a href="#" id="pull"><img src="../public/images/nav-icon.png" /></a>
+                        <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
                     </div> <!-- Cierre del logo -->
                     <!-- Menú -->
                     <nav id="menu_nav">
@@ -107,17 +107,26 @@
                                     </form>
                                 </div> <!-- Cierre de la caja del buscador -->
                             </li> <!-- Cierre de la Buscador -->
-                            <!-- Item 4, Registro --> 
-                            <li>
-                                <button class="btn btn-info" data-toggle="modal" data-target="#miregistro" 
-                                style="background-color:#bebebe; border:none; opacity:0.7; padding-left:5px;margin-right:10px;
-                                outline:none;">Sign in</button> 
-                            </li> <!-- Cierre de la Registro -->
-                            <!-- Item 5, Login --> 
-                            <li>
-                                <button class="btn btn-info" id="btn_menu" data-toggle="modal" data-target="#milogin" 
-                                style="background-color:#bebebe; border:none; opacity:0.7;outline:none;">Log in</button>  
-                            </li> <!-- Cierre de la Login -->
+                            <!-- Item 4, Registro -->
+                            
+
+                                <?php
+
+                                    if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+
+                                        include("noLog.html");
+
+                                    }
+                                    else{
+
+                                        print("Hola, <b>".$_SESSION["usuario"]."</b>! <br>\n");
+
+                                        include("log.html");
+
+                                    }
+
+                                ?>
+
                         </ul> <!-- Cierre de la lista desordenada -->
                     </nav> <!-- Cierre del menú -->
             </header> <!-- Cierre del encabezado -->
@@ -160,7 +169,7 @@
                 <h3> Cartelera </h3>
 
                 <div class="peli">
-                    <img href="#" src="../public/images/peli1.jpg"/>
+                    <img href="#" src="../images/peli1.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -168,7 +177,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli2.jpg"/>
+                    <img href="#" src="../images/peli2.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -176,7 +185,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli3.jpg"/>
+                    <img href="#" src="../images/peli3.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -184,7 +193,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli4.jpg"/>
+                    <img href="#" src="../images/peli4.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -192,7 +201,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli5.jpg"/>
+                    <img href="#" src="../images/peli5.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -214,7 +223,7 @@
                 <h3> Próximamente </h3>
 
                 <div class="peli">
-                    <img href="#" src="../public/images/peli1.jpg"/>
+                    <img href="#" src="../images/peli1.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -222,7 +231,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli2.jpg"/>
+                    <img href="#" src="../images/peli2.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -230,7 +239,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli3.jpg"/>
+                    <img href="#" src="../images/peli3.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -238,7 +247,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli4.jpg"/>
+                    <img href="#" src="../images/peli4.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -246,7 +255,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../public/images/peli5.jpg"/>
+                    <img href="#" src="../images/peli5.jpg"/>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -263,10 +272,10 @@
             <!-- Pie de toda la página -->
              <footer>
 
-                <img class="red" style="padding-right:170px;" href="#" src="../public/images/red1.png"/>
-                <img class="red" href="#" src="../public/images/red2.png"/>
-                <img class="red" href="#" src="../public/images/red3.png"/>
-                <img class="red"  href="#" src="../public/images/red4.png"/>
+                <img class="red" style="padding-right:170px;" href="#" src="../images/red1.png"/>
+                <img class="red" href="#" src="../images/red2.png"/>
+                <img class="red" href="#" src="../images/red3.png"/>
+                <img class="red"  href="#" src="../images/red4.png"/>
 
                 <a href="#"> Contacto </a>
                 <a href="#"> Política de privacidad </a>
@@ -390,7 +399,7 @@
          <div> <!-- Cierre div del container -->
 
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
-        <script type="text/javascript" src="../public/css/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
 
 	</body>
 	

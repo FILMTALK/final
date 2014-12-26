@@ -3,6 +3,10 @@
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
 
+/* @var boolean $estaLog Estado del usuario en el login
+	*/
+//$estaLog=false;
+
 /*
 * usuarioExiste. Para comprobar si un usuario existe en la bd.
 * parans --> $email. Se obtiene del formulario.
@@ -142,5 +146,20 @@ function obtenerUsuario($email){
 	return $usuario;
 
 } // Cierre de la función obtenerUsuario
+
+/*function estaLogueado(){
+	
+	return $estaLog;
+}
+
+function login(){
+	$estaLog = true;
+	return $estaLog;
+}
+
+function logout(){
+	$estaLog = false;
+	return $estaLog;
+}*/
 
 ?>

@@ -67,8 +67,8 @@ if(isset($_POST['login'])){
 				$email=$_POST['email'];
 				$password=md5($_POST['password']);
 
-				// Redirecciona al perfil del usuario
-				header("location: ../views/profile.php");
+					// Redirecciona al perfil del usuario
+					header("location: /index.php");
 				}
 
 			

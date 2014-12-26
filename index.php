@@ -7,7 +7,7 @@
 	if(!$collection){
 
 		// Mostrará un aviso por pantalla
-		echo "Failed to connect to filmtalk";
+		echo "Failed to connect to filmdate";
 	}
 	else{
 

@@ -22,9 +22,9 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title> filmdate </title>
-        <link rel="stylesheet" type="text/css" href="../public/css/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
 	</head>
-	<body  background="../public/images/cine.jpg" no-repeat center center fixed>	
+	<body  background="../images/cine.jpg" no-repeat center center fixed>	
     <!--MENU-->
         <nav class="navbar navbar-default" role="navigation"><!--inverse en vez de default, para que sea en negro el navegador-->
             <div class="container-fluid">
@@ -81,7 +81,7 @@
         </div>   
             
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
-        <script type="text/javascript" src="../public/css/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
 	</body>
 	
 </html>
