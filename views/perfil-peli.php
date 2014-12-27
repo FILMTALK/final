@@ -140,7 +140,7 @@
 		<source src="../images/video/video.mp4" type="video/mp4">
 	</video>
 	<div id="contenedor">
-		<h1>BOYHOOD</h1>
+		<h1>After Us</h1>
 		<div class="ec-stars-wrapper">
 			<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 			<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>

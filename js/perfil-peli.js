@@ -16,10 +16,10 @@ function playOrPause(){
 	if(!myMovie.paused && !myMovie.ended)
 	{
 		myMovie.pause();
-		playButton.src="images/play.png";//PARA CAMBIAR LA IMAGEN DEL PLAY
+		playButton.src="../images/video/play.png";//PARA CAMBIAR LA IMAGEN DEL PLAY
 	}else{
 		myMovie.play();
-		playButton.src="images/pause.png";//PARA CAMBIAR LA IMAGEN DEL PLAY
+		playButton.src="../images/video/pause.png";//PARA CAMBIAR LA IMAGEN DEL PLAY
 	}
 }
 
