@@ -6,10 +6,10 @@
 	try{
 
 		// Se conecta con la base de datos
-	    $conexion=new MongoClient("mongodb://filmdate:zubiri14@ds063160.mongolab.com:63160/filmdate");
-
+	    $conexion=new MongoClient("mongodb://filmdate:zubiri14@ds043220.mongolab.com:43220/openshift_ncp648lb_i71frbbr");
+	    
 	    // Establecemos la base de datos
-	    $bd=$conexion->filmdate;
+	    $bd=$conexion->openshift_ncp648lb_i71frbbr;
 
 	    // Establecemos la colección (tabla)
 	    $collection=$bd->usuarios;
