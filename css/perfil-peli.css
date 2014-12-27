@@ -1,0 +1,434 @@
+body {
+  margin: 0;
+  background: #000;
+}
+
+/*CRITICA*/
+
+#iruzkin{
+  position: absolute;
+  width: 370px;
+  top: 800px;
+  display: none;
+}
+#nork{
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  display: -webkit-box;
+  padding: 8px;
+  margin: auto;
+  margin-left: 0px;
+  width: auto;
+  height: 10px;
+  -webkit-border-radius: 10px;
+}
+
+
+/*VIDEO CSS*/
+video { 
+  position: absolute;
+  top: -145px;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  height: 730px;
+  z-index: -100;
+ background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .8;
+}
+
+#contenedor { 
+  float: right;
+  padding: 80px;
+  margin-top: 8%;
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 2rem;
+  width: 580px;
+  font-size: 1.2rem;
+  height: 60em;
+}
+
+#contenedor h1{
+  font-size: 50px;
+}
+
+#contenedor p{
+  font-size: 15px;
+}
+
+#amasa{
+  background-color: #cccccc;
+	position: absolute;
+	top: 580px;
+	width: 100%;
+	height: 800px;
+}
+
+.criticas{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 800px;
+  background: grey;
+  height: 300px;
+
+}
+/*FIN VIDEO*/
+
+/*Valoración estrellas*/
+
+.ec-stars-wrapper {
+background: none;
+  /* Espacio entre los inline-block (los hijos, los `a`) 
+     http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+  font-size: 0;
+  /* Podríamos quitarlo, 
+    pero de esta manera (siempre que no le demos padding), 
+    sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+    también se esté haciendo hover a alguna estrella */
+  display: inline-block;
+}
+.ec-stars-wrapper a {
+  background: none;
+  text-decoration: none;
+  display: inline-block;
+  /* Volver a dar tamaño al texto */
+  font-size: 30px;
+  color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+  background: none;
+  color: yellow;
+  text-decoration: none;
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper > a:hover ~ a {
+  background: none;
+  color: #888;
+  text-decoration: none;
+}
+
+
+/**********************************/
+
+#buttons{
+    float: left;
+    width:70px;
+    height: 22px;
+    cursor: pointer;
+}
+
+#buttons img{
+
+    width:40px;
+}
+
+#amplia{
+    position: relative;
+    float: right;
+    width:30px;
+    height: 22px;
+    cursor: pointer;
+}
+
+#amplia img{
+    width:36px;
+}
+
+
+/*************MENU**************/
+/********************************/
+
+ul,ol,li,form,input{margin:0; padding:0;}
+
+
+header,nav{
+  display: block;
+}
+
+#header{
+  /*border: 3px solid red;*/
+  position: relative;
+  z-index: 2;
+  display: -webkit-box; /* Chrome*/
+  display: flex; /* Moz*/
+  -webkit-box-orient: horizontal; /* encabezado en horizontal */
+  -moz-box-orient: horizontal; /* encabezado en horizontal */
+  height: 50px;
+}
+
+
+
+.btn-login{
+  cursor: pointer;
+  margin: 0px;
+}
+
+#logo{
+  padding-left: 15px;
+  padding-top: 13px;
+  /*border: 3px solid green;*/
+  width: 200px;
+  min-width: 100px;
+  opacity: 0.9;
+}
+#menu_nav{
+  margin-top: 17px;
+  /*border: 3px solid purple;*/
+  position: absolute;
+  right: 0;
+  width: 555px;
+}
+
+#menu_nav li{ 
+
+  display: inline-block; /* Para poner el menú en horizontal */
+
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+  color: #bebebe;
+  padding-right: 20px;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.link:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+/* Botón oculto para aparecer el menú */
+#pull{
+
+  display: none;
+}
+
+/* Botón para ir hacia abajo */
+#div_abajo{
+  z-index: 1;
+  /*border: 2px solid brown;*/
+  position: relative;
+  left: 20%;
+  top:548px;
+  width: 80%;
+  height: 80px;
+  margin-left: 0px;
+}
+/*icono animado*/
+.glyphicon-refresh-animate {
+    -webkit-animation: spin2 1s infinite linear;
+    -moz-animation: spin2 1s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: translate(0px,0px);}
+    to { -webkit-transform: translate(0px,50px);}
+}
+
+@-moz-keyframes spin2 {
+    from { -moz-transform: translate(0px,0px);}
+    to { -moz-transform: translate(0px,50px);}
+}
+
+/* Buscador */
+#buscador{
+  padding-right: 15px;
+}
+
+#search input[type="text"] {
+  outline: none;
+    background:   url(../images/busca.png) no-repeat 10px 6px #fcfcfc;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #bebebe;
+    opacity: 0.9
+    font-size: 13px;
+    color: #bebebe;
+    width: 160px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+#search input[type="text"]:focus {
+    width: 156px;
+}
+
+/* Footer */
+footer{
+  background-color: #cccccc;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  height: 66px;
+  padding: 3px;
+}
+
+footer a{
+  position: relative;
+  top: 16px;
+  color: #eeeeee;
+  padding-right:18px;
+  float: right;
+}
+
+footer a:hover{
+  color: grey;
+  text-decoration: none;
+}
+/*imagenes de redes sociales*/
+.red{
+  cursor: pointer;
+  float: right;
+  padding-right:14px;
+}
+
+/* ************************************************************************************************
+                                            RESPONSIVE
+************************************************************************************************ */
+
+/*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
+@media all and (max-width: 750px){
+
+  #bgvid { display: none; }
+
+  #div_abajo{
+    display: none;
+  }
+
+  .slider{
+    display: none;
+  }
+
+  #cartelera, #proximamente, #footer{
+    position: relative;
+    left: 0px;
+    top: 0px;
+
+  }
+
+  #btn_abajo{
+
+    display: none;
+
+  }
+
+  /* Encabezado ************************************/
+  #header{
+    display: block;
+    background-color: #191919;
+  }
+
+  /* Imagen corporativa */
+  #logo{
+
+    width: 300px; 
+
+
+  }
+  #logoTxiki{
+
+    width: 50%;
+
+  }
+
+  #logo a{
+
+      clear: both;
+      float: right;
+  }
+
+  /* Menú */
+
+  #menu_nav {
+    margin-top: 0px;
+    padding-left: 20px;
+    background-color: #3F3F3F;
+    width: 100%; /* Ocupa toda la pantalla */
+  }
+
+  /* Item de las listas desordenadas */
+  #menu_nav li{
+    padding: 10px;
+    display: block; 
+
+  }
+
+  nav ul {
+
+       display: none;
+       height: auto;
+
+    }
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 13px;
+    }
+
+    /*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
+
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    /* Cartelera */
+  #cartelera{
+    position: relative;
+    float: left;
+    padding: 12px;
+    padding-left: 60px;
+    width: 100%;
+    /*border: 3px solid green;*/
+  }
+
+  #proximamente{
+    float: right;
+    position: relative;
+    padding: 12px;
+    padding-left: 60px;
+    width: 100%;
+    /*border: 3px solid green;*/
+  }
+
+  #cartelera h3{
+    margin-left: 0px;
+  }
+
+  .peli{
+    position: relative;
+    float: left;
+    margin: 10px;
+  }
+
+  footer a{
+    position: relative;
+  }
+
+
+} 

@@ -85,7 +85,7 @@
             <header id="header"> 
                     <!-- Imagen corporativa -->
                     <div id="logo">
-                        <img id="logoTxiki" href="/inicio" src="../images/logotxiki.png" />
+                        <a href="/index.php"><img id="logoTxiki" src="../images/logotxiki_gris.png" /></a>
                         <!-- Botón del menú -->
                         <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
                     </div> <!-- Cierre del logo -->
@@ -95,11 +95,11 @@
                         <ul>
                             <!-- Item 1, Cartelera --> 
                             <li>
-                                <a href="#" class="link"> Cartelera </a>
+                                <a href="../views/perfil-peli.php" class="link"> Cartelera </a>
                             </li> <!-- Cierre de la Cartelera -->
                             <!-- Item 2, Próximamente --> 
                             <li>
-                                <a href="#" class="link"> Próximamente </a>
+                                <a href="../views/perfil-peli.php" class="link"> Próximamente </a>
                             </li> <!-- Cierre de la Próximamente -->
                             <!-- Item 3, Buscador --> 
                             <li>
@@ -172,7 +172,7 @@
                 <h3> Cartelera </h3>
 
                 <div class="peli">
-                    <img href="#" src="../images/peli1.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli1.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli2.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli2.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -188,7 +188,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli3.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli3.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli4.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli4.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli5.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli5.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -226,7 +226,7 @@
                 <h3> Próximamente </h3>
 
                 <div class="peli">
-                    <img href="#" src="../images/peli1.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli1.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli2.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli2.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -242,7 +242,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli3.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli3.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -250,7 +250,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli4.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli4.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -258,7 +258,7 @@
                     </div>
                 </div>
                 <div class="peli">
-                    <img href="#" src="../images/peli5.jpg"/>
+                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli5.jpg"/></a>
                     <div class="descrip">
                         <h4>Titulo One</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
