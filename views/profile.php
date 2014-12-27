@@ -20,11 +20,12 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
 	<!-- Cabecera de toda la página -->
 	<head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 		<title> Perfil de Usuario</title>
-
+        <!--para el favicon-->
+        <link rel="icon" type="image/png" href="../images/favicon.png" />
 		<!-- El diseño está en un archivo externo -->
         <link rel="stylesheet" href="../css/main.css" /> 
 		<link rel="stylesheet" href="../css/perfilUsuario.css" /> 

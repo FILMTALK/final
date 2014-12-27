@@ -3,6 +3,12 @@
 
 	<!-- Cabecera de toda la página -->
 	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title> filmdate </title>
+        <!--para el favicon-->
+        <link rel="icon" type="image/png" href="../images/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         <style type="text/css">
 
                 .contenido{
@@ -19,10 +25,6 @@
                 }
 
         </style>
-
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title> filmdate </title>
-        <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
 	</head>
 	<body  background="../images/cine.jpg" no-repeat center center fixed>	
     <!--MENU-->
