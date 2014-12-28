@@ -95,9 +95,13 @@ header, section, footer, nav {
 /* Menú */
 
 /* Imagen corporativa */
+
+.imgLogo{
+	content:url("../images/logotxiki.png");
+}
 #logo{
-	padding-left: 15px;
-	padding-top: 13px;
+  padding-left: 26px;
+  padding-top: 10px;
 	/*border: 3px solid green;*/
 	width: 200px;
 	min-width: 100px;
@@ -118,7 +122,7 @@ header, section, footer, nav {
 }
 
 .link{/*estilos para los link del menu, para que no coja bootstrap*/
-	color: #bebebe;
+	color: #f2efef;
 	padding-right: 20px;
 	opacity: 0.9;
 	text-decoration: none;
@@ -208,13 +212,13 @@ header, section, footer, nav {
 	left: 0px;
 	/*border: 3px solid green;*/
 	height: 600px;
-	background-color: #eeeeee;
+	background-color: #f2efef;
 
 }
 
 #cartelera h3{
 
-	color: #333333;
+	color: #cccccc;
 	margin-left: 30px;
 	
 }
@@ -237,7 +241,7 @@ header, section, footer, nav {
 }
 
 .descrip h4{
-	color: #00B8E6;
+	color: #66cccc;
 }
 
 
@@ -262,7 +266,7 @@ header, section, footer, nav {
 }
 
 #proximamente h3{
-	color: #333333;
+	color: #f2efef;
 	margin-left: 30px;
 }
 
@@ -273,12 +277,12 @@ header, section, footer, nav {
 
 #search input[type="text"] {
 	outline: none;
-    background:   url(../images/busca.png) no-repeat 10px 6px #fcfcfc;
+    background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
     background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #bebebe;
+    border: 2px solid #f2efef;
     opacity: 0.9
     font-size: 13px;
-    color: #bebebe;
+    color: #f2efef;
     width: 160px;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
@@ -356,26 +360,11 @@ footer a:hover{
 	/* Encabezado ************************************/
 	#header{
 		display: block;
-		background-color: #191919;
+		background-color: #f2efef;
 	}
 
-	/* Imagen corporativa */
-	#logo{
-
-		width: 300px; 
-
-
-	}
-	#logoTxiki{
-
-		width: 50%;
-
-	}
-
-	#logo a{
-
-    	clear: both;
-    	float: right;
+	.imgLogo{
+		content:url("../images/logotxiki_gris.png");
 	}
 
 	/* Menú */
@@ -383,7 +372,7 @@ footer a:hover{
 	#menu_nav {
 		margin-top: 0px;
 		padding-left: 20px;
-		background-color: #3F3F3F;
+		background-color: #c6c5c5;
 		width: 100%; /* Ocupa toda la pantalla */
 	}
 
@@ -406,7 +395,7 @@ footer a:hover{
         display: block;
         position: absolute;
         right: 15px;
-        top: 13px;
+        top: 20px;
     }
 
     /*Después de aparecer el menú, aparece el icono */
@@ -422,36 +411,43 @@ footer a:hover{
 
     }
 
+    #search input[type="text"] {
+	    border: 2px solid #f2efef;
+	    color: #f2efef;
+	}	
+
     /* Cartelera */
 	#cartelera{
 
-		height: 1000px;
+		height: 2200px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		border: 2px solid black;
+		/*border: 2px solid black;*/
 
 	}
 
 	#proximamente{
 
-		height: 1000px;
+		height: 2200px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		border: 2px solid black;
+		/*border: 2px solid black;*/
 
 	}
 
+	#proximamente h3{
+		margin-left: 9px;
+	}
+
 	#cartelera h3{
-
-		margin-left: 0px;
-
+		margin-left: 9px;
 	}
 
 	.peli{
 		margin: 10px;
-		border: 2px solid green;
+		/*border: 2px solid green;*/
 
 	}
 	/* Footer */
@@ -475,22 +471,18 @@ footer a:hover{
 
 	/* Cartelera */
 	#cartelera{
-
-		height: 1990px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		border: 2px solid black;
+		/*border: 2px solid black;*/
 
 	}
 
 	#proximamente{
-
-		height: 1990px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		border: 2px solid black;
+		/*border: 2px solid black;*/
 
 	}
 

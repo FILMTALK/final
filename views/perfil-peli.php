@@ -139,8 +139,119 @@
 		<!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
 		<source src="../images/video/video.mp4" type="video/mp4">
 	</video>
+
+	<!--Ventana Modal del Log In-->
+            <div class="modal fade" id="milogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4>Inicia sesión</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                             
+                                    
+                                        <div class="panel-body">
+                                            <form role="form" method="post" action="../model/login.php">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Contraseña</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                                    style="font-size:16px;margin-top:8px;">
+                                                    <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                                                </button>
+                                                <button type="submit" name="login" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
+                                                <p><br/></p>
+                                            </form>
+                                        </div>
+                                    
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Ventana Modal del Sign In-->
+            <div class="modal fade" id="miregistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog">
+
+                    <div class="modal-content"  style="height:500px;margin-top:10%;">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4>Regístrate</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="row">
+                                        <div class="panel-body">
+                                            <form role="form" method="post" action="../model/registro.php">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Nombre de usuario</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                        <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Contraseña</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Repite la contraseña</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                        <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Repite Contraseña">
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                                    style="font-size:16px;margin-top:8px;">
+                                                    <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                                                </button>
+                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                                                <p><br/></p>
+                                            </form>
+                                        </div>      
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 	<div id="contenedor">
-		<h1>After Us</h1>
+		<h1>AFTER US</h1>
 		<div class="ec-stars-wrapper">
 			<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
 			<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -206,8 +317,8 @@
 	 <footer>
 
 	    <img class="red" style="padding-right:170px;" href="#" src="../images/red1.png"/>
-	    <img class="red" href="#" src="../../../images/red2.png"/>
-	    <img class="red" href="#" src="../../images/red3.png"/>
+	    <img class="red" href="#" src="../images/red2.png"/>
+	    <img class="red" href="#" src="../images/red3.png"/>
 	    <img class="red"  href="#" src="../images/red4.png"/>
 
 	    <a href="#"> Contacto </a>

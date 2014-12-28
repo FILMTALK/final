@@ -31,9 +31,9 @@ video {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  height: 730px;
+  height: 780px;
   z-index: -100;
- background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-color: #cccccc;
   background-size: cover;
   transition: 1s opacity;
 }
@@ -175,8 +175,8 @@ header,nav{
 }
 
 #logo{
-  padding-left: 15px;
-  padding-top: 13px;
+  padding-left: 26px;
+  padding-top: 10px;
   /*border: 3px solid green;*/
   width: 200px;
   min-width: 100px;
@@ -197,7 +197,7 @@ header,nav{
 }
 
 .link{/*estilos para los link del menu, para que no coja bootstrap*/
-  color: #bebebe;
+  color: #f2efef;
   padding-right: 20px;
   opacity: 0.9;
   text-decoration: none;
@@ -302,55 +302,45 @@ footer a:hover{
                                             RESPONSIVE
 ************************************************************************************************ */
 
-/*Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
-@media all and (max-width: 750px){
+/*Cuando la anchura de la ventana contenga como máximo 768px se cambia el diseño */
+@media all and (max-width: 768px){
 
-  #bgvid { display: none; }
-
+   #bgvid { display: none; 
+   }
   #div_abajo{
+
+    display: none;
+
+  }
+
+  #buttons{
     display: none;
   }
 
-  .slider{
+  #amplia{
     display: none;
   }
 
-  #cartelera, #proximamente, #footer{
+  #contenedor{
+    width: 100%;
+    margin-top: 0%;
+    background-color: #999999;
+    height: 100%;
+  }
+
+  #amasa{
     position: relative;
-    left: 0px;
-    top: 0px;
-
+    padding-top: 0px;
   }
 
-  #btn_abajo{
-
-    display: none;
-
-  }
-
-  /* Encabezado ************************************/
+  /* MENU ************************************/
   #header{
     display: block;
-    background-color: #191919;
+    background-color: #f2efef;
   }
 
-  /* Imagen corporativa */
-  #logo{
-
-    width: 300px; 
-
-
-  }
-  #logoTxiki{
-
-    width: 50%;
-
-  }
-
-  #logo a{
-
-      clear: both;
-      float: right;
+  .imgLogo{
+    content:url("../images/logotxiki_gris.png");
   }
 
   /* Menú */
@@ -358,7 +348,7 @@ footer a:hover{
   #menu_nav {
     margin-top: 0px;
     padding-left: 20px;
-    background-color: #3F3F3F;
+    background-color: #c6c5c5;
     width: 100%; /* Ocupa toda la pantalla */
   }
 
@@ -381,7 +371,7 @@ footer a:hover{
         display: block;
         position: absolute;
         right: 15px;
-        top: 13px;
+        top: 20px;
     }
 
     /*Después de aparecer el menú, aparece el icono */
@@ -397,38 +387,23 @@ footer a:hover{
 
     }
 
-    /* Cartelera */
-  #cartelera{
-    position: relative;
-    float: left;
-    padding: 12px;
-    padding-left: 60px;
-    width: 100%;
-    /*border: 3px solid green;*/
-  }
+    #search input[type="text"] {
+      border: 2px solid #f2efef;
+      color: #f2efef;
+  } 
 
-  #proximamente{
-    float: right;
-    position: relative;
-    padding: 12px;
-    padding-left: 60px;
-    width: 100%;
-    /*border: 3px solid green;*/
-  }
-
-  #cartelera h3{
-    margin-left: 0px;
-  }
-
-  .peli{
-    position: relative;
-    float: left;
-    margin: 10px;
+  /* Footer */
+  footer{
+    display: none;
+    background: none;
   }
 
   footer a{
-    position: relative;
+    display: none;
   }
 
+  .red{
+    display: none;
+  }
 
 } 

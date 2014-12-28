@@ -85,7 +85,7 @@
             <header id="header"> 
                     <!-- Imagen corporativa -->
                     <div id="logo">
-                        <a href="/index.php"><img id="logoTxiki" src="../images/logotxiki_gris.png" /></a>
+                        <a href="/index.php"><img class="imgLogo"/></a>
                         <!-- Botón del menú -->
                         <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
                     </div> <!-- Cierre del logo -->
