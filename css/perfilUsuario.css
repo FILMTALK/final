@@ -8,7 +8,7 @@ html, body {
 }
 
 body.droppable .profile-avatar-wrap {
-  border: 5px dashed #00B8E6;
+  border: 5px dashed #66cccc;
   z-index: 9999;
 }
 
@@ -19,7 +19,7 @@ body.droppable .profile-avatar-wrap {
 
 h1 {
   margin: 0 0 30px 0;
-  border-bottom: 2px solid #00B8E6;
+  border-bottom: 2px solid #66cccc;
 }
 h3 {
   clear: both;

@@ -5,22 +5,28 @@ body {
 
 /*CRITICA*/
 
-#iruzkin{
+#contCriticas{
+  background-color: #cccccc;
   position: absolute;
-  width: 370px;
-  top: 800px;
-  display: none;
+  top: 580px;
+  width: 100%;
+  height: 800px;
 }
-#nork{
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
-  display: -webkit-box;
-  padding: 8px;
-  margin: auto;
-  margin-left: 0px;
-  width: auto;
-  height: 10px;
-  -webkit-border-radius: 10px;
+
+.criticas{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 800px;
+  background: grey;
+  height: 500px;
+
+}
+
+#coment{
+ background-color: #fff;
+ width: 600px;
+ height: auto;
 }
 
 
@@ -41,7 +47,7 @@ video {
    opacity: .8;
 }
 
-#contenedor { 
+#infopeli { 
   float: right;
   padding: 80px;
   margin-top: 8%;
@@ -55,31 +61,14 @@ video {
   height: 60em;
 }
 
-#contenedor h1{
+#infopeli h1{
   font-size: 50px;
 }
 
-#contenedor p{
+#infopeli p{
   font-size: 15px;
 }
 
-#amasa{
-  background-color: #cccccc;
-	position: absolute;
-	top: 580px;
-	width: 100%;
-	height: 800px;
-}
-
-.criticas{
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  width: 800px;
-  background: grey;
-  height: 300px;
-
-}
 /*FIN VIDEO*/
 
 /*Valoración estrellas*/
@@ -274,7 +263,7 @@ footer{
   background-color: #cccccc;
   width: 100%;
   position: absolute;
-  top: 100%;
+  top: 200%;
   height: 66px;
   padding: 3px;
 }
@@ -321,14 +310,14 @@ footer a:hover{
     display: none;
   }
 
-  #contenedor{
+  #infopeli{
     width: 100%;
     margin-top: 0%;
     background-color: #999999;
     height: 100%;
   }
 
-  #amasa{
+  #contCriticas{
     position: relative;
     padding-top: 0px;
   }
@@ -371,7 +360,7 @@ footer a:hover{
         display: block;
         position: absolute;
         right: 15px;
-        top: 20px;
+        top: 17px;
     }
 
     /*Después de aparecer el menú, aparece el icono */

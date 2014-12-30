@@ -95,11 +95,11 @@
                         <ul>
                             <!-- Item 1, Cartelera --> 
                             <li>
-                                <a href="../views/perfil-peli.php" class="link"> Cartelera </a>
+                                <a href="views/perfil-peli.php" class="link"> Cartelera </a>
                             </li> <!-- Cierre de la Cartelera -->
                             <!-- Item 2, Próximamente --> 
                             <li>
-                                <a href="../views/perfil-peli.php" class="link"> Próximamente </a>
+                                <a href="views/perfil-peli.php" class="link"> Próximamente </a>
                             </li> <!-- Cierre de la Próximamente -->
                             <!-- Item 3, Buscador --> 
                             <li>
@@ -115,16 +115,21 @@
 
                                 <?php
 
+                                    echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+
+                                    session_start();
+
                                     if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
 
                                         include("noLog.html");
 
+
                                     }
                                     else{
 
-                                        print("Hola, <b>".$_SESSION["usuario"]."</b>! <br>\n");
+                                        echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
 
-                                        include("log.html");
+                                        include("logInicio.html");
 
                                     }
 
@@ -324,7 +329,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="login" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
+                                                <button type="submit" name="login" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>
@@ -387,7 +392,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>      

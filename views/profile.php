@@ -70,6 +70,7 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 	</head> <!-- Cierre del encabezado de la página -->
 
 	<body>
+    <div id="container"> 
         <header id="header"> 
             <!-- Imagen corporativa -->
             <div id="logo">
@@ -140,9 +141,34 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
                 <img src="../images/256.jpg" id="profile-avatar" alt="Image for Profile">
             </div>
 
-            <h2>Eli Amasa Iniwo</h2>
-            <div class="location">San Sebastian, CA</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur voluptatem accusantium voluptas doloremque porro temporibus aut rerum possimus cum minus.</p>
+            <?php
+
+                //print(" Hola, <b>" . $_COOKIE[$cookie_name] . "<b/>");
+
+                // Se importa database.php para mantener la conexión
+                include_once("../config/database.php");
+
+                // Se importan para utilizar las sesiones
+                include_once("../model/registro.php");
+                include_once("../model/login.php");
+
+
+                // Si está logueado muestra los datos y el link para salir
+                echo "Usuario: <b>".$_SESSION["usuario"]."</b>!\n\n\n";
+
+                ?>
+
+                <button class="btn btn-info" data-toggle="modal" data-target="#edit" 
+                    style="background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
+                    margin-right:10px;
+                    outline:none;"><span class="glyphicon glyphicon-pencil"></span></button><br />
+
+                <?php echo "Email: <b>".$_SESSION["email"]."</b>\n\n\n"; ?>
+                <button class="btn btn-info" data-toggle="modal" data-target="#edit" 
+                    style="background-color:#66cccc; color:#fff; border:none; opacity:0.7; 
+                    padding-left:5px;margin-right:10px;
+                    outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
+
 
         </div>
 
@@ -151,29 +177,64 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
     </div>
 <!---------------------------tgt---------------------------------->
-		<?php
 
-			//print(" Hola, <b>" . $_COOKIE[$cookie_name] . "<b/>");
+ <!--Ventana Modal del Log In-->
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-			// Se importa database.php para mantener la conexión
-			include_once("../config/database.php");
+        <div class="modal-dialog">
 
-			// Se importan para utilizar las sesiones
-			include_once("../model/registro.php");
-			include_once("../model/login.php");
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Cambio de nombre</h4>
+                </div>
 
+                <div class="modal-body">
+                    <div class="row">
+                                <div class="panel-body">
+                                    <form role="form" method="post" action="../model/editar.php">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Nuevo nombre</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                <input type="text" name="nombre" class="form-control" placeholder="Nuevo nombre">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Contraseña</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                <input type="password" name="password" class="form-control" placeholder="Contraseña para verificar">
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                            style="font-size:16px;margin-top:8px;">
+                                            <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                                        </button>
+                                        <button type="submit" name="editNombre" class="btn btn-primary" style="background:#66cccc;border:none;">
+                                            <span class="glyphicon glyphicon-user"></span> Modificar</button>
+                                        <p><br/></p>
+                                    </form>
+                                </div>
+                            
+                        
+                    </div>
+                </div>
 
-			// Si está logueado muestra los datos y el link para salir
-			print("Hola, <b>".$_SESSION["usuario"]."</b>! <br>\n");
-			print("Tu contraseña es: <b>".$_SESSION["password"]."</b><br>\n");
-			print("Tu email es: <b>".$_SESSION["email"]."</b><br>\n");
-			print("<a href=\"salir.php"."\">Salir</a>");
-
-		?>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!--Jquery que necesita-->
     <script src="../js/resample.js"></script>
     <script src="../js/avatar.js"></script>
+
+    <!-- jQuery para ventana modal -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
+    <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
 
 	</body>
 

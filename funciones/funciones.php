@@ -147,19 +147,61 @@ function obtenerUsuario($email){
 
 } // Cierre de la función obtenerUsuario
 
-/*function estaLogueado(){
-	
-	return $estaLog;
+function obtenerIdUsuario($usuario){
+
+	// Variable global
+	global $collection;
+
+	// Variable local 
+	$id=''; // Se establece el valor vacío de String
+
+	// Se realiza una consulta para obtener los datos de un usuario
+	$users=$collection->findOne(array('usuario' => $usuario));
+
+	// Recorremos los datos para saber si el email existe
+	foreach($users as $campos => $datos){
+
+		// Comprobamos el campo usuario
+		if($campos=='_id'){
+			// Se guarda el email en la variable local
+			$id=$datos;
+
+		} // Cierre del if
+
+	} // Cierre del bucle foreach
+
+	// Devuelve la variable local en String
+	return $id;
+
 }
 
-function login(){
-	$estaLog = true;
-	return $estaLog;
-}
+function verificarPassword($password){
 
-function logout(){
-	$estaLog = false;
-	return $estaLog;
-}*/
+	// Variable global
+	global $collection;
+
+	// Variable local 
+	$correcto=false; // Se establece el valor false
+
+	// Se realiza una consulta para obtener los datos de un usuario en concreto
+	$users=$collection->findOne(array('contrasena' => $password));
+
+	// Recorremos los datos para saber si el email existe
+	foreach($users as $campos => $datos){
+
+		// Si la contraseña es igual
+		if($datos==$password){
+
+			// Se establece a la variable local el valor true
+			return $correcto=true;
+
+		} // Cierre del if
+
+	} // Cierre del bucle foreach
+
+	// Devuelve el valor de la variable local
+	return $correcto;
+
+} // Cierre de la función comprobarPassword
 
 ?>

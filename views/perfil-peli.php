@@ -85,54 +85,63 @@
         </script> <!-- Cierre de jQuery del slider -->
 </head>
 <body>
-<header id="header"> 
+<!-- Encabezado de toda la página -->
                     
-	        <!-- Imagen corporativa -->
-	        <div id="logo">
+            <header id="header"> 
+                    <!-- Imagen corporativa -->
+                    <div id="logo">
+                        <a href="/index.php"><img class="imgLogo"/></a>
+                        <!-- Botón del menú -->
+                        <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
+                    </div> <!-- Cierre del logo -->
+                    <!-- Menú -->
+                    <nav id="menu_nav">
+                        <!-- Lista desordenada -->
+                        <ul>
+                            <!-- Item 1, Cartelera --> 
+                            <li>
+                                <a href="perfil-peli.php" class="link"> Cartelera </a>
+                            </li> <!-- Cierre de la Cartelera -->
+                            <!-- Item 2, Próximamente --> 
+                            <li>
+                                <a href="perfil-peli.php" class="link"> Próximamente </a>
+                            </li> <!-- Cierre de la Próximamente -->
+                            <!-- Item 3, Buscador --> 
+                            <li>
+                                <!-- Caja de buscador -->
+                                <div id="buscador">
+                                     <form method="get" action="/search" id="search">
+                                        <input name="q" type="text" size="40" placeholder="Buscar pelicula" />
+                                    </form>
+                                </div> <!-- Cierre de la caja del buscador -->
+                            </li> <!-- Cierre de la Buscador -->
+                            <!-- Item 4, Registro -->
+                            
 
-	            <a href="/index.php"><img id="logoTxiki" src="../images/logotxiki_gris.png" /></a>
-	            <!-- Botón del menú -->
-	            <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
-	           
+                                <?php
 
-	        </div> <!-- Cierre del logo -->
+                                    echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
-	        
+                                    session_start();
 
-	        <!-- Menú -->
-	        <nav id="menu_nav">
-	            <ul>
-	                <li>
-	                    <a href="#" class="link"> Cartelera </a>
-	                </li> <!-- Cierre de la Cartelera -->
-	                <!-- Item 2, Próximamente --> 
-	                <li>
-	                    <a href="#" class="link"> Próximamente </a>
-	                </li> <!-- Cierre de la Próximamente -->
-	                <!-- Item 3, Buscador --> 
-	                <li>
-	                    <!-- Caja de buscador -->
-	                    <div id="buscador">
-	                         <form method="get" action="/search" id="search">
-	                            <input name="q" type="text" size="40" placeholder="Buscar pelicula" />
-	                        </form>
-	                    </div> <!-- Cierre de la caja del buscador -->
-	                </li> <!-- Cierre de la Buscador -->
-	                <!-- Item 4, Registro --> 
-	                <li>
-	                    <button class="btn btn-info" data-toggle="modal" data-target="#miregistro" 
-	                    style="background-color:#bebebe; border:none; opacity:0.7; padding-left:5px;margin-right:10px;
-	                    outline:none;">Sign in</button> 
+                                    if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
 
-	                </li> <!-- Cierre de la Registro -->
-	                <!-- Item 5, Login --> 
-	                <li>
-	                    <button class="btn btn-info" id="btn_menu" data-toggle="modal" data-target="#milogin" 
-	                    style="background-color:#bebebe; border:none; opacity:0.7;outline:none;">Log in</button>  
-	                </li> <!-- Cierre de la Login -->
-	            </ul> <!-- Cierre de la lista desordenada -->
-	        </nav> <!-- Cierre del menú -->
-	</header> <!-- Cierre del encabezado -->
+                                        include("noLog.html");
+
+                                    }
+                                    else{
+
+                                        echo "<a href='profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+
+                                        include("log.html");
+
+                                    }
+
+                                ?>
+
+                        </ul> <!-- Cierre de la lista desordenada -->
+                    </nav> <!-- Cierre del menú -->
+            </header> <!-- Cierre del encabezado -->
 
 	<video autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
   	<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
@@ -177,7 +186,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="login" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
+                                                <button type="submit" name="login" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>
@@ -240,7 +249,7 @@
                                                     style="font-size:16px;margin-top:8px;">
                                                     <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                                 </button>
-                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#00B8E6;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
                                                 <p><br/></p>
                                             </form>
                                         </div>      
@@ -250,7 +259,7 @@
                     </div>
                 </div>
             </div>
-	<div id="contenedor">
+	<div id="infopeli">
 		<h1>AFTER US</h1>
 		<div class="ec-stars-wrapper">
 			<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
@@ -275,44 +284,64 @@
         <center><span style="font-size:20px;color:grey;" class="glyphicon glyphicon-chevron-down glyphicon-refresh-animate"></span></center>
      </div> <!-- Cierre del btn_abajo -->
 
-	<div id="amasa">
+	<div id="contCriticas">
 
-	<div id="iruzkin">
-		<div id="iruzkin_header">
-			<h3>Iruzkinak</h3>
-		</div>
-		<div id="iruzkinak">
+	<div class="criticas">
+        <div id="coment">
+            <?php
+                include_once("../config/database.php");
+                $collection=$bd->criticas;
+                $comenta = $collection->find();
+                $id_usuario;
+                $critica;
+                $username;
 
-				<div id="nork">
-					
-					<?php echo $_POST['usu'];?>
-				</div>
-				<div id="iruzkina">
-					<?php echo $_POST['criti'];?>
-				</div>
+                foreach ($comenta as $campo => $valor) {
 
-		</div>
-	</div>
+                    foreach ($valor as $coment => $datos) {
 
-		<div class="criticas">
-			<form role="form" method="post" action="index.php">
-				Usuario: <br><input type="text" name="usu">
-				<br>
+                        if($coment=="id_usuario"){
+                        
+                            $id_usuario=$datos; 
+
+                            $collection=$bd->usuarios;
+                            $usuarios = $collection->findOne(array('_id' => new MongoId($id_usuario)));
+
+                            foreach ($usuarios as $campo => $valor) {
+
+                                if($campo=="usuario"){
+                                
+                                    echo $valor."<br/>";
+
+                                }             
+                                
+                            } 
+
+                        } 
+
+                        if($coment=="comentario"){
+                        
+                            echo $datos."<br/>";
+
+                        }
+                    }          
+                    
+                }
+
+            ?>
+        </div>
 			<!--Input-->
+            <form role="form" method="post" action="../model/criticas.php">
                 <div class="form-group">
-                    <label for="usr" style="color:#fff">Crítica</label>
                     <div class="input-group"  style="width:330px;">
                         <textarea style="border-radius: 5px;" class="form-control" rows="3" name="criti" placeholder="Crítica"></textarea>
-                    </div>
-                <input type="submit" value="Enviar" > 
+                    </div></br>
+                </div>
+                <button type="submit" name="enviarCritica" class="btn btn-primary" style="background:#00B8E6;border:none;">
+                    <span class="glyphicon glyphicon-comment"></span> Comenta</button>
             </form>
-
 		</div>
-
-
 	</div>
-
-
 	    <!-- Pie de toda la página -->
 	 <footer>
 
