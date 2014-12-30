@@ -175,7 +175,7 @@ function obtenerIdUsuario($usuario){
 
 }
 
-function verificarPassword($password){
+function verificarPassword($usuario,$password){
 
 	// Variable global
 	global $collection;
@@ -184,7 +184,7 @@ function verificarPassword($password){
 	$correcto=false; // Se establece el valor false
 
 	// Se realiza una consulta para obtener los datos de un usuario en concreto
-	$users=$collection->findOne(array('contrasena' => $password));
+	$users=$collection->findOne(array('usuario' => $usuario));
 
 	// Recorremos los datos para saber si el email existe
 	foreach($users as $campos => $datos){

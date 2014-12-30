@@ -84,11 +84,11 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
                 <ul>
                     <!-- Item 1, Cartelera --> 
                     <li>
-                        <a href="#" class="link"> Cartelera </a>
+                        <a href="cartelera.php" class="link"> Cartelera </a>
                     </li> <!-- Cierre de la Cartelera -->
                     <!-- Item 2, Próximamente --> 
                     <li>
-                        <a href="#" class="link"> Próximamente </a>
+                        <a href="proximamente.php" class="link"> Próximamente </a>
                     </li> <!-- Cierre de la Próximamente -->
                     <!-- Item 3, Buscador --> 
                     <li>

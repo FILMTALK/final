@@ -95,11 +95,11 @@
                         <ul>
                             <!-- Item 1, Cartelera --> 
                             <li>
-                                <a href="views/perfil-peli.php" class="link"> Cartelera </a>
+                                <a href="views/cartelera.php" class="link"> Cartelera </a>
                             </li> <!-- Cierre de la Cartelera -->
                             <!-- Item 2, Próximamente --> 
                             <li>
-                                <a href="views/perfil-peli.php" class="link"> Próximamente </a>
+                                <a href="views/proximamente.php" class="link"> Próximamente </a>
                             </li> <!-- Cierre de la Próximamente -->
                             <!-- Item 3, Buscador --> 
                             <li>
@@ -176,52 +176,66 @@
 
                 <h3> Cartelera </h3>
 
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli1.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli2.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli3.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli4.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli5.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="vermas">
+                <?php
+
+                    echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+
+                    // Establecemos la colección
+                    $collection=$bd->peliculas;
+
+                    $cartelera=$collection->find(array("boxOffice" => "boxOffice"))->limit(5);
+
+                    foreach ($cartelera as $campo => $valor) {
+
+                        echo "<div class='peli'>";
+
+                        foreach ($valor as $movie => $dato) {
+
+                            $titulo;
+                            $year;
+                            $runtime;
+                            $poster;
+
+                            if($movie=="poster"){
+
+                                $poster=$dato;
+                                echo "<a href='views/perfil-peli.php'><img src=$poster></a>";
+
+                            }
+
+                            echo "<div class='descrip'>";
+
+                            if($movie=="title"){
+
+                                $titulo=$dato;
+                                echo "<h4>" . $titulo . "</h4>";
+                            }
+
+                            if($movie=="year"){
+
+                                $year=$dato;
+                                echo "<p>" . $year. "</p>";
+
+                            }
+
+                            if($movie=="runtime"){
+
+                                $runtime=$dato;
+                                echo "<p>" . $runtime. " mins </p>";
+
+                            }
+
+                            echo "</div>";
+                        }
+
+                        echo "</div>";
+                    }
+
+                ?>     
+
+                <div class="vermas" onclick="location.href='views/cartelera.php'">
                     <span class="glyphicon glyphicon-plus"</span>
-                </div>
-
-                
-
+                </div>       
 
             </section> <!--Cierre de la Cartelera -->
 
@@ -230,47 +244,65 @@
 
                 <h3> Próximamente </h3>
 
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli1.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli2.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli3.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli4.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="peli">
-                    <a href="../views/perfil-peli.php"><img href="#" src="../images/peli5.jpg"/></a>
-                    <div class="descrip">
-                        <h4>Titulo One</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt .</p>
-                    </div>
-                </div>
-                <div class="vermas">
+                <?php
+
+                    echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+
+                    // Establecemos la colección
+                    $collection=$bd->peliculas;
+
+                    $proximamente=$collection->find(array("upcoming" => "upcoming"))->limit(5);
+
+                    foreach ($proximamente as $campo => $valor) {
+
+                        echo "<div class='peli'>";
+
+                        foreach ($valor as $movie => $dato) {
+
+                            $titulo;
+                            $year;
+                            $runtime;
+                            $poster;
+
+                            if($movie=="poster"){
+
+                                $poster=$dato;
+                                echo "<a href='views/perfil-peli.php'><img src=$poster></a>";
+
+                            }
+
+                            echo "<div class='descrip'>";
+
+                            if($movie=="title"){
+
+                                $titulo=$dato;
+                                echo "<h4><a href='views/perfil-peli.php'>" . $titulo . "</a></h4>";
+
+                            }
+
+                            if($movie=="year"){
+
+                                $year=$dato;
+                                echo "<p>" . $year. "</p>";
+
+                            }
+
+                            if($movie=="runtime"){
+
+                                $runtime=$dato;
+                                echo "<p>" . $runtime. " mins </p>";
+
+                            }
+
+                            echo "</div>";      
+
+                        }
+
+                        echo "</div>";                
+                    }
+
+                ?>
+                <div class="vermas" onclick="location.href='views/proximamente.php'">
                     <span class="glyphicon glyphicon-plus"</span>
                 </div>
 

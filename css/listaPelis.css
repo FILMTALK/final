@@ -1,0 +1,100 @@
+/* ************************************************************************************************
+											Selector UNIVERSAL
+************************************************************************************************ */
+
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+/* ************************************************************************************************
+											Selectores por TIPO
+************************************************************************************************ */
+
+/* Cuerpo de toda la página */
+body{
+
+	width: 100%; /* Para que ocupe toda la pantalla */
+
+}
+
+/* ************************************************************************************************
+											Selectores por ID
+************************************************************************************************ */
+
+#menu_nav{
+
+	padding: 10px;
+	height: 30px;
+
+}
+
+#menu_nav li{ 
+
+	display: inline-block; /* Para poner el menú en horizontal */
+
+}
+
+/* Cartelera */
+#cartelera{
+
+	padding: 5px;
+	padding-left: 50px;
+	width: 100%;
+
+}
+
+#cartelera h3{
+
+	color: #cccccc;
+	margin-left: 30px;
+	
+}
+
+/* Próximamente */
+#proximamente{
+
+	padding: 5px;
+	padding-left: 50px;
+	width: 100%;
+
+}
+
+#proximamente h3{
+
+	color: #cccccc;
+	margin-left: 30px;
+
+}
+
+
+/* ************************************************************************************************
+											Selectores por CLASE
+************************************************************************************************ */
+
+.peli{
+
+	position: relative;
+	float: left;
+	margin: 38px;
+
+}
+
+.descrip{
+
+	width: 160px;
+
+}
+
+.descrip p{
+
+	color: #333333;
+	font-size: 13px;
+}
+
+.descrip h4{
+
+	color: #66cccc;
+
+}

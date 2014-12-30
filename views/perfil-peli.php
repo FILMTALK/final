@@ -100,11 +100,11 @@
                         <ul>
                             <!-- Item 1, Cartelera --> 
                             <li>
-                                <a href="perfil-peli.php" class="link"> Cartelera </a>
+                                <a href="cartelera.php" class="link"> Cartelera </a>
                             </li> <!-- Cierre de la Cartelera -->
                             <!-- Item 2, Próximamente --> 
                             <li>
-                                <a href="perfil-peli.php" class="link"> Próximamente </a>
+                                <a href="proximamente.php" class="link"> Próximamente </a>
                             </li> <!-- Cierre de la Próximamente -->
                             <!-- Item 3, Buscador --> 
                             <li>
@@ -311,7 +311,7 @@
 
                                 if($campo=="usuario"){
                                 
-                                    echo $valor."<br/>";
+                                    echo "<b>".$valor."</b><br/>";
 
                                 }             
                                 

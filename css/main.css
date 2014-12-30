@@ -227,7 +227,7 @@ header, section, footer, nav {
 
 	position: relative;
 	float: left;
-	margin: 30px;
+	margin: 38px;
 
 }
 
@@ -246,9 +246,13 @@ header, section, footer, nav {
 
 
 .vermas{
+
 	clear: both;
 	float: right;
 	margin-top: 0px;
+	margin-right: 30px;
+	cursor: pointer;
+	
 }
 
 /* Próximamente */

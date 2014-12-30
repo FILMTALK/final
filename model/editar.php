@@ -28,13 +28,20 @@ if(isset($_POST['editNombre'])){
 	else{ // Si los campos no están vacíos
 
 		// Se comprueba si la contraseña coincide
-		if(comprobarPassword(md5($_POST['password']))==true){ //Si la contraseña coindice
+		if(verificarPassword($_SESSION["usuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
 
-			
+			$collection = $db->usuarios;
 
+			// now update the document
+   			$collection->update(array('usuario' => $_SESSION['usuario']), array('$set'=> array('usuario' => $_POST['nombre'])));
+
+   			//$new_data= array('$set' => array("usuario" => $_POST['nombre']));
+   			//$collection->update(array('usuario' => $_SESSION['usuario']), $new_data);
+
+   			echo "Cambio realizado";
 
 			// Redirecciona al perfil del usuario
-			header("location: /index.php");
+			header("location: ../views/profile.php");
 		
 		}
 		else{ // Si la contraseña no coincide
