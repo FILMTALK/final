@@ -69,7 +69,7 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
         
 	</head> <!-- Cierre del encabezado de la página -->
 
-	<body>
+	<body  background="../images/cine.jpg" no-repeat center center fixed>
     <div id="container"> 
         <header id="header"> 
             <!-- Imagen corporativa -->
@@ -131,9 +131,12 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
 <!---------------------------tgt---------------------------------->
 
+</div>
+<div id="cont">
+
         <div class="page-wrap">
 
-        <h1>Perfil de usuario</h1>
+        <?php echo "<h1>Perfil de ".$_SESSION["usuario"]."</h1>"?>
 
         <div class="profile">
 
@@ -177,8 +180,9 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
     </div>
 <!---------------------------tgt---------------------------------->
+</div>
 
- <!--Ventana Modal del Log In-->
+<!--Ventana Modal del Log In-->
     <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
         <div class="modal-dialog">
@@ -226,7 +230,8 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
             </div>
         </div>
     </div>
-</div>
+
+
 
     <!--Jquery que necesita-->
     <script src="../js/resample.js"></script>

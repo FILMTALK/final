@@ -48,6 +48,7 @@ video {
 }
 
 #infopeli { 
+  border-radius: 5px;
   float: right;
   padding: 80px;
   margin-top: 8%;
