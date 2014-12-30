@@ -12,21 +12,62 @@
 
 	<body>
 
-		<nav id="menu_nav">
+		<header id="header"> 
+	        <!-- Imagen corporativa -->
+	        <div id="logo">
+	            <a href="/index.php"><img class="imgLogo"/></a>
+	            <!-- Botón del menú -->
+	            <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
+	        </div> <!-- Cierre del logo -->
+	        <!-- Menú -->
+	        <nav id="menu_nav">
+	            <!-- Lista desordenada -->
+	            <ul>
+	                <!-- Item 1, Cartelera --> 
+	                <li>
+	                    <a href="cartelera.php" class="link"> Cartelera </a>
+	                </li> <!-- Cierre de la Cartelera -->
+	                <!-- Item 2, Próximamente --> 
+	                <li>
+	                    <a href="proximamente.php" class="link"> Próximamente </a>
+	                </li> <!-- Cierre de la Próximamente -->
+	                <!-- Item 3, Buscador --> 
+	                <li>
+	                    <!-- Caja de buscador -->
+	                    <div id="buscador">
+	                         <form method="get" action="/search" id="search">
+	                            <input name="q" type="text" size="40" placeholder="Buscar pelicula" />
+	                        </form>
+	                    </div> <!-- Cierre de la caja del buscador -->
+	                </li> <!-- Cierre de la Buscador -->
+	                <!-- Item 4, Registro -->
+	                
 
-			<!-- Lista desordenada -->
-            <ul>
+	                    <?php
 
-				<!-- Links para acceder a las demás páginas de la aplicación -->
-				<li><a href='/index.php'> Inicio </a> <br/></li> 
-				
-				<li><a href='cartelera.php'> Cartelera </a> <br/></li>
+	                        echo "<link href=\"../css/listaPelis.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
-				<li><a href='proximamente.php'> Próximamente </a> <br/></li>
+	                        session_start();
 
-			</ul>
+	                        if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
 
-		</nav> <!-- Cierre del menú -->
+	                            include("noLog.html");
+
+
+	                        }
+	                        else{
+
+	                            echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+
+	                            include("log.html");
+
+	                        }
+
+	                    ?>
+
+	            </ul> <!-- Cierre de la lista desordenada -->
+	        </nav> <!-- Cierre del menú -->
+		</header> <!-- Cierre del encabezado -->
 
 		<!-- Representa el apartado de Próximamente -->
         <section id="proximamente">

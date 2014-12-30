@@ -69,12 +69,13 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
         
 	</head> <!-- Cierre del encabezado de la página -->
 
-	<body  background="../images/cine.jpg" no-repeat center center fixed>
+	<body background="../images/cine.jpg" no-repeat center center fixed>
     <div id="container"> 
+        
         <header id="header"> 
             <!-- Imagen corporativa -->
             <div id="logo">
-                <a href="/index.php"><img class="imgLogo" /></a>
+                <a href="/index.php"><img class="imgLogo"/></a>
                 <!-- Botón del menú -->
                 <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
             </div> <!-- Cierre del logo -->
@@ -99,35 +100,34 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
                             </form>
                         </div> <!-- Cierre de la caja del buscador -->
                     </li> <!-- Cierre de la Buscador -->
-                    <!-- Item 4, Registro --> 
-                    <!-- <li>
-                        <button class="btn btn-info" data-toggle="modal" data-target="#miregistro" 
-                        style="background-color:#bebebe; border:none; opacity:0.7; padding-left:5px;margin-right:10px;
-                        outline:none;">Sign in</button> 
-                    </li> <!-- Cierre de la Registro 
-                    <!-- Item 5, Login 
-                    <li>
-            
-                        <button class="btn btn-info" id="btn_menu" data-toggle="modal" data-target="#milogin" 
-                        style="background-color:#bebebe; border:none; opacity:0.7;outline:none;">Log in</button>  
-                    </li> <!-- Cierre de la Login --> 
-                    <li>
+                    <!-- Item 4, Registro -->
+                    
+
                         <?php
-                            // Se importa database.php para mantener la conexión
-                            require_once("../config/database.php");
-                            // Se importan para utilizar las sesiones
-                            require_once("../model/registro.php");
-                            require_once("../model/login.php");
-                            print("Hola, <b>".$_SESSION["usuario"]."</b>! <br>\n");
+
+                            echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+
+                            session_start();
+
+                            if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+
+                                include("noLog.html");
+
+
+                            }
+                            else{
+
+                                echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+
+                                include("log.html");
+
+                            }
+
                         ?>
-                    </li> 
-                    <li>
-                        <button class="btn btn-info" id="btn_menu" style="background-color:#bebebe; 
-                        border:none; opacity:0.7;outline:none;" onclick="location.href='salir.php'">Salir</button>  
-                    </li> <!-- Cierre de la Login -->   
+
                 </ul> <!-- Cierre de la lista desordenada -->
             </nav> <!-- Cierre del menú -->
-        </header> <!-- Cierre del encabezado -->
+    </header> <!-- Cierre del encabezado -->
 
 <!---------------------------tgt---------------------------------->
 
@@ -241,6 +241,6 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
     <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
 
-	</body>
+    </body>
 
 </html>

@@ -47,8 +47,8 @@ video {
    opacity: .8;
 }
 
-#infopeli { 
-  border-radius: 5px;
+#infopeli {
+  border-radius: 5px; 
   float: right;
   padding: 80px;
   margin-top: 8%;

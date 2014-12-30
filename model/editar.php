@@ -30,15 +30,15 @@ if(isset($_POST['editNombre'])){
 		// Se comprueba si la contraseña coincide
 		if(verificarPassword($_SESSION["usuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
 
-			$collection = $db->usuarios;
+			$users=$collection->findOne(array('usuario' => $_SESSION["usuario"]));
 
-			// now update the document
-   			$collection->update(array('usuario' => $_SESSION['usuario']), array('$set'=> array('usuario' => $_POST['nombre'])));
+			foreach ($users as $document) {
+				
+				$collection->update(array('usuario' => $_SESSION["usuario"]), array('$set'=> array('usuario' => $_POST['nombre'])));
 
-   			//$new_data= array('$set' => array("usuario" => $_POST['nombre']));
-   			//$collection->update(array('usuario' => $_SESSION['usuario']), $new_data);
+			}
 
-   			echo "Cambio realizado";
+   			//echo "Cambio realizado";
 
 			// Redirecciona al perfil del usuario
 			header("location: ../views/profile.php");

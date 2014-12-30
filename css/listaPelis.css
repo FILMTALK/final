@@ -19,14 +19,45 @@ body{
 
 }
 
+/* Etiquetas en bloque */
+header, section, footer, nav {
+
+	display: block;
+}
+
 /* ************************************************************************************************
 											Selectores por ID
 ************************************************************************************************ */
 
+/* Encabezado ************************************/
+#header{
+	/*border: 3px solid red;*/
+	position: relative;
+	z-index: 2;
+	display: -webkit-box; /* Chrome*/
+	-webkit-box-orient: horizontal; /* encabezado en horizontal */
+	height: 50px;
+}
+
+
+/* Imagen corporativa */
+#logo{
+  padding-left: 26px;
+  padding-top: 12px;
+	/*border: 3px solid green;*/
+	width: 200px;
+	min-width: 100px;
+	opacity: 0.9;
+}
+
+/* Menú */
 #menu_nav{
 
-	padding: 10px;
-	height: 30px;
+  margin-top: 17px;
+  /*border: 3px solid purple;*/
+  position: absolute;
+  right: 0;
+  width: 555px;
 
 }
 
@@ -68,10 +99,57 @@ body{
 
 }
 
+/* Buscador */
+#buscador{
+	padding-right: 15px;
+}
+
+#search input[type="text"] {
+	outline: none;
+    background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #f2efef;
+    opacity: 0.9
+    font-size: 13px;
+    color: #f2efef;
+    width: 160px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+#search input[type="text"]:focus {
+    width: 156px;
+}
+
+/* Botón oculto para aparecer el menú */
+#pull{
+
+	display: none;
+}
+
 
 /* ************************************************************************************************
 											Selectores por CLASE
 ************************************************************************************************ */
+
+/* Imagen corporativa */
+.imgLogo{
+	content:url("../images/logotxiki.png");
+}
+
+/* Botón login */
+
+.btn-login{
+
+	cursor: pointer;
+	margin: 0px;
+}
 
 .peli{
 
@@ -97,4 +175,16 @@ body{
 
 	color: #66cccc;
 
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #f2efef;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: grey;
+	text-decoration: none;
 }
