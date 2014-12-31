@@ -177,6 +177,9 @@
 
 		</section> <!--Cierre de la Cartelera -->
 
+        <!-- Pie de toda la página -->
+        <?php include("footer.html"); ?>
+
 
 		<!--Ventana Modal del Log In-->
             <div class="modal fade" id="milogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
