@@ -333,6 +333,20 @@ footer a:hover{
 
 	}
 
+	/* Footer */
+	footer{
+		display: none;
+		background: none;
+	}
+
+	footer a{
+		display: none;
+	}
+
+	.red{
+		display: none;
+	}
+
 
 } 
 
