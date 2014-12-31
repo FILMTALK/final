@@ -436,7 +436,7 @@
             </div>
 
              
-         <div> <!-- Cierre div del container -->
+         </div> <!-- Cierre div del container -->
 
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>

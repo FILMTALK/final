@@ -131,7 +131,7 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
 <!---------------------------tgt---------------------------------->
 
-</div>
+</div> <!-- div de Container -->
 <div id="cont">
 
         <div class="page-wrap">
@@ -229,7 +229,6 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
             </div>
         </div>
-    </div>
 
 
 

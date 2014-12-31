@@ -105,6 +105,7 @@ header, section, footer, nav {
 }
 
 #search input[type="text"] {
+	
 	outline: none;
     background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
     background-color: rgba(0, 0, 0, 0);
@@ -187,4 +188,143 @@ header, section, footer, nav {
 .link:hover{
 	color: grey;
 	text-decoration: none;
+}
+
+/* ************************************************************************************************
+                                            RESPONSIVE
+************************************************************************************************ */
+
+/*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
+@media all and (max-width: 768px){
+
+	#cartelera, #proximamente{
+
+		position: relative;
+		left: 0px;
+		top: 0px;
+
+	}
+
+	/* Encabezado ************************************/
+	#header{
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{
+	  padding-left: 10px;
+	}
+
+	.imgLogo{
+		content:url("../images/logotxiki_gris.png");
+	}
+
+	/* Menú */
+
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+		padding: 7px;
+		display: block; 
+
+	}
+
+	nav ul {
+
+       display: none;
+       height: auto;
+
+    }
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }
+
+    /*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
+
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    #search input[type="text"] {
+	    border: 2px solid #f2efef;
+	    color: #f2efef;
+	}	
+
+    /* Cartelera */
+	#cartelera{
+
+		height: 2200px;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente{
+
+		height: 2200px;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente h3{
+		margin-left: 9px;
+	}
+
+	#cartelera h3{
+		margin-left: 9px;
+	}
+
+	.peli{
+		margin: 10px;
+		/*border: 2px solid green;*/
+
+	}
+
+
+} 
+
+/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
+@media all and (max-width: 320px){
+
+	/* Cartelera */
+	#cartelera{
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente{
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+
 }
