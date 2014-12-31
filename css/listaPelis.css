@@ -25,6 +25,29 @@ header, section, footer, nav {
 	display: block;
 }
 
+/* Footer */
+footer{
+	background-color: #cccccc;
+	width: 100%;
+	position: absolute;
+	top: 275%;
+	height: 66px;
+	padding: 3px;
+}
+
+footer a{
+	position: relative;
+	top: 16px;
+	color: #eeeeee;
+	padding-right:18px;
+	float: right;
+}
+
+footer a:hover{
+	color: grey;
+	text-decoration: none;
+}
+
 /* ************************************************************************************************
 											Selectores por ID
 ************************************************************************************************ */
@@ -188,6 +211,13 @@ header, section, footer, nav {
 .link:hover{
 	color: grey;
 	text-decoration: none;
+}
+
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
 }
 
 /* ************************************************************************************************

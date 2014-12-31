@@ -342,19 +342,9 @@
             </form>
 		</div>
 	</div>
-	    <!-- Pie de toda la página -->
-	 <footer>
 
-	    <img class="red" style="padding-right:170px;" href="#" src="../images/red1.png"/>
-	    <img class="red" href="#" src="../images/red2.png"/>
-	    <img class="red" href="#" src="../images/red3.png"/>
-	    <img class="red"  href="#" src="../images/red4.png"/>
-
-	    <a href="#"> Contacto </a>
-	    <a href="#"> Política de privacidad </a>
-	    <a href="#"> © CopyRight 2014 </a>
-
-	</footer> <!-- Ciere del pie de página -->
+    <!-- Pie de toda la página -->
+    <?php include("footer.html"); ?>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
     <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
