@@ -292,60 +292,79 @@
 
 	<div id="contCriticas">
 
-	<div class="criticas">
-        <div id="coment">
-            <?php
-                include_once("../config/database.php");
-                $collection=$bd->criticas;
-                $comenta = $collection->find();
-                $id_usuario;
-                $critica;
-                $username;
+    	<div class="criticas">
+            <div id="coment">
+                <?php
 
-                foreach ($comenta as $campo => $valor) {
+                    include_once("../config/database.php");
+                    $collection=$bd->criticas;
+                    $comenta = $collection->find();
+                    $id_usuario;
+                    $critica;
+                    $username;
 
-                    foreach ($valor as $coment => $datos) {
+                    foreach ($comenta as $campo => $valor) {
 
-                        if($coment=="id_usuario"){
-                        
-                            $id_usuario=$datos; 
+                        foreach ($valor as $coment => $datos) {
 
-                            $collection=$bd->usuarios;
-                            $usuarios = $collection->findOne(array('_id' => new MongoId($id_usuario)));
+                            if($coment=="id_usuario"){
+                            
+                                $id_usuario=$datos; 
 
-                            foreach ($usuarios as $campo => $valor) {
+                                $collection=$bd->usuarios;
+                                $usuarios = $collection->findOne(array('_id' => new MongoId($id_usuario)));
 
-                                if($campo=="usuario"){
-                                
-                                    echo "<b>".$valor."</b><br/>";
+                                foreach ($usuarios as $campo => $valor) {
 
-                                }             
-                                
+                                    if($campo=="usuario"){
+                                    
+                                        echo "<b>".$valor."</b><br/>";
+
+                                    }             
+                                    
+                                } 
+
                             } 
 
-                        } 
+                            if($coment=="comentario"){
+                            
+                                echo $datos."<br/>";
 
-                        if($coment=="comentario"){
+                            }
+                        }          
                         
-                            echo $datos."<br/>";
+                    }
 
-                        }
-                    }          
-                    
+                ?>
+            </div>
+
+            <!-- Si el usuario no está logueado no podrá comentar la película -->
+            <?php
+
+                if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
+
+                    // No se muestra el textarea para comentar ni el botón
+
+
                 }
+                else{ ?>
+
+                    <!--Input para comentar la película -->
+                    <form role="form" method="post" action="../model/criticas.php">
+                        <div class="form-group">
+                            <div class="input-group"  style="width:330px;">
+                                <textarea style="border-radius: 5px;" class="form-control" rows="3" name="criti" placeholder="Crítica"></textarea>
+                            </div></br>
+                        </div>
+                        <button type="submit" name="enviarCritica" class="btn btn-primary" style="background:#00B8E6;border:none;">
+                            <span class="glyphicon glyphicon-comment"></span> Comenta</button>
+                    </form>
+
+            <?php
+               }
 
             ?>
-        </div>
-			<!--Input-->
-            <form role="form" method="post" action="../model/criticas.php">
-                <div class="form-group">
-                    <div class="input-group"  style="width:330px;">
-                        <textarea style="border-radius: 5px;" class="form-control" rows="3" name="criti" placeholder="Crítica"></textarea>
-                    </div></br>
-                </div>
-                <button type="submit" name="enviarCritica" class="btn btn-primary" style="background:#00B8E6;border:none;">
-                    <span class="glyphicon glyphicon-comment"></span> Comenta</button>
-            </form>
+
 		</div>
 	</div>
 
