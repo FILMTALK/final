@@ -200,13 +200,27 @@ setcookie("usuario[password]", $password, time()+3600);
 
                 ?>
 
-                <button class="btn btn-info" data-toggle="modal" data-target="#edit" 
+                <button class="btn btn-info" data-toggle="modal" data-target="#editNombre" 
                     style="background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
                     margin-right:10px;
                     outline:none;"><span class="glyphicon glyphicon-pencil"></span></button><br />
 
-                <?php echo "Email: <b>".$_SESSION["email"]."</b>\n\n\n"; ?>
-                <button class="btn btn-info" data-toggle="modal" data-target="#edit" 
+                    <?php
+
+                        // array de cookies
+                        if (isset($_COOKIE['usuario'])) {
+                            foreach ($_COOKIE['usuario'] as $name => $value) {
+                                $name=htmlspecialchars($name);
+                                if($name=="email"){
+                                    $value=htmlspecialchars($value);
+                                    echo "Email: <b>$value</b>\n\n\n";
+
+                                }
+                            }
+                        }
+
+                    ?>
+                <button class="btn btn-info" data-toggle="modal" data-target="#editEmail" 
                     style="background-color:#66cccc; color:#fff; border:none; opacity:0.7; 
                     padding-left:5px;margin-right:10px;
                     outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
@@ -221,8 +235,8 @@ setcookie("usuario[password]", $password, time()+3600);
 <!---------------------------tgt---------------------------------->
 </div>
 
-<!--Ventana Modal del Log In-->
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Ventana Modal del Editar nombre-->
+    <div class="modal fade" id="editNombre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
         <div class="modal-dialog">
 
@@ -236,7 +250,7 @@ setcookie("usuario[password]", $password, time()+3600);
                 <div class="modal-body">
                     <div class="row">
                                 <div class="panel-body">
-                                    <form role="form" method="post" action="../model/editar.php">
+                                    <form role="form" method="post" action="../model/editarNombreUsuario.php">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nuevo nombre</label>
                                             <div class="input-group">
@@ -268,6 +282,56 @@ setcookie("usuario[password]", $password, time()+3600);
 
             </div>
         </div>
+    </div>
+
+    <!--Ventana Modal del Editar email-->
+    <div class="modal fade" id="editEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Cambio de email</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                                <div class="panel-body">
+                                    <form role="form" method="post" action="../model/editarEmailUsuario.php">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Nuevo email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                                <input type="email" name="email" class="form-control" placeholder="Nuevo email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Contraseña</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                                <input type="password" name="password" class="form-control" placeholder="Contraseña para verificar">
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                            style="font-size:16px;margin-top:8px;">
+                                            <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                                        </button>
+                                        <button type="submit" name="editEmail" class="btn btn-primary" style="background:#66cccc;border:none;">
+                                            <span class="glyphicon glyphicon-user"></span> Modificar</button>
+                                        <p><br/></p>
+                                    </form>
+                                </div>
+                            
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 
