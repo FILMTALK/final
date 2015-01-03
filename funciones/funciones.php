@@ -210,24 +210,20 @@ function peliculaExiste($nombre){
 	global $collection2;
 
 	// Variable local 
-	$existe=false; // Se establece el valor false
+	$existe=true; // Se establece el valor true
 
 	// Se realiza una consulta para obtener los dato de una pelicula 
 	$peliculas=$collection2->findOne(array('title' => $nombre));
 
-	// Recorremos los datos para saber si la pelicula existe
-	foreach($peliculas as $campos => $datos){
+	// Si la consulta devuelve NULL (no existe)
+	if($peliculas==NULL){
 
-		// Si la pelicula existe, devolverá un true
-		if($datos==$nombre){
+		// Se establece la variable local con el valor false.
+		$existe=false;
 
-			// Se establece a la variable local el valor true
-			return $existe=true;			
+	}
 
-		} // Cierre del if		
-
-	} // Cierre del bucle foreach
-
+	// Devuelve el valor booleano
 	return $existe;	
 
 

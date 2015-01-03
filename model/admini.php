@@ -17,11 +17,14 @@ if(isset($_POST['anadir'])){
 	}
 	else{ // Si los campos no están vacíos
 
+		// Establecemos la colección
+		$collection=$bd->peliculas;
+
 		// Se comprueba si la pelicula existe
 		if(peliculaExiste($_POST['nombre'])==true){
 
 			// Se muestra un mensaje por pantalla
-			echo "La película ya está dada de alta";
+			echo "La pelicula ya esta dada de alta";
 			exit;
 		}
 		else{ 
@@ -41,6 +44,9 @@ if(isset($_POST['anadir'])){
 
 				// Se inserta el documento en la colección
 				$collection->insert($document);
+
+				// Redirecciona al perfil del usuario
+				header("location: ../views/anadir.html");
 
 			}
 			catch (MongoCursorException $e) {
