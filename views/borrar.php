@@ -169,7 +169,7 @@
 
                 </table>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:120px;background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-minus"></span> Borrar</button>
+            <button name="borrar" type="submit" class="btn btn-primary" style="width:120px;background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-minus"></span> Borrar</button>
                 <p><br/>
         </div>
             
