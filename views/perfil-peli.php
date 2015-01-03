@@ -115,24 +115,30 @@
                                     </form>
                                 </div> <!-- Cierre de la caja del buscador -->
                             </li> <!-- Cierre de la Buscador -->
-                            <!-- Item 4, Registro -->
+                            <!-- Items logueo -->
                             
 
                                 <?php
 
+                                    // Diseño en un archivo externo
                                     echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
+                                    // Se inicia sesión o reanuda la sesión
                                     session_start();
 
-                                    if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+                                    if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
+                                        // Se incluye el archivo noLog que contiene los dos botones
                                         include("noLog.html");
+
 
                                     }
                                     else{
 
-                                        echo "<a href='profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+                                        // Link para ir al perfil de usuario
+                                        echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
 
+                                        //Boton salir
                                         include("log.html");
 
                                     }

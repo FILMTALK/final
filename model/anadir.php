@@ -27,7 +27,7 @@ if(isset($_POST['anadir'])){
 			echo "La pelicula ya esta dada de alta";
 			exit;
 		}
-		else{ 
+		else{ 			
 
 			try {
 

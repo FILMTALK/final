@@ -1,3 +1,42 @@
+<?php
+// Se inicia sesión o reanuda la sesión
+session_start();
+
+// Si la variable de session del id de usuario está definido y si es distinto a null
+if(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!=''){
+
+    // Se importan las funciones
+    include_once("funciones/funciones.php");
+
+    // Se obtienenn los datos del usuario mediante el id
+    $datosUsuario=obtenerDatosUsuario($_SESSION['id_usuario']);
+
+    // Variables locales
+    $email;
+    $usuario;
+    $password;
+
+    // Recorremos los datos para saber si el email existe
+    foreach($datosUsuario as $campos => $datos){
+        if($campos=='email'){
+            $email=$datos;
+        }
+        if($campos=='usuario'){
+            $usuario=$datos;
+        }
+        if($campos=='password'){
+            $password=$datos;
+        }
+    } // Cierre del bucle foreach
+    
+    // Se establece el array de cookies (guardar la información del usuario)
+    setcookie("usuario[email]", $email, time()+3600);
+    setcookie("usuario[nombre]", $usuario, time()+3600);
+    setcookie("usuario[password]", $password, time()+3600);
+    // Se expira en 1min.*/
+    
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 
@@ -110,25 +149,31 @@
                                     </form>
                                 </div> <!-- Cierre de la caja del buscador -->
                             </li> <!-- Cierre de la Buscador -->
-                            <!-- Item 4, Registro -->
+                            <!-- Items logueo -->
                             
 
                                 <?php
 
+                                    // Diseño en un fichero externo
                                     echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
+                                    // Se inicia sesión o reanuda la sesión
                                     session_start();
 
-                                    if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+                                    // Botones de regitro y login
+                                    if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
+                                        // Se incluye el archivo noLog que contiene los dos botones
                                         include("noLog.html");
 
 
                                     }
                                     else{
 
-                                        echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+                                        // Link para ir al perfil de usuario
+                                        echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
 
+                                        //Boton salir
                                         include("logInicio.html");
 
                                     }

@@ -1,20 +1,39 @@
-<html>
-<!--
 <?php
+// Se importan las funciones
+include_once("../funciones/funciones.php");
 
-/* Se importa database.php para mantener la conexión
-include_once("../config/database.php");
+// Se inicia sesión o reanuda la sesión
+session_start();
 
-Se importan para utilizar las sesiones
-include_once("../model/registro.php");
-include_once("../model/login.php");
+// Se obtienenn los datos del usuario mediante el id
+$datosUsuario=obtenerDatosUsuario($_SESSION['id_usuario']);
 
-$cookie_name="usuario";
-$cookie_value=$usuario;
-setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
+// Variables locales
+$email;
+$usuario;
+$password;
 
-?> -->
+// Recorremos los datos para saber si el email existe
+foreach($datosUsuario as $campos => $datos){
+    if($campos=='email'){
+        $email=$datos;
+    }
+    if($campos=='usuario'){
+        $usuario=$datos;
+    }
+    if($campos=='password'){
+        $password=$datos;
+    }
+} // Cierre del bucle foreach
 
+// Se establece el array de cookies (guardar la información del usuario)
+setcookie("usuario[email]", $email, time()+3600);
+setcookie("usuario[nombre]", $usuario, time()+3600);
+setcookie("usuario[password]", $password, time()+3600);
+// Se expira en 1min.*/
+
+?>
+<html>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 
@@ -100,25 +119,30 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
                             </form>
                         </div> <!-- Cierre de la caja del buscador -->
                     </li> <!-- Cierre de la Buscador -->
-                    <!-- Item 4, Registro -->
+                    <!-- Items logueo -->
                     
 
                         <?php
 
+                            // Diseño en un archivo externo
                             echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
+                            // Se inicia sesión o reanuda la sesión
                             session_start();
 
-                            if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+                            if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
+                                // Se incluye el archivo noLog que contiene los dos botones
                                 include("noLog.html");
 
 
                             }
                             else{
 
-                                echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+                                // Link para ir al perfil de usuario
+                                echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
 
+                                //Boton salir
                                 include("log.html");
 
                             }
@@ -136,7 +160,22 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
         <div class="page-wrap">
 
-        <?php echo "<h1>Perfil de ".$_SESSION["usuario"]."</h1>"?>
+        <?php 
+
+            // array de cookies
+            if (isset($_COOKIE['usuario'])) {
+                foreach ($_COOKIE['usuario'] as $name => $value) {
+                    $name=htmlspecialchars($name);
+                    if($name=="nombre"){
+                        $value=htmlspecialchars($value);
+                        echo "<h1>Perfil de $value </h1>";
+
+                    }
+                }
+            }
+
+
+        ?>
 
         <div class="profile">
 
@@ -157,7 +196,7 @@ setcookie($cookie_name, $cookie_value, time()+3600);  Se expira en 1h.*/
 
 
                 // Si está logueado muestra los datos y el link para salir
-                echo "Usuario: <b>".$_SESSION["usuario"]."</b>!\n\n\n";
+                echo "Usuario: <b>".$_SESSION["nombreUsuario"]."</b>!\n\n\n";
 
                 ?>
 

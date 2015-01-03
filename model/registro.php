@@ -6,11 +6,12 @@ include_once("../config/database.php");
 // Se importan las funciones para comprobar u obtener datos
 include_once("../funciones/funciones.php");
 
-// Iniciar una nueva sesión
+// Iniciar una nueva sesión o reanudar una sesión
 session_start();
 
 // Se comprueba si el registro está definida
 if(isset($_POST['registro'])){
+
 	// Si los campos email, username, password o password2 están vacíos
 	if($_POST['email']==NULL or $_POST['username']==NULL or $_POST['password']==NULL or $_POST['password2']==NULL){
 
@@ -37,6 +38,7 @@ if(isset($_POST['registro'])){
 
 			// Imprime un mensaje y termina el script actual 
 			exit;
+
 		}
 		else{ // Si las contraseñas coinciden
 
@@ -51,6 +53,7 @@ if(isset($_POST['registro'])){
 
 				// Imprime un mensaje y termina el script actual 
 				exit;
+
 			}
 			else{ // Si el usuario no existe
 
@@ -68,24 +71,27 @@ if(isset($_POST['registro'])){
 					// Se inserta el documento en la colección llamado users
 					$collection->insert($document);
 
-					// Se obtiene el email desde la base de datos pasando el parámetro username 
-					$email=obtenerEmail($_POST['username']);
-					
-					// Se establece la variable de sesión del usuario obteniendo desde el formulario
-					$_SESSION['usuario']=$_POST['username'];
+					// Se obtiene el id del usuario desde la bd
+					$id_usuario=obtenerIdUsuario($_POST['email']);
 
-					// Se establece la variable sesión de la contraseña obtenienda desde el formulario
-					$_SESSION['password']=md5($_POST['password']);
+					// Si la variable de sesión no está definido
+					if(!isset($_SESSION['id_usuario'])){
 
-					// Se establece la variable de sesión del email obtenienda desde la bd
-					$_SESSION['email']=$email;
+						//Se establece la variable de sesión del usuario, que será el id.
+						$_SESSION['id_usuario']=$id_usuario;
+						
+					}
 
-					$usuario=$_POST['username'];
-					$password=md5($_POST['password']);
+					// Se obtiene el nombre de usuario de la bd
+					$nombreUsuario=obtenerUsuario($id_usuario);
 
-					/*$cookie_name="usuario";
-					$cookie_value=$usuario;
-					setcookie($cookie_name, $cookie_value, time()+3600); // Se expira en 1h.*/
+					// Si la variable de sesión nombreUsuario no está definido
+					if(!isset($_SESSION['nombreUsuario'])){
+
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['nombreUsuario']=$nombreUsuario;
+						
+					}
 
 					// Redirecciona al perfil del usuario
 					header("location: ../views/profile.php");

@@ -9,9 +9,12 @@ session_start();
 session_destroy();
 
 // Libera las variables de sesión
-/*unset($_SESSION['email']);
-unset($_SESSION['usuario']);
-unset($_SESSION['password']);*/
+/*unset($_SESSION['id_usuario']);
+unset($_SESSION['nombreUsuario']);
+*/
+
+//establecer la fecha de expiración a una hora atrás
+setcookie ("Usuario", "", time()-3600);
 
 // Redirecciona a la página principal
 header("location: /index.php");

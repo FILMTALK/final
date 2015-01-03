@@ -77,30 +77,35 @@
 	                        </form>
 	                    </div> <!-- Cierre de la caja del buscador -->
 	                </li> <!-- Cierre de la Buscador -->
-	                <!-- Item 4, Registro -->
+	                <!-- Items logueo -->
 	                
 
 	                    <?php
 
+                            // Diseño en un archivo externo
 	                        echo "<link href=\"../css/listaPelis.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
-	                        session_start();
+                            // Se inicia sesión o reanuda la sesión
+                            session_start();
 
-	                        if(!(isset($_SESSION['usuario']) && $_SESSION['usuario']!='')){
+                            if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
-	                            include("noLog.html");
+                                // Se incluye el archivo noLog que contiene los dos botones
+                                include("noLog.html");
 
 
-	                        }
-	                        else{
+                            }
+                            else{
 
-	                            echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["usuario"]."</b></a>";
+                                // Link para ir al perfil de usuario
+                                echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
 
-	                            include("log.html");
+                                //Boton salir
+                                include("log.html");
 
-	                        }
+                            }
 
-	                    ?>
+                        ?>
 
 	            </ul> <!-- Cierre de la lista desordenada -->
 	        </nav> <!-- Cierre del menú -->

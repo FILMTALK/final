@@ -43,34 +43,42 @@ if(isset($_POST['login'])){
 		else{ // Si el usuario existe en la bd
 
 			// Se comprueba si la contraseña coincide
-			if(comprobarPassword($_POST['email'],md5($_POST['password']))==true){ //Si la contraseña coindice
+			if(comprobarPassword($_POST['email'],md5($_POST['password']))==true){ //Si la contraseña coincide
 
 				if($_POST['email']=="admin@admin.com"){
-					// Redirecciona al perfil del usuario
+					// Redirecciona al perfil admin
 					header("location: ../views/admin.php");
 
-				}else{
-					// Se obtiene el usuario del usuario desde la base
-				$usuario=obtenerUsuario($_POST['email']);
+				}
+				else{ // S no es administrador
 
-				// Se establece la variable de sesión del usuario obtenienda desde la bd
-				$_SESSION['usuario']=$usuario;
+					// Se obtiene el id del usuario desde la bd
+					$id_usuario=obtenerIdUsuario($_POST['email']);
 
+					// Si la variable de sesión id no está definido
+					if(!isset($_SESSION['id_usuario'])){
 
-				// Se establece la variable de sesión de la contraseña obtenienda desde el formulario
-				$_SESSION['password']=md5($_POST['password']);
+						//Se establece la variable de sesión del usuario, que será el id.
+						$_SESSION['id_usuario']=$id_usuario;
+						
+					}
 
+					// Se obtiene el nombre de usuario de la bd
+					$nombreUsuario=obtenerUsuario($id_usuario);
 
-				// Se establece la variable de sesión del email obteniendo desde el formulario
-				$_SESSION['email']=$_POST['email'];
+					// Si la variable de sesión nombreUsuario no está definido
+					if(!isset($_SESSION['nombreUsuario'])){
 
-				$email=$_POST['email'];
-				$password=md5($_POST['password']);
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['nombreUsuario']=$nombreUsuario;
+						
+					}
 
 					// Redirecciona al perfil del usuario
 					header("location: /index.php");
-				}
+					//include("../views/inicio.php");
 
+				} // Cierre del else si no es admin
 			
 			}
 			else{ // Si la contraseña no coincide

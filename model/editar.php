@@ -28,13 +28,13 @@ if(isset($_POST['editNombre'])){
 	else{ // Si los campos no están vacíos
 
 		// Se comprueba si la contraseña coincide
-		if(verificarPassword($_SESSION["usuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
+		if(verificarPassword($_SESSION["nombreUsuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
 
-			$users=$collection->findOne(array('usuario' => $_SESSION["usuario"]));
+			$users=$collection->findOne(array('usuario' => $_SESSION["nombreUsuario"]));
 
 			foreach ($users as $document) {
 				
-				$collection->update(array('usuario' => $_SESSION["usuario"]), array('$set'=> array('usuario' => $_POST['nombre'])));
+				$collection->update(array('usuario' => $_SESSION["nombreUsuario"]), array('$set'=> array('usuario' => $_POST['nombre'])));
 
 			}
 

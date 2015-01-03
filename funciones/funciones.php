@@ -3,9 +3,80 @@
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
 
-/* @var boolean $estaLog Estado del usuario en el login
-	*/
-//$estaLog=false;
+
+function obtenerIdUsuario($email){
+
+	// Variable global
+	global $collection;
+
+	// Variable local 
+	$id=''; // Se establece el valor vacío de String
+
+	// Se realiza una consulta para obtener los datos de un usuario
+	$users=$collection->findOne(array('email' => $email));
+
+	// Recorremos los datos de ese usuario en concreto
+	foreach($users as $campos => $datos){
+
+		// Filtramos el campo para obtener el dato
+		if($campos=='_id'){
+
+			// Se guarda el id único del usuario en una variable local
+			$id=$datos;
+
+		} // Cierre del if
+
+	} // Cierre del bucle foreach
+
+	// Devuelve la variable local en String
+	return $id;
+
+}
+
+
+function obtenerUsuario($id_usuario){
+
+	// Variable global
+	global $collection;
+
+	// Variable local 
+	$usuario=''; // Se establece el valor vacío de String
+
+	// Se realiza una consulta para obtener los datos de un usuario
+	$users=$collection->findOne(array('_id' => $id_usuario));
+			
+	// Recorremos los datos para saber si el email existe
+	foreach($users as $campos => $datos){
+
+		// Comprobamos el campo usuario
+		if($campos=='usuario'){
+
+			// Se guarda el email en la variable local
+			$usuario=$datos;
+
+		} // Cierre del if
+
+	} // Cierre del bucle foreach
+
+	// Devuelve la variable local en String
+	return $usuario;
+
+} // Cierre de la función obtenerUsuario
+
+function obtenerDatosUsuario($id_usuario){
+
+	// Variable global
+	global $collection;
+
+	// Se realiza una consulta para obtener los datos de un usuario
+	$users=$collection->findOne(array('_id' => $id_usuario));
+
+	// Devuelve los datos del usuario en un
+	return $users;
+
+}
+
+
 
 /*
 * usuarioExiste. Para comprobar si un usuario existe en la bd.
@@ -18,23 +89,16 @@ function usuarioExiste($email){
 	global $collection;
 
 	// Variable local 
-	$existe=false; // Se establece el valor false
+	$existe=true; // Se establece el valor true
 
 	// Se realiza una consulta para obtener los dato de un usuario 
 	$users=$collection->findOne(array('email' => $email));
 	
-	// Recorremos los datos para saber si el email existe
-	foreach($users as $campos => $datos){
+	if($users==NULL){
 
-		// Si el usuario existe, devolverá un true
-		if($datos==$email){
+		$existe=false;
 
-			// Se establece a la variable local el valor true
-			return $existe=true;			
-
-		} // Cierre del if		
-
-	} // Cierre del bucle foreach
+	}
 
 	// Devuelve el valor de la variable local
 	return $existe;	
@@ -112,69 +176,6 @@ function obtenerEmail($usuario){
 
 } // Cierre de la función obtenerEmail
 
-
-/*
-* obtenerUsuario. Se obtiene el campo username de la bd.
-* parans --> $email. Se obtiene del formulario.
-* return --> El usuario en String.
-*/
-function obtenerUsuario($email){
-
-	// Variable global
-	global $collection;
-
-	// Variable local 
-	$usuario=''; // Se establece el valor vacío de String
-
-	// Se realiza una consulta para obtener los datos de un usuario
-	$users=$collection->findOne(array('email' => $email));
-			
-	// Recorremos los datos para saber si el email existe
-	foreach($users as $campos => $datos){
-
-		// Comprobamos el campo usuario
-		if($campos=='usuario'){
-
-			// Se guarda el email en la variable local
-			$usuario=$datos;
-
-		} // Cierre del if
-
-	} // Cierre del bucle foreach
-
-	// Devuelve la variable local en String
-	return $usuario;
-
-} // Cierre de la función obtenerUsuario
-
-function obtenerIdUsuario($usuario){
-
-	// Variable global
-	global $collection;
-
-	// Variable local 
-	$id=''; // Se establece el valor vacío de String
-
-	// Se realiza una consulta para obtener los datos de un usuario
-	$users=$collection->findOne(array('usuario' => $usuario));
-
-	// Recorremos los datos para saber si el email existe
-	foreach($users as $campos => $datos){
-
-		// Comprobamos el campo usuario
-		if($campos=='_id'){
-			// Se guarda el email en la variable local
-			$id=$datos;
-
-		} // Cierre del if
-
-	} // Cierre del bucle foreach
-
-	// Devuelve la variable local en String
-	return $id;
-
-}
-
 function verificarPassword($usuario,$password){
 
 	// Variable global
@@ -207,13 +208,13 @@ function verificarPassword($usuario,$password){
 function peliculaExiste($nombre){
 
 	// Variable global
-	global $collection2;
+	global $collection;
 
 	// Variable local 
 	$existe=true; // Se establece el valor true
 
 	// Se realiza una consulta para obtener los dato de una pelicula 
-	$peliculas=$collection2->findOne(array('title' => $nombre));
+	$peliculas=$collection->findOne(array('title' => $nombre));
 
 	// Si la consulta devuelve NULL (no existe)
 	if($peliculas==NULL){
@@ -224,7 +225,7 @@ function peliculaExiste($nombre){
 	}
 
 	// Devuelve el valor booleano
-	return $existe;	
+	return $peliculas;	
 
 
 }  //Cierre de la función peliculaExiste

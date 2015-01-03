@@ -49,7 +49,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="anadir.html">Añadir</a></li>
                                 <li><a href="listar.html">Listar</a></li>
-                                <li><a href="borrar.html">Borrar</a></li>
+                                <li><a href="borrar.php">Borrar</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -58,7 +58,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="anadir.html">Añadir</a></li>
                                 <li><a href="listar.html">Listar</a></li>
-                                <li><a href="borrar.html">Borrar</a></li>
+                                <li><a href="borrar.php">Borrar</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -87,8 +87,8 @@
                     
                     <tr class="info">
                      <th>Título</th>
-                     <th>Descripción</th>
                      <th>Duración</th>
+                     <th>Descripción</th>
                      <th>Reparto</th>
                      <th>Calificación</th>
                     </tr>
@@ -108,6 +108,7 @@
 
                             $titulo;
                             $descripcion;
+                            $runtime;
 
                             if($movie=="title"){
 
@@ -119,7 +120,13 @@
                             if($movie=="synopsis"){
 
                                 $descripcion=$dato;
-                                echo "<th>" . $descripcion . "</th>";
+                                echo "<th><p align='justify'>" . $descripcion . "</p></th>";
+                            }
+
+                            if($movie=="runtime"){
+
+                                $runtime=$dato;
+                                echo "<th>" . $runtime . " mins</th>";
                             }
 
                            /* echo "<th>Duracsdfsdión</th>
