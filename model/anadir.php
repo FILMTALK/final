@@ -35,7 +35,7 @@ if(isset($_POST['anadir'])){
 				$document = array( 
 
 					"title" => $_POST['nombre'], 
-					"descripcion" => $_POST['descripcion'],
+					"synopsis" => $_POST['descripcion'],
 					"duracion" => ($_POST['duracion']),
 					"reparto" => ($_POST['reparto']),
 					"calificacion" => ($_POST['calificacion'])

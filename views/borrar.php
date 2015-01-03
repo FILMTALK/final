@@ -92,8 +92,46 @@
                      <th>Reparto</th>
                      <th>Calificación</th>
                     </tr>
+                <?php
 
-                    <tr>
+                    include_once("../config/database.php");
+                    // Establecemos la colección
+                    $collection=$bd->peliculas;
+
+                    $pelis=$collection->find(array());
+
+                    foreach ($pelis as $campo => $valor) {
+
+                        echo "<tr>";
+
+                        foreach ($valor as $movie => $dato) {
+
+                            $titulo;
+                            $descripcion;
+
+                            if($movie=="title"){
+
+                                $titulo=$dato;
+                                echo "<th>" . $titulo . "</th>";
+
+                            }
+
+                            if($movie=="synopsis"){
+
+                                $descripcion=$dato;
+                                echo "<th>" . $descripcion . "</th>";
+                            }
+
+                           /* echo "<th>Duracsdfsdión</th>
+                                     <th>sdfsd</th>
+                                     <th>fsdfsd</th>";*/
+                        }
+
+                        echo "</tr>";
+                    }
+
+                ?>    <!-- 
+                    
                      <th>sdff</th>
                      <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -101,10 +139,7 @@
                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</th>
-                     <th>Duracsdfsdión</th>
-                     <th>sdfsd</th>
-                     <th>fsdfsd</th>
-                    </tr>
+                    
 
                     <tr>
                      <th>fsdf</th>
@@ -130,7 +165,7 @@
                      <th>sdf</th>
                      <th>sdf</th>
                      <th>sdfsd</th>
-                    </tr>
+                    </tr> -->
 
                 </table>
             </div>
