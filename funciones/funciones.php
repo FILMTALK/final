@@ -204,4 +204,33 @@ function verificarPassword($usuario,$password){
 
 } // Cierre de la función comprobarPassword
 
+function peliculaExiste($nombre){
+
+	// Variable global
+	global $collection2;
+
+	// Variable local 
+	$existe=false; // Se establece el valor false
+
+	// Se realiza una consulta para obtener los dato de una pelicula 
+	$peliculas=$collection2->findOne(array('title' => $nombre));
+
+	// Recorremos los datos para saber si la pelicula existe
+	foreach($peliculas as $campos => $datos){
+
+		// Si la pelicula existe, devolverá un true
+		if($datos==$nombre){
+
+			// Se establece a la variable local el valor true
+			return $existe=true;			
+
+		} // Cierre del if		
+
+	} // Cierre del bucle foreach
+
+	return $existe;	
+
+
+}  //Cierre de la función peliculaExiste
+
 ?>

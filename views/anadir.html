@@ -63,12 +63,12 @@
         <!--Formulario-->
         <div class="container">
         <div style="position:relative;top:30px;left:20px;">
-            <form role="form" action="../model/login.php">
+            <form method="post" role="form" action="../model/admini.php">
             <!--Input-->
                 <div class="form-group">
                     <label for="usr" style="color:#fff;text-align: left;">Titulo de la película</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Nombre">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Nombre" name="nombre">
                     </div>
                 </div>
                 <br/>
@@ -76,7 +76,7 @@
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Descripción</label>
                     <div class="input-group"  style="width:330px;">
-                        <textarea style="border-radius: 5px;" class="form-control" rows="3"  placeholder="Descripción"></textarea>
+                        <textarea style="border-radius: 5px;" class="form-control" rows="3"  placeholder="Descripción" name="descripcion"></textarea>
                     </div>
                 </div>
                 <br/>
@@ -84,7 +84,7 @@
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Duración</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Duración">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Duración" name="duracion">
                     </div>
                 </div>
                 <br/>
@@ -92,7 +92,7 @@
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Reparto</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Reparto">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Reparto" name="reparto">
                     </div>
                 </div>
                 <br/>
@@ -100,12 +100,12 @@
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Calificación</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Calificación">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Calificación" name="calificacion">
                     </div>
                 </div>
                 <br/>
 
-                <button type="submit" class="btn btn-primary" style="width:120px;background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-plus"></span> Añadir</button>
+                <button name="anadir" type="submit" class="btn btn-primary" style="width:120px;background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-plus"></span> Añadir</button>
                 <br/>
             </form>
         </div>

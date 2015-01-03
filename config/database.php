@@ -2,6 +2,7 @@
 
 	// Variable global
 	$collection;
+	$collection2;
 	$bd;
 
 	try{
@@ -14,6 +15,7 @@
 
 	    // Establecemos la colección (tabla)
 	    $collection=$bd->usuarios;
+	    $collection2=$bd->peliculas;
     	    
 	}
 	catch(MongoConnectionException $e){
