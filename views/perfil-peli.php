@@ -149,11 +149,11 @@
                     </nav> <!-- Cierre del menú -->
             </header> <!-- Cierre del encabezado -->
 
-	<video autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-  	<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-		<!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
-		<source src="../images/video/video.mp4" type="video/mp4">
-	</video>
+<video autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+        <!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
+        <source src="https://dl.dropboxusercontent.com/u/87532981/Ella%20May%20and%20the%20Wishing%20Stone%20By%20Cary%20Fagan.mp4" type="video/mp4"></source>
+</video>
 
 	<!--Ventana Modal del Log In-->
             <div class="modal fade" id="milogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
