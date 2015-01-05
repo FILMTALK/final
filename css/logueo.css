@@ -1,0 +1,444 @@
+/* ************************************************************************************************
+											Selector UNIVERSAL
+************************************************************************************************ */
+
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
+
+
+/* ************************************************************************************************
+											Selectores por TIPO
+************************************************************************************************ */
+
+/* Cuerpo de toda la página */
+body{
+
+	width: 100%; /* Para que ocupe toda la pantalla */
+}
+
+/* Etiquetas en bloque */
+header, section, footer, nav {
+	display: block;
+}
+
+
+/***********************************************************************************************
+									   Selectores por CLASE 
+***********************************************************************************************/
+
+/* Botón login */
+
+.btn-login{
+
+	cursor: pointer;
+	margin: 0px;
+}
+
+
+
+/* ************************************************************************************************
+											Selectores por ID
+************************************************************************************************ */
+
+/* Layout */
+#container{
+
+	width: 100%;
+
+}
+
+/* Encabezado ************************************/
+#header{
+	/*border: 3px solid red;*/
+	position: relative;
+	z-index: 2;
+	display: -webkit-box; /* Chrome*/
+	-webkit-box-orient: horizontal; /* encabezado en horizontal */
+	height: 50px;
+}
+
+
+/* Menú */
+
+/* Imagen corporativa */
+
+.imgLogo{
+	content:url("../images/logotxiki.png");
+}
+#logo{
+  padding-left: 26px;
+  padding-top: 12px;
+	/*border: 3px solid green;*/
+	width: 200px;
+	min-width: 100px;
+	opacity: 0.9;
+}
+#menu_nav{
+	margin-top: 17px;
+	/*border: 3px solid purple;*/
+	position: absolute;
+	right: 0;
+	width: 555px;
+}
+
+#menu_nav li{ 
+
+	display: inline-block; /* Para poner el menú en horizontal */
+
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #f2efef;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: grey;
+	text-decoration: none;
+}
+
+/* Botón oculto para aparecer el menú */
+#pull{
+
+	display: none;
+}
+
+/* Header navigation of slider */
+#headernav-outer { 
+
+	position:relative; 
+	top: 285px;
+	margin:0 auto; 
+	width: 95%; 
+
+}
+
+
+/* Botón para ir hacia abajo */
+#div_abajo{
+	/*border: 2px solid brown;*/
+	height: 80px;
+	margin-left: 0px;
+}
+
+
+/*icono animado*/
+.glyphicon-refresh-animate {
+    -webkit-animation: spinDos 1.5s infinite linear;
+    /*para cambiar color
+    -webkit-animation: camColor 1.5s infinite linear;*/
+
+}
+
+@-webkit-keyframes spinDos {
+    from { -webkit-transform: translate(0px,5px);}
+    to { -webkit-transform: translate(0px,30px);}
+}
+
+/*@-webkit-keyframes spinDos {
+	0%{color:red;}
+	50%{color:blue;}
+	100%{color:red;}
+}*/
+
+
+
+/* Cartelera */
+#cartelera{
+
+	padding: 5px;
+	padding-left: 50px;
+	width: 100%;
+	/*border: 3px solid green;*/
+	height: 600px;
+	background-color: #f2efef;
+
+}
+
+#cartelera h3{
+
+	color: #cccccc;
+	margin-left: 30px;
+	
+}
+
+.peli{
+
+	position: relative;
+	float: left;
+	margin: 38px;
+
+}
+
+.descrip{
+	width: 160px;
+}
+
+.descrip p{
+	color: #333333;
+	font-size: 13px;
+}
+
+.descrip h4{
+	color: #66cccc;
+}
+
+
+.vermas{
+
+	clear: both;
+	float: right;
+	margin-top: 0px;
+	margin-right: 30px;
+	cursor: pointer;
+	
+}
+
+/* Próximamente */
+#proximamente{
+	background-color: #cccccc;
+	padding: 5px;
+	padding-left: 50px;
+	width: 100%;
+	position: absolute;
+	/*border: 3px solid orange;*/
+	height: 650px;
+
+}
+
+#proximamente h3{
+	color: #f2efef;
+	margin-left: 30px;
+}
+
+/* Buscador */
+#buscador{
+	padding-right: 15px;
+}
+
+#search input[type="text"] {
+	outline: none;
+    background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #f2efef;
+    opacity: 0.9
+    font-size: 13px;
+    color: #f2efef;
+    width: 160px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+#search input[type="text"]:focus {
+    width: 156px;
+}
+
+/* Footer */
+footer{
+	background-color: #cccccc;
+	width: 100%;
+	position: absolute;
+	top: 160%;
+	height: 66px;
+	padding: 3px;
+}
+
+footer a{
+	position: relative;
+	top: 16px;
+	color: #eeeeee;
+	padding-right:18px;
+	float: right;
+}
+
+footer a:hover{
+	color: grey;
+	text-decoration: none;
+}
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
+}
+
+
+/* ************************************************************************************************
+                                            RESPONSIVE
+************************************************************************************************ */
+
+/*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
+@media all and (max-width: 768px){
+
+	#div_abajo{
+		display: none;
+	}
+
+	.slider{
+		display: none;
+	}
+
+	#cartelera, #proximamente{
+
+		position: relative;
+		left: 0px;
+		top: 0px;
+
+	}
+
+	#btn_abajo{
+
+		display: none;
+
+	}
+
+	/* Encabezado ************************************/
+	#header{
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{
+	  padding-left: 10px;
+	}
+
+	.imgLogo{
+		content:url("../images/logotxiki_gris.png");
+	}
+
+	/* Menú */
+
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+		padding: 7px;
+		display: block; 
+
+	}
+
+	nav ul {
+
+       display: none;
+       height: auto;
+
+    }
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }
+
+    /*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
+
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    #search input[type="text"] {
+	    border: 2px solid #f2efef;
+	    color: #f2efef;
+	}	
+
+    /* Cartelera */
+	#cartelera{
+
+		height: 2200px;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente{
+
+		height: 2200px;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente h3{
+		margin-left: 9px;
+	}
+
+	#cartelera h3{
+		margin-left: 9px;
+	}
+
+	.peli{
+		margin: 10px;
+		/*border: 2px solid green;*/
+
+	}
+	/* Footer */
+	footer{
+		display: none;
+		background: none;
+	}
+
+	footer a{
+		display: none;
+	}
+
+	.red{
+		display: none;
+	}
+
+} 
+
+/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
+@media all and (max-width: 320px){
+
+	/* Cartelera */
+	#cartelera{
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+	#proximamente{
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+		/*border: 2px solid black;*/
+
+	}
+
+
+
+}

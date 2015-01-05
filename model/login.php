@@ -1,5 +1,16 @@
 <?php
 
+//------------------------------------------------------------------------------
+// Los mensajes flash requieren las sesiones 
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+
+//------------------------------------------------------------------------------
+// Se incluye la clase y se instancia
+//------------------------------------------------------------------------------
+require_once('../controller/class.messages.php');
+$msg = new Messages();
+
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
 
@@ -15,14 +26,14 @@ if(isset($_POST['login'])){
 	// Si los campos username o password están vacíos
 	if($_POST['email']==NULL or $_POST['password']==NULL){
 
-		// Se muestra un mensaje por pantalla
-		echo "Los campos estan vacios";
+		// Mensaje de error a mostrar
+		$msg->add('e', 'ERROR: Los campos estan vacios');
 
-		// Redirecciona al formulario de login
-		//header("location: ../views/login.php");
+		// Redirecciona a la página de login
+		header('Location: ../views/login.php');
 
-		// Imprime un mensaje y termina el script actual 
-		exit;
+		// Sale
+		exit();
 
 	}
 	else{ // Si los campos no están vacíos
@@ -30,14 +41,14 @@ if(isset($_POST['login'])){
 		// Se comprueba si el usuario existe en la base de datos, si no está, muestra un mensaje.
 		if(usuarioExiste($_POST['email'])==false){
 
-			// Se visualiza un mensaje por pantalla
-			echo "Los datos no son validos";
+			// Mensaje de error a mostrar
+			$msg->add('e', 'ERROR: Los datos no son validos');
 
-			// Redirecciona al formulario de login
-			//header("location: ../views/login.php");
+			// Redirecciona a la página de login
+			header('Location: ../views/login.php');
 
-			// Imprime un mensaje y termina el script actual 
-			exit;
+			// Sale
+			exit();
 
 		}
 		else{ // Si el usuario existe en la bd
@@ -76,18 +87,20 @@ if(isset($_POST['login'])){
 
 					// Redirecciona al perfil del usuario
 					header("location: /index.php");
-					//include("../views/inicio.php");
 
 				} // Cierre del else si no es admin
 			
 			}
 			else{ // Si la contraseña no coincide
 
-				// Muestra un mensaje por pantalla
-				echo "La clave no es correcta";
+				// Mensaje de error a mostrar
+				$msg->add('e', 'ERROR: La clave no es correcta');
 
-				// Redirecciona al formulario de login
-				//header("location: ../views/login.php");
+				// Redirecciona a la página de login
+				header('Location: ../views/login.php');
+
+				// Sale
+				exit();
 
 			} // Cierre del else porque la contraseña no coincide
 
