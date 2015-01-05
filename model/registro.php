@@ -1,5 +1,16 @@
 <?php
 
+//------------------------------------------------------------------------------
+// Los mensajes flash requieren las sesiones 
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+
+//------------------------------------------------------------------------------
+// Se incluye la clase y se instancia
+//------------------------------------------------------------------------------
+require_once('../controller/class.messages.php');
+$msg = new Messages();
+
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
 
@@ -15,14 +26,14 @@ if(isset($_POST['registro'])){
 	// Si los campos email, username, password o password2 están vacíos
 	if($_POST['email']==NULL or $_POST['username']==NULL or $_POST['password']==NULL or $_POST['password2']==NULL){
 
-		// Se muestra un mensaje por pantalla
-		echo "Los campos estan vacios";
+		// Mensaje de error a mostrar
+		$msg->add('e', 'ERROR: Los campos estan vacios');
 
-		// Redirecciona al formulario de registro
-		//header("location: ../views/registro.php");
+		// Redirecciona a la página de registro
+		header('Location: ../views/registro.php');
 
-		// Imprime un mensaje y termina el script actual 
-		exit;
+		// Sale
+		exit();
 		
 	}
 	else{ // Si los campos no están vacíos
@@ -30,14 +41,14 @@ if(isset($_POST['registro'])){
 		// Se comprueba si las contraseñas coinciden
 		if(!($_POST["password"]==$_POST["password2"])){
 
-			// Se muestra un mensaje por pantalla
-			echo "<p> Las claves no coinciden </p>";
+			// Mensaje de error a mostrar
+			$msg->add('e', 'ERROR: Las claves no coinciden');
 
-			// Redirecciona al formulario de registro
-			//header("location: ../views/registro.php");
+			// Redirecciona a la página de registro
+			header('Location: ../views/registro.php');
 
-			// Imprime un mensaje y termina el script actual 
-			exit;
+			// Sale
+			exit();
 
 		}
 		else{ // Si las contraseñas coinciden
@@ -45,14 +56,14 @@ if(isset($_POST['registro'])){
 			// Se comprueba que el usuario existe en la bd.
 			if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
 
-				// Se visualiza un mensaje por pantalla
-				echo "El usuario ya existe";
+				// Mensaje de error a mostrar
+				$msg->add('e', 'ERROR: El usuario ya existe');
 
-				// Redirecciona al formulario de registro
-				//header("location: ../views/registro.php");
+				// Redirecciona a la página de registro
+				header('Location: ../views/registro.php');
 
-				// Imprime un mensaje y termina el script actual 
-				exit;
+				// Sale
+				exit();
 
 			}
 			else{ // Si el usuario no existe
@@ -99,8 +110,15 @@ if(isset($_POST['registro'])){
 				}
 				catch (MongoCursorException $e) {
 
-					// Se visualiza si los datos no son adecuados
-					echo 'Error al insertar datos!';
+					// Mensaje de error a mostrar
+					$msg->add('e', 'ERROR: Al insertar los datos');
+
+					// Redirecciona a la página de registro
+					header('Location: ../views/registro.php');
+
+					// Sale
+					exit();
+
 
 				} // Cierre de la excepción
 
