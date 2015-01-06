@@ -1,3 +1,18 @@
+<?php
+
+//------------------------------------------------------------------------------
+// A session is required for the messages to work
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+
+//------------------------------------------------------------------------------
+// Include the Messages class and instantiate it
+//------------------------------------------------------------------------------
+require_once('../controller/class.messages.php');
+$msg = new Messages();
+
+
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -13,6 +28,9 @@
 	<script type="text/javascript" src="../js/perfil-peli.js"></script>
     <!--CSS bootstrap-->
     <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
+
+    <!-- Mensajes flash -->
+    <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
 
 	<!--para full screen video, pantalla completa-->
 	<script type="text/javascript">
@@ -293,6 +311,7 @@
 	<div id="contCriticas">
 
     	<div class="criticas">
+
             <div id="coment">
                 <?php
 
@@ -334,6 +353,13 @@
                         }          
                         
                     }
+
+
+                    //------------------------------------------------------------------------
+                    // Muestra el mensaje flash
+                    //------------------------------------------------------------------------
+                    echo $msg->display();
+
 
                 ?>
             </div>

@@ -1,5 +1,17 @@
 <?php
 
+//------------------------------------------------------------------------------
+// Los mensajes flash requieren las sesiones 
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+
+//------------------------------------------------------------------------------
+// Se incluye la clase y se instancia
+//------------------------------------------------------------------------------
+require_once('../controller/class.messages.php');
+$msg = new Messages();
+
+
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
 
@@ -14,21 +26,21 @@ if(isset($_POST['enviarCritica'])){
 	// Si el textarea de criticas está vacio
 	if($_POST['criti']==NULL){
 
-		// Se muestra un mensaje por pantalla
-		echo "No has introducido el comentario";
+		// Mensaje de error a mostrar
+		$msg->add('e', 'ERROR: No has introducido el comentario');
 
-		// Redirecciona al formulario de registro
-		//header("location: ../views/perfil-peli.php");
+		// Redirecciona al perfil de la película
+		header('Location: ../views/perfil-peli.php');
 
-		// Imprime un mensaje y termina el script actual 
-		exit;
+		// Imprime un mensaje y termina el script actual
+		exit();
 		
 	}
 	else{ // Si el textarea no está vacío
 
 		try {
 
-			$idUsu=obtenerIdUsuario($_SESSION["usuario"]);
+			$idUsu=$_SESSION['id_usuario'];
 
 			// Se crea un array para obtener los datos del formulario para guarda como un documento
 			$document = array( 
@@ -50,8 +62,14 @@ if(isset($_POST['enviarCritica'])){
 		}
 		catch (MongoCursorException $e) {
 
-			// Se visualiza si los datos no son adecuados
-			echo 'Error al insertar datos!';
+			// Mensaje de error a mostrar
+			$msg->add('e', 'ERROR: Al insertar datos!');
+
+			// Redirecciona al perfil de la película
+			header('Location: ../views/perfil-peli.php');
+
+			// Imprime un mensaje y termina el script actual
+			exit();
 
 		}// Cierre de la excepción
 
