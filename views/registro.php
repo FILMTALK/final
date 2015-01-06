@@ -18,12 +18,6 @@ $msg = new Messages();
 //$msg->add('e', 'The is a sample Error Message');
 //$msg->add('w', 'The is a sample Warning Message');
 //$msg->add('i', 'The is a sample Information Message');
-    
-
-//------------------------------------------------------------------------
-// Mostrar el mensaje flash
-//------------------------------------------------------------------------
-//echo $msg->display();
 
 include_once("../config/database.php");
 
@@ -48,6 +42,7 @@ include_once("../config/database.php");
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
         <!--CSS bootstrap-->
         <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
+        <!-- Mensajes flash -->
         <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
 
         <!-- jQuery para menu respontive -->

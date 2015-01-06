@@ -1,9 +1,19 @@
 <?php
+
+//------------------------------------------------------------------------------
+// A session is required for the messages to work
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+
+//------------------------------------------------------------------------------
+// Include the Messages class and instantiate it
+//------------------------------------------------------------------------------
+require_once('../controller/class.messages.php');
+$msg = new Messages();
+
+
 // Se importan las funciones
 include_once("../funciones/funciones.php");
-
-// Se inicia sesión o reanuda la sesión
-session_start();
 
 // Se obtienenn los datos del usuario mediante el id
 $datosUsuario=obtenerDatosUsuario($_SESSION['id_usuario']);
@@ -54,6 +64,9 @@ setcookie("usuario[password]", $password, time()+3600);
 
         <!--CSS bootstrap-->
         <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
+
+        <!-- Mensajes flash -->
+        <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
         
 
          <!-- jQuery para menu respontive -->
@@ -157,6 +170,15 @@ setcookie("usuario[password]", $password, time()+3600);
 
 </div> <!-- div de Container -->
 <div id="cont">
+
+        <?php
+
+            //------------------------------------------------------------------------
+            // Mostrar el mensaje flash
+            //------------------------------------------------------------------------
+            echo $msg->display();
+
+        ?>
 
         <div class="page-wrap">
 
