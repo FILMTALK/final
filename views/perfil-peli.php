@@ -19,7 +19,7 @@ $msg = new Messages();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title>Perfil Pelicula</title>
+	<title>Perfil Película</title>
 
 	<!--para el favicon-->
     <link rel="icon" type="image/png" href="../images/favicon.png" />
@@ -56,6 +56,8 @@ $msg = new Messages();
     <script type="text/javascript" src="../js/menu.js"></script> 
 </head>
 <body>
+
+    <div id="contene">
     
     <!-- Encabezado de toda la página -->
     <?php include("../includes/header.html"); ?>
@@ -189,7 +191,7 @@ $msg = new Messages();
 
             <div id="coment">
 
-                <h2>Criticas</h2></br></br>
+                <h2>Críticas</h2></br></br>
                 <!-- Listado de los comentarios de la película obtenida de la BD -->
                 <?php
                     //$id_pelicula = $_SESSION['id_pelicula'];
@@ -231,14 +233,16 @@ $msg = new Messages();
 
             ?>
 
-		</div>
-	</div> <!-- Cierre del div de críticas -->
+		</div><!-- Cierre del div de críticas -->
+	</div> <!-- Cierre del div de contCríticas -->
+
 
     <!-- Pie de toda la página -->
     <?php 
         echo "<link href=\"../css/perfil-peli.css\" rel=\"stylesheet\" type=\"text/css\" >";
         include("../includes/footer.html"); 
     ?>
+    </div>
 
     <!-- Para las ventanas modales -->
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->

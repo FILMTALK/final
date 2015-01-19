@@ -32,26 +32,33 @@ h4 a{
 }
 
 /* Footer */
-footer{
-	background-color: #f2efef;
-	width: 100%;
-	position: absolute;
-	top: 196%;
-	height: 66px;
-	padding: 3px;
+#foot{
+
+  background-color: #E6E6E6;
+  width: 100%;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  height: 66px;
+  padding: 3px;
+  
 }
 
-footer a{
-	position: relative;
-	top: 16px;
-	color: #999999;
-	padding-right:18px;
-	float: right;
+#foot a{
+
+  position: relative;
+  top: 16px;
+  color: #999999;
+  padding-right:18px;
+  float: right;
+
 }
 
-footer a:hover{
-	color: #66cccc;
-	text-decoration: none;
+#foot a:hover{
+
+  color: #66cccc;
+  text-decoration: none;
+
 }
 
 /* ************************************************************************************************
