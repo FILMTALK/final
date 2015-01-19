@@ -16,7 +16,7 @@ $msg = new Messages();
 include_once("../config/database.php");
 
 // Se importan las funciones para comprobar u obtener datos
-include_once("../funciones/funciones.php");
+include_once("../funciones/usuarios.php");
 
 // Iniciar una nueva sesión o reanudar una sesión
 session_start();
@@ -33,7 +33,7 @@ if(isset($_POST['editEmail'])){
 		// Redirecciona al perfil del usuario
 		header('Location: ../views/profile.php');
 
-		// Sale
+		// Imprime un mensaje y termina el script actual
 		exit();
 
 	}
@@ -42,22 +42,51 @@ if(isset($_POST['editEmail'])){
 		// Se comprueba si la contraseña coincide
 		if(verificarPassword($_SESSION["nombreUsuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
 
-			$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
+			// Se establece la variable mediante el valor de la variable de sesión
+			$id_usuario=$_SESSION["id_usuario"];
 
-			foreach ($users as $document) {
-				
-				$collection->update(array('usuario' => $_SESSION["nombreUsuario"]), array('$set'=> array('email' => $_POST['email'])));
+			// Si existe un usuario con el mismo email introducido
+			if(usuarioExiste($_POST['email'])==true){
+
+				// Mensaje de error a mostrar
+				$msg->add('e', 'ERROR: Ya existe un usuario');
+
+				// Redirecciona al perfil del usuario
+				header('Location: ../views/profile.php');
+
+				// Imprime un mensaje y termina el script actual
+				exit();
 
 			}
+			else{
 
-   			// Mensaje de error a mostrar
-			$msg->add('s', 'Cambio realizado');
+				// Se consultan los datos de ese usuario en concreto
+				$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
 
-			// Redirecciona al perfil del usuario
-			header('Location: ../views/profile.php');
+				// Se recorre el array
+				foreach ($users as $document) {
+					
+					// Se actualiza el email del usuario
+					$collection->update(array('usuario' => $_SESSION["nombreUsuario"]), array('$set'=> array('email' => $_POST['email'])));
 
-			// Sale
-			exit();
+				}
+
+				// Se obtiene el nombre de usuario de la BD
+				$email=obtenerEmail($id_usuario);
+
+				// Se establece la variable de sesión del nombre de usuario
+				$_SESSION["email"]=$email;
+
+	   			// Muestra mensaje exitoso
+				$msg->add('s', 'Cambio realizado');
+
+				// Redirecciona al perfil del usuario
+				header('Location: ../views/profile.php');
+
+				// Imprime un mensaje y termina el script actual
+				exit();
+
+			}
 		
 		}
 		else{ // Si la contraseña no coincide
@@ -68,7 +97,7 @@ if(isset($_POST['editEmail'])){
 			// Redirecciona al perfil del usuario
 			header('Location: ../views/profile.php');
 
-			// Sale
+			// Imprime un mensaje y termina el script actual
 			exit();
 
 		} // Cierre del else porque la contraseña no coincide

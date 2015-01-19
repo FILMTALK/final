@@ -1,37 +1,25 @@
+/* ************************************************************************************************
+                      Selectores por TIPO
+************************************************************************************************ */
+
+/* BASIC RESET */
+ul,ol,li,form,input{margin:0; padding:0;}
+
 body {
   margin: 0;
-  background: #000;
-}
-
-/*CRITICA*/
-
-#contCriticas{
-  background-color: #cccccc;
-  position: absolute;
-  top: 580px;
-  width: 100%;
-  height: 800px;
-}
-
-.criticas{
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 800px;
-  background: grey;
-  height: 500px;
+  background: #E6E6E6;
 
 }
 
-#coment{
- background-color: #fff;
- width: 600px;
- height: auto;
+/* Menú  ***********************************************************/
+header,nav{
+  display: block;
+  
 }
 
+/* Video  ***********************************************************/
+video {
 
-/*VIDEO CSS*/
-video { 
   position: absolute;
   top: -145px;
   left: 0;
@@ -42,38 +30,81 @@ video {
   background-color: #cccccc;
   background-size: cover;
   transition: 1s opacity;
+
 }
+
+/* Footer */
+footer{
+
+  background-color: #E6E6E6;
+  width: 100%;
+  position: absolute;
+  top: 200%;
+  height: 66px;
+  padding: 3px;
+  
+}
+
+footer a{
+
+  position: relative;
+  top: 16px;
+  color: #999999;
+  padding-right:18px;
+  float: right;
+
+}
+
+footer a:hover{
+
+  color: #66cccc;
+  text-decoration: none;
+
+}
+
+
+/***********************************************************************************************
+                     Selectores por CLASE 
+***********************************************************************************************/
+
+/* Botón login */
+.btn-login{
+
+  cursor: pointer;
+  margin: 0px;
+  
+}
+
+/*estilos para los link del menu, para que no coja bootstrap*/
+.link{
+  color: #f2efef;
+  padding-right: 20px;
+  opacity: 0.9;
+  text-decoration: none;
+  
+}
+
+.link:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+/* Criticas  ***********************************************************/
+.criticas{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 800px;
+  height: 500px;
+
+}
+
 .stopfade { 
    opacity: .8;
 }
 
-#infopeli {
-  border-radius: 5px; 
-  float: right;
-  padding: 80px;
-  margin-top: 8%;
-  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-weight:100; 
-  background: rgba(0,0,0,0.5);
-  color: white;
-  padding: 2rem;
-  width: 580px;
-  font-size: 1.2rem;
-  height: 60em;
-}
-
-#infopeli h1{
-  font-size: 50px;
-}
-
-#infopeli p{
-  font-size: 15px;
-}
-
-/*FIN VIDEO*/
 
 /*Valoración estrellas*/
-
 .ec-stars-wrapper {
 background: none;
   /* Espacio entre los inline-block (los hijos, los `a`) 
@@ -91,7 +122,7 @@ background: none;
   display: inline-block;
   /* Volver a dar tamaño al texto */
   font-size: 30px;
-  color: #888;
+  color: #FFFF94;
 }
 
 .ec-stars-wrapper:hover a {
@@ -104,117 +135,10 @@ background: none;
  */
 .ec-stars-wrapper > a:hover ~ a {
   background: none;
-  color: #888;
+  color: #FFFF94;
   text-decoration: none;
 }
 
-
-/**********************************/
-
-#buttons{
-    float: left;
-    width:70px;
-    height: 22px;
-    cursor: pointer;
-}
-
-#buttons img{
-
-    width:40px;
-}
-
-#amplia{
-    position: relative;
-    float: right;
-    width:30px;
-    height: 22px;
-    cursor: pointer;
-}
-
-#amplia img{
-    width:36px;
-}
-
-
-/*************MENU**************/
-/********************************/
-
-ul,ol,li,form,input{margin:0; padding:0;}
-
-
-header,nav{
-  display: block;
-}
-
-#header{
-  /*border: 3px solid red;*/
-  position: relative;
-  z-index: 2;
-  display: -webkit-box; /* Chrome*/
-  display: flex; /* Moz*/
-  -webkit-box-orient: horizontal; /* encabezado en horizontal */
-  -moz-box-orient: horizontal; /* encabezado en horizontal */
-  height: 50px;
-}
-
-
-
-.btn-login{
-  cursor: pointer;
-  margin: 0px;
-}
-
-#logo{
-  padding-left: 26px;
-  padding-top: 10px;
-  /*border: 3px solid green;*/
-  width: 200px;
-  min-width: 100px;
-  opacity: 0.9;
-}
-#menu_nav{
-  margin-top: 17px;
-  /*border: 3px solid purple;*/
-  position: absolute;
-  right: 0;
-  width: 555px;
-}
-
-#menu_nav li{ 
-
-  display: inline-block; /* Para poner el menú en horizontal */
-
-}
-
-.link{/*estilos para los link del menu, para que no coja bootstrap*/
-  color: #f2efef;
-  padding-right: 20px;
-  opacity: 0.9;
-  text-decoration: none;
-}
-
-.link:hover{
-  color: grey;
-  text-decoration: none;
-}
-
-/* Botón oculto para aparecer el menú */
-#pull{
-
-  display: none;
-}
-
-/* Botón para ir hacia abajo */
-#div_abajo{
-  z-index: 1;
-  /*border: 2px solid brown;*/
-  position: relative;
-  left: 20%;
-  top:548px;
-  width: 80%;
-  height: 80px;
-  margin-left: 0px;
-}
 /*icono animado*/
 .glyphicon-refresh-animate {
     -webkit-animation: spin2 1s infinite linear;
@@ -231,10 +155,80 @@ header,nav{
     to { -moz-transform: translate(0px,50px);}
 }
 
-/* Buscador */
-#buscador{
-  padding-right: 15px;
+/* Redes sociales */
+.red{
+  
+  cursor: pointer;
+  float: right;
+  padding-right:14px;
+
 }
+
+/* ************************************************************************************************
+                      Selectores por ID
+************************************************************************************************ */
+
+/* Encabezado en horizontal */
+#header{
+
+  position: relative;
+  z-index: 2;
+  display: -webkit-box; /* Chrome*/
+  display: flex; /* Moz*/
+  -webkit-box-orient: horizontal; 
+  -moz-box-orient: horizontal; 
+  height: 50px;
+
+}
+
+/* Menú  ***********************************************************/
+/* Imágen corporativa */ 
+#logo{
+  padding-left: 26px;
+  padding-top: 10px;
+  width: 200px;
+  min-width: 100px;
+  opacity: 0.9;
+}
+
+/* Menú */
+#menu_nav{
+
+  margin-top: 17px;
+  position: absolute;
+  right: 0;
+  width: 555px;
+
+}
+
+/* Para poner el menú en horizontal */
+#menu_nav li{ 
+
+  display: inline-block; 
+
+}
+
+/* Botón oculto para aparecer el menú */
+#pull{
+
+  display: none;
+}
+
+/* Botón para ir hacia abajo */
+#div_abajo{
+
+  z-index: 1;
+  position: relative;
+  left: 20%;
+  top:548px;
+  width: 80%;
+  height: 80px;
+  margin-left: 0px;
+
+}
+
+/* Buscador */
+#buscador{ padding-right: 15px; }
 
 #search input[type="text"] {
   outline: none;
@@ -256,37 +250,84 @@ header,nav{
 }
 
 #search input[type="text"]:focus {
-    width: 156px;
+    width: 173px;
 }
 
-/* Footer */
-footer{
-  background-color: #cccccc;
-  width: 100%;
+/* InfoPeli  ***********************************************************/
+#infopeli {
+  float: right;
+  padding: 80px;
+  margin-top: 8%;
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 2rem;
+  width: 580px;
+  font-size: 1.2rem;
+  height: 430px;
+}
+
+#infopeli h1{
+  font-size: 50px;
+}
+
+#infopeli p{
+  font-size: 15px;
+}
+
+
+/* Criticas  ***********************************************************/
+h2{
+  color: #66cccc;
+}
+#contCriticas{
+
+  background-color: #E6E6E6;
   position: absolute;
-  top: 200%;
-  height: 66px;
-  padding: 3px;
+  top: 580px;
+  width: 100%;
+  height: 800px;
+
 }
 
-footer a{
-  position: relative;
-  top: 16px;
-  color: #eeeeee;
-  padding-right:18px;
-  float: right;
+#coment{
+
+  width: 100%;
+  height: auto;
+ 
 }
 
-footer a:hover{
-  color: grey;
-  text-decoration: none;
+/* Botones para el vídeo */
+#buttons{
+    position: absolute;
+    top:513px;
+    left: 25px;
+    width:70px;
+    height: 22px;
+    cursor: pointer;
 }
-/*imagenes de redes sociales*/
-.red{
-  cursor: pointer;
-  float: right;
-  padding-right:14px;
+
+#buttons img{ width:40px; }
+
+/* Botón para ampliar el vídeo */
+#amplia{
+    position: absolute;
+    top:513px;
+    left: 75px;
+    width:30px;
+    height: 22px;
+    cursor: pointer;
 }
+
+#amplia img{ width:36px; }
+
+
+
+textarea{
+  width: 500px;
+  }
+
 
 /* ************************************************************************************************
                                             RESPONSIVE
@@ -295,46 +336,47 @@ footer a:hover{
 /*Cuando la anchura de la ventana contenga como máximo 768px se cambia el diseño */
 @media all and (max-width: 768px){
 
-   #bgvid { display: none; 
-   }
-  #div_abajo{
+  #bgvid { display: none; }
 
-    display: none;
+  video{ display: none; }
 
-  }
 
-  #buttons{
-    display: none;
-  }
+  #div_abajo{ isplay: none; }
 
-  #amplia{
-    display: none;
-  }
+  #buttons{ display: none; }
 
+  #amplia{ display: none; }
+
+  /* Info peli  ***********************************************************/
   #infopeli{
+
+    margin-top: 50px;
     width: 100%;
-    margin-top: 0%;
     background-color: #999999;
     height: 100%;
   }
 
+  /* Criticas  ***********************************************************/
   #contCriticas{
+
     position: relative;
     padding-top: 0px;
   }
 
-  /* MENU ************************************/
+  /* Encabezados ************************************/
   #header{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
     display: block;
     background-color: #f2efef;
   }
 
-  .imgLogo{
-    content:url("../images/logotxiki_gris.png");
-  }
+  /* Imagen corporsativa */
+  .imgLogo{ content:url("../images/logotxiki_gris.png"); }
 
   /* Menú */
-
   #menu_nav {
     margin-top: 0px;
     padding-left: 20px;
@@ -351,35 +393,35 @@ footer a:hover{
 
   nav ul {
 
-       display: none;
-       height: auto;
+     display: none;
+     height: auto;
 
-    }
+  }
 
-    /* Aparece el botón para desplegar el menú */
-    #pull {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 17px;
-    }
+  /* Aparece el botón para desplegar el menú */
+  #pull {
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 17px;
+  }
 
-    /*Después de aparecer el menú, aparece el icono */
-    nav a#pull:after {
+  /*Después de aparecer el menú, aparece el icono */
+  nav a#pull:after {
 
-        content: "";
-        background: url('../img/nav-icon.png') no-repeat;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 15px;
+      content: "";
+      background: url('../img/nav-icon.png') no-repeat;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 15px;
 
-    }
+  }
 
-    #search input[type="text"] {
-      border: 2px solid #f2efef;
-      color: #f2efef;
+  #search input[type="text"] {
+    border: 2px solid #f2efef;
+    color: #f2efef;
   } 
 
   /* Footer */

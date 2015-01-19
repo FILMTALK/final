@@ -23,11 +23,6 @@ function playOrPause(){
 	}
 }
 
-function vidFade() {
+function vidFade() {	
   myMovie.classList.add("stopfade");
 }
-
-
-
-
-

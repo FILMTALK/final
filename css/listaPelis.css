@@ -14,7 +14,7 @@
 
 /* Cuerpo de toda la página */
 body{
-
+	background-color: #f2efef;
 	width: 100%; /* Para que ocupe toda la pantalla */
 
 }
@@ -25,12 +25,18 @@ header, section, footer, nav {
 	display: block;
 }
 
+h4 a{
+
+	color: #66cccc;
+
+}
+
 /* Footer */
 footer{
-	background-color: #cccccc;
+	background-color: #f2efef;
 	width: 100%;
 	position: absolute;
-	top: 275%;
+	top: 196%;
 	height: 66px;
 	padding: 3px;
 }
@@ -38,13 +44,13 @@ footer{
 footer a{
 	position: relative;
 	top: 16px;
-	color: #eeeeee;
+	color: #999999;
 	padding-right:18px;
 	float: right;
 }
 
 footer a:hover{
-	color: grey;
+	color: #66cccc;
 	text-decoration: none;
 }
 
@@ -54,20 +60,21 @@ footer a:hover{
 
 /* Encabezado ************************************/
 #header{
-	/*border: 3px solid red;*/
+
 	position: relative;
 	z-index: 2;
 	display: -webkit-box; /* Chrome*/
 	-webkit-box-orient: horizontal; /* encabezado en horizontal */
 	height: 50px;
+	background-color: #f2efef;
 }
 
 
 /* Imagen corporativa */
 #logo{
-  padding-left: 26px;
-  padding-top: 12px;
-	/*border: 3px solid green;*/
+
+	padding-left: 26px;
+	padding-top: 12px;
 	width: 200px;
 	min-width: 100px;
 	opacity: 0.9;
@@ -77,7 +84,6 @@ footer a:hover{
 #menu_nav{
 
   margin-top: 17px;
-  /*border: 3px solid purple;*/
   position: absolute;
   right: 0;
   width: 555px;
@@ -92,10 +98,10 @@ footer a:hover{
 
 /* Cartelera */
 #cartelera{
-
 	padding: 5px;
 	padding-left: 50px;
 	width: 100%;
+	background-color: #f2efef;
 
 }
 
@@ -112,12 +118,12 @@ footer a:hover{
 	padding: 5px;
 	padding-left: 50px;
 	width: 100%;
-
+	
 }
 
 #proximamente h3{
 
-	color: #cccccc;
+	color: #A29F9F;
 	margin-left: 30px;
 
 }
@@ -130,12 +136,12 @@ footer a:hover{
 #search input[type="text"] {
 	
 	outline: none;
-    background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
+    background:   url(../images/busca_gris.png) no-repeat 10px 6px #f2efef;
     background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #f2efef;
+    border: 2px solid #B2B2B2;
     opacity: 0.9
     font-size: 13px;
-    color: #f2efef;
+    color: #B2B2B2;
     width: 160px;
     padding: 6px 15px 6px 35px;
     -webkit-border-radius: 20px;
@@ -148,7 +154,7 @@ footer a:hover{
 }
 
 #search input[type="text"]:focus {
-    width: 156px;
+    width: 173px;
 }
 
 /* Botón oculto para aparecer el menú */
@@ -164,7 +170,7 @@ footer a:hover{
 
 /* Imagen corporativa */
 .imgLogo{
-	content:url("../images/logotxiki.png");
+	content:url("../images/logotxiki_gris.png");
 }
 
 /* Botón login */
@@ -180,12 +186,20 @@ footer a:hover{
 	position: relative;
 	float: left;
 	margin: 38px;
-
+	
 }
 
 .descrip{
 
 	width: 160px;
+
+}
+
+.info{
+
+	border: 2px solid blue;
+	display: -webkit-box; /* Chrome*/
+	-webkit-box-orient: horizontal; /* encabezado en horizontal */
 
 }
 
@@ -195,21 +209,15 @@ footer a:hover{
 	font-size: 13px;
 }
 
-.descrip h4{
-
-	color: #66cccc;
-
-}
-
 .link{/*estilos para los link del menu, para que no coja bootstrap*/
-	color: #f2efef;
+	color: #B2B2B2;
 	padding-right: 20px;
 	opacity: 0.9;
 	text-decoration: none;
 }
 
 .link:hover{
-	color: grey;
+	color: #66cccc;
 	text-decoration: none;
 }
 
@@ -237,6 +245,10 @@ footer a:hover{
 
 	/* Encabezado ************************************/
 	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
 		display: block;
 		background-color: #f2efef;
 	}
@@ -262,6 +274,21 @@ footer a:hover{
 	#menu_nav li{
 		padding: 7px;
 		display: block; 
+
+	}
+
+	/* estilos para los link del menu, para que no coja bootstrap */
+	.link{ 
+		color: #f2efef;
+		padding-right: 20px;
+		opacity: 0.9;
+		text-decoration: none;
+	}
+
+	.link:hover{
+
+		color: grey;
+		text-decoration: none;
 
 	}
 
@@ -294,28 +321,27 @@ footer a:hover{
     }
 
     #search input[type="text"] {
-	    border: 2px solid #f2efef;
-	    color: #f2efef;
+	    color: #B2B2B2;
 	}	
 
     /* Cartelera */
 	#cartelera{
 
+		margin-top: 50px;
 		height: 2200px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
 	#proximamente{
 
+		margin-top: 50px;
 		height: 2200px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
@@ -329,7 +355,6 @@ footer a:hover{
 
 	.peli{
 		margin: 10px;
-		/*border: 2px solid green;*/
 
 	}
 
@@ -358,7 +383,6 @@ footer a:hover{
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
@@ -366,9 +390,6 @@ footer a:hover{
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
-
-
 }

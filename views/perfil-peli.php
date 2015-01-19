@@ -26,341 +26,180 @@ $msg = new Messages();
 	<link rel="stylesheet" type="text/css" href="../css/perfil-peli.css"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/perfil-peli.js"></script>
+    <script type="text/javascript" src="../js/valoracion.js"></script><!-- Valorar las estrellas -->
     <!--CSS bootstrap-->
     <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
-
     <!-- Mensajes flash -->
     <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
-
 	<!--para full screen video, pantalla completa-->
 	<script type="text/javascript">
 	    $(document).ready(function(){
 	        //Funcion que se activa al evento click del button o boton
 	        $('#amplia').click(function(){
-	                 // Codigo para activar pantalla completa en Chrome o Safari 5
-	                 //Seleccionamos el elemnento video del ID video, en este caso la misma etiqueta video
-	                 var elem = document.getElementById("bgvid");
-						if (elem.requestFullscreen) {
-						  elem.requestFullscreen();
-						} else if (elem.msRequestFullscreen) {
-						  elem.msRequestFullscreen();
-						} else if (elem.mozRequestFullScreen) {
-						  elem.mozRequestFullScreen();
-						} else if (elem.webkitRequestFullscreen) {
-						  elem.webkitRequestFullscreen();
-						}                           
+             // Codigo para activar pantalla completa en Chrome o Safari 5
+             //Seleccionamos el elemnento video del ID video, en este caso la misma etiqueta video
+             var elem = document.getElementById("bgvid");
+				if (elem.requestFullscreen) {
+				  elem.requestFullscreen();
+				} else if (elem.msRequestFullscreen) {
+				  elem.msRequestFullscreen();
+				} else if (elem.mozRequestFullScreen) {
+				  elem.mozRequestFullScreen();
+				} else if (elem.webkitRequestFullscreen) {
+				  elem.webkitRequestFullscreen();
+				}                           
 	        });
 	    });
 	 </script>
 
-	 <script type="text/javascript">
-        
-            $(document).ready(function(){
-
-                //Obtenemos el link que contenga el id pull
-                var pull=$('#pull');
-
-                //Obtenemos todos las etiquetas ul que contenga la etiqueta nav
-                var menu=$('ul');
-
-                var html=$('html');
-
-                //Guardamos la altura del menú en una variable
-                var menuHeight=menu.height();
-
-                //Cuando haga clic en el link, realizaremos una función con pasando un parámetro
-                $(pull).on('click', function(e) {
-
-                    e.preventDefault();
-                    menu.slideToggle();
-
-               
-                });  //Cierre del método on
-
-
-
-                //Cuando la ventana se hace más pequeño, se realiza la siguiente función
-                $(window).resize(function(){
-
-                  //Gaurdamos en una variable el width de la ventana de forma local
-                  var w=$(window).width();
-
-                  //Si la anchura es mayor que 700px, el slider debe aparecer
-                  if(w>700) {
-
-                    //Eliminamos el atributo style del menú
-                    menu.removeAttr('style');
-
-        
-                  }
-
-                //Cierre de la función resize
-                });
-
-            //Cierre de la función general    
-            });
-
-        </script> <!-- Cierre de jQuery del slider -->
+	<!-- jQuery para menu respontive -->
+    <script type="text/javascript" src="../js/menu.js"></script> 
 </head>
 <body>
-<!-- Encabezado de toda la página -->
-                    
-            <header id="header"> 
-                    <!-- Imagen corporativa -->
-                    <div id="logo">
-                        <a href="/index.php"><img class="imgLogo"/></a>
-                        <!-- Botón del menú -->
-                        <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
-                    </div> <!-- Cierre del logo -->
-                    <!-- Menú -->
-                    <nav id="menu_nav">
-                        <!-- Lista desordenada -->
-                        <ul>
-                            <!-- Item 1, Cartelera --> 
-                            <li>
-                                <a href="cartelera.php" class="link"> Cartelera </a>
-                            </li> <!-- Cierre de la Cartelera -->
-                            <!-- Item 2, Próximamente --> 
-                            <li>
-                                <a href="proximamente.php" class="link"> Próximamente </a>
-                            </li> <!-- Cierre de la Próximamente -->
-                            <!-- Item 3, Buscador --> 
-                            <li>
-                                <!-- Caja de buscador -->
-                                <div id="buscador">
-                                     <form method="get" action="/search" id="search">
-                                        <input name="q" type="text" size="40" placeholder="Buscar pelicula" />
-                                    </form>
-                                </div> <!-- Cierre de la caja del buscador -->
-                            </li> <!-- Cierre de la Buscador -->
-                            <!-- Items logueo -->
-                            
+    
+    <!-- Encabezado de toda la página -->
+    <?php include("../includes/header.html"); ?>
 
-                                <?php
+    <video autoplay id="bgvid" loop>
 
-                                    // Diseño en un archivo externo
-                                    echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+        <?php
 
-                                    // Se inicia sesión o reanuda la sesión
-                                    session_start();
+            // Importamos el fichero database.php para la conexión a la base de datos en la nube
+            include_once("../config/database.php");
 
-                                    if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
+            include_once("../funciones/peliculas.php");
 
-                                        // Se incluye el archivo noLog que contiene los dos botones
-                                        include("noLog.html");
+            echo "<link href=\"../css/perfil-peli.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
 
-                                    }
-                                    else{
+            // Establecemos la colección
+            $collection=$bd->peliculas;
 
-                                        // Link para ir al perfil de usuario
-                                        echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
+            // Se obtiene la id de la película desde las funciones pasando el parámetro de la peli obteniendo con el método GET.
+            $id_pelicula=obtenerIdPelicula($_GET['peli']);
 
-                                        //Boton salir
-                                        include("log.html");
+            $_SESSION['id_pelicula']=$id_pelicula; 
 
-                                    }
+            // Se obtienen todos los datos de la pelicula
+            $pelicula=obtenerDatosPelicula($_SESSION['id_pelicula']);
 
-                                ?>
+            foreach ($pelicula as $campo => $valor) {
 
-                        </ul> <!-- Cierre de la lista desordenada -->
-                    </nav> <!-- Cierre del menú -->
-            </header> <!-- Cierre del encabezado -->
+                $url;
 
-<video autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-        <!--<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">-->
-        <source src="https://dl.dropboxusercontent.com/u/87532981/Ella%20May%20and%20the%20Wishing%20Stone%20By%20Cary%20Fagan.mp4" type="video/mp4"></source>
-</video>
+                if($campo=="trailer"){
+
+                    $url=$valor;
+                    echo "<source src='$url'></source>";
+
+
+                }               
+
+            }
+
+
+        ?>
+
+    </video>
 
 	<!--Ventana Modal del Log In-->
-            <div class="modal fade" id="milogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <?php include("../includes/ventanaModalLogin.html"); ?>
 
-                <div class="modal-dialog">
+    <!--Ventana Modal del Sign In-->
+    <?php include("../includes/ventanaModalSignin.html"); ?>
 
-                    <div class="modal-content">
-                        
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4>Inicia sesión</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="row">
-                             
-                                    
-                                        <div class="panel-body">
-                                            <form role="form" method="post" action="../model/login.php">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputPassword1">Contraseña</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
-                                                    style="font-size:16px;margin-top:8px;">
-                                                    <span class="glyphicon glyphicon-arrow-left"></span> Atras
-                                                </button>
-                                                <button type="submit" name="login" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Logueate</button>
-                                                <p><br/></p>
-                                            </form>
-                                        </div>
-                                    
-                                
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <!--Ventana Modal del Sign In-->
-            <div class="modal fade" id="miregistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-                <div class="modal-dialog">
-
-                    <div class="modal-content"  style="height:500px;margin-top:10%;">
-                        
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4>Regístrate</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="row">
-                                        <div class="panel-body">
-                                            <form role="form" method="post" action="../model/registro.php">
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Email</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Nombre de usuario</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                                        <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputPassword1">Contraseña</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputPassword1">Repite la contraseña</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                                        <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Repite Contraseña">
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
-                                                    style="font-size:16px;margin-top:8px;">
-                                                    <span class="glyphicon glyphicon-arrow-left"></span> Atras
-                                                </button>
-                                                <button type="submit" name="registro" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
-                                                <p><br/></p>
-                                            </form>
-                                        </div>      
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
 	<div id="infopeli">
-		<h1>AFTER US</h1>
-		<div class="ec-stars-wrapper">
-			<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-			<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-			<a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-			<a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-			<a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-		</div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac. Proin non eros blandit, rutrum est a, cursus quam. Nam ultricies, velit ac suscipit vehicula, turpis eros sollicitudin lacus, at convallis mauris magna non justo. Etiam et suscipit elit. Morbi eu ornare nulla, sit amet ornare est. Sed vehicula ipsum a mattis dapibus. Etiam volutpat vel enim at auctor.</p>
-		<p>Aenean pharetra convallis pellentesque. Vestibulum et metus lectus. Nunc consectetur, ipsum in viverra eleifend, erat erat ultricies felis, at ultricies mi massa eu ligula. Suspendisse in justo dapibus metus sollicitudin ultrices id sed nisl.</p>
 
+        <?php
+
+            // Se obtiene el titulo de la película mediante el método GET.
+            $titulo = $_GET['peli'];
+            echo "<h1> $titulo </h1>";
+
+        ?>      
+
+		<!-- Voto de estrellas -->
+        <div id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="ec-stars-wrapper votacion">
+
+            <?php if($_SESSION['id_usuario']!=''): ?>
+            <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="1" title="Votar con 1 estrellas">&#9733;</a>
+            <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="2" title="Votar con 2 estrellas">&#9733;</a>
+            <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="3" title="Votar con 3 estrellas">&#9733;</a>
+            <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="4" title="Votar con 4 estrellas">&#9733;</a>
+            <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="5" title="Votar con 5 estrellas">&#9733;</a>
+            <?php endif; ?>
+            <div id="estrella">
+                <?php
+
+                    include_once("../includes/valoracion.php");
+                 ?>
+             </div>
+            
+        </div>
+
+        
+
+
+
+        <!-- Muestra la sinopsis de la película correspondiente -->
+        <?php 
+
+            // Establecemos la colección
+            $collection=$bd->peliculas;
+
+            // Es un array de datos sobre la película consultada en la bd
+            $datosPelicula=obtenerDatosPelicula($_SESSION['id_pelicula']);
+
+            foreach ($datosPelicula as $campo => $valor) {
+
+                $synopsis;
+
+                if($campo=="synopsis"){
+
+                    $synopsis=$valor;
+                    echo "<p>$synopsis</p>";
+
+
+                }               
+
+            }
+
+        ?>
+
+        <!-- Botones para el vídeo -->
         <div id="buttons">
             <img src="../images/video/pause.png" id="playButton" onclick="doFirst()" />
         </div>
         <div id="amplia">
             <img src="../images/video/full.png" />
         </div>
+        <!-- Cierre de los botones del vídeo -->
 
-	</div>
+	</div> <!-- Cierre del id infopeli -->
 
-	    <div id="div_abajo">
-        <center><span style="font-size:20px;color:grey;" class="glyphicon glyphicon-chevron-down glyphicon-refresh-animate"></span></center>
-     </div> <!-- Cierre del btn_abajo -->
+	<div id="div_abajo">
+        <a href="#miancla"><center><span class="glyphicon-refresh-animate"><img src="../images/flecha-abajo.png"></span></center></a>
+    </div> <!-- Cierre del btn_abajo -->
 
+    <!-- Parte de las críticas -->
+    <a name="miancla"></a>
 	<div id="contCriticas">
 
     	<div class="criticas">
 
             <div id="coment">
+
+                <h2>Criticas</h2></br></br>
+                <!-- Listado de los comentarios de la película obtenida de la BD -->
                 <?php
-
-                    include_once("../config/database.php");
-                    $collection=$bd->criticas;
-                    $comenta = $collection->find();
-                    $id_usuario;
-                    $critica;
-                    $username;
-
-                    foreach ($comenta as $campo => $valor) {
-
-                        foreach ($valor as $coment => $datos) {
-
-                            if($coment=="id_usuario"){
-                            
-                                $id_usuario=$datos; 
-
-                                $collection=$bd->usuarios;
-                                $usuarios = $collection->findOne(array('_id' => new MongoId($id_usuario)));
-
-                                foreach ($usuarios as $campo => $valor) {
-
-                                    if($campo=="usuario"){
-                                    
-                                        echo "<b>".$valor."</b><br/>";
-
-                                    }             
-                                    
-                                } 
-
-                            } 
-
-                            if($coment=="comentario"){
-                            
-                                echo $datos."<br/>";
-
-                            }
-                        }          
-                        
-                    }
-
+                    //$id_pelicula = $_SESSION['id_pelicula'];
+                    include_once("../includes/criticas.php");
 
                     //------------------------------------------------------------------------
                     // Muestra el mensaje flash
                     //------------------------------------------------------------------------
                     echo $msg->display();
-
-
+                    
                 ?>
             </div>
 
@@ -370,19 +209,20 @@ $msg = new Messages();
                 if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                     // No se muestra el textarea para comentar ni el botón
-
-
                 }
-                else{ ?>
+                else{ 
+                    $id_usuario=$_SESSION['id_usuario'];
+                    ?>
 
                     <!--Input para comentar la película -->
-                    <form role="form" method="post" action="../model/criticas.php">
+                    <form class="formulario" role="form" method="post">
                         <div class="form-group">
                             <div class="input-group"  style="width:330px;">
-                                <textarea style="border-radius: 5px;" class="form-control" rows="3" name="criti" placeholder="Crítica"></textarea>
-                            </div></br>
+                                <textarea style="border-radius: 5px;width: 780px;" class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
+                                 id="critica" placeholder="Crítica" required></textarea>
+                            </div>
                         </div>
-                        <button type="submit" name="enviarCritica" class="btn btn-primary" style="background:#00B8E6;border:none;">
+                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>">
                             <span class="glyphicon glyphicon-comment"></span> Comenta</button>
                     </form>
 
@@ -392,12 +232,17 @@ $msg = new Messages();
             ?>
 
 		</div>
-	</div>
+	</div> <!-- Cierre del div de críticas -->
 
     <!-- Pie de toda la página -->
-    <?php include("footer.html"); ?>
+    <?php 
+        echo "<link href=\"../css/perfil-peli.css\" rel=\"stylesheet\" type=\"text/css\" >";
+        include("../includes/footer.html"); 
+    ?>
 
+    <!-- Para las ventanas modales -->
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
     <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

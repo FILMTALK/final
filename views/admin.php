@@ -1,3 +1,15 @@
+<?php
+
+//------------------------------------------------------------------------------
+// A session is required for the messages to work
+//------------------------------------------------------------------------------
+if( !session_id() ) session_start();
+if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
+    header('Location: ../index.php');
+}
+
+?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 
@@ -47,29 +59,33 @@
                         <!--Seccion Desplegable-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Usuarios <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="anadir.html">Añadir</a></li>
-                                <li><a href="listar.html">Listar</a></li>
-                                <li><a href="borrar.php">Borrar</a></li>
+                                <li><a href="anadirUser.php">Añadir</a></li>
+                                <li><a href="listarUser.php">Listar</a></li>
+                                <li><a href="borrarUser.php">Borrar</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                         <!--Seccion Desplegable2-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-film"></span> Peliculas <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="anadir.html">Añadir</a></li>
-                                <li><a href="listar.html">Listar</a></li>
-                                <li><a href="borrar.php">Borrar</a></li>
+                                <li><a href="anadirPeli.php">Añadir</a></li>
+                                <li><a href="listarPeli.php">Listar</a></li>
+                                <li><a href="borrarPeli.php">Borrar</a></li>
                             </ul>
                         </li>
                     </ul>
                     <div>
                     <!--Buscador-->
                     <form action="./" class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Buscar pelicula">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
                         </div>
-                        <button class="btn btn-default">Enviar</button>
                     </form>
+                         <button class="btn btn-default" style="margin-top:8px;" onclick="location.href='salir.php'">
+                         <span class="glyphicon glyphicon-off"></span></button>  
                 </div>
                 </div>
             </div>

@@ -15,10 +15,7 @@ $msg = new Messages();
 include_once("../config/database.php");
 
 // Se importan las funciones para comprobar u obtener datos
-include_once("../funciones/funciones.php");
-
-// Iniciar una nueva sesión o reanudar una sesión
-session_start();
+include_once("../funciones/usuarios.php");
 
 // Se comprueba si el login está definida
 if(isset($_POST['login'])){
@@ -32,7 +29,7 @@ if(isset($_POST['login'])){
 		// Redirecciona a la página de login
 		header('Location: ../views/login.php');
 
-		// Sale
+		// Imprime un mensaje y termina el script actual
 		exit();
 
 	}
@@ -47,7 +44,7 @@ if(isset($_POST['login'])){
 			// Redirecciona a la página de login
 			header('Location: ../views/login.php');
 
-			// Sale
+			// Imprime un mensaje y termina el script actual
 			exit();
 
 		}
@@ -57,11 +54,6 @@ if(isset($_POST['login'])){
 			if(comprobarPassword($_POST['email'],md5($_POST['password']))==true){ //Si la contraseña coincide
 
 				if($_POST['email']=="admin@admin.com"){
-					// Redirecciona al perfil admin
-					header("location: ../views/admin.php");
-
-				}
-				else{ // S no es administrador
 
 					// Se obtiene el id del usuario desde la bd
 					$id_usuario=obtenerIdUsuario($_POST['email']);
@@ -74,14 +66,56 @@ if(isset($_POST['login'])){
 						
 					}
 
-					// Se obtiene el nombre de usuario de la bd
-					$nombreUsuario=obtenerUsuario($id_usuario);
+					// Redirecciona al perfil admin
+					header("location: ../views/admin.php");
+
+				}
+				else{ // Si no es administrador
+
+					// Se obtiene el id del usuario desde la bd
+					$id_usuario=obtenerIdUsuario($_POST['email']);
+
+					// Se obtienenn los datos del usuario mediante el id
+					$datosUsuario=obtenerDatosUsuario($id_usuario);
+
+					// Variables locales
+					$email;
+					$nombreUsuario;
+
+					// Recorremos los datos para saber si el email existe
+					foreach($datosUsuario as $campos => $datos){
+
+					    if($campos=='email'){
+					        $email=$datos;
+					    }
+
+					    if($campos=='usuario'){
+					        $nombreUsuario=$datos;
+					    }
+
+					} // Cierre del bucle foreach
+
+					// Si la variable de sesión id no está definido
+					if(!isset($_SESSION['id_usuario'])){
+
+						//Se establece la variable de sesión del usuario, que será el id.
+						$_SESSION['id_usuario']=$id_usuario;
+						
+					}
 
 					// Si la variable de sesión nombreUsuario no está definido
 					if(!isset($_SESSION['nombreUsuario'])){
 
 						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
 						$_SESSION['nombreUsuario']=$nombreUsuario;
+						
+					}
+
+					// Si la variable de sesión email no está definido
+					if(!isset($_SESSION['email'])){
+
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['email']=$email;
 						
 					}
 
@@ -99,7 +133,7 @@ if(isset($_POST['login'])){
 				// Redirecciona a la página de login
 				header('Location: ../views/login.php');
 
-				// Sale
+				// Imprime un mensaje y termina el script actual
 				exit();
 
 			} // Cierre del else porque la contraseña no coincide

@@ -15,7 +15,7 @@ $msg = new Messages();
 include_once("../config/database.php");
 
 // Se importan las funciones para comprobar u obtener datos
-include_once("../funciones/funciones.php");
+include_once("../funciones/usuarios.php");
 
 // Iniciar una nueva sesión o reanudar una sesión
 session_start();
@@ -32,7 +32,7 @@ if(isset($_POST['registro'])){
 		// Redirecciona a la página de registro
 		header('Location: ../views/registro.php');
 
-		// Sale
+		// Imprime un mensaje y termina el script actual
 		exit();
 		
 	}
@@ -47,7 +47,7 @@ if(isset($_POST['registro'])){
 			// Redirecciona a la página de registro
 			header('Location: ../views/registro.php');
 
-			// Sale
+			// Imprime un mensaje y termina el script actual
 			exit();
 
 		}
@@ -62,7 +62,7 @@ if(isset($_POST['registro'])){
 				// Redirecciona a la página de registro
 				header('Location: ../views/registro.php');
 
-				// Sale
+				// Imprime un mensaje y termina el script actual
 				exit();
 
 			}
@@ -85,7 +85,27 @@ if(isset($_POST['registro'])){
 					// Se obtiene el id del usuario desde la bd
 					$id_usuario=obtenerIdUsuario($_POST['email']);
 
-					// Si la variable de sesión no está definido
+					// Se obtienenn los datos del usuario mediante el id
+					$datosUsuario=obtenerDatosUsuario($id_usuario);
+
+					// Variables locales
+					$email;
+					$nombreUsuario;
+
+					// Recorremos los datos para saber si el email existe
+					foreach($datosUsuario as $campos => $datos){
+
+					    if($campos=='email'){
+					        $email=$datos;
+					    }
+
+					    if($campos=='usuario'){
+					        $nombreUsuario=$datos;
+					    }
+
+					} // Cierre del bucle foreach
+
+					// Si la variable de sesión id no está definido
 					if(!isset($_SESSION['id_usuario'])){
 
 						//Se establece la variable de sesión del usuario, que será el id.
@@ -93,14 +113,19 @@ if(isset($_POST['registro'])){
 						
 					}
 
-					// Se obtiene el nombre de usuario de la bd
-					$nombreUsuario=obtenerUsuario($id_usuario);
-
 					// Si la variable de sesión nombreUsuario no está definido
 					if(!isset($_SESSION['nombreUsuario'])){
 
 						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
 						$_SESSION['nombreUsuario']=$nombreUsuario;
+						
+					}
+
+					// Si la variable de sesión email no está definido
+					if(!isset($_SESSION['email'])){
+
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['email']=$email;
 						
 					}
 
@@ -116,7 +141,7 @@ if(isset($_POST['registro'])){
 					// Redirecciona a la página de registro
 					header('Location: ../views/registro.php');
 
-					// Sale
+					// Imprime un mensaje y termina el script actual
 					exit();
 
 

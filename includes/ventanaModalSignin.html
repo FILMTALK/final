@@ -1,0 +1,58 @@
+<div class="modal fade" id="miregistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content"  style="height:500px;margin-top:10%;">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>Regístrate</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="panel-body">
+                        <form role="form" method="post" action="../model/registro.php">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nombre de usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input type="text" name="username" class="form-control" id="exampleInputPassword1" placeholder="Usuario" maxlength="8" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Repite la contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Repite Contraseña" required>
+                                </div>
+                            </div>
+                            <br/>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                style="font-size:16px;margin-top:8px;">
+                                <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                            </button>
+                            <button type="submit" name="registro" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span>Registrarte</button>
+                            <p><br/></p>
+                        </form>
+                    </div>      
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

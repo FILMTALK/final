@@ -1,0 +1,44 @@
+<div class="modal fade" id="milogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>Inicia sesión</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">               
+                    <div class="panel-body">
+                        <form role="form" method="post" action="../model/login.php">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+                                </div>
+                            </div>
+                            <br/>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" class="btn btn-success" 
+                                style="font-size:16px;margin-top:8px;">
+                                <span class="glyphicon glyphicon-arrow-left"></span> Atras
+                            </button>
+                            <button type="submit" name="login" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Loguéate</button>
+                            <p><br/></p>
+                        </form>
+                    </div>                       
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,367 @@
+/* ************************************************************************************************
+											Selector UNIVERSAL
+************************************************************************************************ */
+
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+/* ************************************************************************************************
+											Selectores por TIPO
+************************************************************************************************ */
+
+/* Cuerpo de toda la página */
+body{
+	background-color: #f2efef;
+	width: 100%; /* Para que ocupe toda la pantalla */
+
+}
+
+/* Etiquetas en bloque */
+header, section, footer, nav {
+
+	display: block;
+}
+
+/* Footer */
+footer{
+	width: 100%;
+	position: absolute;
+	top: 160%;
+	height: 66px;
+	padding: 3px;
+
+}
+
+footer a{
+	position: relative;
+	top: 16px;
+	color: #999999;
+	padding-right:18px;
+	float: right;
+}
+
+footer a:hover{
+	color: #66cccc;
+	text-decoration: none;
+}
+
+/* ************************************************************************************************
+											Selectores por ID
+************************************************************************************************ */
+
+/* Encabezado ************************************/
+#header{
+
+	position: relative;
+	z-index: 2;
+	display: -webkit-box; /* Chrome*/
+	-webkit-box-orient: horizontal; /* encabezado en horizontal */
+	height: 50px;
+	background-color: #f2efef;
+}
+
+
+/* Imagen corporativa */
+#logo{
+
+	padding-left: 26px;
+	padding-top: 12px;
+	width: 200px;
+	min-width: 100px;
+	opacity: 0.9;
+}
+
+/* Menú */
+#menu_nav{
+
+  margin-top: 17px;
+  position: absolute;
+  right: 0;
+  width: 555px;
+
+}
+
+#menu_nav li{ 
+
+	display: inline-block; /* Para poner el menú en horizontal */
+
+}
+
+
+/* Buscador */
+#buscador{
+	padding-right: 15px;
+}
+
+#search input[type="text"] {
+	
+	outline: none;
+    background:   url(../images/busca_gris.png) no-repeat 10px 6px #f2efef;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #B2B2B2;
+    opacity: 0.9
+    font-size: 13px;
+    color: #B2B2B2;
+    width: 160px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+#search input[type="text"]:focus {
+    width: 173px;
+}
+
+/* Botón oculto para aparecer el menú */
+#pull{
+
+	display: none;
+}
+
+#titulo h3{
+
+margin-top: 70px;
+color: #cccccc;
+
+}
+
+/* ************************************************************************************************
+											Selectores por CLASE
+************************************************************************************************ */
+
+/* Imagen corporativa */
+.imgLogo{
+	content:url("../images/logotxiki_gris.png");
+}
+
+/* Botón login */
+
+.btn-login{
+
+	cursor: pointer;
+	margin: 0px;
+}
+
+.peli{
+
+	position: relative;
+	float: left;
+	margin-left: 200px;
+	margin-right: 200px;
+
+}
+
+.descrip{
+
+	width: 160px;
+
+}
+
+.descrip p{
+
+	color: #333333;
+	font-size: 13px;
+}
+
+h4 a{
+
+	color: #66cccc;
+
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #B2B2B2;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: #66cccc;
+	text-decoration: none;
+}
+
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
+}
+
+/* ************************************************************************************************
+                                            RESPONSIVE
+************************************************************************************************ */
+
+/*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
+@media all and (max-width: 768px){
+
+
+	/* Encabezado ************************************/
+	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{
+	  padding-left: 10px;
+	}
+
+	.imgLogo{
+		content:url("../images/logotxiki_gris.png");
+	}
+
+	/* Menú */
+
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+		padding: 7px;
+		display: block; 
+
+	}
+
+	/* estilos para los link del menu, para que no coja bootstrap */
+	.link{ 
+		color: #f2efef;
+		padding-right: 20px;
+		opacity: 0.9;
+		text-decoration: none;
+	}
+
+	.link:hover{
+
+		color: grey;
+		text-decoration: none;
+
+	}
+
+	nav ul {
+
+       display: none;
+       height: auto;
+
+    }
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }
+
+    /*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
+
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    #search input[type="text"] {
+	    color: #B2B2B2;
+	}	
+
+	  #titulo h3{
+	
+		margin-left: 30px;
+	
+  	}
+
+	.peli{
+		margin: 10px;
+
+	}
+
+	/* Footer */
+	footer{
+		display: none;
+		background: none;
+	}
+
+	footer a{
+		display: none;
+	}
+
+	.red{
+		display: none;
+	}
+
+	.primary{
+
+		margin-left: 45px;
+
+	}
+
+	.secondary{
+
+		text-align: justify;
+		margin-right: 40px;
+		margin-left: 45px;
+		margin-bottom: 50px;
+
+	}
+
+
+}
+
+/* A partir de 600px tendrá este diseño */
+@media all and ( min-width: 600px ) {
+  
+  .container {
+    padding-right: 0px;
+  }
+
+  .primary {
+
+    float: left;
+    padding-right: 60px;
+    width: 15%;
+    margin-top: 30px;
+  	margin-left: 150px;
+  	margin-bottom: 20px;
+  	height: 230px;
+  }
+
+  .secondary {
+
+  	text-align: justify;
+    float: right;
+    margin-right: 0px;
+    width: 70%;
+	padding-right: 150px;
+	margin-top: 30px;
+	height: 230px;
+  	margin-bottom: 20px;
+
+  }
+
+  #titulo h3{
+	
+	margin-left: 150px;
+	
+  }
+}

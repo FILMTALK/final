@@ -8,13 +8,13 @@
 
 }
 
-/* BASIC RESET */
-ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
-
 
 /* ************************************************************************************************
 											Selectores por TIPO
 ************************************************************************************************ */
+
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
 
 /* Cuerpo de toda la página */
 body{
@@ -31,6 +31,11 @@ header, section, footer, nav {
 /***********************************************************************************************
 									   Selectores por CLASE 
 ***********************************************************************************************/
+
+/* Imagen corporativa */
+.imgLogo{
+	content:url("../images/logotxiki.png");
+}
 
 /* Botón login */
 
@@ -93,36 +98,36 @@ header, section, footer, nav {
 }
 
 
-/* Menú */
+/* Menú ****************/
 
 /* Imagen corporativa */
-
-.imgLogo{
-	content:url("../images/logotxiki.png");
-}
 #logo{
-  padding-left: 26px;
-  padding-top: 12px;
-	/*border: 3px solid green;*/
+
+	padding-left: 26px;
+	padding-top: 12px;
 	width: 200px;
 	min-width: 100px;
 	opacity: 0.9;
 }
+
+/* Menú */
 #menu_nav{
+
 	margin-top: 17px;
-	/*border: 3px solid purple;*/
 	position: absolute;
 	right: 0;
 	width: 555px;
 }
 
+/* Para poner el menú en horizontal */
 #menu_nav li{ 
 
-	display: inline-block; /* Para poner el menú en horizontal */
+	display: inline-block; 
 
 }
 
-.link{/*estilos para los link del menu, para que no coja bootstrap*/
+/* estilos para los link del menu, para que no coja bootstrap */
+.link{ 
 	color: #f2efef;
 	padding-right: 20px;
 	opacity: 0.9;
@@ -130,8 +135,10 @@ header, section, footer, nav {
 }
 
 .link:hover{
+
 	color: grey;
 	text-decoration: none;
+
 }
 
 /* Botón oculto para aparecer el menú */
@@ -146,7 +153,7 @@ header, section, footer, nav {
 	position:relative; 
 	top: 285px;
 	margin:0 auto; 
-	width: 95%; 
+	width: 99%; 
 
 }
 
@@ -161,23 +168,19 @@ header, section, footer, nav {
 
 	background-image:url("../images/btn_back.png");
 	float: left;
-	/*background-color: red;*/
-
 }
 
 #next{
 
 	float: right;
 	background-image:url("../images/btn_next.png"); 
-	/*background-color: red;*/
-
 }
 
 /* Botón para ir hacia abajo */
 #div_abajo{
-	/*border: 2px solid brown;*/
+
 	height: 80px;
-	margin-left: 0px;
+	margin-left: -20px;
 }
 
 
@@ -202,85 +205,112 @@ header, section, footer, nav {
 
 
 
-/* Cartelera */
+/* Listado de cartelera */
 #cartelera{
 
 	padding: 5px;
 	padding-left: 50px;
 	width: 100%;
 	position: absolute;
-	top: 600px;
+	top: 590px;
 	left: 0px;
-	/*border: 3px solid green;*/
 	height: 600px;
 	background-color: #f2efef;
 
 }
 
+/* Título de la cartelera */
 #cartelera h3{
 
-	color: #cccccc;
+	color: #B2B2B2;
 	margin-left: 30px;
 	
 }
 
+/* Imagen de la película */
 .peli{
 
 	position: relative;
 	float: left;
 	margin: 38px;
-
+	z-index:1;
 }
 
-.descrip{
-	width: 160px;
+.text {
+	font-style: bold;
+    position: absolute;
+    top: 0;
+    color:#66cccc;
+    background-color:rgba(255,255,255,0.8);
+    width: 160px;
+    height: 230px;
+    padding-top:100px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
+.text:hover {
+    opacity:0.8;
+}
+
+
+/* Descripción de la película */
+.descrip{ width: 160px; }
 
 .descrip p{
+
 	color: #333333;
 	font-size: 13px;
 }
 
-.descrip h4{
+h4 a{
+
 	color: #66cccc;
 }
 
-
+/* Botón para ir a cartelera o próximamente */
 .vermas{
 
 	clear: both;
 	float: right;
 	margin-top: 0px;
-	margin-right: 30px;
+	margin-right: 85px;
 	cursor: pointer;
 	
 }
 
-/* Próximamente */
+/* Lista de próximamente */
 #proximamente{
-	background-color: #cccccc;
+	background-color: #E6E6E6;
 	padding: 5px;
 	padding-left: 50px;
 	width: 100%;
 	position: absolute;
-	top: 1200px;
+	top: 1190px;
 	left: 0px;
-	/*border: 3px solid orange;*/
 	height: 650px;
 
 }
 
+/* Título de próximamente */
 #proximamente h3{
-	color: #f2efef;
+	color: #B2B2B2;
 	margin-left: 30px;
 }
 
 /* Buscador */
 #buscador{
+
 	padding-right: 15px;
 }
 
+/* Input del buscador */
 #search input[type="text"] {
+
 	outline: none;
     background:   url(../images/busca.png) no-repeat 10px 6px #f2efef;
     background-color: rgba(0, 0, 0, 0);
@@ -299,13 +329,14 @@ header, section, footer, nav {
     transition: all 0.7s ease 0s;
 }
 
+/* Focus del buscador */
 #search input[type="text"]:focus {
-    width: 156px;
+    width: 173px;
 }
 
 /* Footer */
 footer{
-	background-color: #cccccc;
+	background-color: #E6E6E6;
 	width: 100%;
 	position: absolute;
 	top: 275%;
@@ -316,17 +347,19 @@ footer{
 footer a{
 	position: relative;
 	top: 16px;
-	color: #eeeeee;
+	color: #999999;
 	padding-right:18px;
 	float: right;
 }
 
 footer a:hover{
-	color: grey;
+	color: #66cccc;
 	text-decoration: none;
 }
-/*imagenes de redes sociales*/
+
+/* Redes sociales */
 .red{
+
 	cursor: pointer;
 	float: right;
 	padding-right:14px;
@@ -340,16 +373,13 @@ footer a:hover{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-	#div_abajo{
-		display: none;
-	}
+	#div_abajo{ display: none; }
 
-	.slider{
-		display: none;
-	}
+	.slider{ display: none; }
 
 	#cartelera, #proximamente{
 
+		height: 850px;
 		position: relative;
 		left: 0px;
 		top: 0px;
@@ -364,6 +394,10 @@ footer a:hover{
 
 	/* Encabezado ************************************/
 	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
 		display: block;
 		background-color: #f2efef;
 	}
@@ -377,7 +411,6 @@ footer a:hover{
 	}
 
 	/* Menú */
-
 	#menu_nav {
 		margin-top: 0px;
 		padding-left: 20px;
@@ -420,81 +453,75 @@ footer a:hover{
 
     }
 
+    /* Input del buscador */
     #search input[type="text"] {
+
 	    border: 2px solid #f2efef;
 	    color: #f2efef;
 	}	
 
-    /* Cartelera */
+    /* Listado de cartelera */
 	#cartelera{
 
-		height: 2200px;
+		margin-top: 50px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
+	/* Lista de próximamente */
 	#proximamente{
 
-		height: 2200px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
-	#proximamente h3{
-		margin-left: 9px;
-	}
+	/* Título de próximamente */
+	#proximamente h3{ margin-left: 9px; }
 
-	#cartelera h3{
-		margin-left: 9px;
-	}
+	/* Título de cartelera */
+	#cartelera h3{ margin-left: 9px; }
 
-	.peli{
-		margin: 10px;
-		/*border: 2px solid green;*/
+	/* Imágen de la película */
+	.peli{ margin: 10px; }
 
-	}
 	/* Footer */
 	footer{
+
 		display: none;
 		background: none;
 	}
 
-	footer a{
-		display: none;
-	}
+	footer a{ display: none; }
 
-	.red{
-		display: none;
-	}
+	/* Redes sociales */
+	.red{ display: none; }
 
 } 
 
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
-@media all and (max-width: 320px){
+@media all  and (max-width: 399px){
 
-	/* Cartelera */
+	/* Listado de cartelera */
 	#cartelera{
+
+		height: 1800px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
 
+	/* Lista de próximamente */
 	#proximamente{
+		height: 1800px;
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-		/*border: 2px solid black;*/
 
 	}
-
-
 
 }

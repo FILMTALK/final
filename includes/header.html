@@ -1,0 +1,63 @@
+<!-- Encabezado de toda la página -->
+<header id="header"> 
+        <!-- Imagen corporativa -->
+        <div id="logo">
+            <a href="/index.php"><img class="imgLogo"/></a>
+            <!-- Botón del menú -->
+            <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
+        </div> <!-- Cierre del logo -->
+        <!-- Menú -->
+        <nav id="menu_nav">
+            <!-- Lista desordenada -->
+            <ul>
+                <!-- Item 1, Cartelera --> 
+                <li>
+                    <a href="cartelera.php" class="link"> Cartelera </a>
+                </li> <!-- Cierre de la Cartelera -->
+                <!-- Item 2, Próximamente --> 
+                <li>
+                    <a href="proximamente.php" class="link"> Próximamente </a>
+                </li> <!-- Cierre de la Próximamente -->
+                <!-- Item 3, Buscador --> 
+                <li>
+                    <!-- Caja de buscador -->
+                    <div id="buscador">
+                         <form method="post" action="../views/buscar.php" id="search">
+                            <input name="pelicula" type="text" size="40" placeholder="Buscar pelicula" />
+                        </form>
+                    </div> <!-- Cierre de la caja del buscador -->
+                </li> <!-- Cierre de la Buscador -->
+                <!-- Items logueo -->
+                
+
+                    <?php
+
+                        // Diseño en un archivo externo
+                        echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
+
+                        // Se inicia sesión o reanuda la sesión
+                        session_start();
+
+                        // Si el usuario no está logueado
+                        if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
+
+                            // Se incluye el archivo noLog que contiene los dos botones
+                            include("../includes/noLog.html");
+
+
+                        }
+                        else{ // Si el usuario está logueado
+
+                            // Link para ir al perfil de usuario
+                            echo "<a href='profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
+
+                            //Boton salir
+                            include("../includes/log.html");
+
+                        }
+
+                    ?>
+
+            </ul> <!-- Cierre de la lista desordenada -->
+        </nav> <!-- Cierre del menú -->
+</header> <!-- Cierre del encabezado -->

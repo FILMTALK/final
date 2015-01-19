@@ -28,9 +28,9 @@
 // 
 //  See README for basic usage instructions, or see samples/index.php for more advanced samples
 //
-//--------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 // Changelog
-//--------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 // 
 //	2011-05-15 - v1.0 - Initial Version
 //
@@ -49,10 +49,7 @@ class Messages {
 	var $msgAfter = "</p>\n";
 
 	
-	/**
-	 * Constructor
-	 * @author Mike Everhart
-	 */
+
 	public function __construct() {
 	
 		// Generate a unique ID for this user and session
@@ -63,17 +60,6 @@ class Messages {
 		
 	}
 	
-	/**
-	 * Add a message to the queue
-	 * 
-	 * @author Mike Everhart
-	 * 
-	 * @param  string   $type        	The type of message to add
-	 * @param  string   $message     	The message
-	 * @param  string   $redirect_to 	(optional) If set, the user will be redirected to this URL
-	 * @return  bool 
-	 * 
-	 */
 	public function add($type, $message, $redirect_to=null) {
 		
 		if( !isset($_SESSION['flash_messages']) ) return false;
@@ -110,16 +96,7 @@ class Messages {
 	// display()
 	// print queued messages to the screen
 	//-----------------------------------------------------------------------------------------------
-	/**
-	 * Display the queued messages
-	 * 
-	 * @author Mike Everhart
-	 * 
-	 * @param  string   $type     Which messages to display
-	 * @param  bool  	$print    True  = print the messages on the screen
-	 * @return mixed              
-	 * 
-	 */
+
 	public function display($type='all', $print=true) {
 		$messages = '';
 		$data = '';
@@ -169,28 +146,11 @@ class Messages {
 	}
 	
 	
-	/**
-	 * Check to  see if there are any queued error messages
-	 * 
-	 * @author Mike Everhart
-	 * 
-	 * @return bool  true  = There ARE error messages
-	 *               false = There are NOT any error messages
-	 * 
-	 */
 	public function hasErrors() { 
 		return empty($_SESSION['flash_messages']['error']) ? false : true;	
 	}
 	
-	/**
-	 * Check to see if there are any ($type) messages queued
-	 * 
-	 * @author Mike Everhart
-	 * 
-	 * @param  string   $type     The type of messages to check for
-	 * @return bool            	  
-	 * 
-	 */
+
 	public function hasMessages($type=null) {
 		if( !is_null($type) ) {
 			if( !empty($_SESSION['flash_messages'][$type]) ) return $_SESSION['flash_messages'][$type];	
@@ -202,15 +162,7 @@ class Messages {
 		return false;
 	}
 	
-	/**
-	 * Clear messages from the session data
-	 * 
-	 * @author Mike Everhart
-	 * 
-	 * @param  string   $type     The type of messages to clear
-	 * @return bool 
-	 * 
-	 */
+
 	public function clear($type='all') { 
 		if( $type == 'all' ) {
 			unset($_SESSION['flash_messages']); 
