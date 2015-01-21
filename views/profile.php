@@ -217,7 +217,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
         </div> <!-- Cierre de la Ventana Modal Editar email -->
 
         <!--Jquery que necesita-->
-        <script src="../js/resample.js"></script>
+       <!-- <script src="../js/resample.js"></script> -->
         <script src="../js/avatar.js"></script>
 
         <!-- jQuery para ventana modal -->
