@@ -127,12 +127,12 @@ background: none;
   display: inline-block;
   /* Volver a dar tamaño al texto */
   font-size: 30px;
-  color: #FFFF94;
+  color: #FFFFB2;
 }
 
 .ec-stars-wrapper:hover a {
   background: none;
-  color: yellow;
+  color: #FFCC00;
   text-decoration: none;
 }
 /*
@@ -140,7 +140,7 @@ background: none;
  */
 .ec-stars-wrapper > a:hover ~ a {
   background: none;
-  color: #FFFF94;
+  color: #FFFFB2;
   text-decoration: none;
 }
 
@@ -313,20 +313,17 @@ h2{
     cursor: pointer;
 }
 
-#buttons img{ width:40px; }
+#buttons img{ width:35px; }
 
 /* Botón para ampliar el vídeo */
 #amplia{
     position: absolute;
-    top:513px;
+    top:517px;
     left: 75px;
     width:30px;
     height: 22px;
     cursor: pointer;
 }
-
-#amplia img{ width:36px; }
-
 
 
 textarea{

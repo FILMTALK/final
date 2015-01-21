@@ -32,26 +32,7 @@ $msg = new Messages();
     <!-- Mensajes flash -->
     <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
 	<!--para full screen video, pantalla completa-->
-	<script type="text/javascript">
-	    $(document).ready(function(){
-	        //Funcion que se activa al evento click del button o boton
-	        $('#amplia').click(function(){
-             // Codigo para activar pantalla completa en Chrome o Safari 5
-             //Seleccionamos el elemnento video del ID video, en este caso la misma etiqueta video
-             var elem = document.getElementById("bgvid");
-				if (elem.requestFullscreen) {
-				  elem.requestFullscreen();
-				} else if (elem.msRequestFullscreen) {
-				  elem.msRequestFullscreen();
-				} else if (elem.mozRequestFullScreen) {
-				  elem.mozRequestFullScreen();
-				} else if (elem.webkitRequestFullscreen) {
-				  elem.webkitRequestFullscreen();
-				}                           
-	        });
-	    });
-	 </script>
-
+    <script type="text/javascript" src="../js/fullscreenVideo.js"></script>
 	<!-- jQuery para menu respontive -->
     <script type="text/javascript" src="../js/menu.js"></script> 
 </head>
@@ -173,7 +154,7 @@ $msg = new Messages();
             <img src="../images/video/pause.png" id="playButton" onclick="doFirst()" />
         </div>
         <div id="amplia">
-            <img src="../images/video/full.png" />
+            <span class="glyphicon glyphicon-fullscreen" style="font-size:27px;"></span>
         </div>
         <!-- Cierre de los botones del vídeo -->
 
