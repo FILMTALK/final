@@ -177,6 +177,11 @@ h4 a{
 
 }
 
+h4 a:hover{
+	color: #478F8F;
+	text-decoration: none;
+}
+
 .link{/*estilos para los link del menu, para que no coja bootstrap*/
 	color: #B2B2B2;
 	padding-right: 20px;

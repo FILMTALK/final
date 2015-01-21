@@ -31,14 +31,16 @@ h4 a{
 
 }
 
+h4 a:hover{
+	color: #478F8F;
+	text-decoration: none;
+}
+
 /* Footer */
 #foot{
-
-  background-color: #E6E6E6;
   width: 100%;
   position:absolute;
-  bottom:0px;
-  left:0px;
+  top: 1240px;
   height: 66px;
   padding: 3px;
   
@@ -194,6 +196,28 @@ h4 a{
 	float: left;
 	margin: 38px;
 	
+}
+
+.text {
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 0;
+    color:#4D4D4D;
+    background-color:rgba(255,255,255,0.8);
+    width: 160px;
+    height: 230px;
+    padding-top:60px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.text:hover {
+    opacity:0.8;
 }
 
 .descrip{

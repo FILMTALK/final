@@ -28,8 +28,7 @@ header, section, footer, nav {
 }
 
 /* Footer */
-footer{
-	background-color: #E6E6E6;
+#foot{
 	width: 100%;
 	position: absolute;
 	top: 100px;
@@ -37,7 +36,7 @@ footer{
 	padding: 3px;
 }
 
-footer a{
+#foot a{
 	position: relative;
 	top: 16px;
 	color: #999999;
@@ -45,7 +44,7 @@ footer a{
 	float: right;
 }
 
-footer a:hover{
+#foot a:hover{
 	color: #66cccc;
 	text-decoration: none;
 }
@@ -101,6 +100,28 @@ footer a:hover{
 	float: left;
 	margin: 38px;
 
+}
+
+.text {
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 0;
+    color:#4D4D4D;
+    background-color:rgba(255,255,255,0.8);
+    width: 160px;
+    height: 230px;
+    padding-top:60px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.text:hover {
+    opacity:0.8;
 }
 
 /* Información de la película ************************************/

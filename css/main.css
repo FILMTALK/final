@@ -245,7 +245,7 @@ header, section, footer, nav {
     background-color:rgba(255,255,255,0.8);
     width: 160px;
     height: 230px;
-    padding-top:67px;
+    padding-top:13px;
     text-align: center;
     z-index: 10;
     opacity: 0;
@@ -271,6 +271,11 @@ header, section, footer, nav {
 h4 a{
 
 	color: #66cccc;
+}
+
+h4 a:hover{
+	color: #478F8F;
+	text-decoration: none;
 }
 
 /* Botón para ir a cartelera o próximamente */
@@ -337,12 +342,9 @@ h4 a{
 
 /* Footer */
 #foot{
-
-  background-color: #E6E6E6;
   width: 100%;
   position:absolute;
-  bottom:0px;
-  left:0px;
+  top:1760px;
   height: 66px;
   padding: 3px;
   
