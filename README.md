@@ -12,6 +12,7 @@ El usuario podrá comentar y valorar las peliculas de una forma intuitiva. Adem�
 
 | Nombre                             | Descripción                                                 |
 | ---------------------------------- |:-----------------------------------------------------------:|
+| **api**/api.php                    | Es una API propia para terceros.                            |
 | **config**/database.php            | Conexión con la base de datos MongoLab (nube).              |
 | **controller**/                    | Intermediario entre el modelo y la vista.                   |
 | **controller**/class.messages.php  | Una clase para controlar los mensajes de error.             |
@@ -19,6 +20,8 @@ El usuario podrá comentar y valorar las peliculas de una forma intuitiva. Adem�
 | **js**/                            | JavaScript por parte del cliente.                           |
 | **images**/                        | Se almacenan las imágenes.                                  |
 | **funciones**/                     | Comprueban los datos antes de introducir a la bd.           |
+| **includes**/                      | Son ficheros de HTML o PHP para incluir en otros archivos.  |
+| **library**/Slim                   | Es una librería externa de Slim para utilizar la API.       |
 | **model**/                         | Es la parte del servidor para obtener y manejar datos.      |
 | **views**/                         | El cliente visualiza las películas y su perfil.             |
 | **views**/inicio.php               | Página principal.                                           |
