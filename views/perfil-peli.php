@@ -191,7 +191,29 @@ $msg = new Messages();
 
                 if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
-                    // No se muestra el textarea para comentar ni el botón
+                     ?> 
+
+                    <!-- <div class="alert alert-warning"role="alert">
+                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                      <span class="sr-only">Warning:</span>
+                     ¡Debes estar logueado para poder comentar!
+                    </div>-->
+
+                    <div id="warning">
+                        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Warning:</span>
+                        ¡Debes estar logueado para poder comentar!
+                    </div>
+                    <form class="formulario" role="form" method="post">
+                        <div class="form-group">
+                            <div class="input-group" id="texti">
+                                <textarea class="form-control" rows="2" placeholder="Crítica" disabled></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" id="diferente" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" disabled>
+                            <span class="glyphicon glyphicon-comment"></span> Comenta</button>
+                    </form>
+                <?php
                 }
                 else{ 
                     $id_usuario=$_SESSION['id_usuario'];

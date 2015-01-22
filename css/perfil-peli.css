@@ -21,7 +21,7 @@ header,nav{
 video {
 
   position: absolute;
-  top: -80px;
+  top: -140px;
   left: 0;
   min-width: 100%;
   min-height: 100%;
@@ -196,7 +196,7 @@ background: none;
   z-index: 1;
   position: relative;
   left: 20%;
-  top:548px;
+  top:542px;
   width: 80%;
   height: 80px;
   margin-left: 0px;
@@ -231,6 +231,7 @@ background: none;
 
 /* InfoPeli  ***********************************************************/
 #infopeli {
+  text-align: justify;
   float: right;
   padding: 80px;
   margin-top: 8%;
@@ -261,9 +262,9 @@ h2{
 
   background-color: #E6E6E6;
   position: absolute;
-  top: 580px;
+  top: 800px;
   width: 100%;
-  height: 800px;
+  height: auto;
 
 }
 
@@ -296,9 +297,18 @@ h2{
     cursor: pointer;
 }
 
+#warning{
+  border: 1px solid #EBD699;
+  width: 100%;
+  background-color: #F5EBCC;
+  border-radius: 2px;
+  padding: 15px;
+  margin-bottom: 8px;
+  color: #B88A00;
+}
 
-textarea{
-  width: 500px;
+  #texti{
+    width:335%;
   }
 
 
@@ -314,7 +324,7 @@ textarea{
   video{ display: none; }
 
 
-  #div_abajo{ isplay: none; }
+  #div_abajo{ display: none; }
 
   #buttons{ display: none; }
 
@@ -330,11 +340,36 @@ textarea{
   }
 
   /* Criticas  ***********************************************************/
-  #contCriticas{
 
+  .criticas{
+  position: absolute;
+  top: 4%;
+  padding-right: 4%;
+  left: 2%;
+  width: 100%;
+  height: auto;
+
+}
+
+  #contCriticas{
+    width: 100%;
     position: relative;
     padding-top: 0px;
+    height: auto;
+    top: 400px;
+
   }
+
+  #coment{
+  width: 100%;
+  height: auto;
+ 
+}
+
+  #texti{
+    width:140%;
+  }
+
 
   /* Encabezados ************************************/
   #header{
