@@ -39,14 +39,14 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
         <!--Canvas-->
-        <script type="text/javascript" src="../js/canvas.js"></script>        
+        <script type="text/javascript" src="../js/canvas.js"></script>      
 	</head> <!-- Cierre del encabezado de la página -->
 
-	<body background="../images/cine.jpg" no-repeat center center fixed>
+	<body background="../images/fondoUsu.jpg" no-repeat center center fixed>
         <div id="container"> 
             
             <!-- Encabezado de toda la página -->
-            <?php include("../includes/header.html"); ?>
+            <?php include("../includes/headerListaPelis.html"); ?>
 
         
 
@@ -115,7 +115,12 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                     </div>
                     <div id="avatar">
                          <canvas id="areaCanvas"></canvas>
-                        <input type="file" id="subirImagen"/>           
+                        <!--<input type="file" id="subirImagen"/> -->
+                        <div id="div_file">
+                            <p id="texto">Añade una foto</p>
+                            <input type="file" id="btn_enviar">
+                        </div>
+
                     </div>
 
                     <button id="bnw">Grayscale</button>
