@@ -118,7 +118,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                         <!--<input type="file" id="subirImagen"/> -->
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
-                            <input type="file" id="btn_enviar">
+                            <input type="file" id="subirImagen">
                         </div>
 
                     </div>
