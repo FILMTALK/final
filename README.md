@@ -2,10 +2,10 @@
 <h1>filmdate</h1>
 
 
-Se trata de una aplicación para usuarios aficionados al cine.
+<p align="justify">Se trata de una aplicación para usuarios aficionados al cine.
 El usuario podrá registrarse y loguearse.
 Al loguearse tendrá su perfil y podrá visualizar las películas que están en la cartelera, de estreno y próximamente.
-El usuario podrá comentar y valorar las peliculas de una forma intuitiva. Además podrá tanto modificar sus datos como añadir un avatar.
+El usuario podrá comentar y valorar las peliculas de una forma intuitiva. Además podrá tanto modificar sus datos como añadir un avatar.</p>
 
 
 <h3>Estructura de la app</h3>
