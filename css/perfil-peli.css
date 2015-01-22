@@ -37,35 +37,6 @@ video {
 
 }
 
-/* Footer */
-#foot{
-
-  background-color: #E6E6E6;
-  width: 100%;
-  position:absolute;
-  top:1220px;
-  left:0px;
-  height: 66px;
-  padding: 3px;
-  
-}
-
-#foot a{
-
-  position: relative;
-  top: 16px;
-  color: #999999;
-  padding-right:18px;
-  float: right;
-
-}
-
-#foot a:hover{
-
-  color: #66cccc;
-  text-decoration: none;
-
-}
 
 
 /***********************************************************************************************
@@ -425,16 +396,6 @@ textarea{
     border: 2px solid #f2efef;
     color: #f2efef;
   } 
-
-  /* Footer */
-  footer{
-    display: none;
-    background: none;
-  }
-
-  footer a{
-    display: none;
-  }
 
   .red{
     display: none;

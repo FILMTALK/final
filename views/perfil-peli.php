@@ -205,7 +205,7 @@ $msg = new Messages();
                                  id="critica" placeholder="Crítica" required></textarea>
                             </div>
                         </div>
-                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>">
+                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>">
                             <span class="glyphicon glyphicon-comment"></span> Comenta</button>
                     </form>
 
@@ -217,13 +217,8 @@ $msg = new Messages();
 		</div><!-- Cierre del div de críticas -->
 	</div> <!-- Cierre del div de contCríticas -->
 
-
-    <!-- Pie de toda la página -->
-    <?php 
-        echo "<link href=\"../css/perfil-peli.css\" rel=\"stylesheet\" type=\"text/css\" >";
-        include("../includes/footer.html"); 
-    ?>
-    </div>
+</div>
+    
 
     <!-- Para las ventanas modales -->
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
