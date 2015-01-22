@@ -222,8 +222,8 @@ $msg = new Messages();
                     <!--Input para comentar la película -->
                     <form class="formulario" role="form" method="post">
                         <div class="form-group">
-                            <div class="input-group"  style="width:330px;">
-                                <textarea style="border-radius: 5px;width: 780px;" class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
+                            <div class="input-group"  id="texti">
+                                <textarea class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
                                  id="critica" placeholder="Crítica" required></textarea>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ header,nav{
 video {
 
   position: absolute;
-  top: -140px;
+  top: -80px;
   left: 0;
   min-width: 100%;
   min-height: 100%;
@@ -262,9 +262,9 @@ h2{
 
   background-color: #E6E6E6;
   position: absolute;
-  top: 800px;
+  top: 580px;
   width: 100%;
-  height: auto;
+  height: 800px;
 
 }
 
@@ -355,8 +355,7 @@ h2{
     width: 100%;
     position: relative;
     padding-top: 0px;
-    height: auto;
-    top: 400px;
+    top: 500px;
 
   }
 

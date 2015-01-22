@@ -115,13 +115,6 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                 </div> <!-- Cierre de la clase profile -->
 
-                <div class="profile-avatar-wrap">
-                        <img src="../images/256.jpg" id="profile-avatar" alt="Image for Profile">
-                    </div>
-
-                <h3 id="arrastrar">Arrastra la imagen o seleccionala:</h3>
-                <input type="file" id="uploader">
-
             </div> <!--  Cierre div de la clase page-wrap -->
         </div> <!-- Cierre div de la id cont -->
         <!---------------------------tgt---------------------------------->    
@@ -215,10 +208,6 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                 </div> <!-- modal-content -->
             </div>
         </div> <!-- Cierre de la Ventana Modal Editar email -->
-
-        <!--Jquery que necesita-->
-       <!-- <script src="../js/resample.js"></script> -->
-        <script src="../js/avatar.js"></script>
 
         <!-- jQuery para ventana modal -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
