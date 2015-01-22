@@ -47,10 +47,10 @@ include_once("../config/database.php");
             <!-- Encabezado de toda la página -->
             <?php include("../includes/headerListaPelis.html"); 
 	    
-	            //------------------------------------------------------------------------
-	            // Mostrar el mensaje flash
-	            //------------------------------------------------------------------------
-	            echo $msg->display();
+                echo "<div id='message'>";
+                    // Mostrar el mensaje flash
+                    echo $msg->display();
+                echo "</div>";
 
 	        ?>
 
