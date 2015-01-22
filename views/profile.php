@@ -38,6 +38,8 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
         <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
+        <!--Canvas-->
+        <script type="text/javascript" src="../js/canvas.js"></script>        
 	</head> <!-- Cierre del encabezado de la página -->
 
 	<body background="../images/cine.jpg" no-repeat center center fixed>
@@ -111,7 +113,13 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                             outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
 
                     </div>
+                    <div id="avatar">
+                         <canvas id="areaCanvas"></canvas>
+                        <input type="file" id="subirImagen"/>           
+                    </div>
 
+                    <button id="bnw">Grayscale</button>
+                    <button id="colour">Colour</button>
 
                 </div> <!-- Cierre de la clase profile -->
 
