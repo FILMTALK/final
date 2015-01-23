@@ -2,28 +2,39 @@
 
 include_once("../config/database.php");
 
+
 // Se obtienen los datos mediante ajax
 $valorEstrella=$_POST['clickEstrella'];
 $pelicula_id=$_POST['pelicula_id'];
+$usuario_id=$_POST['usuario_id'];
+$exit;
 
 // Se establece la colección
 $collection=$bd->valoracion;
 
 // Se crea un array para guardar los datos en la bd
-$document = array( 
+$existe=$collection->find(array('id_usuario' => $usuario_id));
 
-	"id_pelicula" => $pelicula_id, 
-	"valoracion" => $valorEstrella
+if($existe->count() == 0){
+	$document = array( 
 
-);
+		"id_pelicula" => $pelicula_id, 
+		"valoracion" => $valorEstrella,
+		"id_usuario" => $usuario_id
 
-// Se inserta el documento en la colección llamado votacion
-$collection->insert($document);
+	);
 
-// Se realiza una consulta con el id_pelicula
-$datos=$collection->find(array('id_pelicula' => $pelicula_id));
+	// Se inserta el documento en la colección llamado votacion
+	$collection->insert($document);
 
-// Devuelve el objeto JSON
-echo json_encode(iterator_to_array($datos));
+	// Se realiza una consulta con el id_pelicula
+	//$datos=$collection->find(array('id_pelicula' => $pelicula_id));
+
+	// Devuelve el objeto JSON
+	$exit=true;
+}else{
+	$exit=false;
+}
+echo json_encode(array('exito'=>$exit));
 
 ?>
