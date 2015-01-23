@@ -75,6 +75,10 @@ input#subirImagen{
 
   }
 
+#areaCanvas{
+  margin-bottom: 20px;
+}
+
 /* ************************************************************************************************
                       Selectores por ID
 ************************************************************************************************ */
@@ -91,7 +95,7 @@ input#subirImagen{
   
 }
 
-#perfilTitulo {;
+#perfilTitulo {
   margin: 0 0 30px 0;
   border-bottom: 2px solid #66cccc;
 }

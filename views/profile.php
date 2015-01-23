@@ -76,7 +76,6 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                     }
 
                 ?>
-
                 <div class="profile">
 
                     <div class="editarDatos">
