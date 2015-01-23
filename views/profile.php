@@ -124,7 +124,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                     </div>
 
                     <button id="bnw">Grayscale</button>
-                    <button id="colour">Colour</button>
+                    <button id="colour">Color</button>
 
                 </div> <!-- Cierre de la clase profile -->
 

@@ -34,7 +34,9 @@ include_once("../config/database.php");
         <!-- Mensajes flash -->
         <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
         <!-- jQuery para menu respontive -->
-        <script type="text/javascript" src="../js/menu.js"></script> 
+        <script type="text/javascript" src="../js/menu.js"></script>
+                <!-- Tipografia de google, para el mouseover -->
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>  
 	</head> <!-- Cierre del encabezado de la página -->
 	
 	<!-- Cuerpo de toda la página -->
@@ -45,10 +47,10 @@ include_once("../config/database.php");
             <!-- Encabezado de toda la página -->
             <?php include("../includes/headerListaPelis.html"); 
 	    
-	            //------------------------------------------------------------------------
-	            // Mostrar el mensaje flash
-	            //------------------------------------------------------------------------
-	            echo $msg->display();
+                echo "<div id='message'>";
+                    // Mostrar el mensaje flash
+                    echo $msg->display();
+                echo "</div>";
 
 	        ?>
 
@@ -117,8 +119,8 @@ include_once("../config/database.php");
                 ?>     
 
                 <div class="vermas" onclick="location.href='cartelera.php'">
-                    <span class="glyphicon glyphicon-plus"</span>
-                </div>       
+                    <span><img src="../images/plus_azul.png"></span>
+                </div>    
 
             </section> <!--Cierre de la Cartelera -->
 
@@ -187,7 +189,7 @@ include_once("../config/database.php");
 
                 ?>
                 <div class="vermas" onclick="location.href='proximamente.php'">
-                    <span class="glyphicon glyphicon-plus"</span>
+                    <span><img src="../images/plus_azul.png"></span>
                 </div>
 
 
