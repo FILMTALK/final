@@ -113,7 +113,25 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                     </div>
                     <div id="avatar">
-                         <canvas id="areaCanvas"></canvas>
+                        <div id="mostrarMsg"> </div>
+                        <canvas id="areaCanvas"></canvas>
+
+                        <?php
+
+                            include_once("../config/database.php");
+
+                            $datos=$collection->findOne(array('email' => $_SESSION["email"]));
+
+                            foreach ($datos as $key => $value) {
+
+                                if($key=="foto"){
+
+                                    echo "<img src='".$value."' alt='Avatar'/>";
+
+                                }
+                            }
+
+                        ?>
                         <!--<input type="file" id="subirImagen"/> -->
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
@@ -124,6 +142,8 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                     <button id="bnw">Grayscale</button>
                     <button id="colour">Color</button>
+
+                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Confirmar foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
 

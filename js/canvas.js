@@ -8,6 +8,7 @@ $(document).ready(function() {
 	// Se establece que el dibujo va a ser de 2 dimensiones
 	var dibujo = canvas.getContext('2d');
 	var imagen;
+	var imagenSrc;
 
 	function dibujarImagen(e){
 
@@ -39,6 +40,7 @@ $(document).ready(function() {
 			}
 			//coge desde local el archivo
 	       imagen.src = event.target.result;
+	       imagenSrc = imagen.src;
 		}
 		fichero.readAsDataURL(e.target.files[0]);
 	}
@@ -98,4 +100,36 @@ $(document).ready(function() {
 	    dibujo.putImageData(imgd, 0, 0);
 
 	});
+
+	$("#enviar").click(function() {
+
+		event.preventDefault();
+
+		var usuario=document.getElementById("enviar").name;
+		var nombre=document.getElementById("enviar").value;
+
+		$.ajax({
+
+			type: "POST",
+			url: "../model/canvas.php",
+			data: {
+
+	        	imgSrc : imagenSrc,
+	        	id_usuario: usuario,
+	        	nombreUsuario: nombre
+
+	    	},
+
+			// función que se ejecutará cuando obtengamos la respuesta
+			success:function(data){
+
+				$("#mostrarMsg").html('Imagen guardada. <br>Actualiza la p&aacute;gina.');
+
+			}
+
+
+		});
+
+	});
+	
 });
