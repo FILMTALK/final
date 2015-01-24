@@ -114,8 +114,6 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                     </div>
                     <div id="avatar">
                         <div id="mostrarMsg"> </div>
-                        <canvas id="areaCanvas"></canvas>
-
                         <?php
 
                             include_once("../config/database.php");
@@ -132,7 +130,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                             }
 
                         ?>
-                        <!--<input type="file" id="subirImagen"/> -->
+                        <canvas id="areaCanvas"></canvas>
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
                             <input type="file" id="subirImagen">
