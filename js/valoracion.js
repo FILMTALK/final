@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	$(".estrellasValoracion").click(function() {
+
 		// Se obtienen los atributos de la estrella que hizo clic
 	    var estrella=this;
 
@@ -19,10 +20,12 @@ $(document).ready(function() {
 		  	dataType: "json", // indicamos que el formato utilizado es JSON
 		  	data: datosClick, // el objeto JSON con los datos 
 
-		  	// función que se ejecutará cuando obtengamos la respuesta
-		  	success:function(data){
-		  		 if (data.exito != true){
-	              alert('Ya has valorado la película');
+			// función que se ejecutará cuando obtengamos la respuesta
+			// función que se ejecutará cuando obtengamos la respuesta
+ 		  	success:function(data){
+
+		  		if (data.exito != true){
+	              $("#limitar").html("Ya has valorado la película");
 	            }else{
 	                var id = $(estrella).attr("id");
 		  			$('#estrella').load('../includes/valoracion.php?id_pelicula='+id);

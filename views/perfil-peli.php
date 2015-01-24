@@ -119,10 +119,8 @@ $msg = new Messages();
             
         </div>
 
-        
-
-
-
+        <div id="limitar"></div>
+      
         <!-- Muestra la sinopsis de la película correspondiente -->
         <?php 
 

@@ -13,7 +13,7 @@ $exit;
 $collection=$bd->valoracion;
 
 // Se crea un array para guardar los datos en la bd
-$existe=$collection->find(array('id_usuario' => $usuario_id));
+$existe=$collection->find(array('id_pelicula' => $pelicula_id,'id_usuario' => $usuario_id));
 
 if($existe->count() == 0){
 	$document = array( 
@@ -27,12 +27,10 @@ if($existe->count() == 0){
 	// Se inserta el documento en la colección llamado votacion
 	$collection->insert($document);
 
-	// Se realiza una consulta con el id_pelicula
-	//$datos=$collection->find(array('id_pelicula' => $pelicula_id));
-
 	// Devuelve el objeto JSON
 	$exit=true;
-}else{
+}
+else{
 	$exit=false;
 }
 echo json_encode(array('exito'=>$exit));
