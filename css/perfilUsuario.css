@@ -87,7 +87,6 @@ input#subirImagen{
 
 #mostrarMsg{
 
-  color: #2B6301 !important;
   width: 190%; 
   -moz-border-radius: 4px; 
   border-radius: 4px; 
@@ -177,7 +176,6 @@ input#subirImagen{
 
   #mostrarMsg{
 
-    color: #2B6301 !important;
     width: 50%; 
     -moz-border-radius: 4px; 
     border-radius: 4px; 

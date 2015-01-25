@@ -25,8 +25,10 @@ $(document).ready(function() {
 				// Si la anchura y la altura se exceden de 150px
 				if(imagen.width > 150 || imagen.height > 150){
 	        		// Saca un aviso por pantalla
-	        		alert("La imagen debe ser de 150x150 px.");
-
+					$("#mostrarMsg").css("background","url(../images/messages/cross.png ) no-repeat 0px 30%");
+					$("#mostrarMsg").css("background-color","#FFF0EF");
+					$("#mostrarMsg").css("border","1px solid #C42608");
+					$("#mostrarMsg").html("<p style='margin-left:20px;color:#c00 !important;'>La imagen debe ser de 150 x 150 px.</p>");
 	       		}
 	       		else{
 
@@ -41,6 +43,7 @@ $(document).ready(function() {
 			//coge desde local el archivo
 	       imagen.src = event.target.result;
 	       imagenSrc = imagen.src;
+
 		}
 		fichero.readAsDataURL(e.target.files[0]);
 	}
@@ -126,7 +129,7 @@ $(document).ready(function() {
 				$("#mostrarMsg").css("background","url(../images/messages/tick.png ) no-repeat 0px 50%");
 				$("#mostrarMsg").css("background-color","#E0FBCC");
 				$("#mostrarMsg").css("border","1px solid #6DC70C");
-				$("#mostrarMsg").html("<p style='margin-left:20px;'>Imagen guardada. <br>Actualiza la p&aacute;gina.</p>");
+				$("#mostrarMsg").html("<p style='margin-left:20px;color:#2B6301 !important;'>Imagen guardada. <br>Actualiza la p&aacute;gina.</p>");
 
 			}
 
