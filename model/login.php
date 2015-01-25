@@ -66,6 +66,22 @@ if(isset($_POST['login'])){
 						
 					}
 
+					// Si la variable de sesión nombreUsuario no está definido
+					if(!isset($_SESSION['nombreUsuario'])){
+
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['nombreUsuario']="admin";
+						
+					}
+
+					// Si la variable de sesión email no está definido
+					if(!isset($_SESSION['email'])){
+
+						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+						$_SESSION['email']="admin@admin.com";
+						
+					}
+
 					// Redirecciona al perfil admin
 					header("location: ../views/admin.php");
 

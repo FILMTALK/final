@@ -4,7 +4,7 @@
 // A session is required for the messages to work
 //------------------------------------------------------------------------------
 if( !session_id() ) session_start();
-if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
+if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION['id_usuario']=='54b39057721880ef1d8b4568')){
     header('Location: ../index.php');
 }
 
@@ -49,7 +49,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand">filmdate</a>
+                    <a href="/index.php" class="navbar-brand">filmdate</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="acolapsar">

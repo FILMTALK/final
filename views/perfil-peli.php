@@ -4,6 +4,9 @@
 // A session is required for the messages to work
 //------------------------------------------------------------------------------
 if( !session_id() ) session_start();
+if(!(isset($_GET['peli']) && $_GET['peli']!='')){
+    header('Location: ../index.php');
+}
 
 //------------------------------------------------------------------------------
 // Include the Messages class and instantiate it
