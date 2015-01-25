@@ -172,7 +172,7 @@ $msg = new Messages();
                 <h2>Críticas</h2></br></br>
                 <!-- Listado de los comentarios de la película obtenida de la BD -->
                 <?php
-                    //$id_pelicula = $_SESSION['id_pelicula'];
+
                     include_once("../includes/criticas.php");
 
                     //------------------------------------------------------------------------
@@ -190,12 +190,6 @@ $msg = new Messages();
                 if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                      ?> 
-
-                    <!-- <div class="alert alert-warning"role="alert">
-                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
-                      <span class="sr-only">Warning:</span>
-                     ¡Debes estar logueado para poder comentar!
-                    </div>-->
 
                     <div id="warning">
                         <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>

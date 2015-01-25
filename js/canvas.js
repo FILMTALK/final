@@ -123,7 +123,10 @@ $(document).ready(function() {
 			// función que se ejecutará cuando obtengamos la respuesta
 			success:function(data){
 
-				$("#mostrarMsg").html('Imagen guardada. <br>Actualiza la p&aacute;gina.');
+				$("#mostrarMsg").css("background","url(../images/messages/tick.png ) no-repeat 0px 50%");
+				$("#mostrarMsg").css("background-color","#E0FBCC");
+				$("#mostrarMsg").css("border","1px solid #6DC70C");
+				$("#mostrarMsg").html("<p style='margin-left:20px;'>Imagen guardada. <br>Actualiza la p&aacute;gina.</p>");
 
 			}
 

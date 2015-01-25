@@ -24,7 +24,7 @@
             <?php include("../includes/headerListaPelis.html"); ?>
 
             <div id="titulo">
-                 <h3>Resultados de la busqueda</h3>
+                 <h3>Resultados de la búsqueda</h3>
             </div>
 
             <?php include("../model/buscar.php"); ?>

@@ -78,6 +78,8 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                 ?>
                 <div class="profile">
 
+                    <div id="mostrarMsg"> </div>
+
                     <div class="editarDatos">
 
                         <?php
@@ -113,7 +115,6 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                     </div>
                     <div id="avatar">
-                        <div id="mostrarMsg"> </div>
                         <?php
 
                             include_once("../config/database.php");
@@ -124,13 +125,13 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
 
                                 if($key=="foto"){
 
-                                    echo "<img src='".$value."' alt='Avatar'/>";
+                                    echo "<img id='fotoUsuario' src='".$value."' alt='Avatar'/><br /><br />";
 
                                 }
                             }
 
                         ?>
-                        <canvas id="areaCanvas"></canvas>
+                        <canvas id="areaCanvas" style="width:10%;height:10%;"></canvas>
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
                             <input type="file" id="subirImagen">
@@ -139,9 +140,9 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
                     </div>
 
                     <button id="bnw">Grayscale</button>
-                    <button id="colour">Color</button>
+                    <button id="colour">Color</button><br /><br />
 
-                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Confirmar foto </button>
+                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
 

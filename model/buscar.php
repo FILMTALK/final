@@ -65,7 +65,7 @@ if(isset($_POST['pelicula'])){
 	if(count($array)==0){
 
 		// Mensaje de error a mostrar
-		$msg->add('e', 'ERROR: No existe pelicula con la busqueda');
+		$msg->add('e', 'ERROR: No existe pel&iacute;cula con la b&uacute;squeda');
 
 		// Muestra el mensaje por pantalla
 		echo $msg->display();
