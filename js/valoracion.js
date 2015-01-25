@@ -25,7 +25,12 @@ $(document).ready(function() {
  		  	success:function(data){
 
 		  		if (data.exito != true){
-	              $("#limitar").html("Ya has valorado la película");
+		  			            	
+		  			$("#limitar").css("background","url(../images/messages/help.png ) no-repeat 0px 50%");
+	             	$("#limitar").css("background-color","#B0CEF5");
+	             	$("#limitar").css("border","1px solid #82AEE7");
+	             	$("#limitar").html("<p style='margin-left:20px;'>Ya has valorado la película</p>");
+
 	            }else{
 	                var id = $(estrella).attr("id");
 		  			$('#estrella').load('../includes/valoracion.php?id_pelicula='+id);
@@ -45,8 +50,12 @@ $(document).ready(function() {
 	    var comentario=this;
 	    var usu=document.getElementById("critica").name;
 	    if(coment==""){
-	    	
-	    	alert("La crítica no puede esta vacía");
+
+			$("#noVacia").css("background","url(../images/messages/cross.png ) no-repeat 0px 50%");
+			$("#noVacia").css("background-color","#FFF0EF");
+			$("#noVacia").css("border","1px solid #C42608");
+			$("#noVacia").html("<p style='margin-left:20px;'>La crítica no puede esta vacía</p>");
+
 	    	return false;
 	    }
 

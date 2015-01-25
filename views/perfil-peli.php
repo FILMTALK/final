@@ -181,6 +181,7 @@ $msg = new Messages();
                     echo $msg->display();
                     
                 ?>
+                <div id="noVacia"></div>
             </div>
 
             <!-- Si el usuario no está logueado no podrá comentar la película -->
