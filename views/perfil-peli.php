@@ -173,7 +173,7 @@ $msg = new Messages();
                 if($sigue->count() == 0):
                     echo "<p>hola</p>";
             ?>
-                    <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
+                    <button id="seguir" name="<?php echo htmlspecialchars($_GET['peli']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
             <?php  endif; ?>
 
         <?php endif; ?>

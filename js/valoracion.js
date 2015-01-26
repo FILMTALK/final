@@ -21,7 +21,6 @@ $(document).ready(function() {
 		  	data: datosClick, // el objeto JSON con los datos 
 
 			// función que se ejecutará cuando obtengamos la respuesta
-			// función que se ejecutará cuando obtengamos la respuesta
  		  	success:function(data){
 
 		  		if (data.exito != true){

@@ -167,52 +167,13 @@ include_once("../funciones/peliculas.php");
                                 
                                 if($campo=="id_pelicula"){
 
-                                    $peli_id=$value;
-                                    
+                                    echo "<a href='../views/perfil-peli.php?peli=$value'>$value<br>";
+
                                 }
+
                             }
                         }
 
-                        echo $peli_id."<br>";
-
-                        $collection=$bd->peliculas;
-                        $datos=$collection->find(array('_id' => "549ef9d3ed8388f0588b4574"));
-
-                        //$datos = obtenerDatosPelicula("$peli_id");
-
-                        //$datos=$collection->findOne(array('_id' => "$peli_id"));
-
-                        var_dump(iterator_to_array($datos));
-
-                        /*foreach ($datos as $campos => $value) {
-
-                            if($campos == "title"){
-                                echo "<p>" . $value . "</p>";
-                            }
-
-                        }*/
-
-
-                        /*
-                        $peli_id;
-                        $datos;
-
-                        foreach ($pelis as $campo => $valor) {
-                            if($campo == "id_pelicula"){
-                                $peli_id=$valor;
-                            }
-
-                            $collection=$bd->peliculas;
-
-                            $datos = obtenerDatosPelicula($peli_id);
-
-                            foreach ($datos as $campos => $value) {
-                                if($campos == "title"){
-                                    echo "<p>" . $value . "</p>";
-                                }
-                            }
-
-                        }*/
                     ?>
 
                 </div>
