@@ -15,6 +15,9 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
     header('Location: ../index.php');
 }
 
+// Se importan las funciones para comprobar u obtener datos
+include_once("../funciones/peliculas.php");
+
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -38,7 +41,10 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
         <!--Canvas-->
-        <script type="text/javascript" src="../js/canvas.js"></script>      
+        <script type="text/javascript" src="../js/canvas.js"></script>    
+        <!-- jQuery para ventana modal -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>  
 	</head> <!-- Cierre del encabezado de la página -->
 
 	<body background="../images/fondoUsu.jpg" no-repeat center center fixed>
@@ -239,9 +245,32 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
             </div>
         </div> <!-- Cierre de la Ventana Modal Editar email -->
 
-        <!-- jQuery para ventana modal -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
-        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
+        <div id="pelisigue">
+            <h2>Películas que sigues: </h2>
+            <?php
+
+                $collection=$bd->sigue_peli;
+                $pelis=$collection->find(array('id_usuario' => $_SESSION['id_usuario']));
+                $peli_id;
+                $datos;
+
+                foreach ($pelis as $campo => $valor) {
+                    if($campo == "id_pelicula"){
+                        $valor = $peli_id;
+                    }
+
+                    $datos = obtenerDatosPelicula($peli_id);
+
+                    foreach ($datos as $campos => $value) {
+                        if($campos == "title"){
+                            echo "<p>" . $value . "</p>";
+                        }
+                    }
+
+                }
+            ?>
+
+        </div>
 
     </body>
 

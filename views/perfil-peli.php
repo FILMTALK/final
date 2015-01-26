@@ -167,7 +167,15 @@ $msg = new Messages();
 
     <div id="seguirPeli">
         <?php if($_SESSION['id_usuario']!=''): ?>
-             <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
+            <?php 
+                $collection=$bd->sigue_peli;
+                $sigue=$collection->find(array('id_pelicula' => $_SESSION['id_pelicula'],'id_usuario' => $_SESSION['id_usuario']));
+                if($sigue->count() == 0):
+                    echo "<p>hola</p>";
+            ?>
+                    <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
+            <?php  endif; ?>
+
         <?php endif; ?>
     </div>
 

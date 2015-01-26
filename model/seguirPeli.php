@@ -9,7 +9,7 @@ $usuario_id=$_POST['usuario_id'];
 $exit;
 
 // Se establece la colección
-$collection=$bd->seguir_peli;
+$collection=$bd->sigue_peli;
 
 // Se crea un array para guardar los datos en la bd
 $existe=$collection->find(array('id_pelicula' => $pelicula_id,'id_usuario' => $usuario_id));
