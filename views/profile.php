@@ -155,9 +155,45 @@ include_once("../funciones/peliculas.php");
                     <h2>Películas que sigues: </h2>
                     <?php
                         include_once("../config/database.php");
+                        include_once("../funciones/peliculas.php");
                         $id_usuario=$_SESSION['id_usuario'];
                         $collection=$bd->sigue_peli;
-                        $pelis=$collection->find(array('id_usuario' => $id_usuario));
+                        $pelis=$collection->find(array('id_usuario' => "$id_usuario"));
+
+                        $peli_id;
+
+                        foreach ($pelis as $campos => $valor) {
+                            foreach ($valor as $campo => $value) {
+                                
+                                if($campo=="id_pelicula"){
+
+                                    $peli_id=$value;
+                                    
+                                }
+                            }
+                        }
+
+                        echo $peli_id."<br>";
+
+                        $collection=$bd->peliculas;
+                        $datos=$collection->find(array('_id' => "549ef9d3ed8388f0588b4574"));
+
+                        //$datos = obtenerDatosPelicula("$peli_id");
+
+                        //$datos=$collection->findOne(array('_id' => "$peli_id"));
+
+                        var_dump(iterator_to_array($datos));
+
+                        /*foreach ($datos as $campos => $value) {
+
+                            if($campos == "title"){
+                                echo "<p>" . $value . "</p>";
+                            }
+
+                        }*/
+
+
+                        /*
                         $peli_id;
                         $datos;
 
@@ -176,7 +212,7 @@ include_once("../funciones/peliculas.php");
                                 }
                             }
 
-                        }
+                        }*/
                     ?>
 
                 </div>
