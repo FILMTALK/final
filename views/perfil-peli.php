@@ -29,6 +29,7 @@ $msg = new Messages();
 	<link rel="stylesheet" type="text/css" href="../css/perfil-peli.css"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/perfil-peli.js"></script>
+    <script type="text/javascript" src="../js/seguirPeli.js"></script>
     <script type="text/javascript" src="../js/valoracion.js"></script><!-- Valorar las estrellas -->
     <!--CSS bootstrap-->
     <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
@@ -163,6 +164,12 @@ $msg = new Messages();
 	<div id="div_abajo">
         <a href="#miancla"><center><span class="glyphicon-refresh-animate"><img src="../images/flecha-abajo.png"></span></center></a>
     </div> <!-- Cierre del btn_abajo -->
+
+    <div id="seguirPeli">
+
+        <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
+
+    </div>
 
     <!-- Parte de las críticas -->
     <a name="miancla"></a>
