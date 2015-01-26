@@ -29,8 +29,13 @@ $(document).ready(function() {
 					$("#mostrarMsg").css("background-color","#FFF0EF");
 					$("#mostrarMsg").css("border","1px solid #C42608");
 					$("#mostrarMsg").html("<p style='margin-left:20px;color:#c00 !important;'>La imagen debe ser de 150 x 150 px.</p>");
+					//return false;
+					//se añade el atributo disabled con el valor disabled al boton enviar 
+					$("#enviar").attr("disabled", "disabled");
 	       		}
 	       		else{
+	       			//eliminamos el atributo disabled
+	       			$("#enviar").removeAttr("disabled");
 
 					// Se establece la anchura de canvas respecto a la imagen
 					canvas.width = imagen.width;
