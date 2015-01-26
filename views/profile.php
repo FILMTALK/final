@@ -151,6 +151,36 @@ include_once("../funciones/peliculas.php");
 
                 </div> <!-- Cierre de la clase profile -->
 
+                <div id="pelisigue">
+                    <h2>Películas que sigues: </h2>
+                    <?php
+                        include_once("../config/database.php");
+                        $id_usuario=$_SESSION['id_usuario'];
+                        $collection=$bd->sigue_peli;
+                        $pelis=$collection->find(array('id_usuario' => $id_usuario));
+                        $peli_id;
+                        $datos;
+
+                        foreach ($pelis as $campo => $valor) {
+                            if($campo == "id_pelicula"){
+                                $peli_id=$valor;
+                            }
+
+                            $collection=$bd->peliculas;
+
+                            $datos = obtenerDatosPelicula($peli_id);
+
+                            foreach ($datos as $campos => $value) {
+                                if($campos == "title"){
+                                    echo "<p>" . $value . "</p>";
+                                }
+                            }
+
+                        }
+                    ?>
+
+                </div>
+
             </div> <!--  Cierre div de la clase page-wrap -->
         </div> <!-- Cierre div de la id cont -->
         <!---------------------------tgt---------------------------------->    
@@ -245,33 +275,7 @@ include_once("../funciones/peliculas.php");
             </div>
         </div> <!-- Cierre de la Ventana Modal Editar email -->
 
-        <div id="pelisigue">
-            <h2>Películas que sigues: </h2>
-            <?php
-                include_once("../config/database.php");
-                $id_usuario=$_SESSION['id_usuario'];
-                $collection=$bd->sigue_peli;
-                $pelis=$collection->find(array('id_usuario' => $id_usuario));
-                $peli_id;
-                $datos;
-
-                foreach ($pelis as $campo => $valor) {
-                    if($campo == "id_pelicula"){
-                        $valor = $peli_id;
-                    }
-
-                    $datos = obtenerDatosPelicula($peli_id);
-
-                    foreach ($datos as $campos => $value) {
-                        if($campos == "title"){
-                            echo "<p>" . $value . "</p>";
-                        }
-                    }
-
-                }
-            ?>
-
-        </div>
+        
 
     </body>
 
