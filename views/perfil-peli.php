@@ -166,9 +166,9 @@ $msg = new Messages();
     </div> <!-- Cierre del btn_abajo -->
 
     <div id="seguirPeli">
-
-        <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
-
+        <?php if($_SESSION['id_usuario']!=''): ?>
+             <button id="seguir" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
+        <?php endif; ?>
     </div>
 
     <!-- Parte de las críticas -->
