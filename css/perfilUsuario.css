@@ -127,6 +127,10 @@ input#subirImagen{
   margin: 90px 150px 50px 150px;
 }
 
+.ruta{
+  margin: 30px 0 60px 0;
+}
+
 #textoApi h1{
   margin-bottom: 30px;
   font-size: 40px;
@@ -134,13 +138,28 @@ input#subirImagen{
   font-family: 'Oswald', sans-serif;
 }
 
+.linkjson{
+  font-size: 25px;
+  color: #999999;
+  font-family: 'Oswald', sans-serif;
+}
+
+.linkjson:hover{
+  color: #66cccc;
+  text-decoration: none;
+}
+
 #textoApi p{
+
   font-size: 16px;
   color: #999999;
   
 }
 
-
+.language{
+  margin: 20px 0 0 60px;
+  font-family: monospace;
+}
 
 
 /* ************************************************************************************************

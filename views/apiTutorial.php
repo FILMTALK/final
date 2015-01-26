@@ -35,19 +35,101 @@
                <p>Filmdate proporciona diversas API y herramientas que permiten integrar la experiencia de Filmdate en tu sitio web, aplicación o dispositivo móvil.<br/>
                 Este documento está diseñado para ayudarte a decidir qué API y herramientas se ajustan mejor a tus necesidades.</p>
 
-                <h2>getPeliculas</h2>
+                <div class="ruta">
+                    <a class="linkjson" href="http://localhost:8080/api/api.php/getPeliculas">getPeliculas 
+                        <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
-                <p>Con esta URL proporcionamos todas las peliculas que se encuentran en nuestra app. Se devuelve
-                en un objeto de tipo JSON, para poder obtener los datos facilmente. </p>
+                    <p>Con esta URL proporcionamos todas las peliculas que se encuentran en nuestra app. Se devuelve
+                    en un objeto de tipo JSON, para poder obtener los datos facilmente. </p>
 
-                <code class="language-javascript">
-                    $app->get('/getPeliculas', function () {<br/>
-                        global $collection;<br/>
-                        $peliculas=$collection->find();<br/>
-                        header('Content-Type: application/json');<br/>
-                        echo json_encode(iterator_to_array($peliculas));<br/>
-                    });
-                </code>
+                    <div class="language">
+                        <code>
+                            $app->get('/getPeliculas', function () {<br/>
+
+                               &nbsp;&nbsp;  global $collection;<br/>
+
+                               &nbsp;&nbsp;  $peliculas=$collection->find();<br/>
+
+                               &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
+
+                               &nbsp;&nbsp;  echo json_encode(iterator_to_array($peliculas));<br/>
+
+                            });
+                        </code>
+                    </div>
+                </div>
+
+                <div class="ruta">
+                    <a class="linkjson" href="http://localhost:8080/api/api.php/getPelicula/Annie">getPelicula/:titulo
+                        <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
+
+                    <p>Con esta URL se puede filtrar por el titulo de la pelicula para obtener toda su 
+                        información. Se devuelve en un objeto de tipo JSON.
+                    </p>
+                    <div class="language">
+                        <code>
+                            $app->get('/getPelicula/:titulo', function ($titulo) {<br/>
+
+                                &nbsp;&nbsp;  global $collection;<br/>
+
+                                &nbsp;&nbsp;  $peliculas=$collection->findOne(array('title' => $titulo));<br/>
+
+                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
+
+                                &nbsp;&nbsp;  echo json_encode($peliculas);<br/>
+      
+                            });
+                        </code>
+                    </div>
+                </div>
+
+                <div class="ruta"> 
+                    <a class="linkjson" href="http://localhost:8080/api/api.php/getCartelera">getCartelera
+                        <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
+
+                    <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la cartelera de nuestra
+                     app. Se devuelve en un objeto de tipo JSON. </p>
+
+                    <div class="language">
+                        <code>
+                            $app->get('/getCartelera', function () {<br/>
+
+                                &nbsp;&nbsp;  global $collection;<br/>
+
+                                &nbsp;&nbsp;  $cartelera=$collection->find(array("boxOffice" => "boxOffice"));<br/>
+
+                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
+
+                               &nbsp;&nbsp;  echo json_encode(iterator_to_array($cartelera));<br/>
+
+                            });
+                        </code>
+                    <p>
+                    </div>
+                </div>
+                <div class="ruta">
+                    <a class="linkjson" href="http://localhost:8080/api/api.php/getProximamente">getProximamente
+                    <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
+
+                    <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la sección 
+                    proximamente de nuestra app. Se devuelve en un objeto de tipo JSON. </p>
+
+                    <div class="language">
+                        <code>
+                            $app->get('/getProximamente', function () {<br/>
+
+                                &nbsp;&nbsp;  global $collection;<br/>
+
+                                &nbsp;&nbsp;  $proximamente=$collection->find(array("upcoming" => "upcoming"));<br/>
+
+                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
+
+                                &nbsp;&nbsp;  echo json_encode(iterator_to_array($proximamente));<br/>
+
+                            });
+                        </code>
+                    </div>
+                </div>
             </div>
 
 
