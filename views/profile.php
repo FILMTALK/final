@@ -248,9 +248,10 @@ include_once("../funciones/peliculas.php");
         <div id="pelisigue">
             <h2>Películas que sigues: </h2>
             <?php
-
+                include_once("../config/database.php");
+                $id_usuario=$_SESSION['id_usuario'];
                 $collection=$bd->sigue_peli;
-                $pelis=$collection->find(array('id_usuario' => $_SESSION['id_usuario']));
+                $pelis=$collection->find(array('id_usuario' => $id_usuario));
                 $peli_id;
                 $datos;
 
