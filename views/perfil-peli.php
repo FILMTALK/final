@@ -150,6 +150,25 @@ $msg = new Messages();
 
         ?>
 
+        <?php if($_SESSION['id_usuario']!=''): 
+                $collection=$bd->sigue_peli;
+                $id_usuario=$_SESSION['id_usuario'];
+                $sigue=$collection->find(array('titulo' => $_GET['peli'],'id_usuario' => "$id_usuario"));
+                if($sigue->count() == 0):
+            ?>
+                    <button id="seguir" name="<?php echo htmlspecialchars($_GET['peli']); ?>" 
+                        value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">
+                        <span class="halflings halflings-plus"></span></span>Seguir</button>
+
+                <?php  
+                else:
+                ?>
+                    <button id="seguir" disabled>Siguiendo</button>
+                <?php 
+                endif; 
+            endif; ?>
+
+
         <!-- Botones para el vídeo -->
         <div id="buttons">
             <img src="../images/video/pause.png" id="playButton" onclick="doFirst()" />
@@ -164,18 +183,6 @@ $msg = new Messages();
 	<div id="div_abajo">
         <a href="#miancla"><center><span class="glyphicon-refresh-animate"><img src="../images/flecha-abajo.png"></span></center></a>
     </div> <!-- Cierre del btn_abajo -->
-
-    <div id="seguirPeli">
-        <?php if($_SESSION['id_usuario']!=''): 
-                $collection=$bd->sigue_peli;
-                $id_usuario=$_SESSION['id_usuario'];
-                $sigue=$collection->find(array('titulo' => $_GET['peli'],'id_usuario' => "$id_usuario"));
-                if($sigue->count() == 0):
-            ?>
-                    <button id="seguir" name="<?php echo htmlspecialchars($_GET['peli']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
-                <?php  endif; ?>
-             <?php endif; ?>
-    </div>
 
     <!-- Parte de las críticas -->
     <a name="miancla"></a>

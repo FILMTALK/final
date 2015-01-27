@@ -247,6 +247,7 @@ background: none;
 
 #infopeli h1{
   font-size: 50px;
+  text-align: left;
 }
 
 #infopeli p{
@@ -319,6 +320,22 @@ h2{
     cursor: pointer;
 }
 
+#seguir{
+  margin: 30px 30px 40px 440px;
+  font-size: 18px;
+  height: 42px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: #fff;
+  border-width:1.5px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
 #warning{
   border: 1px solid #EBD699;
   width: 100%;
@@ -359,6 +376,11 @@ h2{
     width: 100%;
     background-color: #999999;
     height: 100%;
+    min-height: 400px;
+  }
+
+   #seguir{
+    margin: 20px 0px 0px 600px;
   }
 
   /* Criticas  ***********************************************************/
@@ -458,3 +480,23 @@ h2{
   }
 
 } 
+
+/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
+@media all  and (max-width: 399px){
+
+  #seguir{
+    margin: 20px 0px 0px 0px;
+  }
+
+  #infopeli{
+
+    min-height: 500px;
+
+  }
+
+  #contCriticas{
+    top: 600px;
+
+  }
+
+}
