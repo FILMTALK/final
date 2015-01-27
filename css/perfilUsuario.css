@@ -162,6 +162,16 @@ input#subirImagen{
   font-family: monospace;
 }
 
+.apilink{
+  text-decoration: none;
+  color: #66cccc;
+}
+
+.apilink:hover{
+  text-decoration: none;
+  color: #999999;
+}
+
 #foot{
   position: absolute;
   top: 1500px;

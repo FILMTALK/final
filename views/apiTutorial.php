@@ -40,7 +40,9 @@
                         <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en nuestra app. Se devuelve
-                    en un objeto de tipo JSON, para poder obtener los datos facilmente. </p>
+                    en un objeto de tipo JSON, para poder obtener los datos facilmente. 
+                    <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getPeliculas">
+                    http://localhost:8080/api/api.php/getPeliculas</a></p>
 
                     <div class="language">
                         <code>
@@ -65,6 +67,8 @@
 
                     <p>Con esta URL se puede filtrar por el titulo de la pelicula para obtener toda su 
                         información. Se devuelve en un objeto de tipo JSON.
+                        <br/>Por ejemplo, con la pelicula "Big Hero 6": <a class="apilink" href="http://localhost:8080/api/api.php/getPelicula/Big Hero 6">
+                    http://localhost:8080/api/api.php/getPelicula/Big Hero 6</a>
                     </p>
                     <div class="language">
                         <code>
@@ -88,7 +92,9 @@
                         <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la cartelera de nuestra
-                     app. Se devuelve en un objeto de tipo JSON. </p>
+                     app. Se devuelve en un objeto de tipo JSON.
+                     <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getCartelera">
+                    http://localhost:8080/api/api.php/getCartelera</a> </p>
 
                     <div class="language">
                         <code>
@@ -112,7 +118,9 @@
                     <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la sección 
-                    proximamente de nuestra app. Se devuelve en un objeto de tipo JSON. </p>
+                    proximamente de nuestra app. Se devuelve en un objeto de tipo JSON.
+                    <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getProximamente">
+                    http://localhost:8080/api/api.php/getProximamente</a> </p>
 
                     <div class="language">
                         <code>
