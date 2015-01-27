@@ -107,8 +107,8 @@ h4 a:hover{
 /* Cartelera */
 #cartelera{
 	padding: 5px;
-	padding-left: 150px;
-	width: 90%;
+	padding-left: 50px;
+	width: 100%;
 	background-color: #f2efef;
 
 }
@@ -199,7 +199,7 @@ h4 a:hover{
 
 	position: relative;
 	float: left;
-	margin: 38px;
+	margin: 30px;
 	
 }
 
@@ -228,6 +228,7 @@ h4 a:hover{
 .descrip{
 
 	width: 160px;
+	height: 348px;
 
 }
 

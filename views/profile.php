@@ -92,7 +92,7 @@ include_once("../funciones/peliculas.php");
                             // Muestra la variable de sesión del nombreUsuario
                             if (isset($_SESSION['nombreUsuario'])) {
                                        
-                                echo "Usuario: <b>". $_SESSION["nombreUsuario"] ."</b>!\n\n\n";
+                                echo "<p class='infoUser'>Usuario: <b>". $_SESSION["nombreUsuario"] ."</b> </p>";
 
                             }
 
@@ -108,7 +108,7 @@ include_once("../funciones/peliculas.php");
                                 // Muestra la variable de sesión del email
                                 if (isset($_SESSION['email'])) {
                                            
-                                    echo "Email: <b>". $_SESSION["email"] ."</b>\n\n\n";
+                                    echo "<p class='infoUser'>Email: <b>". $_SESSION["email"] ."</b></p>";
 
                                 }
 

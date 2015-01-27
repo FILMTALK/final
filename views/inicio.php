@@ -110,10 +110,10 @@
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
+                            
 
                             if($movie=="poster"){
-
+                                echo "<div class='descrip'>";
                                 $poster=$dato;
                                 echo "<a href='views/perfil-peli.php?peli=$titulo'><span class='text'>";
 
@@ -147,10 +147,10 @@
 
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
-
+                                echo "</div>";
                             }
 
-                            echo "</div>";
+                            
                         }
 
                         echo "</div>";
@@ -203,10 +203,10 @@
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
+                            
 
                             if($movie=="poster"){
-
+                                echo "<div class='descrip'>";
                                 $poster=$dato;
                                 
                                 // Cuando el usuario haga clic en la imágen o en el título irá al perfil de la película
@@ -242,10 +242,11 @@
 
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
+                                echo "</div>"; 
 
                             }
 
-                            echo "</div>";      
+                                 
 
                         }
 
