@@ -54,10 +54,10 @@ $(document).ready(function() {
 			$("#noVacia").css("background-color","#FFF0EF");
 			$("#noVacia").css("border","1px solid #C42608");
 			$("#noVacia").html("<p style='margin-left:20px;'>La crítica no puede esta vacía</p>");
+			document.getElementById("critica").value="";
 
 	    	return false;
 	    }
-
 
 		// creamos el objeto JSON para enviar a la página PHP
 	   	var datosClick = {
@@ -66,7 +66,13 @@ $(document).ready(function() {
 	        id_usuario : usu, // le pasamos la id de usuario
 	        contenido : coment // le pasamos la critica realizada por el usuario
 
-	    };	    
+	    };
+
+	    if(datosClick.contenido != ""){
+
+	    	document.getElementById("critica").value="";
+
+	    }	    
 
 	    // Se envía el valor al archivo php
 	    $.ajax({
