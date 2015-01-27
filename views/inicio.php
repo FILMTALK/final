@@ -261,9 +261,18 @@
 
             </section> <!--Cierre de la Próximamente -->
 
-            <!-- Pie de toda la página -->
-            <?php include("includes/footer.html"); ?>
+            <footer id="foot">
 
+                <img class="red" style="padding-right:90px;" href="#" src="../images/red1.png"/>
+                <img class="red" href="#" src="../images/red2.png"/>
+                <img class="red" href="#" src="../images/red3.png"/>
+                <img class="red"  href="#" src="../images/red4.png"/>
+
+                <a href="views/apiTutorial.php"> API </a>
+                <a href="#"> Política de privacidad </a>
+                <a href="#"> © CopyRight 2014 </a>
+
+            </footer>
 
             <!--Ventana Modal del Log In-->
             <?php include("includes/ventanaModalLogin.html"); ?>

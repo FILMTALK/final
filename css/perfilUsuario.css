@@ -125,6 +125,7 @@ input#subirImagen{
 
 #textoApi{
   margin: 90px 150px 50px 150px;
+  text-align: justify;
 }
 
 .ruta{
@@ -161,13 +162,20 @@ input#subirImagen{
   font-family: monospace;
 }
 
-
+#foot{
+  position: absolute;
+  top: 1500px;
+}
 /* ************************************************************************************************
                                             RESPONSIVE
 ************************************************************************************************ /
 
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
+
+  #foot{
+    display: none;
+  }
 
   #cont{
     left: 10%;
@@ -228,5 +236,12 @@ input#subirImagen{
   }
 
 
+  #textoApi{
+    margin: 80px 15px 40px 15px;
+  }
+
+  .language{
+    margin: 20px 0 0 15px;
+  }
 
 }

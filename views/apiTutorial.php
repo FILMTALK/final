@@ -133,7 +133,15 @@
             </div>
 
 
+
         </div> <!-- div de Container -->
+
+        <!-- Pie de toda la página -->
+        <?php 
+
+        // Se importa mediante un css externo
+        echo "<link href=\"../css/perfilUsuario.css\" rel=\"stylesheet\" type=\"text/css\" >";
+        include("../includes/footer.html"); ?>
 
         
         <!-- jQuery para ventana modal -->
