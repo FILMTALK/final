@@ -40,6 +40,7 @@ foreach ($datos as $campo => $valor) {
 	}
 }
 
+
 // Si el textarea de criticas está vacio
 if(isset($comentario) and $comentario==NULL){
 
