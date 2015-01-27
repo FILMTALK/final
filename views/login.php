@@ -104,9 +104,9 @@ include_once("../config/database.php");
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
-
                             if($movie=="poster"){
+
+                                echo "<div class='descrip'>";
 
                                 $poster=$dato;
                                 
@@ -143,10 +143,9 @@ include_once("../config/database.php");
 
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
+                                echo "</div>";
 
                             }
-
-                            echo "</div>";
                         }
 
                         echo "</div>";
@@ -197,9 +196,9 @@ include_once("../config/database.php");
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
-
                             if($movie=="poster"){
+
+                                echo "<div class='descrip'>";
 
                                 $poster=$dato;
                                 
@@ -237,9 +236,9 @@ include_once("../config/database.php");
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
 
-                            }
+                                echo "</div>";  
 
-                            echo "</div>";      
+                            }
 
                         }
 

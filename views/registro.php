@@ -62,6 +62,7 @@ include_once("../config/database.php");
                 <?php
 
                     echo "<link href=\"../css/listaPelis.css\" rel=\"stylesheet\" type=\"text/css\" >";
+                    include_once("../funciones/peliculas.php");   
 
                     // Establecemos la colección
                     $collection=$bd->peliculas;
@@ -74,25 +75,48 @@ include_once("../config/database.php");
 
                         foreach ($valor as $movie => $dato) {
 
+                            $id_pelicula;
                             $titulo;
                             $year;
                             $runtime;
                             $poster;
+
+                            if($movie=="_id"){
+
+                                $id_pelicula=$dato;
+
+                            }
 
                             if($movie=="title"){
 
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
-
                             if($movie=="poster"){
+
+                                echo "<div class='descrip'>";
 
                                 $poster=$dato;
                                 
                                 // Cuando el usuario haga clic en la imágen o en el título irá al perfil de la película
-                                echo "<a href='perfil-peli.php?peli=$titulo'><img src=$poster></a>";
-                                echo "<h4><a href='perfil-peli.php?peli=$titulo'>" . $titulo. "</a></h4>";                      
+                                echo "<a href='perfil-peli.php?peli=$titulo'><span class='text'>";
+
+                                    // Establecemos la colección
+                                    $collection=$bd->valoracion;
+
+                                    $media=mediaValoracion("$id_pelicula");
+
+                                    $media=$media*2;
+
+                                    $media=round($media,2);
+
+                                    echo "<span style='font-size:20px;'
+                                    class='glyphicon glyphicon-star'></span><br/>";
+
+                                    echo $media;
+
+                                echo "</span><img src=$poster></a>
+                                <h4><a href='perfil-peli.php?peli=$titulo'>" . $titulo. "</a></h4>";                      
 
                             }
 
@@ -107,10 +131,9 @@ include_once("../config/database.php");
 
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
+                                echo "</div>";
 
                             }
-
-                            echo "</div>";
                         }
 
                         echo "</div>";
@@ -144,25 +167,48 @@ include_once("../config/database.php");
 
                         foreach ($valor as $movie => $dato) {
 
+                            $id_pelicula2;
                             $titulo;
                             $year;
                             $runtime;
                             $poster;
+
+                            if($movie=="_id"){
+
+                                $id_pelicula2=$dato;
+
+                            }
 
                             if($movie=="title"){
 
                                 $titulo=$dato;
                             }
 
-                            echo "<div class='descrip'>";
-
                             if($movie=="poster"){
+
+                                echo "<div class='descrip'>";
 
                                 $poster=$dato;
                                 
                                 // Cuando el usuario haga clic en la imágen o en el título irá al perfil de la película
-                                echo "<a href='perfil-peli.php?peli=$titulo'><img src=$poster></a>";
-                                echo "<h4><a href='perfil-peli.php?peli=$titulo'>" . $titulo. "</a></h4>";                      
+                                echo "<a href='perfil-peli.php?peli=$titulo'><span class='text'>";
+
+                                    // Establecemos la colección
+                                    $collection=$bd->valoracion;
+
+                                    $media=mediaValoracion("$id_pelicula2");
+
+                                    $media=$media*2;
+
+                                    $media=round($media,2);
+
+                                    echo "<span style='font-size:20px;'
+                                    class='glyphicon glyphicon-star'></span><br/>";
+
+                                    echo $media;
+
+                                echo "</span><img src=$poster></a>
+                                <h4><a href='perfil-peli.php?peli=$titulo'>" . $titulo. "</a></h4>";                      
 
                             }
 
@@ -178,9 +224,9 @@ include_once("../config/database.php");
                                 $runtime=$dato;
                                 echo "<p>" . $runtime. " mins </p>";
 
-                            }
+                                echo "</div>";  
 
-                            echo "</div>";      
+                            }
 
                         }
 
