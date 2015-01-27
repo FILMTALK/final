@@ -4,7 +4,7 @@ include_once("../config/database.php");
 
 
 // Se obtienen los datos mediante ajax
-$pelicula_id=$_POST['pelicula_id'];
+$titulo=$_POST['titulo'];
 $usuario_id=$_POST['usuario_id'];
 $exit;
 
@@ -12,12 +12,12 @@ $exit;
 $collection=$bd->sigue_peli;
 
 // Se crea un array para guardar los datos en la bd
-$existe=$collection->find(array('id_pelicula' => $pelicula_id,'id_usuario' => $usuario_id));
+$existe=$collection->find(array('titulo' => $titulo,'id_usuario' => $usuario_id));
 
 if($existe->count() == 0){
 	$document = array( 
 
-		"id_pelicula" => $pelicula_id,
+		"titulo" => $titulo,
 		"id_usuario" => $usuario_id
 
 	);

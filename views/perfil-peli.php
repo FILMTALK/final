@@ -166,17 +166,15 @@ $msg = new Messages();
     </div> <!-- Cierre del btn_abajo -->
 
     <div id="seguirPeli">
-        <?php if($_SESSION['id_usuario']!=''): ?>
-            <?php 
+        <?php if($_SESSION['id_usuario']!=''): 
                 $collection=$bd->sigue_peli;
-                $sigue=$collection->find(array('id_pelicula' => $_SESSION['id_pelicula'],'id_usuario' => $_SESSION['id_usuario']));
+                $id_usuario=$_SESSION['id_usuario'];
+                $sigue=$collection->find(array('titulo' => $_GET['peli'],'id_usuario' => "$id_usuario"));
                 if($sigue->count() == 0):
-                    echo "<p>hola</p>";
             ?>
                     <button id="seguir" name="<?php echo htmlspecialchars($_GET['peli']); ?>" value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">Seguir</button>
-            <?php  endif; ?>
-
-        <?php endif; ?>
+                <?php  endif; ?>
+             <?php endif; ?>
     </div>
 
     <!-- Parte de las críticas -->

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 		// creamos el objeto JSON para enviar a la página PHP
 	   	var datosClick = {
-	        pelicula_id : $(seguir).attr("name"),
+	        titulo : $(seguir).attr("name"),
 	        usuario_id : $(seguir).attr("value") 
 	    };
 

@@ -92,7 +92,7 @@ include_once("../funciones/peliculas.php");
                             // Muestra la variable de sesión del nombreUsuario
                             if (isset($_SESSION['nombreUsuario'])) {
                                        
-                                echo "<p class='infoUser'>Usuario: <b>". $_SESSION["nombreUsuario"] ."</b> </p>";
+                                echo "<p class='infoUser'>Usuario: <b>". $_SESSION["nombreUsuario"] ."</b>";
 
                             }
 
@@ -108,7 +108,7 @@ include_once("../funciones/peliculas.php");
                                 // Muestra la variable de sesión del email
                                 if (isset($_SESSION['email'])) {
                                            
-                                    echo "<p class='infoUser'>Email: <b>". $_SESSION["email"] ."</b></p>";
+                                    echo "Email: <b>". $_SESSION["email"] ."</b>";
 
                                 }
 
@@ -117,6 +117,7 @@ include_once("../funciones/peliculas.php");
                             style="background-color:#66cccc; color:#fff; border:none; opacity:0.7; 
                             padding-left:5px;margin-right:10px;
                             outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
+                        </p>
 
                     </div>
                     <div id="avatar">
@@ -155,7 +156,6 @@ include_once("../funciones/peliculas.php");
                     <h2>Películas que sigues: </h2>
                     <?php
                         include_once("../config/database.php");
-                        include_once("../funciones/peliculas.php");
                         $id_usuario=$_SESSION['id_usuario'];
                         $collection=$bd->sigue_peli;
                         $pelis=$collection->find(array('id_usuario' => "$id_usuario"));
@@ -165,7 +165,7 @@ include_once("../funciones/peliculas.php");
                         foreach ($pelis as $campos => $valor) {
                             foreach ($valor as $campo => $value) {
                                 
-                                if($campo=="id_pelicula"){
+                                if($campo=="titulo"){
 
                                     echo "<a href='../views/perfil-peli.php?peli=$value'>$value<br>";
 
