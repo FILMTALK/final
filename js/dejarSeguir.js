@@ -7,7 +7,8 @@ $(document).ready(function() {
 
 		// creamos el objeto JSON para enviar a la página PHP
 	   	var datosClick = {
-	        titulo : $(sigue).attr("name") 
+	        titulo : $(sigue).attr("name"),
+	        id_usuario: $(sigue).attr("value")
 	    };
 	    alert(datosClick.titulo);
 	    // Se envía el valor al archivo php
