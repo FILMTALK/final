@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
-	$("#borrarPeli").click(function() {
+	$(".borrarPeli").click(function(event) {
+		event.preventDefault();//Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento
 
 		var sigue=this;
-		
-
 		// creamos el objeto JSON para enviar a la página PHP
 	   	var datosClick = {
-	        titulo : $(sigue).attr("name"),
-	        id_usuario: $(sigue).attr("value")
+
+	        titulo: $(sigue).attr("name"),
+	        id_usuario : $(sigue).attr("value")
 	    };
-	    alert(datosClick.titulo);
+
 	    // Se envía el valor al archivo php
 	    $.ajax({
 	    	

@@ -8,7 +8,6 @@ $exit;
 $titulo=$_POST['titulo'];
 $id_usuario=$_POST['id_usuario'];
 
-
 try{
 	$collection=$bd->sigue_peli;
 

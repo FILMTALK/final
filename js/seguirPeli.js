@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	$("#seguir").click(function() {
 
+		event.preventDefault();//Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento
+
 	    var seguir=this;
 
 		// creamos el objeto JSON para enviar a la página PHP
