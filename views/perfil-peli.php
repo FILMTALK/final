@@ -156,14 +156,12 @@ $msg = new Messages();
             }
 
         ?>
-
-        <?php if($_SESSION['id_usuario']!=''): 
-                $collection=$bd->sigue_peli;
-                $id_usuario=$_SESSION['id_usuario'];
-                $id_pelicula=$_GET['peli'];
+        <div id="botonSeg">
+        <?php if($_SESSION['id_usuario']!=''):
+            
                 include_once("../includes/seguirPeli.php");
             endif; ?>
-
+        </div>
 
         <!-- Botones para el vídeo -->
         <div id="buttons">

@@ -25,8 +25,8 @@ $(document).ready(function() {
 		  			alert("NO");
 
 	            }else{
-
-	            	alert("SI");
+	            	var tit=$(seguir).attr("name");
+	            	$('#botonSeg').load('../includes/seguirPeli.php?peli='+tit);
 	            }
           	}
 
