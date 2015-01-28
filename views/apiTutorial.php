@@ -36,39 +36,24 @@
                 Este documento está diseñado para ayudarte a decidir qué API y herramientas se ajustan mejor a tus necesidades.</p>
 
                 <div class="ruta">
-                    <a class="linkjson" href="http://localhost:8080/api/api.php/getPeliculas">getPeliculas 
+                    <a class="linkjson" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas">getPeliculas 
                         <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en nuestra app. Se devuelve
                     en un objeto de tipo JSON, para poder obtener los datos facilmente. 
-                    <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getPeliculas">
-                    http://localhost:8080/api/api.php/getPeliculas</a></p>
+                    <br/>Por ejemplo: <a class="apilink" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas">
+                    http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas</a></p>
 
-                    <div class="language">
-                        <code>
-                            $app->get('/getPeliculas', function () {<br/>
-
-                               &nbsp;&nbsp;  global $collection;<br/>
-
-                               &nbsp;&nbsp;  $peliculas=$collection->find();<br/>
-
-                               &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
-
-                               &nbsp;&nbsp;  echo json_encode(iterator_to_array($peliculas));<br/>
-
-                            });
-                        </code>
-                    </div>
                 </div>
 
                 <div class="ruta">
-                    <a class="linkjson" href="http://localhost:8080/api/api.php/getPelicula/Annie">getPelicula/:titulo
+                    <a class="linkjson" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Annie">getPelicula/:titulo
                         <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL se puede filtrar por el titulo de la pelicula para obtener toda su 
                         información. Se devuelve en un objeto de tipo JSON.
-                        <br/>Por ejemplo, con la pelicula "Big Hero 6": <a class="apilink" href="http://localhost:8080/api/api.php/getPelicula/Big Hero 6">
-                    http://localhost:8080/api/api.php/getPelicula/Big Hero 6</a>
+                        <br/>Por ejemplo, con la pelicula "Big Hero 6": <a class="apilink" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big Hero 6">
+                    http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big Hero 6</a>
                     </p>
                     <div class="language">
                         <code>
