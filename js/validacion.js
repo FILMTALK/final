@@ -1,32 +1,41 @@
-function revisarLongitud(elemento,minimo){
-		
-	//Se obtienen el valor de cada elemento
-	var password=document.getElementById("exampleInputPassword1").value;
-	
-	//Si la longitud es menor que el mínimo
-	if(password.length<minimo){
-		
-		alert("La contraseña debe contener mínimo 8 caracteres.");
-		
+function revisarCampos(){
+
+	var username=document.getElementById("exampleInputUsername").value;
+	username=username.trim();
+
+	var password1=document.getElementById("exampleInputPassword1").value;
+	password1=password1.trim();
+
+	var password2=document.getElementById("exampleInputPassword2").value;
+	password2=password2.trim();
+
+	if(username == "" || username.length<8){
+
+		alert("Revisa el nombre de usuario.");
 	}
 
-} //Cierre de la función
+	if(password1 == "" || password1.length<8){ 
 
-function validar(){
+		alert("Revisa la contraseña.");
 
-	var correcto=true;
-
-	//Si el valor del password es menor que 8 caracteres
-	if(document.getElementById("exampleInputPassword1").value.length<8){
-		
-		correcto=false;
 	}
 
-	if(!correcto){
-		
-		alert("Algunos de los datos tienen errores, por favor corrige antes de enviar");
-	}
-	
-	return correcto;
+	if(password2 == "" || password2.length<8){ 
 
-} //Cierre de la función
+		alert("Revisa la contraseña para verificar.");
+
+	}
+
+}
+
+function revisarCampoLogin(){
+
+	var password3=document.getElementById("exampleInputPassword3").value;
+	password3=password3.trim();
+
+	if(password3 == "" || password3.length<8){
+
+		alert("La contraseña debe tener 8 carácteres.");
+	}
+
+}

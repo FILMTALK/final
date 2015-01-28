@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <div class="row">               
                     <div class="panel-body">
-                        <form role="form" method="post" action="../model/login.php" onSubmit="return validar()">
+                        <form role="form" method="post" action="../model/login.php">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email</label>
                                 <div class="input-group">
@@ -24,7 +24,7 @@
                                 <label for="exampleInputPassword1">Contraseña</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    <input type="password" required id="exampleInputPassword1" onBlur="revisarLongitud(this,8)"name="password" class="form-control" placeholder="Contraseña">
+                                    <input type="password" required id="exampleInputPassword3" name="password" class="form-control" placeholder="Contraseña" maxlength="15" onBlur="revisarCampoLogin();">
                                 </div>
                             </div>
                             <br/>
@@ -32,7 +32,7 @@
                                 style="font-size:16px;margin-top:8px;">
                                 <span class="glyphicon glyphicon-arrow-left"></span> Atras
                             </button>
-                            <button type="submit" name="login" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Loguéate</button>
+                            <button type="submit" name="login" onClick="revisarCampoLogin();" class="btn btn-primary" style="background:#66cccc;border:none;"><span class="glyphicon glyphicon-lock"></span> Loguéate</button>
                             <p><br/></p>
                         </form>
                     </div>                       

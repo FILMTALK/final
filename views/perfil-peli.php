@@ -31,6 +31,8 @@ $msg = new Messages();
 	<script type="text/javascript" src="../js/perfil-peli.js"></script>
     <script type="text/javascript" src="../js/seguirPeli.js"></script>
     <script type="text/javascript" src="../js/valoracion.js"></script><!-- Valorar las estrellas -->
+    <!-- JavaScript para validar los campos -->
+    <script type="text/javascript" src="../js/validacion.js"></script>  
     <!--CSS bootstrap-->
     <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
     <!-- Mensajes flash -->

@@ -14,7 +14,9 @@
 		<!--CSS bootstrap-->
         <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         <!-- jQuery para menu respontive -->
-        <script type="text/javascript" src="../js/menu.js"></script> 
+        <script type="text/javascript" src="../js/menu.js"></script>
+        <!-- JavaScript para validar los campos -->
+        <script type="text/javascript" src="../js/validacion.js"></script>  
         <!-- Tipografia de google, para el mouseover -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> 
 	</head>
