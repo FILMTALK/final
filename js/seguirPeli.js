@@ -25,6 +25,7 @@ $(document).ready(function() {
 		  			alert("NO");
 
 	            }else{
+
 	            	alert("SI");
 	            }
           	}

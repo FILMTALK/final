@@ -320,7 +320,7 @@ h2{
     cursor: pointer;
 }
 
-#seguir{
+#seguir,#siguiendo{
   margin: 30px 30px 40px 440px;
   font-size: 18px;
   height: 42px;
@@ -383,7 +383,7 @@ h2{
     min-height: 400px;
   }
 
-   #seguir{
+   #seguir,#siguiendo{
     margin: 20px 0px 0px 600px;
   }
 
@@ -488,7 +488,7 @@ h2{
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
 @media all  and (max-width: 399px){
 
-  #seguir{
+  #seguir,#siguiendo{
     margin: 20px 0px 0px 0px;
   }
 
