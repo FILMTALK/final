@@ -39,13 +39,6 @@ $msg = new Messages();
     <script type="text/javascript" src="../js/fullscreenVideo.js"></script>
 	<!-- jQuery para menu respontive -->
     <script type="text/javascript" src="../js/menu.js"></script> 
-
-        <script type="text/javascript">
-        function vaciar(critica){
-            alert("fdfd");
-            critica.value="";
-        }
-    </script>
 </head>
 <body>
 
@@ -183,10 +176,10 @@ $msg = new Messages();
 	<div id="contCriticas">
 
     	<div class="criticas">
-
+            <h2>Críticas</h2></br></br>
             <div id="coment">
 
-                <h2>Críticas</h2></br></br>
+                
                 <!-- Listado de los comentarios de la película obtenida de la BD -->
                 <?php
 
@@ -232,11 +225,11 @@ $msg = new Messages();
                     <form class="formulario" role="form" method="post">
                         <div class="form-group">
                             <div class="input-group"  id="texti">
-                                <textarea class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
+                                <textarea id="estilotextarea" class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
                                  id="critica" placeholder="Crítica" required></textarea>
                             </div>
                         </div>
-                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" onClick="vaciar(this);">
+                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>">
                             <span class="glyphicon glyphicon-comment"></span> Comenta</button>
                     </form>
 

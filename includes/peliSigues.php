@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("../config/database.php");
 $id_usuario=$_SESSION['id_usuario'];
 $collection=$bd->sigue_peli;

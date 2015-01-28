@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("#borrar").click(function() {
+	$("#borrarPeli").click(function() {
 
 		var sigue=this;
 		

@@ -153,12 +153,11 @@ include_once("../funciones/peliculas.php");
                     <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
-
+                <h2>Películas que sigues: </h2>
                 <div id="pelisigue">
-                    <h2>Películas que sigues: </h2>
+                    
                     <?php
-                        include_once("../includes/peliSigues.php");
-                       
+                        include_once("../includes/peliSigues.php");               
                     ?>
 
                 </div>
