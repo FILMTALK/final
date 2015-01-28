@@ -160,19 +160,8 @@ $msg = new Messages();
         <?php if($_SESSION['id_usuario']!=''): 
                 $collection=$bd->sigue_peli;
                 $id_usuario=$_SESSION['id_usuario'];
-                $sigue=$collection->find(array('titulo' => $_GET['peli'],'id_usuario' => "$id_usuario"));
-                if($sigue->count() == 0):
-            ?>
-                    <button id="seguir" name="<?php echo htmlspecialchars($_GET['peli']); ?>" 
-                        value="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>">
-                        <span class="halflings halflings-plus"></span></span>Seguir</button>
-
-                <?php  
-                else:
-                ?>
-                    <button id="seguir" disabled>Siguiendo</button>
-                <?php 
-                endif; 
+                $id_pelicula=$_GET['peli'];
+                include_once("../includes/seguirPeli.php");
             endif; ?>
 
 
