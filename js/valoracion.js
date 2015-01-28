@@ -79,6 +79,7 @@ $(document).ready(function() {
 		  	// función que se ejecutará cuando obtengamos la respuesta
 		  	success:function(data){
 
+		  		//textarea vacio despues de insert
 		  		$('input[type=text], textarea').val('');
 
 		  		var id = $("#enviarCritica").attr("name");

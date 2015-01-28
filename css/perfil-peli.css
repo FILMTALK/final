@@ -25,7 +25,7 @@ video {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  height: 780px;
+  height: 760px;
   z-index: -100;
   background-color: #cccccc;
   background-size: cover;
@@ -348,6 +348,10 @@ h2{
 
   #texti{
     width:335%;
+  }
+
+  #estilotextarea{
+    border-radius: 5px;
   }
 
 

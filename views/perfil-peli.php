@@ -39,6 +39,13 @@ $msg = new Messages();
     <script type="text/javascript" src="../js/fullscreenVideo.js"></script>
 	<!-- jQuery para menu respontive -->
     <script type="text/javascript" src="../js/menu.js"></script> 
+
+        <script type="text/javascript">
+        function vaciar(critica){
+            alert("fdfd");
+            critica.value="";
+        }
+    </script>
 </head>
 <body>
 
@@ -222,7 +229,7 @@ $msg = new Messages();
                     <form class="formulario" role="form" method="post">
                         <div class="form-group">
                             <div class="input-group" id="texti">
-                                <textarea class="form-control" rows="2" placeholder="Crítica" disabled></textarea>
+                                <textarea id="estilotextarea" class="form-control" rows="2" placeholder="Crítica" disabled></textarea>
                             </div>
                         </div>
                         <button type="submit" id="diferente" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" disabled>
@@ -242,7 +249,7 @@ $msg = new Messages();
                                  id="critica" placeholder="Crítica" required></textarea>
                             </div>
                         </div>
-                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>">
+                        <button type="submit" id="enviarCritica" class="btn btn-primary" style="background:#66cccc;border:none;margin-bottom:150px;" name="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" onClick="vaciar(this);">
                             <span class="glyphicon glyphicon-comment"></span> Comenta</button>
                     </form>
 
@@ -256,6 +263,8 @@ $msg = new Messages();
 
 </div>
     
+
+
 
     <!-- Para las ventanas modales -->
     <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
