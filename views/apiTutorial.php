@@ -34,6 +34,14 @@
                <h1> Welcome, Developers.</h1>
                <p>Filmdate proporciona diversas API y herramientas que permiten integrar la experiencia de Filmdate en tu sitio web, aplicación o dispositivo móvil.<br/>
                 Este documento está diseñado para ayudarte a decidir qué API y herramientas se ajustan mejor a tus necesidades.</p>
+                <p>Os ofrecemos la posibilidad de realizar peticiones a nuestra API visualizando o descargando el
+                 código en los lenguajes de programación en 
+                 <a class="apilink" href="http://filmtalk.github.io/api_php/">
+                    PHP</a> o 
+                <a class="apilink" href="http://filmtalk.github.io/api_node/">
+                    Node.js.</a>
+                    
+                </p>
 
                 <div class="ruta">
                     <a class="linkjson" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas">getPeliculas 
@@ -55,73 +63,26 @@
                         <br/>Por ejemplo, con la pelicula "Big Hero 6": <a class="apilink" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big Hero 6">
                     http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big Hero 6</a>
                     </p>
-                    <div class="language">
-                        <code>
-                            $app->get('/getPelicula/:titulo', function ($titulo) {<br/>
-
-                                &nbsp;&nbsp;  global $collection;<br/>
-
-                                &nbsp;&nbsp;  $peliculas=$collection->findOne(array('title' => $titulo));<br/>
-
-                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
-
-                                &nbsp;&nbsp;  echo json_encode($peliculas);<br/>
-      
-                            });
-                        </code>
-                    </div>
                 </div>
 
                 <div class="ruta"> 
-                    <a class="linkjson" href="http://localhost:8080/api/api.php/getCartelera">getCartelera
+                    <a class="linkjson" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getCartelera">getCartelera
                         <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la cartelera de nuestra
                      app. Se devuelve en un objeto de tipo JSON.
-                     <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getCartelera">
-                    http://localhost:8080/api/api.php/getCartelera</a> </p>
+                     <br/>Por ejemplo: <a class="apilink" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getCartelera">
+                    http://filmdate-filmdate.rhcloud.com/api/api.php/getCartelera</a> </p>
 
-                    <div class="language">
-                        <code>
-                            $app->get('/getCartelera', function () {<br/>
-
-                                &nbsp;&nbsp;  global $collection;<br/>
-
-                                &nbsp;&nbsp;  $cartelera=$collection->find(array("boxOffice" => "boxOffice"));<br/>
-
-                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
-
-                               &nbsp;&nbsp;  echo json_encode(iterator_to_array($cartelera));<br/>
-
-                            });
-                        </code>
-                    <p>
-                    </div>
                 </div>
                 <div class="ruta">
-                    <a class="linkjson" href="http://localhost:8080/api/api.php/getProximamente">getProximamente
+                    <a class="linkjson" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getProximamente">getProximamente
                     <span class="glyphicon glyphicon-link" style="font-size:20px;"></span></a>
 
                     <p>Con esta URL proporcionamos todas las peliculas que se encuentran en la sección 
                     proximamente de nuestra app. Se devuelve en un objeto de tipo JSON.
-                    <br/>Por ejemplo: <a class="apilink" href="http://localhost:8080/api/api.php/getProximamente">
-                    http://localhost:8080/api/api.php/getProximamente</a> </p>
-
-                    <div class="language">
-                        <code>
-                            $app->get('/getProximamente', function () {<br/>
-
-                                &nbsp;&nbsp;  global $collection;<br/>
-
-                                &nbsp;&nbsp;  $proximamente=$collection->find(array("upcoming" => "upcoming"));<br/>
-
-                                &nbsp;&nbsp;  header('Content-Type: application/json');<br/>
-
-                                &nbsp;&nbsp;  echo json_encode(iterator_to_array($proximamente));<br/>
-
-                            });
-                        </code>
-                    </div>
+                    <br/>Por ejemplo: <a class="apilink" href="http://filmdate-filmdate.rhcloud.com/api/api.php/getProximamente">
+                    http://filmdate-filmdate.rhcloud.com/api/api.php/getProximamente</a> </p>
                 </div>
             </div>
 
