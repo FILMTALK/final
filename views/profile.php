@@ -41,7 +41,9 @@ include_once("../funciones/peliculas.php");
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
         <!--Canvas-->
-        <script type="text/javascript" src="../js/canvas.js"></script>    
+        <script type="text/javascript" src="../js/canvas.js"></script>
+        <!--Dejar de seguir peli-->
+        <script type="text/javascript" src="../js/dejarSeguir.js"></script>    
         <!-- jQuery para ventana modal -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>  
@@ -155,25 +157,8 @@ include_once("../funciones/peliculas.php");
                 <div id="pelisigue">
                     <h2>Películas que sigues: </h2>
                     <?php
-                        include_once("../config/database.php");
-                        $id_usuario=$_SESSION['id_usuario'];
-                        $collection=$bd->sigue_peli;
-                        $pelis=$collection->find(array('id_usuario' => "$id_usuario"));
-
-                        $peli_id;
-
-                        foreach ($pelis as $campos => $valor) {
-                            foreach ($valor as $campo => $value) {
-                                
-                                if($campo=="titulo"){
-
-                                    echo "<a href='../views/perfil-peli.php?peli=$value'>$value<br>";
-
-                                }
-
-                            }
-                        }
-
+                        include_once("../includes/peliSigues.php");
+                       
                     ?>
 
                 </div>
