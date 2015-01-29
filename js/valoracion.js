@@ -50,7 +50,6 @@ $(document).ready(function() {
 	    var usu=document.getElementById("critica").name;
 	    if(coment==""){
 
-	    	$('input[type=text], textarea').val('');
 			$("#noVacia").css("background","url(../images/messages/cross.png ) no-repeat 0px 50%");
 			$("#noVacia").css("background-color","#FFF0EF");
 			$("#noVacia").css("border","1px solid #C42608");
