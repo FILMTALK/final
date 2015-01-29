@@ -156,13 +156,14 @@ include_once("../funciones/peliculas.php");
 
                 </div> <!-- Cierre de la clase profile -->
                 <h2>Películas que sigues: </h2>
-                <div id="pelisigue">
+                <div id="aviso"></div>
+                <table id="pelisigue">
                     
                     <?php
-                        include_once("../includes/peliSigues.php");               
+                        include("../includes/peliSigues.php");
                     ?>
 
-                </div>
+                </table>
 
             </div> <!--  Cierre div de la clase page-wrap -->
         </div> <!-- Cierre div de la id cont -->
