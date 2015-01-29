@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 	});
 
-	$("#enviarCritica").click(function() {
+	$("#enviarCritica").click(function(event) {
 		event.preventDefault();//Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento
 		// Se obtienen los atributos de la estrella que hizo clic
 		var comenta=document.getElementById("critica").value;
@@ -50,12 +50,11 @@ $(document).ready(function() {
 	    var usu=document.getElementById("critica").name;
 	    if(coment==""){
 
+	    	$('input[type=text], textarea').val('');
 			$("#noVacia").css("background","url(../images/messages/cross.png ) no-repeat 0px 50%");
 			$("#noVacia").css("background-color","#FFF0EF");
 			$("#noVacia").css("border","1px solid #C42608");
 			$("#noVacia").html("<p style='margin-left:20px;'>La crítica no puede esta vacía</p>");
-			$('input[type=text], textarea').val('');
-
 	    	return false;
 	    }
 

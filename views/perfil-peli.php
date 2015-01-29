@@ -227,7 +227,7 @@ $msg = new Messages();
                     <form class="formulario" role="form" method="post">
                         <div class="form-group">
                             <div class="input-group"  id="texti">
-                                <textarea id="estilotextarea" class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
+                                <textarea class="form-control" rows="2" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>"
                                  id="critica" placeholder="Crítica" required></textarea>
                             </div>
                         </div>
