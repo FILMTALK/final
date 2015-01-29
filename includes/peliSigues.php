@@ -30,7 +30,7 @@
                                     //echo "<a id='$id_usuario' name='$value' class='btn btn-primary borrarPeli' onclick='noSeguir($id_documento)' style='background-color:#00B8E6;border:none;outline:none;'><span class='glyphicon glyphicon-trash'></span></a>";
                                 echo "</td>";
                                 echo "<td>";    
-                                    echo "<a href='../views/perfil-peli.php?peli=$value'> $value</a>";
+                                    echo " <a class='apilink' href='../views/perfil-peli.php?peli=$value'> $value</a>";
                                     echo"<br>";
                                 echo "</td>";
                             }

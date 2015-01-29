@@ -162,7 +162,7 @@ include_once("../funciones/peliculas.php");
                         value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
-                <h2>Películas que sigues: </h2>
+                <h2 id="pelisquesigues">Películas que sigues: </h2>
                 <div id="aviso"></div>
                 <table id="pelisigue">
                     

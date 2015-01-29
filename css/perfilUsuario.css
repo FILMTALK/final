@@ -44,6 +44,10 @@ p#texto,#enviar{
   font-weight: bold;
 }
 
+#pelisquesigues{
+  font-size: 20px;
+}
+
 
 /*para el boton de carga de archivos*/
 div#div_file,#enviar{
@@ -163,6 +167,7 @@ input#subirImagen{
 }
 
 .apilink{
+  font-size: 15px;
   text-decoration: none;
   color: #66cccc;
 }
@@ -188,6 +193,7 @@ input#subirImagen{
   }
 
   #cont{
+    padding-left: 20px;
     left: 10%;
   }
   .page-wrap {
@@ -198,7 +204,7 @@ input#subirImagen{
 
   #perfilTitulo {
 
-    margin: 20px;
+    margin-bottom: 20px;
     font-size: 16px;
     border-bottom: 1.5px solid #66cccc;
     min-width: 60px;
@@ -208,22 +214,14 @@ input#subirImagen{
 
   }
 
- div#div_file{
-    margin: 0 0 0 18px;
-  }
-
-
-  input[type="file"],canvas,#bnw,#colour,#enviar,#fotoUsuario{
-
-    margin: 0 0 0 18px;
-
+  #pelisquesigues{
+    font-size: 17px;
   }
 
 
   .editarDatos {
 
     width: 100%;
-    padding: 20px;
 
   }
 
@@ -245,13 +243,13 @@ input#subirImagen{
 
   }
 
+  .apilink{
+  font-size: 14px;
+}
 
   #textoApi{
     margin: 80px 15px 40px 15px;
   }
 
-  .language{
-    margin: 20px 0 0 15px;
-  }
 
 }
