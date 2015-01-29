@@ -189,7 +189,8 @@ include_once("../funciones/peliculas.php");
                     <div class="modal-body">
                         <div class="row">
                             <div class="panel-body">
-                                <form role="form" method="post" action="../model/editarNombreUsuario.php">
+                                <form name="editarNombre" role="form" method="post" action="../model/editarNombreUsuario.php" 
+                                onSubmit="return revisarEditarNombre();">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nuevo nombre</label>
                                         <div class="input-group">
@@ -201,7 +202,7 @@ include_once("../funciones/peliculas.php");
                                         <label for="exampleInputPassword1">Contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                            <input type="password" name="password" class="form-control" maxlength="15" id="exampleInputPassword4" placeholder="Contraseña para verificar" required>
+                                            <input type="password" name="password" class="form-control" maxlength="15" placeholder="Contraseña para verificar" required>
                                         </div>
                                     </div>
                                     <br/>
@@ -209,7 +210,7 @@ include_once("../funciones/peliculas.php");
                                         style="font-size:16px;margin-top:8px;">
                                         <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                     </button>
-                                    <button type="submit" onClick="revisarEditarNombre();" name="editNombre" class="btn btn-primary" style="background:#66cccc;border:none;">
+                                    <button type="submit" name="editNombre" class="btn btn-primary" style="background:#66cccc;border:none;">
                                         <span class="glyphicon glyphicon-user"></span> Modificar</button>
                                     <p><br/></p>
                                 </form>
@@ -234,7 +235,8 @@ include_once("../funciones/peliculas.php");
                     <div class="modal-body">
                         <div class="row">
                             <div class="panel-body">
-                                <form role="form" method="post" action="../model/editarEmailUsuario.php">
+                                <form name="editarEmail" role="form" method="post" action="../model/editarEmailUsuario.php" 
+                                onSubmit="return revisarEditarEmail();">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nuevo email</label>
                                         <div class="input-group">
@@ -246,7 +248,7 @@ include_once("../funciones/peliculas.php");
                                         <label for="exampleInputPassword1">Contraseña</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                            <input type="password" name="password" class="form-control" maxlength="15" id="exampleInputPassword5" placeholder="Contraseña para verificar" required>
+                                            <input type="password" name="password" class="form-control" maxlength="15" placeholder="Contraseña para verificar" required>
                                         </div>
                                     </div>
                                     <br/>
@@ -254,7 +256,7 @@ include_once("../funciones/peliculas.php");
                                         style="font-size:16px;margin-top:8px;">
                                         <span class="glyphicon glyphicon-arrow-left"></span> Atras
                                     </button>
-                                    <button type="submit" onClick="revisarEditarEmail();" name="editEmail" class="btn btn-primary" style="background:#66cccc;border:none;">
+                                    <button type="submit" name="editEmail" class="btn btn-primary" style="background:#66cccc;border:none;">
                                         <span class="glyphicon glyphicon-user"></span> Modificar</button>
                                     <p><br/></p>
                                 </form>
