@@ -159,7 +159,7 @@ include_once("../funciones/peliculas.php");
                     <button id="colour">Color</button><br /><br />
 
                     <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" 
-                        value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
+                        value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>" disabled> Subir foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
                 <h2 id="pelisquesigues">Películas que sigues: </h2>
