@@ -70,13 +70,19 @@ if(isset($_POST['registro'])){
 
 				try {
 
+					// Read image path, convert to base64 encoding
+					$imageData = base64_encode(file_get_contents("../images/default.jpg"));
+					// Format the image SRC:  data:{mime};base64,{data};
+					//{mime}--> El formato de la imagen, ej.:image/jpeg
+					$src = 'data: '.mime_content_type("../images/default.jpg").';base64,'.$imageData;
+
 					// Se crea un array para obtener los datos del formulario para guarda como un documento
 					$document = array( 
 
 						"email" => $_POST['email'], 
 						"usuario" => $_POST['username'],
-						"password" => md5($_POST['password'])
-
+						"password" => md5($_POST['password']),
+						"foto" => $src
 			    	);
 
 					// Se inserta el documento en la colección llamado users

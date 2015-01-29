@@ -125,22 +125,28 @@ include_once("../funciones/peliculas.php");
 
                     </div>
                     <div id="avatar">
-                        <?php
+                        <div id="recargaImagen">
+                            <?php
 
-                            include_once("../config/database.php");
+                                include_once("../config/database.php");
 
-                            $datos=$collection->findOne(array('email' => $_SESSION["email"]));
+                                $nombreUsuario = $_SESSION["nombreUsuario"];
 
-                            foreach ($datos as $key => $value) {
+                                $collection=$bd->usuarios;
 
-                                if($key=="foto"){
+                                $datos=$collection->findOne(array('usuario' => "$nombreUsuario"));
 
-                                    echo "<img id='fotoUsuario' src='".$value."' alt='Avatar'/><br /><br />";
+                                foreach ($datos as $key => $value) {
 
+                                    if($key=="foto"){
+
+                                        echo "<img id='fotoUsuario' src='".$value."' alt='Avatar'/><br /><br />";
+
+                                    }
                                 }
-                            }
 
-                        ?>
+                            ?>
+                        </div>
                         <canvas id="areaCanvas" style="width:10%;height:10%;"></canvas>
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
@@ -152,7 +158,8 @@ include_once("../funciones/peliculas.php");
                     <button id="bnw">Grayscale</button>
                     <button id="colour">Color</button><br /><br />
 
-                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
+                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" 
+                        value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>"> Subir foto </button>
 
                 </div> <!-- Cierre de la clase profile -->
                 <h2>Películas que sigues: </h2>

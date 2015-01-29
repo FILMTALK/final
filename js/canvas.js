@@ -131,10 +131,9 @@ $(document).ready(function() {
 			// función que se ejecutará cuando obtengamos la respuesta
 			success:function(data){
 
-				$("#mostrarMsg").css("background","url(../images/messages/tick.png ) no-repeat 0px 50%");
-				$("#mostrarMsg").css("background-color","#E0FBCC");
-				$("#mostrarMsg").css("border","1px solid #6DC70C");
-				$("#mostrarMsg").html("<p style='margin-left:20px;color:#2B6301 !important;'>Imagen guardada. <br>Actualiza la p&aacute;gina.</p>");
+				dibujo.clearRect(0, 0, canvas.width, canvas.height);
+
+		  		$('#recargaImagen').load('../includes/anadirImagen.php?nombreUsuario='+nombre);	
 
 			}
 
