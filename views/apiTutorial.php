@@ -16,6 +16,8 @@
         <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
+        <!-- Script para NewRelic -->
+        <script type="text/javascript" src="../js/NewRelic.js"></script>  
         <!-- Tipografia de google -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>     
 	</head> <!-- Cierre del encabezado de la página -->

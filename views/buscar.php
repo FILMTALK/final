@@ -13,7 +13,9 @@
         <!--CSS bootstrap-->
         <link rel="stylesheet" type="text/css" href="../css/dist/css/bootstrap.css">
         <!-- jQuery para menu respontive -->
-        <script type="text/javascript" src="../js/menu.js"></script> 
+        <script type="text/javascript" src="../js/menu.js"></script>
+        <!-- Script para NewRelic -->
+        <script type="text/javascript" src="../js/NewRelic.js"></script> 
     </head>
 
     <body>

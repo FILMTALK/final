@@ -44,7 +44,9 @@ include_once("../config/database.php");
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
         <!-- JavaScript para validar los campos -->
-        <script type="text/javascript" src="../js/validacion.js"></script> 
+        <script type="text/javascript" src="../js/validacion.js"></script>
+        <!-- Script para NewRelic -->
+        <script type="text/javascript" src="../js/NewRelic.js"></script>
         <!-- Tipografia de google, para el mouseover -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>          
 	</head> <!-- Cierre del encabezado de la página -->

@@ -48,7 +48,9 @@ include_once("../funciones/peliculas.php");
         <script type="text/javascript" src="../js/validarEditarDatos.js"></script>
         <!-- jQuery para ventana modal -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
-        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>  
+        <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
+        <!-- Script para NewRelic -->
+        <script type="text/javascript" src="../js/NewRelic.js"></script>
 	</head> <!-- Cierre del encabezado de la página -->
 
 	<body background="../images/fondoUsu.jpg" no-repeat center center fixed>

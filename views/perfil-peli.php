@@ -40,7 +40,9 @@ $msg = new Messages();
 	<!--para full screen video, pantalla completa-->
     <script type="text/javascript" src="../js/fullscreenVideo.js"></script>
 	<!-- jQuery para menu respontive -->
-    <script type="text/javascript" src="../js/menu.js"></script> 
+    <script type="text/javascript" src="../js/menu.js"></script>
+    <!-- Script para NewRelic -->
+    <script type="text/javascript" src="../js/NewRelic.js"></script>
 </head>
 <body>
 
