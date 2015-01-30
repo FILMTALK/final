@@ -38,26 +38,24 @@ if(isset($_POST['registro'])){
 	}
 	else{ // Si los campos no están vacíos
 
-		// Se comprueba si las contraseñas coinciden
-		if(!($_POST["password"]==$_POST["password2"])){
-
+		$email=$_POST['email'];
+		if(!preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$email)){
 			// Mensaje de error a mostrar
-			$msg->add('e', 'ERROR: Las claves no coinciden');
+				$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
 
-			// Redirecciona a la página de registro
-			header('Location: ../views/registro.php');
+				// Redirecciona a la página de añadir usuario
+				header('Location: ../views/registro.php');
 
-			// Imprime un mensaje y termina el script actual
-			exit();
+				// Imprime un mensaje y termina el script actual
+				exit();
 
-		}
-		else{ // Si las contraseñas coinciden
+		}else{
 
-			// Se comprueba que el usuario existe en la bd.
-			if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
+			// Se comprueba si las contraseñas coinciden
+			if(!($_POST["password"]==$_POST["password2"])){
 
 				// Mensaje de error a mostrar
-				$msg->add('e', 'ERROR: El usuario ya existe');
+				$msg->add('e', 'ERROR: Las claves no coinciden');
 
 				// Redirecciona a la página de registro
 				header('Location: ../views/registro.php');
@@ -66,83 +64,13 @@ if(isset($_POST['registro'])){
 				exit();
 
 			}
-			else{ // Si el usuario no existe
+			else{ // Si las contraseñas coinciden
 
-				try {
-
-					// Read image path, convert to base64 encoding
-					$imageData = base64_encode(file_get_contents("../images/default.jpg"));
-					// Format the image SRC:  data:{mime};base64,{data};
-					//{mime}--> El formato de la imagen, ej.:image/jpeg
-					$src = 'data: '.mime_content_type("../images/default.jpg").';base64,'.$imageData;
-
-					// Se crea un array para obtener los datos del formulario para guarda como un documento
-					$document = array( 
-
-						"email" => $_POST['email'], 
-						"usuario" => $_POST['username'],
-						"password" => md5($_POST['password']),
-						"foto" => $src
-			    	);
-
-					// Se inserta el documento en la colección llamado users
-					$collection->insert($document);
-
-					// Se obtiene el id del usuario desde la bd
-					$id_usuario=obtenerIdUsuario($_POST['email']);
-
-					// Se obtienenn los datos del usuario mediante el id
-					$datosUsuario=obtenerDatosUsuario($id_usuario);
-
-					// Variables locales
-					$email;
-					$nombreUsuario;
-
-					// Recorremos los datos para saber si el email existe
-					foreach($datosUsuario as $campos => $datos){
-
-					    if($campos=='email'){
-					        $email=$datos;
-					    }
-
-					    if($campos=='usuario'){
-					        $nombreUsuario=$datos;
-					    }
-
-					} // Cierre del bucle foreach
-
-					// Si la variable de sesión id no está definido
-					if(!isset($_SESSION['id_usuario'])){
-
-						//Se establece la variable de sesión del usuario, que será el id.
-						$_SESSION['id_usuario']=$id_usuario;
-						
-					}
-
-					// Si la variable de sesión nombreUsuario no está definido
-					if(!isset($_SESSION['nombreUsuario'])){
-
-						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
-						$_SESSION['nombreUsuario']=$nombreUsuario;
-						
-					}
-
-					// Si la variable de sesión email no está definido
-					if(!isset($_SESSION['email'])){
-
-						//Se establece la variable de sesión del usuario, que será el nombre de usuario.
-						$_SESSION['email']=$email;
-						
-					}
-
-					// Redirecciona al perfil del usuario
-					header("location: ../views/profile.php");
-
-				}
-				catch (MongoCursorException $e) {
+				// Se comprueba que el usuario existe en la bd.
+				if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
 
 					// Mensaje de error a mostrar
-					$msg->add('e', 'ERROR: Al insertar los datos');
+					$msg->add('e', 'ERROR: El usuario ya existe');
 
 					// Redirecciona a la página de registro
 					header('Location: ../views/registro.php');
@@ -150,12 +78,98 @@ if(isset($_POST['registro'])){
 					// Imprime un mensaje y termina el script actual
 					exit();
 
+				}
+				else{ // Si el usuario no existe
 
-				} // Cierre de la excepción
+					try {
 
-			} // Cierre del else si el usuario no existe
+						// Read image path, convert to base64 encoding
+						$imageData = base64_encode(file_get_contents("../images/default.jpg"));
+						// Format the image SRC:  data:{mime};base64,{data};
+						//{mime}--> El formato de la imagen, ej.:image/jpeg
+						$src = 'data: '.mime_content_type("../images/default.jpg").';base64,'.$imageData;
 
-		} // Cierre del else porque las contraseñas coinciden
+						// Se crea un array para obtener los datos del formulario para guarda como un documento
+						$document = array( 
+
+							"email" => $_POST['email'], 
+							"usuario" => $_POST['username'],
+							"password" => md5($_POST['password']),
+							"foto" => $src
+				    	);
+
+						// Se inserta el documento en la colección llamado users
+						$collection->insert($document);
+
+						// Se obtiene el id del usuario desde la bd
+						$id_usuario=obtenerIdUsuario($_POST['email']);
+
+						// Se obtienenn los datos del usuario mediante el id
+						$datosUsuario=obtenerDatosUsuario($id_usuario);
+
+						// Variables locales
+						$email;
+						$nombreUsuario;
+
+						// Recorremos los datos para saber si el email existe
+						foreach($datosUsuario as $campos => $datos){
+
+						    if($campos=='email'){
+						        $email=$datos;
+						    }
+
+						    if($campos=='usuario'){
+						        $nombreUsuario=$datos;
+						    }
+
+						} // Cierre del bucle foreach
+
+						// Si la variable de sesión id no está definido
+						if(!isset($_SESSION['id_usuario'])){
+
+							//Se establece la variable de sesión del usuario, que será el id.
+							$_SESSION['id_usuario']=$id_usuario;
+							
+						}
+
+						// Si la variable de sesión nombreUsuario no está definido
+						if(!isset($_SESSION['nombreUsuario'])){
+
+							//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+							$_SESSION['nombreUsuario']=$nombreUsuario;
+							
+						}
+
+						// Si la variable de sesión email no está definido
+						if(!isset($_SESSION['email'])){
+
+							//Se establece la variable de sesión del usuario, que será el nombre de usuario.
+							$_SESSION['email']=$email;
+							
+						}
+
+						// Redirecciona al perfil del usuario
+						header("location: ../views/profile.php");
+
+					}
+					catch (MongoCursorException $e) {
+
+						// Mensaje de error a mostrar
+						$msg->add('e', 'ERROR: Al insertar los datos');
+
+						// Redirecciona a la página de registro
+						header('Location: ../views/registro.php');
+
+						// Imprime un mensaje y termina el script actual
+						exit();
+
+
+					} // Cierre de la excepción
+
+				} // Cierre del else si el usuario no existe
+
+			} // Cierre del else porque las contraseñas coinciden
+		} // Cierre del else si el mail está mal
 
 	} // Cierre del else porque los campos no están vacíos
 

@@ -23,6 +23,8 @@ if(isset($_POST['anadir'])){
 
 		// Se muestra un mensaje por pantalla
 		$msg->add('e', 'ERROR: Los campos estan vac&iacute;os');
+		// Redirecciona al anadirPeli
+		header("location: ../views/anadirPeli.php");
 		exit;
 	}
 	else{ // Si los campos no están vacíos
@@ -35,6 +37,8 @@ if(isset($_POST['anadir'])){
 
 			// Se muestra un mensaje por pantalla
 			$msg->add('e', 'ERROR: El pel&iacute; ya existe');
+			// Redirecciona al anadirPeli
+			header("location: ../views/anadirPeli.php");
 			exit;
 		}
 		else{ 			

@@ -33,28 +33,25 @@ if(isset($_POST['registro'])){
 		exit();
 		
 	}
-	else{ // Si los campos no están vacíos
-
-		// Se comprueba si las contraseñas coinciden
-		if(!($_POST["password"]==$_POST["password2"])){
-
+	else{ // Si el mail está mal
+		$email=$_POST['email'];
+		if(!preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$email)){
 			// Mensaje de error a mostrar
-			$msg->add('e', 'ERROR: Las claves no coinciden');
+				$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
 
-			// Redirecciona a la página de registro
-			header('Location: ../views/anadirUser.php');
+				// Redirecciona a la página de añadir usuario
+				header('Location: ../views/anadirUser.php');
 
-			// Imprime un mensaje y termina el script actual
-			exit();
+				// Imprime un mensaje y termina el script actual
+				exit();
 
-		}
-		else{ // Si las contraseñas coinciden
+		}else{
 
-			// Se comprueba que el usuario existe en la bd.
-			if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
+			// Se comprueba si las contraseñas coinciden
+			if(!($_POST["password"]==$_POST["password2"])){
 
 				// Mensaje de error a mostrar
-				$msg->add('e', 'ERROR: El usuario ya existe');
+				$msg->add('e', 'ERROR: Las claves no coinciden');
 
 				// Redirecciona a la página de registro
 				header('Location: ../views/anadirUser.php');
@@ -63,46 +60,77 @@ if(isset($_POST['registro'])){
 				exit();
 
 			}
-			else{ // Si el usuario no existe
-
-				try {
-
-					// Se crea un array para obtener los datos del formulario para guarda como un documento
-					$document = array( 
-
-						"email" => $_POST['email'], 
-						"usuario" => $_POST['username'],
-						"password" => md5($_POST['password'])
-
-			    	);
-
-					// Se inserta el documento en la colección llamado users
-					$collection->insert($document);
-
-					$msg->add('s', '¡FABULOSO! Usuario añadido');
-
-					// Redirecciona al perfil del usuario
-					header("location: ../views/anadirUser.php");
-
-				}
-				catch (MongoCursorException $e) {
-
+			else{ // Si las contraseñas coinciden
+				$password=$_POST["password"];
+				$tamPass = strlen($password);
+				if($tamPass<8 || $tamPass>15){
 					// Mensaje de error a mostrar
-					$msg->add('e', 'ERROR: Al insertar los datos');
+					$msg->add('e', 'ERROR: La contraseña tiene que tener 8 caracteres como mínimo o 15 como máximo');
 
-					// Redirecciona a la página de registro
+					// Redirecciona a la página de añadir usuario
 					header('Location: ../views/anadirUser.php');
 
 					// Imprime un mensaje y termina el script actual
 					exit();
+				}else{
+					// Se comprueba que el usuario existe en la bd.
+					if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
+
+						// Mensaje de error a mostrar
+						$msg->add('e', 'ERROR: El usuario ya existe');
+
+						// Redirecciona a la página de añadir usuario
+						header('Location: ../views/anadirUser.php');
+
+						// Imprime un mensaje y termina el script actual
+						exit();
+
+					}
+					else{ // Si el usuario no existe
+
+						try {
+
+							// Se crea un array para obtener los datos del formulario para guarda como un documento
+							$document = array( 
+
+								"email" => $_POST['email'], 
+								"usuario" => $_POST['username'],
+								"password" => md5($_POST['password'])
+
+					    	);
+
+							// Se inserta el documento en la colección llamado users
+							$collection->insert($document);
+
+							$msg->add('s', '¡FABULOSO! Usuario añadido');
+
+							// Redirecciona al perfil del usuario
+							header("location: ../views/anadirUser.php");
+
+						}
+						catch (MongoCursorException $e) {
+
+							// Mensaje de error a mostrar
+							$msg->add('e', 'ERROR: Al insertar los datos');
+
+							// Redirecciona a la página de registro
+							header('Location: ../views/anadirUser.php');
+
+							// Imprime un mensaje y termina el script actual
+							exit();
 
 
-				} // Cierre de la excepción
+						} // Cierre de la excepción
 
-			} // Cierre del else si el usuario no existe
+					} // Cierre del else si el usuario no existe
 
-		} // Cierre del else porque las contraseñas coinciden
+				} // Cierre del else si la contraseña no tiene 8 caracteres como mínimo
 
+			} // Cierre del else porque las contraseñas coinciden
+
+
+		} //Cierre del else para compobar si el mail está correcto.
+		
 	} // Cierre del else porque los campos no están vacíos
 
 } // Cierre del if --> variable registro

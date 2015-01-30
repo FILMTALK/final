@@ -88,7 +88,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff;text-align: left;">Titulo de la película</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Nombre" name="nombre">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Nombre" name="nombre" required>
                     </div>
                 </div>
                 <br/>
@@ -96,7 +96,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Descripción</label>
                     <div class="input-group"  style="width:330px;">
-                        <textarea style="border-radius: 5px;" class="form-control" rows="3"  placeholder="Descripción" name="descripcion"></textarea>
+                        <textarea style="border-radius: 5px;" class="form-control" rows="3"  placeholder="Descripción" name="descripcion" required></textarea>
                     </div>
                 </div>
                 <br/>
@@ -104,7 +104,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Duración</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Duración" name="duracion">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Duración" name="duracion" required>
                     </div>
                 </div>
                 <br/>
@@ -112,15 +112,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Reparto</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Reparto" name="reparto">
-                    </div>
-                </div>
-                <br/>
-            <!--Input-->
-                <div class="form-group">
-                    <label for="usr" style="color:#fff">Calificación</label>
-                    <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Calificación" name="calificacion">
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Reparto" name="reparto" required>
                     </div>
                 </div>
                 <br/>

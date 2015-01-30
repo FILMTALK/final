@@ -105,7 +105,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Contraseña</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="password" class="form-control" id="usr" placeholder="Contraseña" name="password" required>
+                        <input  style="border-radius: 5px;" min="8" maxlength="15" type="password" class="form-control" id="usr" placeholder="Contraseña" name="password" required>
                     </div>
                 </div>
                 <br/>
@@ -113,7 +113,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Repite la contraseña</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="password" class="form-control" id="usr" placeholder="Repite la contraseña" name="password2" required>
+                        <input  style="border-radius: 5px;"  min="8" maxlength="15" type="password" class="form-control" id="usr" placeholder="Repite la contraseña" name="password2" required>
                     </div>
                 </div>
                 <br/>
