@@ -97,7 +97,7 @@ $msg = new Messages();
                 <div class="form-group">
                     <label for="usr" style="color:#fff">Nombre de usuario</label>
                     <div class="input-group"  style="width:330px;">
-                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Usuairo" name="username" maxlength="8" required>
+                        <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Usuario" name="username" maxlength="8" required>
                     </div>
                 </div>
                 <br/>
