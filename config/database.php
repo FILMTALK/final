@@ -1,18 +1,18 @@
 <?php
-
+	
 	// Variable global
 	$collection;
 	$bd;
 
 	try{
 
-		// Se conecta con la base de datos
+		// Conexión a la base de datos MongoLab
 	    $conexion=new MongoClient("mongodb://filmdate:zubiri14@ds043220.mongolab.com:43220/openshift_ncp648lb_i71frbbr");
 	    
-	    // Establecemos la base de datos
+	    // Se establece la bd
 	    $bd=$conexion->openshift_ncp648lb_i71frbbr;
 
-	    // Establecemos la colección (tabla)
+	    // Se establece la colección
 	    $collection=$bd->usuarios;
     	    
 	}

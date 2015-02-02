@@ -3,7 +3,7 @@
         <!-- Imagen corporativa -->
         <div id="logo">
             <a href="/index.php"><img class="imgLogo"/></a>
-            <!-- Botón del menú -->
+            <!-- Botón del menú para responsive -->
             <a href="#" id="pull"><img src="../images/nav-icon.png" /></a>
         </div> <!-- Cierre del logo -->
         <!-- Menú -->
@@ -27,26 +27,19 @@
                         </form>
                     </div> <!-- Cierre de la caja del buscador -->
                 </li> <!-- Cierre de la Buscador -->
-                <!-- Items logueo -->
-                
 
+                <!-- Items logueo -->              
                     <?php
-
                         // Diseño en un fichero externo
                         echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
-
                         // Se inicia sesión o reanuda la sesión
                         session_start();
-
-                        // Botones de regitro y login
+                        // Si la variable de sesión id_usuario no tiene valor y es nulo
                         if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
-
-                            // Se incluye el archivo noLog que contiene los dos botones
+                            // Se incluye el archivo noLog que contiene los botones de login y registro
                             include("includes/noLog.html");
-
-
                         }
-                        else{
+                        else{ // Si la variable de sesión id_usuario tiene el valor distinto a nulo
 
                             // Link para ir al perfil de usuario
                             echo "<a href='views/profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";

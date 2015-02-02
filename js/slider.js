@@ -16,30 +16,31 @@ var photos = [ {
 
 /* Funciones jQuery ******************************* */
 $(document).ready(function() {
-		
-	// navegacion hacia atras en el carrusel
+	// Cuando haga clic en el div con el id back
 	$("#back").click(function() {
-
+		// navegacion hacia atras en el carrusel
 		navigate("back");
 
-	});
+	});	
 	
-	// navegacion hacia adelante en el carrusel
+	// Cuando haga clic en el div con el id next
 	$("#next").click(function() {
-
+		// navegacion hacia adelante en el carrusel
 		navigate("next");
 
-	});	
+	});
+
+	// Variables locales
 	var activeContainer = 1;	
 	var currentImg = 0;
 	var animating = false;
-	var navigate = function(direction) {
 
+	// Función para navegar dependiendo de la dirección
+	var navigate = function(direction) {
 		// Mira si la animacion esta ejecutandose, si es asi impide la accion
 		if(animating) {
 			return;
-		}
-		
+		}		
 		// comprueba que imagen necesita mostrar
 		if(direction == "next") {
 
@@ -49,7 +50,6 @@ $(document).ready(function() {
 
 				currentImg = 1;
 			}
-
 		}
 		else{
 
@@ -59,8 +59,7 @@ $(document).ready(function() {
 
 				currentImg = photos.length;
 			}
-		}
-		
+		}		
 		// comprueba que contenedor necesita mostrar
 		var currentContainer = activeContainer;
 
@@ -76,7 +75,7 @@ $(document).ready(function() {
 		
 		showImage(photos[currentImg - 1], currentContainer, activeContainer);
 		
-	};
+	}; // Cierre de la función navigate
 	
 	var currentZindex = -1;
 	var showImage = function(photoObject, currentContainer, activeContainer){

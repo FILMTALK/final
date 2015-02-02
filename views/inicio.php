@@ -39,27 +39,20 @@
             <!-- Representa el slider-->
             <div class="slider">  
 
-                <!-- jQuery handles to place the header background images -->
+                <!-- jQuery para mostrar las imagenes en el fondo del encabezado -->
                 <div id="headerimgs">
-
                     <div id="headerimg1" class="headerimg"></div>
                     <div id="headerimg2" class="headerimg"></div>
-
                 </div> <!-- Cierre de headerimgs -->
 
-                <!-- Slideshow controls -->
+                <!-- Controles del slideshow -->
                 <div id="headernav-outer">
-
                     <!-- Botones de navegador -->
                     <div id="headernav">
-
                         <div id="back" class="btn"></div>
                         <div id="next" class="btn"></div>
-
                     </div> <!-- Cierre de nav -->
-
                 </div> <!-- Cierre de los controles del slideshow -->
-
             </div> <!-- Cierre del slider -->
 
 
@@ -69,26 +62,21 @@
                 <!-- Boton para ir hacia abajo -->
                 <div id="div_abajo">
                     <a href="#miancla"><center><span class="glyphicon-refresh-animate"><img src="../images/flecha-abajo.png"></span></center></a>
-                 </div> <!-- Cierre del btn_abajo -->
+                </div> <!-- Cierre del btn_abajo -->
 
-
-                 <a name="miancla"></a>
+                <a name="miancla"></a>
                 <h3> Cartelera </h3>
 
                 <?php
-
-                    // Se importa mediante un css externo
+                    // Se importa el diseño mediante un css externo
                     echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
-
+                    // Se importa las funciones para obtener los datos de las películas
                     include_once("funciones/peliculas.php");                    
-
-                    // Establecemos la colección
+                    // Se establece la colección
                     $collection=$bd->peliculas;
-
                     // Se obtiene sólo 5 registros que sean de cartelera
                     $cartelera=$collection->find(array("boxOffice" => "boxOffice"))->limit(5);
-
-                    // Se recorre el array de cartelera
+                    // Se recorre el array bidimensional de cartelera
                     foreach ($cartelera as $campo => $valor) {
 
                         echo "<div class='peli'>";
@@ -110,32 +98,30 @@
                             if($movie=="title"){
 
                                 $titulo=$dato;
-                            }
-
-                            
+                            }                            
 
                             if($movie=="poster"){
                                 echo "<div class='descrip'>";
                                 $poster=$dato;
                                 echo "<a href='views/perfil-peli.php?peli=$titulo'><span class='text'>";
 
-                                    // Establecemos la colección
+                                    // Se establece la colección
                                     $collection=$bd->valoracion;
-
+                                    // Se obtiene la media de la película
                                     $media=mediaValoracion("$id_pelicula");
 
                                     $media=$media*2;
-
+                                    // Se convierte a un número entero
                                     $media=round($media,2);
 
                                     echo "<span style='font-size:20px;'
                                     class='glyphicon glyphicon-star'></span><br/>";
-
+                                    // Muestra el valor de la media
                                     echo $media;
-
+                                // Muestra el poster de la película
                                 echo"</span><img src=$poster></a><br/><br/>
                                 <h4><a href='views/perfil-peli.php?peli=$titulo'>" . $titulo. "</a></h4>";                      
-
+                                // Muestra el título y al hacer clic muestra la página de la película correspondiente
                             }                            
 
                             if($movie=="year"){
@@ -157,13 +143,11 @@
 
                         echo "</div>";
                     }
-
                 ?>     
-
+                <!-- Muestra el signo + para ir a la lista de cartelera -->
                 <div class="vermas" onclick="location.href='views/cartelera.php'">
                     <span><img src="../images/plus_azul.png"></span>
-                </div>       
-
+                </div>    
             </section> <!--Cierre de la Cartelera -->
 
             <!-- Representa el apartado de Próximamente -->
@@ -172,15 +156,13 @@
                 <h3> Próximamente </h3>
 
                 <?php
-
+                    // Se importa el diseño mediante un css externo
                     echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
-
-                    // Establecemos la colección
+                    // Se establece la colección
                     $collection=$bd->peliculas;
-
                     // Se obtiene sólo 5 registros que las películas próximamente
                     $proximamente=$collection->find(array("upcoming" => "upcoming"))->limit(5);
-
+                     // Se recorre el array bidimensional de próximamente
                     foreach ($proximamente as $campo => $valor) {
 
                         echo "<div class='peli'>";
@@ -199,13 +181,10 @@
 
                             }
 
-
                             if($movie=="title"){
 
                                 $titulo=$dato;
-                            }
-
-                            
+                            }                            
 
                             if($movie=="poster"){
                                 echo "<div class='descrip'>";
@@ -213,8 +192,7 @@
                                 
                                 // Cuando el usuario haga clic en la imágen o en el título irá al perfil de la película
                                 echo "<a href='views/perfil-peli.php?peli=$titulo'><span class='text'>";
-                                    //include_once("includes/mediaNota.php");
-                                    // Establecemos la colección
+                                    // Se establece la colección
                                     $collection=$bd->valoracion;
 
                                     $media=mediaValoracion("$id_pelicula2");
@@ -246,34 +224,28 @@
                                 echo "<p>" . $runtime. " mins </p>";
                                 echo "</div>"; 
 
-                            }
-
-                                 
-
+                            }                                
                         }
-
                         echo "</div>";                
                     }
-
                 ?>
+                <!-- Muestra el signo + para ir a la lista de próximamente -->
                 <div class="vermas" onclick="location.href='views/proximamente.php'">
                     <span><img src="../images/plus_azul.png"></span>
                 </div>
-
-
             </section> <!--Cierre de la Próximamente -->
 
+            <!-- Representa el pie de toda la página -->
             <footer id="foot">
-
+                <!-- Imágenes de las redes sociales -->
                 <img class="red" style="padding-right:90px;" href="#" src="../images/red1.png"/>
                 <img class="red" href="#" src="../images/red2.png"/>
                 <img class="red" href="#" src="../images/red3.png"/>
                 <img class="red"  href="#" src="../images/red4.png"/>
-
+                <!-- Links -->
                 <a href="views/apiTutorial.php"> API </a>
                 <a href="#"> Política de privacidad </a>
                 <a href="#"> © CopyRight 2014 </a>
-
             </footer>
 
             <!--Ventana Modal del Log In-->
@@ -282,14 +254,11 @@
 
             <!--Ventana Modal del Sign In-->
             <?php include("includes/ventanaModalSignin.html"); ?>
-
              
          </div> <!-- Cierre div del container -->
 
         <!-- Para las ventanas modales -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
-
-	</body>
-	
+	</body>	
 </html>

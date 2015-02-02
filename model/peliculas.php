@@ -9,7 +9,7 @@ if(coleccionVacia()==true){ // Si la colección está vacía
 	// Se establece a la variable la API key
 	$apikey='25uu9nryfxqb5b65umh6mkkr';
 
-	// Se obtiene un json de las películas que están cartelera y próximamente desde la API de RottenTomatoes
+	// Se obtiene un json de las películas que están en cartelera y próximamente desde la API de RottenTomatoes
 	$cartelera='http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=' . $apikey;
 	$proximamente='http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json?apikey=' . $apikey;
 
@@ -43,7 +43,7 @@ if(coleccionVacia()==true){ // Si la colección está vacía
 
 	}
 
-	// Se obtienen los datos de la función movies de la API
+	// Se accede al array bidimensional
 	$cart=$resultCart->movies;
 
 
@@ -54,7 +54,7 @@ if(coleccionVacia()==true){ // Si la colección está vacía
 
 	}
 
-	// Se obtienen los datos de la función movies de la API
+	// Se accede al array bidimensional de próximamente
 	$prox=$resultProx->movies;
 
 	// Se recorre el array para insertan en nuestra BD de mongolab
@@ -64,10 +64,11 @@ if(coleccionVacia()==true){ // Si la colección está vacía
 
 	}
 
-	// Incluimos el fichero index.php para mostrar el resultado
+	// Se incluye el fichero inicio.php para mostrar el resultado
 	include 'views/inicio.php';
 
-}
+} // Cierre de comprobación de la colección vacía o no.
+
 else{ // Si la colección peliculas no está vacía, redirige a la página principal	
 
 	include 'views/inicio.php';
