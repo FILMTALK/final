@@ -12,7 +12,7 @@ $msg = new Messages();
 echo "<link href=\"../css/mensajes.css\" rel=\"stylesheet\" type=\"text/css\" >";
 echo "<link href=\"../css/buscar.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
-// Si la variable POST de pelicula contiene un valor
+// Se comprueba si la variable POST de pelicula contiene un valor
 if(isset($_POST['pelicula'])){
 	// Se convierte a minúsculas
 	$peliculaUsuario=strtolower($_POST['pelicula']);
