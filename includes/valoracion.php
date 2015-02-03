@@ -22,6 +22,6 @@
 
         $votos=cantVotos("$id_pelicula");
 
-        echo "<h3>Nota: ". $media ."</h3><br/><h3>       Votos: ". $votos ."</h3><br/><br/><br/>";
+        echo "<h3>Nota: ". $media ."</h3><h3>       Votos: ". $votos ."</h3>";
 
 ?>

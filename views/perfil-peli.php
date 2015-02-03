@@ -118,15 +118,16 @@ $msg = new Messages();
             <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="4" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" title="Votar con 4 estrellas">&#9733;</a>
             <a href="#" id="<?php echo htmlspecialchars($_SESSION['id_pelicula']); ?>" class="estrellasValoracion" value="5" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" title="Votar con 5 estrellas">&#9733;</a>
             <?php endif; ?>
-            <div id="estrella">
+            
+            
+        </div>
+
+        <div id="estrella">
                 <?php
 
                     include_once("../includes/valoracion.php");
                  ?>
-             </div>
-            
         </div>
-
         <div id="limitar"></div>
       
         <!-- Muestra la sinopsis de la película correspondiente -->

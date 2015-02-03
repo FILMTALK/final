@@ -232,6 +232,12 @@ h4 a:hover{
 
 }
 
+.descrip:hover{ 
+
+	-webkit-transform:scale(1.05);
+
+ }
+
 .info{
 
 	border: 2px solid blue;
