@@ -75,31 +75,40 @@ if(isset($_POST['editEmail'])){
 				}
 				else{
 
-					// Se consultan los datos de ese usuario en concreto
-					$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
+					try{
 
-					// Se recorre el array
-					foreach ($users as $document) {
-						
-						// Se actualiza el email del usuario
-						$collection->update(array('usuario' => $_SESSION["nombreUsuario"]), array('$set'=> array('email' => $_POST['email'])));
+						// Se consultan los datos de ese usuario en concreto
+						$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
 
+						// Se recorre el array
+						foreach ($users as $document) {
+							
+							// Se actualiza el email del usuario
+							$collection->update(array('usuario' => $_SESSION["nombreUsuario"]), array('$set'=> array('email' => $_POST['email'])));
+
+						}
+
+						// Se obtiene el nombre de usuario de la BD
+						$email=obtenerEmail($id_usuario);
+
+						// Se establece la variable de sesión del nombre de usuario
+						$_SESSION["email"]=$email;
+
+			   			// Muestra mensaje exitoso
+						$msg->add('s', 'Cambio realizado');
+
+						// Redirecciona al perfil del usuario
+						header('Location: ../views/profile.php');
+
+						// Imprime un mensaje y termina el script actual
+						exit();
+					}catch(MongoCursorException $e){
+						// Muestra mensaje exitoso
+						$msg->add('e', 'ERROR: No se han podido modificar los datos, inténtalo de nuevo.');
+
+						// Redirecciona al perfil del usuario
+						header('Location: ../views/profile.php');
 					}
-
-					// Se obtiene el nombre de usuario de la BD
-					$email=obtenerEmail($id_usuario);
-
-					// Se establece la variable de sesión del nombre de usuario
-					$_SESSION["email"]=$email;
-
-		   			// Muestra mensaje exitoso
-					$msg->add('s', 'Cambio realizado');
-
-					// Redirecciona al perfil del usuario
-					header('Location: ../views/profile.php');
-
-					// Imprime un mensaje y termina el script actual
-					exit();
 
 				}
 			

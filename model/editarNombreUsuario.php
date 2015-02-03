@@ -58,33 +58,40 @@ if(isset($_POST['editNombre'])){
 
 			}
 			else{
+				try{
 
-				// Se consultan los datos de ese usuario en concreto
-				$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
+					// Se consultan los datos de ese usuario en concreto
+					$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
 
-				// Se recorre el array
-				foreach ($users as $document) {
-					
-					// Se actualiza el nombre del usuario
-					$collection->update(array('_id' => $_SESSION["id_usuario"]), array('$set'=> array('usuario' => $_POST['nombre'])));
+					// Se recorre el array
+					foreach ($users as $document) {
+						
+						// Se actualiza el nombre del usuario
+						$collection->update(array('_id' => $_SESSION["id_usuario"]), array('$set'=> array('usuario' => $_POST['nombre'])));
 
+					}
+
+					// Se obtiene el nombre de usuario de la BD
+					$nombreUsuario=obtenerUsuario($id_usuario);
+
+					// Se establece la variable de sesión del nombre de usuario
+					$_SESSION["nombreUsuario"]=$nombreUsuario;
+
+		   			// Muestra mensaje exitoso
+					$msg->add('s', 'Cambio realizado');
+
+					// Redirecciona al perfil del usuario
+					header('Location: ../views/profile.php');
+
+					// Imprime un mensaje y termina el script actual
+					exit();
+				}catch(MongoCursorException $e){
+					// Muestra mensaje exitoso
+					$msg->add('e', 'ERROR: No se han podido modificar los datos, inténtalo de nuevo.');
+
+					// Redirecciona al perfil del usuario
+					header('Location: ../views/profile.php');
 				}
-
-				// Se obtiene el nombre de usuario de la BD
-				$nombreUsuario=obtenerUsuario($id_usuario);
-
-				// Se establece la variable de sesión del nombre de usuario
-				$_SESSION["nombreUsuario"]=$nombreUsuario;
-
-	   			// Muestra mensaje exitoso
-				$msg->add('s', 'Cambio realizado');
-
-				// Redirecciona al perfil del usuario
-				header('Location: ../views/profile.php');
-
-				// Imprime un mensaje y termina el script actual
-				exit();
-
 			}
 		
 		}

@@ -19,7 +19,7 @@ include_once("../funciones/peliculas.php");
 // Se comprueba si el anadir está definida
 if(isset($_POST['anadir'])){
 	// Si los campos están vacíos
-	if($_POST['nombre']==NULL or $_POST['descripcion']==NULL or $_POST['duracion']==NULL or $_POST['reparto']==NULL or $_POST['calificacion']==NULL){
+	if($_POST['nombre']==NULL or $_POST['descripcion']==NULL or $_POST['duracion']==NULL or $_POST['reparto']==NULL){
 
 		// Se muestra un mensaje por pantalla
 		$msg->add('e', 'ERROR: Los campos estan vac&iacute;os');
@@ -51,8 +51,7 @@ if(isset($_POST['anadir'])){
 					"title" => $_POST['nombre'], 
 					"synopsis" => $_POST['descripcion'],
 					"duracion" => ($_POST['duracion']),
-					"reparto" => ($_POST['reparto']),
-					"calificacion" => ($_POST['calificacion'])
+					"reparto" => ($_POST['reparto'])
 
 		    	);
 

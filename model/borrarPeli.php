@@ -12,4 +12,6 @@ $collection=$bd->peliculas;
 
 $eliminar=$collection->remove( array( '_id' => new MongoID($id)));
 
+
+
 ?>
