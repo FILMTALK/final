@@ -157,8 +157,8 @@ include_once("../funciones/peliculas.php");
 
                     </div>
 
-                    <button id="bnw">Grayscale</button>
-                    <button id="colour">Color</button><br /><br />
+                    <button id="bnw" disabled>Grayscale</button>
+                    <button id="colour" disabled>Color</button><br /><br />
 
                     <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" 
                         value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>" disabled> Subir foto </button>

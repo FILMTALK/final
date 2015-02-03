@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	$("#bnw").fadeOut();
+	$("#enviar").fadeOut();
+	$("#colour").fadeOut();
+	
+
 	// Se obtiene la imagen seleccionada
 	var subirImagen = document.getElementById('subirImagen');
 	subirImagen.addEventListener('change', dibujarImagen, false);
@@ -32,7 +37,12 @@ $(document).ready(function() {
 	       		}
 	       		else{
 	       			//eliminamos el atributo disabled
+	       			$("#bnw").fadeIn();
+	       			$("#enviar").fadeIn();
+					$("#colour").fadeIn();
 	       			$("#enviar").removeAttr("disabled");
+	       			$("#bnw").removeAttr("disabled");
+	       			$("#colour").removeAttr("disabled");
 
 					// Se establece la anchura de canvas respecto a la imagen
 					canvas.width = imagen.width;
