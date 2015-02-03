@@ -2,8 +2,7 @@ $(document).ready(function() {
 
 	$("#bnw").fadeOut();
 	$("#enviar").fadeOut();
-	$("#colour").fadeOut();
-	
+	$("#colour").fadeOut();	
 
 	// Se obtiene la imagen seleccionada
 	var subirImagen = document.getElementById('subirImagen');

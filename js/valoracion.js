@@ -84,7 +84,6 @@ $(document).ready(function() {
 
 		  		$('#coment').load('../includes/criticas.php?id_pelicula='+id);
 
-
           	}
 
         });
