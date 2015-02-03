@@ -27,37 +27,26 @@
                         </form>
                     </div> <!-- Cierre de la caja del buscador -->
                 </li> <!-- Cierre de la Buscador -->
-                <!-- Items logueo -->
-                
-
+                <!-- Items logueo -->              
                     <?php
-
                         // Diseño en un archivo externo
                         echo "<link href=\"../css/main.css\" rel=\"stylesheet\" type=\"text/css\" >";
-
                         // Se inicia sesión o reanuda la sesión
                         session_start();
-
                         // Si el usuario no está logueado
                         if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
-
                             // Se incluye el archivo noLog que contiene los dos botones
                             include("../includes/noLog.html");
-
-
                         }
                         else{ // Si el usuario está logueado
 
                             // Link para ir al perfil de usuario
                             echo "<a href='profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
-
                             //Boton salir
                             include("../includes/log.html");
 
                         }
-
                     ?>
-
             </ul> <!-- Cierre de la lista desordenada -->
         </nav> <!-- Cierre del menú -->
 </header> <!-- Cierre del encabezado -->
