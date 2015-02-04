@@ -98,7 +98,7 @@ include_once("../funciones/peliculas.php");
                             // Muestra la variable de sesión del nombreUsuario
                             if (isset($_SESSION['nombreUsuario'])) {
                                        
-                                echo "<p class='infoUser'>Usuario: <b>". $_SESSION["nombreUsuario"] ."</b>";
+                                echo "<p id='infoUser'>Usuario: <b>". $_SESSION["nombreUsuario"] ."</b>";
 
                             }
 
