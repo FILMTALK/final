@@ -65,6 +65,21 @@ video {
   text-decoration: none;
 }
 
+/*estilos para los link del los usuarios*/
+.linkUsu{
+  font-weight: bold;
+  color: #66cccc;
+  padding-right: 20px;
+  opacity: 0.9;
+  text-decoration: none;
+  
+}
+
+.linkUsu:hover{
+  color: grey;
+  text-decoration: none;
+}
+
 /* Criticas  ***********************************************************/
 .criticas{
   position: absolute;

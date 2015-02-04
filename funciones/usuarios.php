@@ -37,6 +37,41 @@ function obtenerIdUsuario($email){
 
 } // Cierre de la función obtenerIdUsuario
 
+
+/*
+* obtenerIdNombre. Se obtiene el campo id de la bd.
+* parans --> $usuario.
+* return --> El id en String.
+*/
+function obtenerIdNombre($usuario){
+
+	// Variable global
+	global $collection;
+
+	// Variable local 
+	$id=''; // Se establece el valor vacío de String
+
+	// Se realiza una consulta para obtener los datos de un usuario
+	$users=$collection->findOne(array('usuario' => $usuario));
+
+	// Recorremos los datos de ese usuario en concreto
+	foreach($users as $campos => $datos){
+
+		// Filtramos el campo para obtener el dato
+		if($campos=='_id'){
+
+			// Se guarda el id único del usuario en una variable local
+			$id=$datos;
+
+		} // Cierre del if
+
+	} // Cierre del bucle foreach
+
+	// Devuelve la variable local en String
+	return $id;
+
+} // Cierre de la función obtenerIdUsuario
+
 /*
 * obtenerUsuario. Se obtiene el nombre del usuario de la bd.
 * parans --> $id_usuario. Se obtiene desde la función obtenerIdUsuario.

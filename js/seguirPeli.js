@@ -34,4 +34,12 @@ $(document).ready(function() {
 
         });
     });
+
+	$("#siguiendo").click(function() {
+		
+		$("#limitar").css("background","url(../images/messages/help.png ) no-repeat 0px 50%");
+     	$("#limitar").css("background-color","#B0CEF5");
+     	$("#limitar").css("border","1px solid #82AEE7");
+     	$("#limitar").html("<p style='margin-left:20px;'>Para dejar de seguir, ve a tu perfil!</p>");
+    });
 });

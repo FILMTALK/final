@@ -27,7 +27,7 @@
 
                     if($campo=="usuario"){
                     
-                        echo "<b>".$valor."</b><br/>";
+                        echo "<a class='linkUsu' href='../views/profileAmigo.php?usuario=$valor'>".$valor."</a><br/>";
                     }             
                     
                 }
