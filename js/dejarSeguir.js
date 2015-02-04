@@ -4,5 +4,4 @@ function noSeguir(id){
     	$('#fila_'+id).remove();     
         
     });
-
 }

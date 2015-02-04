@@ -1,18 +1,13 @@
 <?php
-
-//------------------------------------------------------------------------------
-// A session is required for the messages to work
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
 if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION['id_usuario']=='54b39057721880ef1d8b4568')){
-    header('Location: ../index.php');
+    // Redirecciona a la página principal si no es administrador
+    header('Location: ../index.php');    
 }
-
 ?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
-
 	<!-- Cabecera de toda la página -->
 	<head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +36,7 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION[
         </style>
 	</head>
 	<body  background="../images/cine.jpg" no-repeat center center fixed>	
-    <!--MENU-->
+         <!--MENU-->
         <nav class="navbar navbar-default" role="navigation"><!--inverse en vez de default, para que sea en negro el navegador-->
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -54,9 +49,10 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION[
                     <a href="/index.php" class="navbar-brand">filmdate</a>
                 </div>
 
+                <!-- Elementos del menú -->
                 <div class="collapse navbar-collapse" id="acolapsar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li><a href="admin.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                         <li class="dropdown">
                         <!--Seccion Desplegable-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Usuarios <b class="caret"></b></a>
@@ -77,80 +73,75 @@ if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION[
                         </li>
                     </ul>
                     <div>
-                         <button class="btn btn-default" style="margin-top:8px;" onclick="location.href='salir.php'">
-                         <span class="glyphicon glyphicon-off"></span></button>                     
-                </div>
+
+                        <button class="btn btn-default" style="margin-top:8px;" onclick="location.href='salir.php'"><span class="glyphicon glyphicon-off"></span></button>  
+                    </div>
                 </div>
             </div>
         </nav>
 
+        <!-- Tabla para borrar los usuarios -->
         <div class="container" style="position:relative;top:50px;">
             <div class="panel panel-primary">
-                <div class="panel-heading" style="background:#4D4D4D;border:none;">Películas</div>
+                <div class="panel-heading" style="background:#4D4D4D;border:none;">Usuarios</div>
                 <table class="table table-striped table-hover table-bordered">
-                    
+                    <!-- Cabecera -->
                     <tr class="info">
-                     <th>Email</th>
-                     <th>Usuario</th>
-                     <th>Contraseña</th>
-                     <th></th>
+                        <th>Email</th>
+                        <th>Usuario</th>
+                        <th>Contraseña</th>
+                        <th></th>
                     </tr>
-                <?php
-                    include_once("../funciones/peliculas.php");
-                    include_once("../config/database.php");
-                    // Establecemos la colección
-                    $collection=$bd->usuarios;
+                    <!-- Datos de cada usuario -->
+                    <?php
+                        include_once("../funciones/peliculas.php");
+                        include_once("../config/database.php");
+                        // Se establece la colección
+                        $collection=$bd->usuarios;
+                        // Consulta la colección de usuarios
+                        $users=$collection->find();
+                        // Se recorre el array bidimensional de usuarios
+                        foreach ($users as $campo => $valor) {                  
 
-                    $users=$collection->find(array());
+                            foreach ($valor as $user => $dato) {
 
-                    foreach ($users as $campo => $valor) {                  
+                                $id;
+                                $email;
+                                $usuario;
+                                $password;
 
-                    foreach ($valor as $user => $dato) {
+                                if($user=="_id"){
 
-                        $id;
-                        $email;
-                        $usuario;
-                        $password;
+                                    $id=$dato;
+                                    echo "<tr id=fila_" . $id .">";
+                                }
 
-                        if($user=="_id"){
+                                if($user=="email"){
 
-                            $id=$dato;
-                            echo "<tr id=fila_" . $id .">";
+                                    $email=$dato;
+                                    echo "<td>" . $email . "</td>";
+                                }
+                                if($user=="usuario"){
 
-                        }
+                                    $usuario=$dato;
+                                    echo "<td>" . $usuario . "</td>";
+                                }
+                                if($user=="password"){
 
-                        if($user=="email"){
-
-                            $email=$dato;
-                            echo "<td>" . $email . "</td>";
-
-                        }
-                        if($user=="usuario"){
-
-                            $usuario=$dato;
-                            echo "<td>" . $usuario . "</td>";
-
-                        }
-                        if($user=="password"){
-
-                            $password=$dato;
-                            echo "<td>" . $password . "</td>";
-
-                        }
-                         
-                    }
-
-                    echo "<td>" ?><a id="eliminar" name="eliminar" onclick="eliminar('<?php echo htmlspecialchars($id); ?>')" class="btn btn-primary" style="background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-trash"></span></a> <?php "</td>";
-                    echo "</tr>";
-                }
-
-            ?>  
+                                    $password=$dato;
+                                    echo "<td>" . $password . "</td>";
+                                }
+                                 
+                            }
+                            echo "<td>" ?><a id="eliminar" name="eliminar" onclick="eliminar('<?php echo htmlspecialchars($id); ?>')" class="btn btn-primary" style="background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-trash"></span></a> <?php "</td>";
+                            echo "</tr>";                            
+                        } // Cierre del foreach
+                    ?>  
                 </table>
             </div>
         </div>
             
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script> <!-- jQuery -->
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
-	</body>
-	
+	</body>	
 </html>

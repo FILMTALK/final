@@ -27,36 +27,25 @@
                         </form>
                     </div> <!-- Cierre de la caja del buscador -->
                 </li> <!-- Cierre de la Buscador -->
-                <!-- Items logueo -->
-                
-
+                <!-- Items logueo -->               
                     <?php
-
                         // Diseño en un archivo externo
                         echo "<link href=\"../css/listaPelis.css\" rel=\"stylesheet\" type=\"text/css\" >";
-
                         // Se inicia sesión o reanuda la sesión
                         session_start();
-
                         if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='')){
-
                             // Se incluye el archivo noLog que contiene los dos botones
                             include("../includes/noLog.html");
-
-
                         }
                         else{
 
                             // Link para ir al perfil de usuario
                             echo "<a href='profile.php' class='link'>Hola, <b>" . $_SESSION["nombreUsuario"]."</b></a>";
-
                             //Boton salir
                             include("../includes/log.html");
 
                         }
-
                     ?>
-
             </ul> <!-- Cierre de la lista desordenada -->
         </nav> <!-- Cierre del menú -->
 </header> <!-- Cierre del encabezado -->
