@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="filmdate : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>filmdate</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/FILMTALK/final">View on GitHub</a>
+
+          <h1 id="project_title">filmdate</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/FILMTALK/final/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/FILMTALK/final/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="filmdate" class="anchor" href="#filmdate" aria-hidden="true"><span class="octicon octicon-link"></span></a>filmdate</h1>
+
+<p align="justify">Se trata de una aplicación para usuarios aficionados al cine.
+El usuario podrá registrarse y loguearse.
+Al loguearse tendrá su perfil y podrá visualizar las películas que están en la cartelera, de estreno y próximamente.
+El usuario podrá comentar y valorar las peliculas de una forma intuitiva. Además podrá tanto modificar sus datos como añadir un avatar.</p>
+
+<p><br></p>
+
+<h3>
+<a id="estructura-de-la-app" class="anchor" href="#estructura-de-la-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>Estructura de la app</h3>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th align="center">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>api</strong>/api.php</td>
+<td align="center">Es una API propia para terceros.</td>
+</tr>
+<tr>
+<td>
+<strong>config</strong>/database.php</td>
+<td align="center">Conexión con la base de datos MongoLab (nube).</td>
+</tr>
+<tr>
+<td>
+<strong>controller</strong>/</td>
+<td align="center">Intermediario entre el modelo y la vista.</td>
+</tr>
+<tr>
+<td>
+<strong>controller</strong>/class.messages.php</td>
+<td align="center">Una clase para controlar mediante los mensajes de error.</td>
+</tr>
+<tr>
+<td>
+<strong>css</strong>/</td>
+<td align="center">Fichero estático para almacenar los diseños.</td>
+</tr>
+<tr>
+<td>
+<strong>js</strong>/</td>
+<td align="center">JavaScript por parte del cliente.</td>
+</tr>
+<tr>
+<td>
+<strong>images</strong>/</td>
+<td align="center">Se almacenan las imágenes.</td>
+</tr>
+<tr>
+<td>
+<strong>funciones</strong>/</td>
+<td align="center">Compobar y controlar antes de introducir los datos en la BD.</td>
+</tr>
+<tr>
+<td>
+<strong>funciones</strong>/usuarios.php</td>
+<td align="center">Controlar los datos de los usuarios.</td>
+</tr>
+<tr>
+<td>
+<strong>funciones</strong>/peliculas.php</td>
+<td align="center">Comprobar los datos de las películas.</td>
+</tr>
+<tr>
+<td>
+<strong>includes</strong>/</td>
+<td align="center">Son ficheros de HTML o PHP para incluir en otros archivos.</td>
+</tr>
+<tr>
+<td>
+<strong>library</strong>/Slim</td>
+<td align="center">Es una librería externa de Slim para utilizar la API.</td>
+</tr>
+<tr>
+<td>
+<strong>model</strong>/</td>
+<td align="center">Es la parte del servidor para obtener y manejar datos.</td>
+</tr>
+<tr>
+<td>
+<strong>views</strong>/</td>
+<td align="center">El cliente visualiza las películas y su perfil.</td>
+</tr>
+<tr>
+<td>
+<strong>views</strong>/inicio.php</td>
+<td align="center">Página principal.</td>
+</tr>
+<tr>
+<td>index.php</td>
+<td align="center">Configuración del servidor.</td>
+</tr>
+</tbody>
+</table>
+
+<p><br>
+Funcionamiento de la app:</p>
+
+<pre><code>MongoLab → Base de datos en la nube.(datos JSON).
+MongoClient → Conexión a la base de datos.
+Controller→ Controlar los datos de la base de datos y los que introduce el usuario.
+Views → Visualizar datos para el usuario.
+</code></pre>
+
+<p>Tecnologías a usar:</p>
+
+<pre><code>- HTML5 / CSS3
+- JavaScript + AJAX
+- PHP --&gt; php -S localhost:8080 (el puerto que quieras).
+- MongoDB --&gt;Base de datos no relacional.
+</code></pre>
+
+<p>Sistema operativo:</p>
+
+<pre><code>- Ubuntu 14.04
+</code></pre>
+
+<p><br></p>
+
+<h3>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h3>
+
+<p>La app filmdate ha utilizado la API de RottenTomatoes.</p>
+
+<p>Esta app solicita la página de RottenTomatoes para guardar la lista de películas en la BD.</p>
+
+<p><strong>Aparte de utilizar la libería de RottenTomatoes hay que instalar cURL.</strong></p>
+
+<ul>
+<li>
+<h6>
+<a id="instalar-curl-para-la-api" class="anchor" href="#instalar-curl-para-la-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalar cURL para la API:</h6>
+
+<blockquote>
+<p><em>sudo apt-get install php5-curl</em></p>
+</blockquote>
+</li>
+<li>
+<h6>
+<a id="reiniciar-apache" class="anchor" href="#reiniciar-apache" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reiniciar apache:</h6>
+
+<blockquote>
+<p><em>sudo /etc/init.d/apache2 restart</em></p>
+</blockquote>
+</li>
+</ul>
+
+<p><br></p>
+
+<h3>
+<a id="restful-api" class="anchor" href="#restful-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>RESTful API</h3>
+
+<p>La filmdate ha creado su propia API para terceros.</p>
+
+<p><strong>Se ha utilizado el Framework Slim para la creación.</strong></p>
+
+<ul>
+<li><h6>
+<a id="se-descarga-la-libería-a-utilizar" class="anchor" href="#se-descarga-la-liber%C3%ADa-a-utilizar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Se descarga la libería a utilizar.</h6></li>
+<li>
+<h6>
+<a id="en-el-fichero-que-se-crean-las-rutas-requiere-la-libería" class="anchor" href="#en-el-fichero-que-se-crean-las-rutas-requiere-la-liber%C3%ADa" aria-hidden="true"><span class="octicon octicon-link"></span></a>En el fichero que se crean las rutas requiere la libería.</h6>
+
+<blockquote>
+<p><em>require '../library/Slim/Slim.php';</em></p>
+</blockquote>
+</li>
+<li>
+<h6>
+<a id="se-accede-a-los-métodos-de-la-clase-slim" class="anchor" href="#se-accede-a-los-m%C3%A9todos-de-la-clase-slim" aria-hidden="true"><span class="octicon octicon-link"></span></a>Se accede a los métodos de la clase Slim:</h6>
+
+<blockquote>
+<p><em>\Slim\Slim::registerAutoloader();</em></p>
+</blockquote>
+</li>
+<li>
+<h6>
+<a id="se-crea-el-objeto-de-tipo-slim" class="anchor" href="#se-crea-el-objeto-de-tipo-slim" aria-hidden="true"><span class="octicon octicon-link"></span></a>Se crea el objeto de tipo Slim:</h6>
+
+<blockquote>
+<p><em>$app = new \Slim\Slim();</em></p>
+</blockquote>
+</li>
+<li>
+<h6>
+<a id="se-establecen-las-rutas" class="anchor" href="#se-establecen-las-rutas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Se establecen las rutas:</h6>
+
+<blockquote>
+<p><em>$app-&gt;get('/getPeliculas', function () { jsonAmostrar });</em>
+<br></p>
+</blockquote>
+</li>
+</ul>
+
+<p><br></p>
+
+<h3>
+<a id="enlaces" class="anchor" href="#enlaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enlaces</h3>
+
+<p><strong>Enlace OpenShift</strong> (actualizado cada semana): <a href="http://filmdate-filmdate.rhcloud.com/">http://filmdate-filmdate.rhcloud.com/</a></p>
+
+<p><strong>Email oficial</strong>: <a href="mailto:filmdateee@gmail.com">filmdateee@gmail.com</a></p>
+
+<p><strong>Estructura/Sitemap</strong>:<a href="https://moqups.com/filmdateee@gmail.com/xQ8dWMoQ">https://moqups.com/filmdateee@gmail.com/xQ8dWMoQ</a></p>
+
+<p><strong>Información online:</strong>: <a href="http://filmtalk.github.io/info./">http://filmtalk.github.io/info./</a></p>
+
+<p><strong>Dominio propio</strong>: <a href="http://filmdate.tk/">http://filmdate.tk/</a></p>
+
+<p><br></p>
+
+<h3>
+<a id="referencias" class="anchor" href="#referencias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Referencias</h3>
+
+<ul>
+<li>
+<p>Conexión mongo+php:</p>
+
+<p><a href="http://php.net/manual/es/mongo.tutorial.connecting.php">Tutorial Mongo</a></p>
+
+<p><a href="http://www.tutorialspoint.com/mongodb/mongodb_php.htm">MongoDB y PHP</a></p>
+</li>
+<li><p>Video: 
+<a href="https://www.youtube.com/watch?v=OjuRJsFOj9g">Login y registro para php</a></p></li>
+<li><p>Ejemplo página web: 
+<a href="https://www.themoviedb.org/">The Movie Database</a></p></li>
+<li><p>Mínimos: <a href="http://www.euripean.com/moodle2/file.php/16/minimoak.pdf">Moodle</a></p></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">filmdate maintained by <a href="https://github.com/FILMTALK">FILMTALK</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
