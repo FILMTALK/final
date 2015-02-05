@@ -14,4 +14,25 @@ $(document).ready(function(){
 		  elem.webkitRequestFullscreen();
 		}                           
     });
+
+    //Cuando la ventana se hace más pequeño, se realiza la siguiente función
+    $(window).resize(function(){
+      //Gaurdamos en una variable el width de la ventana de forma local
+      var w=$(window).width();
+      //Si la anchura es mayor que 700px, el slider debe aparecer
+      if(w>1350) {
+        //hacemos el video mas granbde para resoluciones mas grandes
+        $('video').css("height","1000px");
+        $('video').css("top","-200px");
+      }
+
+      if(w<=1350) {
+      	//hacemos el video pequeño para resolucion  pequeño
+        $('video').css("height","760px");
+        $('video').css("top","-90px");
+      }
+    //Cierre de la función resize
+    }); 
+
+
 });

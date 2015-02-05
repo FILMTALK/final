@@ -147,7 +147,7 @@ if(isset($_POST['login'])){
 							
 						}
 
-						// Redirecciona al perfil del usuario
+						// Redirecciona ala pagina anterior
 						header("location:".$_SERVER['HTTP_REFERER']);
 
 					} // Cierre del else si no es admin
