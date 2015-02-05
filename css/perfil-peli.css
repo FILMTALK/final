@@ -17,6 +17,8 @@ header,nav{
   
 }
 
+h2{ color: #66cccc; }
+
 /* Video  ***********************************************************/
 video {
 
@@ -32,11 +34,6 @@ video {
   transition: 1s opacity;
 
 }
-
-#contene{
-
-}
-
 
 
 /***********************************************************************************************
@@ -242,9 +239,7 @@ background: none;
     transition: all 0.7s ease 0s;
 }
 
-#search input[type="text"]:focus {
-    width: 173px;
-}
+#search input[type="text"]:focus { width: 173px; }
 
 /* InfoPeli  ***********************************************************/
 #infopeli {
@@ -280,7 +275,6 @@ background: none;
   display: block; padding: 10px 0; 
   margin: 10px auto 10px; 
   clear: both; 
-
 }
 
 #noVacia{
@@ -291,13 +285,9 @@ background: none;
   border-radius: 4px; 
   display: block; padding: 10px 0; 
   margin: 10px auto 10px; 
-  clear: both; 
-}
+  clear: both; }
 
 /* Criticas  ***********************************************************/
-h2{
-  color: #66cccc;
-}
 #contCriticas{
 
   background-color: #E6E6E6;
@@ -305,39 +295,40 @@ h2{
   top: 580px;
   width: 100%;
   height: 800px;
-
 }
 
 #coment{
 
   width: 100%;
-  height: auto;
- 
+  height: auto; 
 }
 
 /* Botones para el vídeo */
 #buttons{
-    position: absolute;
-    top:513px;
-    left: 25px;
-    width:70px;
-    height: 22px;
-    cursor: pointer;
+
+  position: absolute;
+  top:513px;
+  left: 25px;
+  width:70px;
+  height: 22px;
+  cursor: pointer;
 }
 
 #buttons img{ width:35px; }
 
 /* Botón para ampliar el vídeo */
 #amplia{
-    position: absolute;
-    top:517px;
-    left: 75px;
-    width:30px;
-    height: 22px;
-    cursor: pointer;
+
+  position: absolute;
+  top:517px;
+  left: 75px;
+  width:30px;
+  height: 22px;
+  cursor: pointer;
 }
 
 #seguir,#siguiendo{
+
   margin: 30px 30px 40px 440px;
   font-size: 18px;
   height: 42px;
@@ -354,6 +345,7 @@ h2{
 }
 
 #warning{
+
   border: 1px solid #EBD699;
   width: 100%;
   background-color: #F5EBCC;
@@ -363,13 +355,9 @@ h2{
   color: #B88A00;
 }
 
-  #texti{
-    width:335%;
-  }
+#texti{ width:335%; }
 
-  #critica, #estilotextarea{
-    border-radius: 5px;
-  }
+#critica, #estilotextarea{ border-radius: 5px; }
 
 
 /* ************************************************************************************************
@@ -379,61 +367,39 @@ h2{
 /*Cuando la anchura de la ventana contenga como máximo 768px se cambia el diseño */
 @media all and (max-width: 768px){
 
-  #bgvid { display: none; }
+  nav ul {
+
+    display: none;
+    height: auto;
+
+  }
+
+  /*Después de aparecer el menú, aparece el icono */
+  nav a#pull:after {
+
+    content: "";
+    background: url('../img/nav-icon.png') no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+
+  }
 
   video{ display: none; }
 
+  .imgLogo{ content:url("../images/logotxiki_gris.png"); }
+
+  .red{ display: none; }
+
+  #bgvid { display: none; } 
 
   #div_abajo{ display: none; }
 
   #buttons{ display: none; }
 
   #amplia{ display: none; }
-
-  /* Info peli  ***********************************************************/
-  #infopeli{
-
-    margin-top: 50px;
-    width: 100%;
-    background-color: #999999;
-    height: 100%;
-    min-height: 400px;
-  }
-
-   #seguir,#siguiendo{
-    margin: 20px 0px 0px 600px;
-  }
-
-  /* Criticas  ***********************************************************/
-
-  .criticas{
-  position: absolute;
-  top: 4%;
-  padding-right: 4%;
-  left: 2%;
-  width: 100%;
-  height: auto;
-
-}
-
-  #contCriticas{
-    width: 100%;
-    position: relative;
-    padding-top: 0px;
-    top: 500px;
-
-  }
-
-  #coment{
-  width: 100%;
-  height: auto;
- 
-}
-
-  #texti{
-    width:140%;
-  }
-
 
   /* Encabezados ************************************/
   #header{
@@ -444,9 +410,6 @@ h2{
     display: block;
     background-color: #f2efef;
   }
-
-  /* Imagen corporsativa */
-  .imgLogo{ content:url("../images/logotxiki_gris.png"); }
 
   /* Menú */
   #menu_nav {
@@ -463,42 +426,60 @@ h2{
 
   }
 
-  nav ul {
-
-     display: none;
-     height: auto;
-
+  #search input[type="text"] {
+    border: 2px solid #f2efef;
+    color: #f2efef;
   }
 
   /* Aparece el botón para desplegar el menú */
   #pull {
-      display: block;
-      position: absolute;
-      right: 15px;
-      top: 17px;
+    
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 17px;
   }
 
-  /*Después de aparecer el menú, aparece el icono */
-  nav a#pull:after {
+  /* Info peli  ***********************************************************/
+  #infopeli{
 
-      content: "";
-      background: url('../img/nav-icon.png') no-repeat;
-      width: 30px;
-      height: 30px;
-      display: inline-block;
-      position: absolute;
-      right: 15px;
+    margin-top: 50px;
+    width: 100%;
+    background-color: #999999;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  #seguir,#siguiendo{ margin: 20px 0px 0px 600px; }
+
+  /* Criticas  ***********************************************************/
+  .criticas{
+  position: absolute;
+  top: 4%;
+  padding-right: 4%;
+  left: 2%;
+  width: 100%;
+  height: auto;
 
   }
 
-  #search input[type="text"] {
-    border: 2px solid #f2efef;
-    color: #f2efef;
-  } 
+  #contCriticas{
+    width: 100%;
+    position: relative;
+    padding-top: 0px;
+    top: 500px;
 
-  .red{
-    display: none;
   }
+
+  #coment{
+  width: 100%;
+  height: auto;
+ 
+  }
+
+  #texti{
+    width:140%;
+  }  
 
 } 
 
@@ -515,7 +496,6 @@ h2{
     min-height: 500px;
 
   }
-
   #contCriticas{
     top: 600px;
 

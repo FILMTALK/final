@@ -1,17 +1,24 @@
 /* ************************************************************************************************
                       Selector UNIVERSAL
 ************************************************************************************************ */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 /* ************************************************************************************************
                       Selectores por TIPO
 ************************************************************************************************ */
 
 /* Make sure draggable area is whole page */
-html, body {
-  height: 100%;
+html, body { height: 100%; }
+
+input#subirImagen{
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  width:100%;
+  height:100%;
+  opacity: 0;
 }
 
 
@@ -26,81 +33,11 @@ html, body {
 
 }
 
-.profile {
-  width: 53%;
+.profile { width: 53%; }
 
-}
-
-.editarDatos {
-
-  float: right;
-
-}
-
-p#texto,#enviar{
-  padding: 6px;
-  text-align: center;
-  color:white;
-  font-weight: bold;
-}
-
-#pelisquesigues{
-  font-size: 20px;
-}
+.editarDatos { float: right; }
 
 
-/*para el boton de carga de archivos*/
-div#div_file,#enviar{
-  position:relative;
-  width:141px;
-  background-color: #66cccc;
-  -webkit-border-radius:5px;
-}
-
-input#subirImagen{
-  position:absolute;
-  top:0px;
-  left:0px;
-  right:0px;
-  bottom:0px;
-  width:100%;
-  height:100%;
-  opacity: 0;
-}
-
-#bnw,#colour{
-    
-    border: 1.7px solid #66cccc;
-    border-radius: 4px;
-    background: none;
-    color: #66cccc;
-    padding: 5px;
-    font-weight: bold;
-
-  }
-
-#areaCanvas{
-  margin-bottom: 10px;
-}
-
-#enviar{
-
-  border: 0px;
-
-}
-
-#mostrarMsg{
-
-  width: 190%; 
-  -moz-border-radius: 4px; 
-  border-radius: 4px; 
-  display: block; 
-  padding: 5px; 
-  margin-top: 0; 
-  margin-bottom: 10px; 
-  clear: both;
-
-}
 
 /* ************************************************************************************************
                       Selectores por ID
@@ -114,8 +51,7 @@ input#subirImagen{
   position: absolute;
   top: 13%;
   left: 10%;
-  width: 80%;
-  
+  width: 80%;  
 }
 
 #perfilTitulo {
@@ -123,29 +59,57 @@ input#subirImagen{
   border-bottom: 2px solid #66cccc;
 }
 
-#infoUser{
-  font-size: 15px;
+#infoUser{ font-size: 15px; }
+
+p#texto,#enviar{
+
+  padding: 6px;
+  text-align: center;
+  color:white;
+  font-weight: bold;
+}
+
+#pelisquesigues{ font-size: 20px; }
+
+/*para el boton de carga de archivos*/
+div#div_file,#enviar{
+
+  position:relative;
+  width:141px;
+  background-color: #66cccc;
+  -webkit-border-radius:5px;
+}
+#bnw,#colour{
+    
+  border: 1.7px solid #66cccc;
+  border-radius: 4px;
+  background: none;
+  color: #66cccc;
+  padding: 5px;
+  font-weight: bold;
+
+}
+
+#areaCanvas{ margin-bottom: 10px; }
+
+#enviar{ border: 0px; }
+
+#mostrarMsg{
+
+  width: 190%; 
+  -moz-border-radius: 4px; 
+  border-radius: 4px; 
+  display: block; 
+  padding: 5px; 
+  margin-top: 0; 
+  margin-bottom: 10px; 
+  clear: both;
 }
 
 /* ************************************************************************************************
                       Para la pagina de la API
 ************************************************************************************************ */
-
-#textoApi{
-  margin: 90px 150px 50px 150px;
-  text-align: justify;
-}
-
-.ruta{
-  margin: 30px 0 60px 0;
-}
-
-#textoApi h1{
-  margin-bottom: 30px;
-  font-size: 40px;
-  color: #66cccc;
-  font-family: 'Oswald', sans-serif;
-}
+.ruta{ margin: 30px 0 60px 0; }
 
 .linkjson{
   font-size: 25px;
@@ -156,18 +120,6 @@ input#subirImagen{
 .linkjson:hover{
   color: #66cccc;
   text-decoration: none;
-}
-
-#textoApi p{
-
-  font-size: 16px;
-  color: #999999;
-  
-}
-
-.language{
-  margin: 20px 0 0 60px;
-  font-family: monospace;
 }
 
 .apilink{
@@ -181,10 +133,28 @@ input#subirImagen{
   color: #999999;
 }
 
+#textoApi{
+  margin: 90px 150px 50px 150px;
+  text-align: justify;
+}
+
+#textoApi h1{
+  margin-bottom: 30px;
+  font-size: 40px;
+  color: #66cccc;
+  font-family: 'Oswald', sans-serif;
+}
+
+#textoApi p{
+  font-size: 16px;
+  color: #999999;  
+}
+
 #foot{
   position: absolute;
   top: 1500px;
 }
+
 /* ************************************************************************************************
                                             RESPONSIVE
 ************************************************************************************************ /
@@ -192,22 +162,20 @@ input#subirImagen{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-  #foot{
-    display: none;
-  }
+  .page-wrap { margin: 33px auto; }
+
+  .profile { padding-right: 0px; }
+
+  .editarDatos { width: 100%; }
+
+  .apilink{ font-size: 14px; }  
 
   #cont{
     padding-left: 20px;
     left: 10%;
-  }
-  .page-wrap {
-
-    margin: 33px auto;
-
-  }
+  }  
 
   #perfilTitulo {
-
     margin-bottom: 20px;
     font-size: 16px;
     border-bottom: 1.5px solid #66cccc;
@@ -215,28 +183,11 @@ input#subirImagen{
     width: 26%;
     display: -webkit-box; /* Chrome*/
     -webkit-flex: 1; /* Safari 6.1+ */
-
   }
 
-  #pelisquesigues{
-    font-size: 17px;
-  }
-
-
-  .editarDatos {
-
-    width: 100%;
-
-  }
-
-  .profile {
-
-    padding-right: 0px;
-
-  }
+  #pelisquesigues{ font-size: 17px; }  
 
   #mostrarMsg{
-
     width: 50%; 
     -moz-border-radius: 4px; 
     border-radius: 4px; 
@@ -244,16 +195,10 @@ input#subirImagen{
     padding: 0px; 
     margin: 0 0 0 18px;
     clear: both;
-
   }
 
-  .apilink{
-  font-size: 14px;
-}
+  #foot{ display: none; }
 
-  #textoApi{
-    margin: 80px 15px 40px 15px;
-  }
-
+  #textoApi{ margin: 80px 15px 40px 15px; }
 
 }
