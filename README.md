@@ -92,7 +92,7 @@ La filmdate ha creado su propia API para terceros.
 
 **Estructura/Sitemap**:https://moqups.com/filmdateee@gmail.com/xQ8dWMoQ
 
-**Información online:**: http://filmtalk.github.io/info./
+**Información online:**: http://filmtalk.github.io/final/
 
 **Dominio propio**: http://filmdate.tk/
 
