@@ -115,4 +115,4 @@ La filmdate ha creado su propia API para terceros.
 - Ejemplo página web: 
     [The Movie Database] (https://www.themoviedb.org/)
 
-- Mínimos: [Mínimos] (https://drive.google.com/file/d/0B9NisiPkodSLZUZVeGtrUzg4dHM/view?usp=sharing)
+- Mínimos: [pdf] (https://drive.google.com/file/d/0B9NisiPkodSLZUZVeGtrUzg4dHM/view?usp=sharing)
