@@ -36,32 +36,101 @@ h4 a:hover{
 	text-decoration: none;
 }
 
-/* Footer */
-#foot{
-  width: 100%;
-  position:absolute;
-  top: 1240px;
-  height: 66px;
-  padding: 3px;
-  
+
+/* ************************************************************************************************
+											Selectores por CLASE
+************************************************************************************************ */
+
+/* Imagen corporativa */
+.imgLogo{
+	content:url("../images/logotxiki_gris.png");
 }
 
-#foot a{
+/* Botón login */
 
-  position: relative;
-  top: 16px;
-  color: #999999;
-  padding-right:18px;
-  float: right;
+.btn-login{
+
+	cursor: pointer;
+	margin: 0px;
+}
+
+.peli{
+
+	position: relative;
+	float: left;
+	margin: 30px;
+	
+}
+
+.text {
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 0;
+    color:#4D4D4D;
+    background-color:rgba(255,255,255,0.8);
+    width: 160px;
+    height: 230px;
+    padding-top:60px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.text:hover {
+    opacity:0.8;
+}
+
+.descrip{
+
+	width: 160px;
+	height: 348px;
 
 }
 
-#foot a:hover{
+.descrip:hover{ 
 
-  color: #66cccc;
-  text-decoration: none;
+	-webkit-transform:scale(1.05);
+
+ }
+
+.info{
+
+	border: 2px solid blue;
+	display: -webkit-box; /* Chrome*/
+	-webkit-box-orient: horizontal; /* encabezado en horizontal */
 
 }
+
+.descrip p{
+
+	color: #333333;
+	font-size: 13px;
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #B2B2B2;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: #66cccc;
+	text-decoration: none;
+}
+
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
+}
+
+
 
 /* ************************************************************************************************
 											Selectores por ID
@@ -177,99 +246,34 @@ h4 a:hover{
 
 }
 
-
-/* ************************************************************************************************
-											Selectores por CLASE
-************************************************************************************************ */
-
-/* Imagen corporativa */
-.imgLogo{
-	content:url("../images/logotxiki_gris.png");
+/* Footer */
+#foot{
+  width: 100%;
+  position:absolute;
+  top: 1240px;
+  height: 66px;
+  padding: 3px;
+  
 }
 
-/* Botón login */
+#foot a{
 
-.btn-login{
-
-	cursor: pointer;
-	margin: 0px;
-}
-
-.peli{
-
-	position: relative;
-	float: left;
-	margin: 30px;
-	
-}
-
-.text {
-	font-size: 60px;
-	font-family: 'Oswald', sans-serif;
-    position: absolute;
-    top: 0;
-    color:#4D4D4D;
-    background-color:rgba(255,255,255,0.8);
-    width: 160px;
-    height: 230px;
-    padding-top:60px;
-    text-align: center;
-    z-index: 10;
-    opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.text:hover {
-    opacity:0.8;
-}
-
-.descrip{
-
-	width: 160px;
-	height: 348px;
+  position: relative;
+  top: 16px;
+  color: #999999;
+  padding-right:18px;
+  float: right;
 
 }
 
-.descrip:hover{ 
+#foot a:hover{
 
-	-webkit-transform:scale(1.05);
-
- }
-
-.info{
-
-	border: 2px solid blue;
-	display: -webkit-box; /* Chrome*/
-	-webkit-box-orient: horizontal; /* encabezado en horizontal */
+  color: #66cccc;
+  text-decoration: none;
 
 }
 
-.descrip p{
 
-	color: #333333;
-	font-size: 13px;
-}
-
-.link{/*estilos para los link del menu, para que no coja bootstrap*/
-	color: #B2B2B2;
-	padding-right: 20px;
-	opacity: 0.9;
-	text-decoration: none;
-}
-
-.link:hover{
-	color: #66cccc;
-	text-decoration: none;
-}
-
-/*imagenes de redes sociales*/
-.red{
-	cursor: pointer;
-	float: right;
-	padding-right:14px;
-}
 
 /* ************************************************************************************************
                                             RESPONSIVE
@@ -278,48 +282,37 @@ h4 a:hover{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-	#cartelera, #proximamente{
+	/*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
 
-		position: relative;
-		left: 0px;
-		top: 0px;
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
 
+    }
 
+	nav ul {
+
+       display: none;
+       height: auto;
+
+    }
+
+    /* Footer */
+	footer{
+		display: none;
+		background: none;
 	}
 
-	/* Encabezado ************************************/
-	#header{
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		display: block;
-		background-color: #f2efef;
-	}
-	
-	#logo{
-	  padding-left: 10px;
+	footer a{
+		display: none;
 	}
 
-	.imgLogo{
-		content:url("../images/logotxiki_gris.png");
-	}
-
-	/* Menú */
-
-	#menu_nav {
-		margin-top: 0px;
-		padding-left: 20px;
-		background-color: #c6c5c5;
-		width: 100%; /* Ocupa toda la pantalla */
-	}
-
-	/* Item de las listas desordenadas */
-	#menu_nav li{
-		padding: 7px;
-		display: block; 
-
-	}
+	.imgLogo{ content:url("../images/logotxiki_gris.png"); }
 
 	/* estilos para los link del menu, para que no coja bootstrap */
 	.link{ 
@@ -336,12 +329,43 @@ h4 a:hover{
 
 	}
 
-	nav ul {
+	.peli{
+		margin: 10px;
 
-       display: none;
-       height: auto;
+	}
 
-    }
+	.red{
+		display: none;
+	}
+
+	/* Encabezado ************************************/
+	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{ padding-left: 10px; }
+
+	
+
+	/* Menú */
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+		padding: 7px;
+		display: block; 
+
+	}
 
     /* Aparece el botón para desplegar el menú */
     #pull {
@@ -349,24 +373,19 @@ h4 a:hover{
         position: absolute;
         right: 15px;
         top: 17px;
-    }
-
-    /*Después de aparecer el menú, aparece el icono */
-    nav a#pull:after {
-
-        content: "";
-        background: url('../img/nav-icon.png') no-repeat;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 15px;
-
-    }
+    }    
 
     #search input[type="text"] {
 	    color: #B2B2B2;
 	}	
+
+	#cartelera, #proximamente{
+
+		position: relative;
+		left: 0px;
+		top: 0px;
+
+	}
 
     /* Cartelera */
 	#cartelera{
@@ -389,40 +408,16 @@ h4 a:hover{
 
 	}
 
-	#proximamente h3{
+	#proximamente h3, #cartelera h3{
 		margin-left: 9px;
-	}
-
-	#cartelera h3{
-		margin-left: 9px;
-	}
-
-	.peli{
-		margin: 10px;
 
 	}
-
-	/* Footer */
-	footer{
-		display: none;
-		background: none;
-	}
-
-	footer a{
-		display: none;
-	}
-
-	.red{
-		display: none;
-	}
-
 
 } 
 
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
 @media all and (max-width: 320px){
 
-	/* Cartelera */
 	#cartelera{
 		padding: 12px;
 		padding-left: 60px;

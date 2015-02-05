@@ -25,6 +25,17 @@ header, section, footer, nav {
 	display: block;
 }
 
+h4 a{
+
+	color: #66cccc;
+
+}
+
+h4 a:hover{
+	color: #478F8F;
+	text-decoration: none;
+}
+
 /* Footer */
 footer{
 	width: 100%;
@@ -47,6 +58,64 @@ footer a:hover{
 	color: #66cccc;
 	text-decoration: none;
 }
+
+/* ************************************************************************************************
+											Selectores por CLASE
+************************************************************************************************ */
+
+/* Imagen corporativa */
+.imgLogo{
+	content:url("../images/logotxiki_gris.png");
+}
+
+/* Botón login */
+
+.btn-login{
+
+	cursor: pointer;
+	margin: 0px;
+}
+
+.peli{
+
+	position: relative;
+	float: left;
+	margin-left: 200px;
+	margin-right: 200px;
+
+}
+
+.descrip{
+
+	width: 160px;
+
+}
+
+.descrip p{
+
+	color: #333333;
+	font-size: 13px;
+}
+
+.link{/*estilos para los link del menu, para que no coja bootstrap*/
+	color: #B2B2B2;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+	color: #66cccc;
+	text-decoration: none;
+}
+
+/*imagenes de redes sociales*/
+.red{
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
+}
+
 
 /* ************************************************************************************************
 											Selectores por ID
@@ -90,7 +159,6 @@ footer a:hover{
 
 }
 
-
 /* Buscador */
 #buscador{
 	padding-right: 15px;
@@ -133,73 +201,7 @@ color: #cccccc;
 
 }
 
-/* ************************************************************************************************
-											Selectores por CLASE
-************************************************************************************************ */
 
-/* Imagen corporativa */
-.imgLogo{
-	content:url("../images/logotxiki_gris.png");
-}
-
-/* Botón login */
-
-.btn-login{
-
-	cursor: pointer;
-	margin: 0px;
-}
-
-.peli{
-
-	position: relative;
-	float: left;
-	margin-left: 200px;
-	margin-right: 200px;
-
-}
-
-.descrip{
-
-	width: 160px;
-
-}
-
-.descrip p{
-
-	color: #333333;
-	font-size: 13px;
-}
-
-h4 a{
-
-	color: #66cccc;
-
-}
-
-h4 a:hover{
-	color: #478F8F;
-	text-decoration: none;
-}
-
-.link{/*estilos para los link del menu, para que no coja bootstrap*/
-	color: #B2B2B2;
-	padding-right: 20px;
-	opacity: 0.9;
-	text-decoration: none;
-}
-
-.link:hover{
-	color: #66cccc;
-	text-decoration: none;
-}
-
-/*imagenes de redes sociales*/
-.red{
-	cursor: pointer;
-	float: right;
-	padding-right:14px;
-}
 
 /* ************************************************************************************************
                                             RESPONSIVE
@@ -208,39 +210,39 @@ h4 a:hover{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
+	nav ul {
 
-	/* Encabezado ************************************/
-	#header{
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		display: block;
-		background-color: #f2efef;
+       display: none;
+       height: auto;
+
+    }
+
+    /*Después de aparecer el menú, aparece el icono */
+    nav a#pull:after {
+
+        content: "";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    /* Footer */
+	footer{
+		display: none;
+		background: none;
 	}
-	
-	#logo{
-	  padding-left: 10px;
+
+	footer a{
+		display: none;
 	}
+
 
 	.imgLogo{
 		content:url("../images/logotxiki_gris.png");
-	}
-
-	/* Menú */
-
-	#menu_nav {
-		margin-top: 0px;
-		padding-left: 20px;
-		background-color: #c6c5c5;
-		width: 100%; /* Ocupa toda la pantalla */
-	}
-
-	/* Item de las listas desordenadas */
-	#menu_nav li{
-		padding: 7px;
-		display: block; 
-
 	}
 
 	/* estilos para los link del menu, para que no coja bootstrap */
@@ -258,57 +260,9 @@ h4 a:hover{
 
 	}
 
-	nav ul {
-
-       display: none;
-       height: auto;
-
-    }
-
-    /* Aparece el botón para desplegar el menú */
-    #pull {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 17px;
-    }
-
-    /*Después de aparecer el menú, aparece el icono */
-    nav a#pull:after {
-
-        content: "";
-        background: url('../img/nav-icon.png') no-repeat;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 15px;
-
-    }
-
-    #search input[type="text"] {
-	    color: #B2B2B2;
-	}	
-
-	  #titulo h3{
-	
-		margin-left: 30px;
-	
-  	}
-
 	.peli{
 		margin: 10px;
 
-	}
-
-	/* Footer */
-	footer{
-		display: none;
-		background: none;
-	}
-
-	footer a{
-		display: none;
 	}
 
 	.red{
@@ -330,6 +284,52 @@ h4 a:hover{
 
 	}
 
+	/* Encabezado ************************************/
+	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{
+	  padding-left: 10px;
+	}
+
+	/* Menú */
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+		padding: 7px;
+		display: block; 
+
+	}
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }    
+
+    #search input[type="text"] {
+	    color: #B2B2B2;
+	}	
+
+	#titulo h3{
+	
+		margin-left: 30px;
+	
+  	}
 
 }
 
@@ -369,4 +369,5 @@ h4 a:hover{
 	margin-left: 150px;
 	
   }
+  
 }

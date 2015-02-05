@@ -17,14 +17,16 @@
 ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
 
 /* Cuerpo de toda la página */
-body{
-
-	width: 100%; /* Para que ocupe toda la pantalla */
-}
+body{ width: 100%; /* Para que ocupe toda la pantalla */ }
 
 /* Etiquetas en bloque */
-header, section, footer, nav {
-	display: block;
+header, section, footer, nav { display: block; }
+
+h4 a{ color: #66cccc; }
+
+h4 a:hover{
+	color: #478F8F;
+	text-decoration: none;
 }
 
 
@@ -33,9 +35,7 @@ header, section, footer, nav {
 ***********************************************************************************************/
 
 /* Imagen corporativa */
-.imgLogo{
-	content:url("../images/logotxiki.png");
-}
+.imgLogo{ content:url("../images/logotxiki.png"); }
 
 /* Botón login */
 
@@ -63,7 +63,6 @@ header, section, footer, nav {
 	width: 100%; 
 	height: 600px; 
 	position: absolute; 
-
 }
 
 .slider .btn { 
@@ -72,7 +71,95 @@ header, section, footer, nav {
 	width: 60px; 
 	float: left; 
 	cursor: pointer; 
+}
 
+/* estilos para los link del menu, para que no coja bootstrap */
+.link{ 
+
+	color: #f2efef;
+	padding-right: 20px;
+	opacity: 0.9;
+	text-decoration: none;
+}
+
+.link:hover{
+
+	color: grey;
+	text-decoration: none;
+
+}
+
+/* Imagen de la película */
+.peli{
+
+	position: relative;
+	float: left;
+	margin: 38px;
+	z-index:1;
+}
+
+.text {
+	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 0;
+    color:#4D4D4D;
+    background-color:rgba(255,255,255,0.8);
+    width: 160px;
+    height: 230px;
+    padding-top:13px;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.text:hover { opacity:0.8; }
+
+
+/* Descripción de la película */
+.descrip{ 
+
+	width: 160px;
+	height: 348px;
+}
+
+.descrip p{
+
+	color: #333333;
+	font-size: 13px;
+}
+
+.descrip:hover{ -webkit-transform:scale(1.05); }
+
+/*icono animado*/
+.glyphicon-refresh-animate { -webkit-animation: spinDos 1.5s infinite linear; }
+
+@-webkit-keyframes spinDos {
+    from { -webkit-transform: translate(0px,5px);}
+    to { -webkit-transform: translate(0px,30px);}
+}
+
+/* Botón para ir a cartelera o próximamente */
+.vermas{
+
+	clear: both;
+	float: right;
+	margin-top: 0px;
+	margin-right: 85px;
+	cursor: pointer;	
+}
+
+.vermas:hover{ -webkit-transform:scale(1.18); }
+
+/* Redes sociales */
+.red{
+
+	cursor: pointer;
+	float: right;
+	padding-right:14px;
 }
 
 
@@ -81,11 +168,7 @@ header, section, footer, nav {
 ************************************************************************************************ */
 
 /* Layout */
-#container{
-
-	width: 100%;
-
-}
+#container{ width: 100%; }
 
 /* Encabezado ************************************/
 #header{
@@ -120,32 +203,10 @@ header, section, footer, nav {
 }
 
 /* Para poner el menú en horizontal */
-#menu_nav li{ 
-
-	display: inline-block; 
-
-}
-
-/* estilos para los link del menu, para que no coja bootstrap */
-.link{ 
-	color: #f2efef;
-	padding-right: 20px;
-	opacity: 0.9;
-	text-decoration: none;
-}
-
-.link:hover{
-
-	color: grey;
-	text-decoration: none;
-
-}
+#menu_nav li{ display: inline-block; }
 
 /* Botón oculto para aparecer el menú */
-#pull{
-
-	display: none;
-}
+#pull{ display: none; }
 
 /* Header navigation of slider */
 #headernav-outer { 
@@ -154,14 +215,9 @@ header, section, footer, nav {
 	top: 285px;
 	margin:0 auto; 
 	width: 99%; 
-
 }
 
-#headernav {
-
-	padding-left:20px; 
-
-}
+#headernav { padding-left:20px; }
 
 /* Controles del slider */
 #back{ 
@@ -183,28 +239,6 @@ header, section, footer, nav {
 	margin-left: -20px;
 }
 
-
-/*icono animado*/
-.glyphicon-refresh-animate {
-    -webkit-animation: spinDos 1.5s infinite linear;
-    /*para cambiar color
-    -webkit-animation: camColor 1.5s infinite linear;*/
-
-}
-
-@-webkit-keyframes spinDos {
-    from { -webkit-transform: translate(0px,5px);}
-    to { -webkit-transform: translate(0px,30px);}
-}
-
-/*@-webkit-keyframes spinDos {
-	0%{color:red;}
-	50%{color:blue;}
-	100%{color:red;}
-}*/
-
-
-
 /* Listado de cartelera */
 #cartelera{
 
@@ -216,91 +250,13 @@ header, section, footer, nav {
 	left: 0px;
 	height: 600px;
 	background-color: #f2efef;
-
 }
 
 /* Título de la cartelera */
 #cartelera h3{
 
 	color: #B2B2B2;
-	margin-left: 30px;
-	
-}
-
-/* Imagen de la película */
-.peli{
-
-	position: relative;
-	float: left;
-	margin: 38px;
-	z-index:1;
-}
-
-.text {
-	font-size: 60px;
-	font-family: 'Oswald', sans-serif;
-    position: absolute;
-    top: 0;
-    color:#4D4D4D;
-    background-color:rgba(255,255,255,0.8);
-    width: 160px;
-    height: 230px;
-    padding-top:13px;
-    text-align: center;
-    z-index: 10;
-    opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.text:hover {
-    opacity:0.8;
-}
-
-
-/* Descripción de la película */
-.descrip{ 
-
-	width: 160px;
-	height: 348px;
-
- }
-
-.descrip p{
-
-	color: #333333;
-	font-size: 13px;
-}
-.descrip:hover{ 
-
-	-webkit-transform:scale(1.05);
-
- }
-
-h4 a{
-
-	color: #66cccc;
-}
-
-h4 a:hover{
-	color: #478F8F;
-	text-decoration: none;
-}
-
-/* Botón para ir a cartelera o próximamente */
-.vermas{
-
-	clear: both;
-	float: right;
-	margin-top: 0px;
-	margin-right: 85px;
-	cursor: pointer;
-	
-}
-
-.vermas:hover{
-	-webkit-transform:scale(1.18);
+	margin-left: 30px;	
 }
 
 /* Lista de próximamente */
@@ -318,15 +274,13 @@ h4 a:hover{
 
 /* Título de próximamente */
 #proximamente h3{
+
 	color: #B2B2B2;
 	margin-left: 30px;
 }
 
 /* Buscador */
-#buscador{
-
-	padding-right: 15px;
-}
+#buscador{ padding-right: 15px; }
 
 /* Input del buscador */
 #search input[type="text"] {
@@ -371,22 +325,12 @@ h4 a:hover{
   color: #999999;
   padding-right:18px;
   float: right;
-
 }
 
 #foot a:hover{
 
   color: #66cccc;
   text-decoration: none;
-
-}
-
-/* Redes sociales */
-.red{
-
-	cursor: pointer;
-	float: right;
-	padding-right:14px;
 }
 
 
@@ -397,71 +341,10 @@ h4 a:hover{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-	#div_abajo{ display: none; }
-
-	.slider{ display: none; }
-
-	#cartelera, #proximamente{
-
-		height: 850px;
-		position: relative;
-		left: 0px;
-		top: 0px;
-
-	}
-
-	#btn_abajo{
-
-		display: none;
-
-	}
-
-	/* Encabezado ************************************/
-	#header{
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		display: block;
-		background-color: #f2efef;
-	}
-	
-	#logo{
-	  padding-left: 10px;
-	}
-
-	.imgLogo{
-		content:url("../images/logotxiki_gris.png");
-	}
-
-	/* Menú */
-	#menu_nav {
-		margin-top: 0px;
-		padding-left: 20px;
-		background-color: #c6c5c5;
-		width: 100%; /* Ocupa toda la pantalla */
-	}
-
-	/* Item de las listas desordenadas */
-	#menu_nav li{
-		padding: 7px;
-		display: block; 
-
-	}
-
 	nav ul {
 
        display: none;
        height: auto;
-
-    }
-
-    /* Aparece el botón para desplegar el menú */
-    #pull {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 17px;
     }
 
     /*Después de aparecer el menú, aparece el icono */
@@ -474,49 +357,9 @@ h4 a:hover{
         display: inline-block;
         position: absolute;
         right: 15px;
-
     }
 
-    /* Input del buscador */
-    #search input[type="text"] {
-
-	    border: 2px solid #f2efef;
-	    color: #f2efef;
-	}	
-
-    /* Listado de cartelera */
-	#cartelera{
-
-		margin-top: 50px;
-		padding: 12px;
-		padding-left: 60px;
-		width: 100%;
-
-	}
-
-	/* Lista de próximamente */
-	#proximamente{
-
-		padding: 12px;
-		padding-left: 60px;
-		width: 100%;
-
-	}
-
-	/* Título de próximamente */
-	#proximamente h3{ margin-left: 9px; }
-
-	/* Título de cartelera */
-	#cartelera h3{ margin-left: 9px; }
-
-	/* Imágen de la película */
-	.peli{ margin: 10px; }
-
-	.infoUser{
-		font-size: 5px;
-	}
-
-	/* Footer */
+    /* Footer */
 	footer{
 
 		display: none;
@@ -525,12 +368,96 @@ h4 a:hover{
 
 	footer a{ display: none; }
 
+	.imgLogo{ content:url("../images/logotxiki_gris.png"); }
+
+	.slider{ display: none; }
+
+	/* Imágen de la película */
+	.peli{ margin: 10px; }
+
+	.infoUser{ font-size: 5px; }
+
 	/* Redes sociales */
 	.red{ display: none; }
 
+	#div_abajo{ display: none; }
+
+	#btn_abajo{ display: none; }
+
+	/* Encabezado ************************************/
+	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{ padding-left: 10px; }
+
+	/* Menú */
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+
+		padding: 7px;
+		display: block; 
+	}
+
+	/* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }
+
+    /* Input del buscador */
+    #search input[type="text"] {
+
+	    border: 2px solid #f2efef;
+	    color: #f2efef;
+	}
+
+	#cartelera, #proximamente{
+
+		height: 850px;
+		position: relative;
+		left: 0px;
+		top: 0px;
+
+	}       	
+
+    /* Listado de cartelera */
+	#cartelera{
+
+		margin-top: 50px;
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+	}
+
+	/* Lista de próximamente */
+	#proximamente{
+
+		padding: 12px;
+		padding-left: 60px;
+		width: 100%;
+	}
+
+	/* Títulos */
+	#proximamente h3, #cartelera h3{ margin-left: 9px; }
+
 } 
 
-/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
+/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
 @media all  and (max-width: 399px){
 
 	/* Listado de cartelera */
@@ -540,7 +467,6 @@ h4 a:hover{
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-
 	}
 
 	/* Lista de próximamente */
@@ -549,7 +475,6 @@ h4 a:hover{
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-
 	}
 
 }

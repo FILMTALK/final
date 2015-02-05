@@ -27,34 +27,13 @@ header, section, footer, nav {
 	display: block;
 }
 
-/* Footer */
-#foot{
-	width: 100%;
-	position: absolute;
-	top: 100px;
-	height: 66px;
-	padding: 3px;
-}
 
-#foot a{
-	position: relative;
-	top: 16px;
-	color: #999999;
-	padding-right:18px;
-	float: right;
-}
-
-#foot a:hover{
-	color: #66cccc;
-	text-decoration: none;
-}
 
 /***********************************************************************************************
 									   Selectores por CLASE 
 ***********************************************************************************************/
 
 /* Botón login */
-
 .btn-login{
 
 	cursor: pointer;
@@ -73,12 +52,6 @@ header, section, footer, nav {
     from { -webkit-transform: translate(0px,5px);}
     to { -webkit-transform: translate(0px,30px);}
 }
-
-/*@-webkit-keyframes spinDos {
-	0%{color:red;}
-	50%{color:blue;}
-	100%{color:red;}
-}*/
 
 /*estilos para los link del menu, para que no coja bootstrap*/
 .link{
@@ -247,7 +220,6 @@ header, section, footer, nav {
 	
 }
 
-
 /* Próximamente */
 #proximamente{
 	background-color: #E6E6E6;
@@ -294,6 +266,27 @@ header, section, footer, nav {
     width: 173px;
 }
 
+/* Footer */
+#foot{
+	width: 100%;
+	position: absolute;
+	top: 100px;
+	height: 66px;
+	padding: 3px;
+}
+
+#foot a{
+	position: relative;
+	top: 16px;
+	color: #999999;
+	padding-right:18px;
+	float: right;
+}
+
+#foot a:hover{
+	color: #66cccc;
+	text-decoration: none;
+}
 
 /* ************************************************************************************************
                                             RESPONSIVE
@@ -302,74 +295,11 @@ header, section, footer, nav {
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-	#div_abajo{
-		display: none;
-	}
-
-	.slider{
-		display: none;
-	}
-
-	#cartelera, #proximamente{
-
-		position: relative;
-		left: 0px;
-		top: 0px;
-
-	}
-
-	#btn_abajo{
-
-		display: none;
-
-	}
-
-	/* Encabezado ************************************/
-	#header{
-		position: fixed;
-		left: 0px;
-		top: 0px;
-		width: 100%;
-		display: block;
-		background-color: #f2efef;
-	}
-	
-	#logo{
-	  padding-left: 10px;
-	}
-
-	.imgLogo{
-		content:url("../images/logotxiki_gris.png");
-	}
-
-	/* Menú */
-	#menu_nav {
-		margin-top: 0px;
-		padding-left: 20px;
-		background-color: #c6c5c5;
-		width: 100%; /* Ocupa toda la pantalla */
-	}
-
-	/* Item de las listas desordenadas */
-	#menu_nav li{
-		padding: 7px;
-		display: block; 
-
-	}
-
 	nav ul {
 
        display: none;
        height: auto;
 
-    }
-
-    /* Aparece el botón para desplegar el menú */
-    #pull {
-        display: block;
-        position: absolute;
-        right: 15px;
-        top: 17px;
     }
 
     /*Después de aparecer el menú, aparece el icono */
@@ -385,6 +315,70 @@ header, section, footer, nav {
 
     }
 
+    /* Footer */
+	footer{
+		display: none;
+		background: none;
+	}
+
+	footer a{
+		display: none;
+	}
+
+	.imgLogo{ content:url("../images/logotxiki_gris.png"); }
+
+	.slider{ display: none; }
+
+	.peli{ margin: 10px; }
+
+	.red{ display: none; }
+
+	#div_abajo{ display: none; }
+
+	#btn_abajo{ display: none; }
+
+	#cartelera, #proximamente{
+
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}	
+
+	/* Encabezado ************************************/
+	#header{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		display: block;
+		background-color: #f2efef;
+	}
+	
+	#logo{ padding-left: 10px; }
+
+	/* Menú */
+	#menu_nav {
+		margin-top: 0px;
+		padding-left: 20px;
+		background-color: #c6c5c5;
+		width: 100%; /* Ocupa toda la pantalla */
+	}
+
+	/* Item de las listas desordenadas */
+	#menu_nav li{
+
+		padding: 7px;
+		display: block; 
+	}
+
+    /* Aparece el botón para desplegar el menú */
+    #pull {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+    }    
+
     #search input[type="text"] {
 	    border: 2px solid #f2efef;
 	    color: #f2efef;
@@ -397,7 +391,6 @@ header, section, footer, nav {
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-
 	}
 
 	#proximamente{
@@ -406,7 +399,6 @@ header, section, footer, nav {
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-
 	}
 
 	#proximamente h3{
@@ -415,33 +407,13 @@ header, section, footer, nav {
 
 	#cartelera h3{
 		margin-left: 9px;
-	}
-
-	.peli{
-		margin: 10px;
-
-	}
-
-	/* Footer */
-	footer{
-		display: none;
-		background: none;
-	}
-
-	footer a{
-		display: none;
-	}
-
-	.red{
-		display: none;
-	}
+	}	
 
 } 
 
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 320px se cambia el diseño */
 @media all and (max-width: 320px){
 
-	/* Cartelera */
 	#cartelera{
 		padding: 12px;
 		padding-left: 60px;
@@ -453,6 +425,5 @@ header, section, footer, nav {
 		padding: 12px;
 		padding-left: 60px;
 		width: 100%;
-
 	}
 }
