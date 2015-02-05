@@ -27,11 +27,8 @@ foreach ($pelis as $campos => $valor) {
         
         if($campo=="titulo"){
 
-            echo "<td>";
-                echo "<span class='glyphicon glyphicon-film'></span>";
-            echo "</td>";
-            echo "<td>";    
-                echo " <a class='apilink' href='../views/perfil-peli.php?peli=$value'> $value</a>";
+            echo "<td >";    
+                echo " <a class='apilink' href='../views/perfil-peli.php?peli=$value'> <span class='glyphicon glyphicon-film'></span> $value</a>";
                 echo"<br>";
             echo "</td>";
         }

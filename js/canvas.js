@@ -56,6 +56,7 @@ $(document).ready(function() {
 	       imagenSrc = imagen.src;
 
 		}
+		//lee la url del fichero para mostrar la imagen
 		fichero.readAsDataURL(e.target.files[0]);
 	}
 

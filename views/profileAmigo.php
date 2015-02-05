@@ -27,12 +27,6 @@ include_once("../funciones/peliculas.php");
         <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
-        <!--Canvas-->
-        <script type="text/javascript" src="../js/canvas.js"></script>
-        <!--Dejar de seguir peli-->
-        <script type="text/javascript" src="../js/dejarSeguir.js"></script>    
-        <!-- JavaScript para validar los campos -->
-        <script type="text/javascript" src="../js/validarEditarDatos.js"></script>
         <!-- jQuery para ventana modal -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
@@ -80,7 +74,17 @@ include_once("../funciones/peliculas.php");
                             outline:none;'><span class='glyphicon glyphicon-plus'></span>Añadir amigo</button>";
 
                             }
+                        
+
+
+                        echo '<h2 id="pelisquesigues">Películas que sigue '. $_GET["usuario"]. ': </h2>'
                         ?>
+                        <!-- Tabla de las películas que sigue el usuario -->
+                        <table id="pelisigue">                    
+                            <?php
+                                include("../includes/peliSigueAmigo.php");
+                            ?>
+                        </table>
                         
                     </div> <!-- Cierre de editar datos -->
 
@@ -106,15 +110,6 @@ include_once("../funciones/peliculas.php");
                         </div> <!-- Cierre para recargar la imagen -->
                     </div> <!-- Cierre del div de avatar -->
                 </div> <!-- Cierre de la clase profile -->
-
-                <h2 id="pelisquesigues">Películas que sigues: </h2>
-                <div id="aviso"></div>
-                <!-- Tabla de las películas que sigue el usuario -->
-                <table id="pelisigue">                    
-                    <?php
-                        include("../includes/peliSigueAmigo.php");
-                    ?>
-                </table>
             </div> <!--  Cierre div de la clase page-wrap -->
         </div> <!-- Cierre div de la id cont -->
 
