@@ -1,19 +1,11 @@
 <?php
-
-//------------------------------------------------------------------------------
-// Los mensajes flash requieren las sesiones 
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
-
-//------------------------------------------------------------------------------
-// Se incluye la clase y se instancia
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 require_once('../controller/class.messages.php');
 $msg = new Messages();
-
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
-
 // Se importan las funciones para comprobar u obtener datos
 include_once("../funciones/usuarios.php");
 
@@ -28,10 +20,8 @@ if(isset($_POST['registro'])){
 
 		// Mensaje de error a mostrar
 		$msg->add('e', 'ERROR: Los campos estan vacios');
-
 		// Redirecciona a la página de registro
 		header('Location: ../views/registro.php');
-
 		// Imprime un mensaje y termina el script actual
 		exit();
 		
@@ -39,15 +29,15 @@ if(isset($_POST['registro'])){
 	else{ // Si los campos no están vacíos
 
 		$email=$_POST['email'];
+		// Se comprueba la estructura del email
 		if(!preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$email)){
+
 			// Mensaje de error a mostrar
-				$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
-
-				// Redirecciona a la página de añadir usuario
-				header('Location: ../views/registro.php');
-
-				// Imprime un mensaje y termina el script actual
-				exit();
+			$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
+			// Redirecciona a la página de registro
+			header('Location: ../views/registro.php');
+			// Imprime un mensaje y termina el script actual
+			exit();
 
 		}else{
 
@@ -56,10 +46,8 @@ if(isset($_POST['registro'])){
 
 				// Mensaje de error a mostrar
 				$msg->add('e', 'ERROR: Las claves no coinciden');
-
 				// Redirecciona a la página de registro
 				header('Location: ../views/registro.php');
-
 				// Imprime un mensaje y termina el script actual
 				exit();
 
@@ -71,10 +59,8 @@ if(isset($_POST['registro'])){
 
 					// Mensaje de error a mostrar
 					$msg->add('e', 'ERROR: El usuario ya existe');
-
 					// Redirecciona a la página de registro
 					header('Location: ../views/registro.php');
-
 					// Imprime un mensaje y termina el script actual
 					exit();
 
@@ -83,9 +69,9 @@ if(isset($_POST['registro'])){
 
 					try {
 
-						// Read image path, convert to base64 encoding
+						// Lee la imagen y convierte a base64
 						$imageData = base64_encode(file_get_contents("../images/default.jpg"));
-						// Format the image SRC:  data:{mime};base64,{data};
+						// Formato de SRC:  data:{mime};base64,{data};
 						//{mime}--> El formato de la imagen, ej.:image/jpeg
 						$src = 'data: '.mime_content_type("../images/default.jpg").';base64,'.$imageData;
 
@@ -156,10 +142,8 @@ if(isset($_POST['registro'])){
 
 						// Mensaje de error a mostrar
 						$msg->add('e', 'ERROR: Al insertar los datos');
-
 						// Redirecciona a la página de registro
 						header('Location: ../views/registro.php');
-
 						// Imprime un mensaje y termina el script actual
 						exit();
 

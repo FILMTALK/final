@@ -1,19 +1,11 @@
 <?php
-
-//------------------------------------------------------------------------------
-// Los mensajes flash requieren las sesiones 
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
-
-//------------------------------------------------------------------------------
-// Se incluye la clase y se instancia
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 require_once('../controller/class.messages.php');
 $msg = new Messages();
-
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
-
 // Se importan las funciones para comprobar u obtener datos
 include_once("../funciones/usuarios.php");
 
@@ -25,25 +17,23 @@ if(isset($_POST['registro'])){
 
 		// Mensaje de error a mostrar
 		$msg->add('e', 'ERROR: Los campos estan vac&iacute;os');
-
 		// Redirecciona a la página de registro
 		header('Location: ../views/anadirUser.php');
-
 		// Imprime un mensaje y termina el script actual
 		exit();
 		
 	}
 	else{ // Si el mail está mal
 		$email=$_POST['email'];
+		// Se comprueba la estrucutra del email
 		if(!preg_match("/^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/",$email)){
+
 			// Mensaje de error a mostrar
-				$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
-
-				// Redirecciona a la página de añadir usuario
-				header('Location: ../views/anadirUser.php');
-
-				// Imprime un mensaje y termina el script actual
-				exit();
+			$msg->add('e', 'ERROR: El email no tiene formato correcto, debe de ser ejemplo@ejemplo.com');
+			// Redirecciona a la página de añadir usuario
+			header('Location: ../views/anadirUser.php');
+			// Imprime un mensaje y termina el script actual
+			exit();
 
 		}else{
 
@@ -52,36 +42,37 @@ if(isset($_POST['registro'])){
 
 				// Mensaje de error a mostrar
 				$msg->add('e', 'ERROR: Las claves no coinciden');
-
-				// Redirecciona a la página de registro
+				// Redirecciona a la página de añadir usuario
 				header('Location: ../views/anadirUser.php');
-
 				// Imprime un mensaje y termina el script actual
 				exit();
 
 			}
 			else{ // Si las contraseñas coinciden
+
 				$password=$_POST["password"];
+				// Obtiene el tamaño de la contraseña
 				$tamPass = strlen($password);
+				// Si la contraseña es menor que 8 o mayor que 15 caractres.
 				if($tamPass<8 || $tamPass>15){
 					// Mensaje de error a mostrar
 					$msg->add('e', 'ERROR: La contraseña tiene que tener 8 caracteres como mínimo o 15 como máximo');
-
 					// Redirecciona a la página de añadir usuario
 					header('Location: ../views/anadirUser.php');
 
 					// Imprime un mensaje y termina el script actual
 					exit();
-				}else{
+
+				}
+				else{
+
 					// Se comprueba que el usuario existe en la bd.
 					if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
 
 						// Mensaje de error a mostrar
 						$msg->add('e', 'ERROR: El usuario ya existe');
-
 						// Redirecciona a la página de añadir usuario
 						header('Location: ../views/anadirUser.php');
-
 						// Imprime un mensaje y termina el script actual
 						exit();
 
@@ -101,24 +92,20 @@ if(isset($_POST['registro'])){
 
 							// Se inserta el documento en la colección llamado users
 							$collection->insert($document);
-
+							// Se crea el mensaje con el contenido exitoso
 							$msg->add('s', '¡FABULOSO! Usuario añadido');
-
-							// Redirecciona al perfil del usuario
+							// Redirecciona a la página de añadir usuario
 							header("location: ../views/anadirUser.php");
 
 						}
-						catch (MongoCursorException $e) {
+						catch (MongoCursorException $e) { // Lanza la excepción
 
 							// Mensaje de error a mostrar
 							$msg->add('e', 'ERROR: Al insertar los datos');
-
 							// Redirecciona a la página de registro
 							header('Location: ../views/anadirUser.php');
-
 							// Imprime un mensaje y termina el script actual
 							exit();
-
 
 						} // Cierre de la excepción
 
@@ -127,7 +114,6 @@ if(isset($_POST['registro'])){
 				} // Cierre del else si la contraseña no tiene 8 caracteres como mínimo
 
 			} // Cierre del else porque las contraseñas coinciden
-
 
 		} //Cierre del else para compobar si el mail está correcto.
 		

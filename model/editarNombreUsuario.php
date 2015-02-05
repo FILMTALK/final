@@ -1,22 +1,13 @@
 <?php
-
-//------------------------------------------------------------------------------
-// Los mensajes flash requieren las sesiones 
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
-
-//------------------------------------------------------------------------------
-// Se incluye la clase y se instancia
-//------------------------------------------------------------------------------
+// Se requiere las sesiones para los mensajes flash
 require_once('../controller/class.messages.php');
 $msg = new Messages();
-
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
-
 // Se importan las funciones para comprobar u obtener datos
 include_once("../funciones/usuarios.php");
-
 // Iniciar una nueva sesión o reanudar una sesión
 session_start();
 
@@ -28,10 +19,8 @@ if(isset($_POST['editNombre'])){
 
 		// Mensaje de error a mostrar
 		$msg->add('e', 'ERROR: Los campos estan vacios');
-
 		// Redirecciona al perfil del usuario
 		header('Location: ../views/profile.php');
-
 		// Imprime un mensaje y termina el script actual
 		exit();
 
@@ -40,29 +29,23 @@ if(isset($_POST['editNombre'])){
 
 		// Se comprueba si la contraseña coincide
 		if(verificarPassword($_SESSION["nombreUsuario"],md5($_POST['password']))==true){ //Si la contraseña coindice
-
 			// Se establece la variable mediante el valor de la variable de sesión
 			$id_usuario=$_SESSION["id_usuario"];
-
 			// Si existe un usuario con el mismo nombre de usuario introducido
 			if(usernameExiste($_POST['nombre'])==true){
-
 				// Mensaje de error a mostrar
 				$msg->add('e', 'ERROR: El nombre de usuario ya existe.');
-
 				// Redirecciona al perfil del usuario
 				header('Location: ../views/profile.php');
-
 				// Imprime un mensaje y termina el script actual
 				exit();
 
 			}
 			else{
-				try{
 
+				try{
 					// Se consultan los datos de ese usuario en concreto
 					$users=$collection->findOne(array('_id' => $_SESSION["id_usuario"]));
-
 					// Se recorre el array
 					foreach ($users as $document) {
 						
@@ -73,22 +56,19 @@ if(isset($_POST['editNombre'])){
 
 					// Se obtiene el nombre de usuario de la BD
 					$nombreUsuario=obtenerUsuario($id_usuario);
-
 					// Se establece la variable de sesión del nombre de usuario
 					$_SESSION["nombreUsuario"]=$nombreUsuario;
-
 		   			// Muestra mensaje exitoso
 					$msg->add('s', 'Cambio realizado');
-
 					// Redirecciona al perfil del usuario
 					header('Location: ../views/profile.php');
-
 					// Imprime un mensaje y termina el script actual
 					exit();
-				}catch(MongoCursorException $e){
-					// Muestra mensaje exitoso
-					$msg->add('e', 'ERROR: No se han podido modificar los datos, inténtalo de nuevo.');
 
+				}catch(MongoCursorException $e){
+
+					// Se crea mensaje de error
+					$msg->add('e', 'ERROR: No se han podido modificar los datos, inténtalo de nuevo.');
 					// Redirecciona al perfil del usuario
 					header('Location: ../views/profile.php');
 				}
@@ -99,17 +79,13 @@ if(isset($_POST['editNombre'])){
 
 			// Mensaje de error a mostrar
 			$msg->add('e', 'ERROR: La clave no es correcta');
-
 			// Redirecciona al perfil del usuario
 			header('Location: ../views/profile.php');
-
 			// Imprime un mensaje y termina el script actual
 			exit();
 
-		} // Cierre del else porque la contraseña no coincide
-		
+		} // Cierre del else porque la contraseña no coincide		
 	} // Cierre del else si los campos no están vacíos
-
-} // Cierre del if --> variable login
+} // Cierre del if 
 
 ?>

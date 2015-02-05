@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+	// Se ocultan los botones
 	$("#bnw").fadeOut();
 	$("#enviar").fadeOut();
 	$("#colour").fadeOut();	
@@ -18,10 +18,10 @@ $(document).ready(function() {
 
 		// Se crea un objeto de tipo FileReader
 		var fichero = new FileReader();
-		//Cuando el fichero ha sido seleccionado
+		// Cuando el fichero ha sido seleccionado
 		fichero.onload = function(event){
 
-			//Se crea el objeto Imagen
+			// Se crea el objeto Imagen
 			imagen = new Image();
 			// Al cargar la imagen se realizan las siguientes instrucciones
 			imagen.onload = function(){
@@ -35,10 +35,11 @@ $(document).ready(function() {
 					$("#mostrarMsg").html("<p style='margin-left:20px;color:#c00 !important;'>La imagen debe ser de 150 x 150 px.</p>");
 	       		}
 	       		else{
-	       			//eliminamos el atributo disabled
+	       			// Muestra los botones
 	       			$("#bnw").fadeIn();
 	       			$("#enviar").fadeIn();
 					$("#colour").fadeIn();
+					// Eliminamos el atributo disabled de los botones
 	       			$("#enviar").removeAttr("disabled");
 	       			$("#bnw").removeAttr("disabled");
 	       			$("#colour").removeAttr("disabled");
@@ -56,7 +57,7 @@ $(document).ready(function() {
 	       imagenSrc = imagen.src;
 
 		}
-		//lee la url del fichero para mostrar la imagen
+		// Lee la url del fichero para mostrar la imagen
 		fichero.readAsDataURL(e.target.files[0]);
 	}
 
@@ -77,9 +78,9 @@ $(document).ready(function() {
 		for (var i = 0, n = pixeles.length; i < n; i += 4) {
 	        var grayscale = pixeles[i] * .3 + pixeles[i+1] * .59 + pixeles[i+2] * .11;
 	        // Se establecen los colores
-	        pixeles[i] = grayscale;   // red
-	        pixeles[i+1] = grayscale;   // green
-	        pixeles[i+2] = grayscale;   // blue
+	        pixeles[i] = grayscale;   // rojo
+	        pixeles[i+1] = grayscale; // verde
+	        pixeles[i+2] = grayscale; // azul
 	      
 	    }
 	    // Se dibuja los pixeles en escala de grises
@@ -103,15 +104,12 @@ $(document).ready(function() {
 		// Se recorren todos los pixeles
 		for (var i = 0, n = pixeles.length; i < n; i += 4) {
 			
-			          // red
-          data[i] = 255 - data[i];
-          // green
-          data[i + 1] = 255 - data[i + 1];
-          // blue
-          data[i + 2] = 255 - data[i + 2];
+          data[i] = 255 - data[i]; 		   // rojo
+          data[i + 1] = 255 - data[i + 1]; // verde
+          data[i + 2] = 255 - data[i + 2]; // azul
 	      
 	    }
-	    // Se dibuja los pixeles en escala de grises
+	    // Se dibuja los pixeles en color
 	    dibujo.putImageData(imgd, 0, 0);
 
 	});
@@ -120,6 +118,7 @@ $(document).ready(function() {
 
 		event.preventDefault();
 
+		// Se obtiene el usuario y el nombre desde los atributos name y value del botón enviar
 		var usuario=document.getElementById("enviar").name;
 		var nombre=document.getElementById("enviar").value;
 

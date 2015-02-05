@@ -1,5 +1,10 @@
 <?php
 
+/*
+* obtenerIdPelicula. Se obtiene el campo id de la bd.
+* parans --> $titulo. Se obtiene el título de la película.
+* return --> El id en String.
+*/
 function obtenerIdPelicula($titulo){
 
 	// Variable global
@@ -30,7 +35,11 @@ function obtenerIdPelicula($titulo){
 
 }  //Cierre de la función obtenerIdPelicula
 
-
+/*
+* obtenerDatosPelicula. Se obtienen todos los datos de un registro.
+* parans --> $id_pelicula. Se obtiene el id de la pelicula.
+* return --> Devuelve un array.
+*/
 function obtenerDatosPelicula($id_pelicula){
 
 	// Variable global
@@ -44,6 +53,11 @@ function obtenerDatosPelicula($id_pelicula){
 
 }
 
+/*
+* peliculaExiste. Comprueba si la película existe en un booleano.
+* parans --> $nombre. Se obtiene el título de la película.
+* return --> Devuelve un true si existe la película, sino un false.
+*/
 function peliculaExiste($nombre){
 
 	// Variable global
@@ -62,7 +76,6 @@ function peliculaExiste($nombre){
 		$existe=false;
 
 	}
-
 	// Devuelve el valor booleano
 	return $peliculas;	
 
@@ -70,7 +83,11 @@ function peliculaExiste($nombre){
 }  //Cierre de la función peliculaExiste
 
 
-
+/*
+* mediaValoracion. Obtiene la media de la película.
+* parans --> $id_pelicula. Se obtiene el id de la película.
+* return --> Devuelve un número en decimales.
+*/
 function mediaValoracion($id_pelicula){
 
 	$total=0;
@@ -85,30 +102,35 @@ function mediaValoracion($id_pelicula){
 
 	foreach($valoraciones as $campos => $datos){
 
-			foreach ($datos as $campo => $dato){
+		foreach ($datos as $campo => $dato){
 
-				if($campo=="valoracion"){
+			if($campo=="valoracion"){
 
-					$total=$total+$dato;
-					$cant++;
+				$total=$total+$dato;
+				$cant++;
 
-				}
+			}
 
-			} // Cierre del bucle foreach
+		} // Cierre del bucle foreach
 
 	} // Cierre del bucle foreach
 
 	if($cant!=0){
 
 		$media=$total/$cant;
-
 	}
 
+	// Devuelve un número en decimales
 	return $media;
 
-}
+} // Cierre de la función mediaValoracion
 
 
+/*
+* cantVotos. Muestra la cantidad de votos que contiene la película.
+* parans --> $id_pelicula. Se obtiene el id de la película.
+* return --> Devuelve un número entero.
+*/
 function cantVotos($id_pelicula){
 
 	$cant=0;
@@ -121,21 +143,21 @@ function cantVotos($id_pelicula){
 
 	foreach($valoraciones as $campos => $datos){
 
-			foreach ($datos as $campo => $dato){
+		foreach ($datos as $campo => $dato){
 
-				if($campo=="valoracion"){
+			if($campo=="valoracion"){
 
-					$cant++;
+				$cant++;
 
-				}
+			}
 
-			} // Cierre del bucle foreach
+		} // Cierre del bucle foreach
 
 	} // Cierre del bucle foreach
 
-
+	// Devuelve un número entero
 	return $cant;
 
-}
+} // Cierre de la función cantVotos
 
 ?>
