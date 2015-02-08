@@ -1,7 +1,7 @@
 <?php
 // Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
-// Se requiere las sesiones para los mensajes flash
+// Requiere la clase de mensajes y se instancia el objeto de tipo Messages
 require_once('../controller/class.messages.php');
 $msg = new Messages();
 // Se importa database.php para realizar consultas a la base de datos
@@ -55,7 +55,7 @@ if(isset($_POST['registro'])){
 			else{ // Si las contraseñas coinciden
 
 				// Se comprueba que el usuario existe en la bd.
-				if(usuarioExiste($_POST['email'])==true){ //Si el usuario existe
+				if(usuarioExiste($_POST['email'])==true or usernameExiste($_POST['username'])==true){ //Si el usuario existe
 
 					// Mensaje de error a mostrar
 					$msg->add('e', 'ERROR: El usuario ya existe');
