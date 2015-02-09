@@ -5,8 +5,8 @@ if( !session_id() ) session_start();
 require_once('../controller/class.messages.php');
 $msg = new Messages();
 
-if($_SESSION['usuario']== $_GET['usuario']){
-    header('Location: ./views/profile.php');
+if($_SESSION["nombreUsuario"]==$_GET['usuario']){
+    header('Location: ../views/profile.php');
 }
 
 // Se importan las funciones para comprobar u obtener datos
@@ -58,7 +58,7 @@ include_once("../funciones/peliculas.php");
 
             <div class="page-wrap">
                 <?php
-                               
+
                     echo "<h1 id='perfilTitulo'>Perfil de ". $_GET["usuario"] . "</h1>"; 
 
                 ?>
