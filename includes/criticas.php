@@ -35,7 +35,7 @@
 
             if($coment=="comentario"){
             
-                echo $datos."<br/><br/><br/>";
+                echo "<p align='justify'>".$datos."</p><br/><br/><br/>";
             }
         }       
     }
