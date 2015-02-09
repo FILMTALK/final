@@ -5,6 +5,10 @@ if( !session_id() ) session_start();
 require_once('../controller/class.messages.php');
 $msg = new Messages();
 
+if($_SESSION['usuario']== $_GET['usuario']){
+    header('Location: ./views/profile.php');
+}
+
 // Se importan las funciones para comprobar u obtener datos
 include_once("../funciones/peliculas.php");
 ?>
