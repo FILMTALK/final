@@ -162,7 +162,12 @@ div#div_file,#enviar{
 /*TABLET:Cuando la anchura de la ventana contenga como máximo 700px se cambia el diseño */
 @media all and (max-width: 768px){
 
-  .page-wrap { margin: 33px auto; }
+  .page-wrap { 
+
+    width: 768px;
+    margin: 33px auto; 
+
+  }
 
   .profile { padding-right: 0px; }
 
@@ -180,7 +185,7 @@ div#div_file,#enviar{
     font-size: 16px;
     border-bottom: 1.5px solid #66cccc;
     min-width: 60px;
-    width: 26%;
+    width: 50%;
     display: -webkit-box; /* Chrome*/
     -webkit-flex: 1; /* Safari 6.1+ */
   }
@@ -201,4 +206,20 @@ div#div_file,#enviar{
 
   #textoApi{ margin: 80px 15px 40px 15px; }
 
+}
+
+/*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
+@media all  and (max-width: 399px){
+
+  .profile, .page-wrap, .editarDatos, #infoUser, #recargaImagen, #pelisquesigues { 
+
+    width: 290px;
+
+  }
+
+  #perfilTitulo {
+
+    width: 80%;
+
+  }
 }
