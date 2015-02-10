@@ -5,7 +5,7 @@ if( !session_id() ) session_start();
 require_once('../controller/class.messages.php');
 $msg = new Messages();
 
-if($_SESSION['nombreUsuario']== $_GET['usuario']){
+if($_SESSION['nombreUsuario']==$_GET['usuario'] || $_GET['usuario']==null){
     header('Location: ../views/profile.php');
 }
 
@@ -66,34 +66,34 @@ include_once("../funciones/peliculas.php");
                 ?>
                 <!-- Perfil del usuario -->
                 <div class="profile">
-                    <!-- Muestra los mensajes flash desde el ajax -->
                     <div id="limitar"></div>
                     <div class="editarDatos">
                         <div id='botonAmigo'>
-                        <?php
-                            // Muestra la variable de sesión del nombreUsuario
-                            if (isset($_SESSION['nombreUsuario'])) {
-
-                                $usuario=$_SESSION['nombreUsuario'];
-                                $amigo =$_GET['usuario'];
-
-                                include('../includes/amigos.php');                              
-
-                            }                    
-                        echo '</div>';
-                        echo '<h2 id="pelisquesigues">Películas que sigue '. $_GET["usuario"]. ': </h2>';
-                        ?>
-                        <!-- Tabla de las películas que sigue el usuario -->
-                        
-                        <table id="pelisigue">                    
                             <?php
-                                include("../includes/peliSigueAmigo.php");
+                                // Muestra la variable de sesión del nombreUsuario
+                                if (isset($_SESSION['nombreUsuario'])) {
+
+                                    $usuario=$_SESSION['nombreUsuario'];
+                                    $amigo =$_GET['usuario'];
+
+                                    include('../includes/amigos.php');                              
+
+                                }                    
+                            echo '</div>';
+                            echo '<h2 class="pelisquesigues">Películas que sigue '. $_GET["usuario"]. ': </h2>';
                             ?>
-                        </table>
+                            <!-- Tabla de las películas que sigue el usuario -->                        
+                            <table id="pelisigue">                    
+                                <?php
+                                    include("../includes/peliSigueAmigo.php");
+                                ?>
+                            </table>
+                            <br /><br />
+                        </div> <!-- Cierre del botón de amigo-->
                         
                     </div> <!-- Cierre de editar datos -->
 
-                    <!-- Añadir foto -->
+                    <!-- Foto de perfil -->
                     <div id="avatar">
                         <div id="recargaImagen">
                             <?php

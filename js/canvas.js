@@ -32,7 +32,9 @@ $(document).ready(function() {
 					$("#mostrarMsg").css("background","url(../images/messages/cross.png ) no-repeat 0px 30%");
 					$("#mostrarMsg").css("background-color","#FFF0EF");
 					$("#mostrarMsg").css("border","1px solid #C42608");
-					$("#mostrarMsg").html("<p style='margin-left:20px;color:#c00 !important;'>La imagen debe ser de 150 x 150 px.</p>");
+					$("#mostrarMsg").css("width","83%");
+					$("#mostrarMsg").css("margin","0px 0px 10px 0px");
+					$("#mostrarMsg").html("<p style='margin-left:20px;color:#c00 !important;width:60%;'>La imagen debe ser de 150 x 150 px.</p>");
 	       		}
 	       		else{
 	       			// Muestra los botones

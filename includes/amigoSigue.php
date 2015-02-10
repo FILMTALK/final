@@ -2,11 +2,6 @@
 include_once("../config/database.php");
 // Se guarda la variable de sesión
 $usuario=$_SESSION['nombreUsuario'];
-// Si no contiene valor
-/*if(!(isset($id_usuario))){
-    // Se guarda el valor de la variable GET
-    $id_usuario=$_GET['id_usuario'];
-}*/
 // Se establece la colección sigue_peli
 $collection=$bd->sigue_amigos;
 $amigo=$collection->find(array('usuario' => "$usuario"));

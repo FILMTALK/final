@@ -1,5 +1,5 @@
 <?php
-
+// Se importa la bd
 include_once("../config/database.php");
 
 $usuario=$_SESSION['nombreUsuario'];
@@ -14,7 +14,7 @@ $amigo=$collection->find(array('usuario' => "$usuario",'amigo' => "$amigo_usu"))
 
 if($amigo->count() == 0){
 
- echo "<button class='btn btn-info' id='anadirAmigo' name='$usuario' value='$amigo_usu'
+ 	echo "<button class='btn btn-info' id='anadirAmigo' name='$usuario' value='$amigo_usu'
         style='background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
         margin-right:10px;
         outline:none;'><span class='glyphicon glyphicon-plus'></span>Añadir amigo</button>";

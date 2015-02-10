@@ -105,8 +105,7 @@ include_once("../funciones/peliculas.php");
                             padding-left:5px;margin-right:10px;
                             outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
                         </p>
-
-                       
+                        <br />
                         <div id="div_file">
                             <p id="texto">Añade una foto</p>
                             <input type="file" id="subirImagen">

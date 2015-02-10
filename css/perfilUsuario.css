@@ -95,14 +95,11 @@ div#div_file,#enviar{
 #enviar{ border: 0px; }
 
 #mostrarMsg{
-
-  width: 190%; 
+ 
   -moz-border-radius: 4px; 
   border-radius: 4px; 
   display: block; 
   padding: 5px; 
-  margin-top: 0; 
-  margin-bottom: 10px; 
   clear: both;
 }
 
@@ -173,7 +170,9 @@ div#div_file,#enviar{
 
   .editarDatos { width: 100%; }
 
-  .apilink{ font-size: 14px; }  
+  .apilink{ font-size: 14px; }
+
+  .pelisquesigues{ font-size: 17px; }  
 
   #cont{
     padding-left: 20px;
@@ -188,17 +187,14 @@ div#div_file,#enviar{
     width: 50%;
     display: -webkit-box; /* Chrome*/
     -webkit-flex: 1; /* Safari 6.1+ */
-  }
-
-  .pelisquesigues{ font-size: 17px; }  
+  }    
 
   #mostrarMsg{
-    width: 50%; 
+
     -moz-border-radius: 4px; 
     border-radius: 4px; 
     display: block; 
     padding: 0px; 
-    margin: 0 0 0 18px;
     clear: both;
   }
 
@@ -211,15 +207,7 @@ div#div_file,#enviar{
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
 @media all  and (max-width: 399px){
 
-  .profile, .page-wrap, .editarDatos, #infoUser, #recargaImagen, .pelisquesigues { 
+  .profile, .page-wrap, .editarDatos, #infoUser, #recargaImagen, .pelisquesigues { width: 290px; }
 
-    width: 290px;
-
-  }
-
-  #perfilTitulo {
-
-    width: 80%;
-
-  }
+  #perfilTitulo { width: 80%; }
 }

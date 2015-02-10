@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
 $("#anadirAmigo").click(function(event) {
+
 		event.preventDefault();//Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento
-		// Se obtienen los atributos de la estrella que hizo clic
+		// Se obtienen los atributos del botón anadirAmigo
 		var usu=document.getElementById("anadirAmigo").name;
 	    var amigo=document.getElementById("anadirAmigo").value;
+
 		// creamos el objeto JSON para enviar a la página PHP
 	   	var datosClick = {
 
@@ -25,9 +27,13 @@ $("#anadirAmigo").click(function(event) {
 		  	success:function(data){
 
 		  		if (data.exito != true){
-		  			$("#limitar").css("background","url(../images/messages/help.png ) no-repeat 0px 50%");
+		  			
+		  			$("#limitar").css("background","url(../images/messages/help.png ) no-repeat 0px 30%");
 	             	$("#limitar").css("background-color","#B0CEF5");
 	             	$("#limitar").css("border","1px solid #82AEE7");
+	             	$("#limitar").css("margin","0px 0px 10px 0px");
+	             	$("#limitar").css("border-radius","4px");
+	             	$("#limitar").css("padding","5px");
 	             	$("#limitar").html("<p style='margin-left:20px;'>Para dejar de ser amigos, ve a tu perfil!</p>");
 
 	            }else{
