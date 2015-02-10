@@ -6,8 +6,7 @@ require_once('../controller/class.messages.php');
 $msg = new Messages();
 // Se importa database.php para realizar consultas a la base de datos
 include_once("../config/database.php");
-// Se importan las funciones para comprobar u obtener datos
-include_once("../funciones/usuarios.php");
+// Se importan las funciones para obtener datos
 include_once("../funciones/peliculas.php");
 
 // Se obtienen los datos mediante ajax

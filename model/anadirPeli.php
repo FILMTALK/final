@@ -27,6 +27,7 @@ if(isset($_POST['anadir'])){
 
 		// Se establece la colección peliculas
 		$collection=$bd->peliculas;
+
 		// Se comprueba si la pelicula existe
 		if(peliculaExiste($_POST['nombre'])==true){
 
@@ -42,7 +43,7 @@ if(isset($_POST['anadir'])){
 
 			try {
 
-				// Se crea un array para obtener los datos del formulario para guarda como un documento
+				// Se crea un array para guardar los datos del formulario
 				$document = array( 
 
 					"title" => $_POST['nombre'], 

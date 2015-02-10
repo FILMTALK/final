@@ -11,7 +11,7 @@ $exit;
 // Se establece la colección
 $collection=$bd->sigue_amigos;
 
-// Se crea un array para guardar los datos en la bd
+// Se comprueba si existe el documento
 $existe=$collection->find(array('usuario' => $usuario,'amigo' => $amigo));
 
 // Si el array contiene datos
@@ -25,7 +25,7 @@ if($existe->count() == 0){
 
 	);
 
-	// Se inserta el documento en la colección llamado votacion
+	// Se inserta el documento en la colección llamado sigue_amigos
 	$collection->insert($document);
 
 	// Establece la variable

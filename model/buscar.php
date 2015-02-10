@@ -14,6 +14,7 @@ echo "<link href=\"../css/buscar.css\" rel=\"stylesheet\" type=\"text/css\" >";
 
 // Se comprueba si la variable POST de pelicula contiene un valor
 if(isset($_POST['pelicula'])){
+
 	// Se convierte a minúsculas
 	$peliculaUsuario=strtolower($_POST['pelicula']);
 	// Se eliminan los espacios del inicio y final
@@ -54,8 +55,10 @@ if(isset($_POST['pelicula'])){
 		}
 
 	} // Cierre del foreach de peliculas
+
 	// Si el array está vacío
 	if(count($array)==0){
+		
 		// Mensaje de error a mostrar
 		$msg->add('e', 'ERROR: No existe pel&iacute;cula con la b&uacute;squeda');
 		// Muestra el mensaje por pantalla

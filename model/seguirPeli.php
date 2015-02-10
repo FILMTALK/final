@@ -11,7 +11,7 @@ $exit;
 // Se establece la colección
 $collection=$bd->sigue_peli;
 
-// Se crea un array para guardar los datos en la bd
+// Comprobamos si existe el documento con esas condiciones
 $existe=$collection->find(array('titulo' => $titulo,'id_usuario' => $usuario_id));
 
 // Si el array contiene datos
@@ -25,7 +25,7 @@ if($existe->count() == 0){
 
 	);
 
-	// Se inserta el documento en la colección llamado votacion
+	// Se inserta el documento en la colección llamado sigue_peli
 	$collection->insert($document);
 
 	// Establece la variable
