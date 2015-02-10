@@ -33,7 +33,9 @@ include_once("../funciones/peliculas.php");
         <!--Canvas-->
         <script type="text/javascript" src="../js/canvas.js"></script>
         <!--Dejar de seguir peli-->
-        <script type="text/javascript" src="../js/dejarSeguir.js"></script>    
+        <script type="text/javascript" src="../js/dejarSeguirPeli.js"></script> 
+        <!--Dejar de seguir amigo-->
+        <script type="text/javascript" src="../js/dejarSeguirAmigo.js"></script>   
         <!-- JavaScript para validar los campos -->
         <script type="text/javascript" src="../js/validarEditarDatos.js"></script>
         <!-- jQuery para ventana modal -->
@@ -103,6 +105,21 @@ include_once("../funciones/peliculas.php");
                             padding-left:5px;margin-right:10px;
                             outline:none;"><span class="glyphicon glyphicon-pencil"></span></button>
                         </p>
+
+                       
+                        <div id="div_file">
+                            <p id="texto">Añade una foto</p>
+                            <input type="file" id="subirImagen">
+                        </div>
+                        <br />
+                        <canvas id="areaCanvas" style="width:20%;height:20%;"></canvas>
+                        <br /><br />
+                         <button id="bnw" disabled>Grayscale</button>
+                        <button id="colour" disabled>Color</button><br /><br />
+                        <!-- Boton para guardar la foto en la bd -->
+                        <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" 
+                            value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>" disabled> Subir foto </button>
+                    <br /><br />
                     </div> <!-- Cierre de editar datos -->
 
                     <!-- Añadir foto -->
@@ -125,22 +142,15 @@ include_once("../funciones/peliculas.php");
                                 }
                             ?>
                         </div> <!-- Cierre para recargar la imagen -->
-                        <canvas id="areaCanvas" style="width:10%;height:10%;"></canvas>
-                        <div id="div_file">
-                            <p id="texto">Añade una foto</p>
-                            <input type="file" id="subirImagen">
-                        </div>
+                        
                     </div> <!-- Cierre del div de avatar -->
-
-                    <button id="bnw" disabled>Grayscale</button>
-                    <button id="colour" disabled>Color</button><br /><br />
-                    <!-- Boton para guardar la foto en la bd -->
-                    <button id="enviar" name="<?php echo htmlspecialchars($_SESSION['id_usuario']); ?>" 
-                        value="<?php echo htmlspecialchars($_SESSION['nombreUsuario']); ?>" disabled> Subir foto </button>
-
+                    <h2 class="pelisquesigues">Amigos: </h2>
+                    <table id="friends">
+                        <?php include("../includes/amigoSigue.php"); ?>
+                    </table>
                 </div> <!-- Cierre de la clase profile -->
 
-                <h2 id="pelisquesigues">Películas que sigues: </h2>
+                <h2 class="pelisquesigues">Películas que sigues: </h2>
                 <div id="aviso"></div>
                 <!-- Tabla de las películas que sigue el usuario -->
                 <table id="pelisigue">                    

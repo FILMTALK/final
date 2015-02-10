@@ -69,7 +69,7 @@ p#texto,#enviar{
   font-weight: bold;
 }
 
-#pelisquesigues{ font-size: 20px; }
+.pelisquesigues{ font-size: 20px; }
 
 /*para el boton de carga de archivos*/
 div#div_file,#enviar{
@@ -190,7 +190,7 @@ div#div_file,#enviar{
     -webkit-flex: 1; /* Safari 6.1+ */
   }
 
-  #pelisquesigues{ font-size: 17px; }  
+  .pelisquesigues{ font-size: 17px; }  
 
   #mostrarMsg{
     width: 50%; 
@@ -211,7 +211,7 @@ div#div_file,#enviar{
 /*SMARTPHONE:Cuando la anchura de la ventana contenga como máximo 399px se cambia el diseño */
 @media all  and (max-width: 399px){
 
-  .profile, .page-wrap, .editarDatos, #infoUser, #recargaImagen, #pelisquesigues { 
+  .profile, .page-wrap, .editarDatos, #infoUser, #recargaImagen, .pelisquesigues { 
 
     width: 290px;
 

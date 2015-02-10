@@ -1,19 +1,19 @@
 <?php
 include_once("../config/database.php");
 // Se guarda la variable de sesión
-$id_usuario=$_SESSION['id_usuario'];
+$usuario=$_SESSION['nombreUsuario'];
 // Si no contiene valor
-if(!(isset($id_usuario))){
+/*if(!(isset($id_usuario))){
     // Se guarda el valor de la variable GET
     $id_usuario=$_GET['id_usuario'];
-}
+}*/
 // Se establece la colección sigue_peli
-$collection=$bd->sigue_peli;
-$pelis=$collection->find(array('id_usuario' => "$id_usuario"));
+$collection=$bd->sigue_amigos;
+$amigo=$collection->find(array('usuario' => "$usuario"));
 // Variable local
 $id_documento;
 // Se recorren los datos del usuario
-foreach ($pelis as $campos => $valor) {
+foreach ($amigo as $campos => $valor) {
    
     foreach ($valor as $campo => $value) {
 
@@ -22,13 +22,13 @@ foreach ($pelis as $campos => $valor) {
              $id_documento=$value;
         }
         
-        if($campo=="titulo"){
+        if($campo=="amigo"){
 
             echo "<td>";
-                include("../includes/botonDejarSeguirPeli.html");
+                include("../includes/botonDejarSeguirAmigo.html");
             echo "</td>";
             echo "<td>";    
-                echo " <a class='apilink' href='../views/perfil-peli.php?peli=$value'> $value</a>";
+                echo " <a class='apilink' href='../views/profileAmigo.php?usuario=$value'> $value</a>";
                 echo"<br>";
             echo "</td>";
         }

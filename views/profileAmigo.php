@@ -5,7 +5,7 @@ if( !session_id() ) session_start();
 require_once('../controller/class.messages.php');
 $msg = new Messages();
 
-if($_SESSION["nombreUsuario"]==$_GET['usuario']){
+if($_SESSION['nombreUsuario']== $_GET['usuario']){
     header('Location: ../views/profile.php');
 }
 
@@ -31,6 +31,8 @@ include_once("../funciones/peliculas.php");
         <link rel="stylesheet" type="text/css" href="../css/mensajes.css">
         <!-- jQuery para menu respontive -->
         <script type="text/javascript" src="../js/menu.js"></script>
+        <!-- jQuery para añadir amigo -->
+        <script type="text/javascript" src="../js/anadirAmigo.js"></script>
         <!-- jQuery para ventana modal -->
         <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
         <script type="text/javascript" src="../css/dist/js/bootstrap.min.js"></script>
@@ -58,32 +60,31 @@ include_once("../funciones/peliculas.php");
 
             <div class="page-wrap">
                 <?php
-
+                               
                     echo "<h1 id='perfilTitulo'>Perfil de ". $_GET["usuario"] . "</h1>"; 
 
                 ?>
                 <!-- Perfil del usuario -->
                 <div class="profile">
                     <!-- Muestra los mensajes flash desde el ajax -->
-                    <div id="mostrarMsg"> </div>
-                    <!-- Editar nombre de usuario y el email -->
+                    <div id="limitar"></div>
                     <div class="editarDatos">
+                        <div id='botonAmigo'>
                         <?php
                             // Muestra la variable de sesión del nombreUsuario
                             if (isset($_SESSION['nombreUsuario'])) {
-                                       
-                                echo "<button class='btn btn-info'
-                            style='background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
-                            margin-right:10px;
-                            outline:none;'><span class='glyphicon glyphicon-plus'></span>Añadir amigo</button>";
 
-                            }
-                        
+                                $usuario=$_SESSION['nombreUsuario'];
+                                $amigo =$_GET['usuario'];
 
+                                include('../includes/amigos.php');                              
 
-                        echo '<h2 id="pelisquesigues">Películas que sigue '. $_GET["usuario"]. ': </h2>'
+                            }                    
+                        echo '</div>';
+                        echo '<h2 id="pelisquesigues">Películas que sigue '. $_GET["usuario"]. ': </h2>';
                         ?>
                         <!-- Tabla de las películas que sigue el usuario -->
+                        
                         <table id="pelisigue">                    
                             <?php
                                 include("../includes/peliSigueAmigo.php");

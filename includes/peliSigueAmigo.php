@@ -4,11 +4,11 @@ include_once("../config/database.php");
 include_once("../funciones/usuarios.php");
 
 // Se guarda el valor de la variable GET
-$usuario=$_GET['usuario'];
+$nombreUsuario=$_GET['usuario'];
 
 //funcion para obtener la id de usuario con el nombre
-
-$id_usuario=obtenerIdNombre($usuario);
+$collection=$bd->usuarios;
+$id_usuario=obtenerIdNombre($nombreUsuario);
 
 // Se establece la colección sigue_peli
 $collection=$bd->sigue_peli;
