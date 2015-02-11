@@ -21,5 +21,5 @@ $media=round($media,2);
 // Se obtiene el número de votos de la película
 $votos=cantVotos("$id_pelicula");
 // Muestra la media y el número de votos
-echo "<h3>Nota: ". $media ."</h3><h3>       Votos: ". $votos ."</h3>";
+echo "<h3>Nota: ". $media ." /10</h3><h3>       Votos: ". $votos ."</h3>";
 ?>
