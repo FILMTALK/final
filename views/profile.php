@@ -48,7 +48,7 @@ include_once("../funciones/peliculas.php");
         </script> 
 	</head> <!-- Cierre del encabezado de la página -->
 
-	<body background="../images/fondoUsu.jpg" no-repeat center center fixed>
+	<body>
         <!-- Caja container -->
         <div id="container">            
             <!-- Encabezado de toda la página -->

@@ -9,6 +9,11 @@
 
 /* Make sure draggable area is whole page */
 html, body { height: 100%; }
+body{
+  background-image: url('..//images/fondoUsu.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 input#subirImagen{
   position:absolute;
