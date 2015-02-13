@@ -142,6 +142,9 @@ $(document).ready(function() {
 				dibujo.clearRect(0, 0, canvas.width, canvas.height);
 
 		  		$('#recargaImagen').load('../includes/anadirImagen.php?nombreUsuario='+nombre);	
+		  		$("#bnw").fadeOut();
+				$("#enviar").fadeOut();
+				$("#colour").fadeOut();	
 
 			}
 
