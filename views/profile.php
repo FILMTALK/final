@@ -107,7 +107,7 @@ include_once("../funciones/peliculas.php");
                         </p>
                         <br />
                         <div id="div_file">
-                            <p id="texto">Añade una foto</p>
+                            <p id="texto"><span><img src='../images/masIcono.png'></span> Añade una foto</p>
                             <input type="file" id="subirImagen">
                         </div>
                         <br />

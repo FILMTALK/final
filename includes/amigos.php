@@ -17,11 +17,11 @@ if($amigo->count() == 0){
  	echo "<button class='btn btn-info' id='anadirAmigo' name='$usuario' value='$amigo_usu'
         style='background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
         margin-right:10px;
-        outline:none;'><span class='glyphicon glyphicon-plus'></span>Añadir amigo</button>";
+        outline:none;'><span><img src='../images/masIcono.png'></span> Añadir amigo</button>";
 }else{
 	echo "<button class='btn btn-info' id='anadirAmigo' name='$usuario' value='$amigo_usu'
         style='background-color:#66cccc; color:#fff; border:none; opacity:0.7; padding-left:5px;
         margin-right:10px;
-        outline:none;'>Amigo<span class='glyphicon glyphicon-ok'></span></button>";
+        outline:none;'>Amigo <span><img src='../images/check.png'></span></button>";
 }
 ?>

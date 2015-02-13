@@ -27,7 +27,8 @@
 
                     if($campo=="usuario"){
                     
-                        echo "<a class='linkUsu' href='../views/profileAmigo.php?usuario=$valor'>".$valor."</a><br/>";
+                        echo "<a class='linkUsu' href='../views/profileAmigo.php?usuario=$valor'>
+                        <span class='glyphicon glyphicon-user'></span>".$valor."</a><br/>";
                     }             
                     
                 }
