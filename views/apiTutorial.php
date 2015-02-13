@@ -24,7 +24,7 @@
         </script> 
 	</head> <!-- Cierre del encabezado de la página -->
 
-	<body>
+	<body id="sinFondo">
         <div id="container">             
             <!-- Encabezado de toda la página -->
             <?php include("../includes/headerListaPelis.html"); ?>

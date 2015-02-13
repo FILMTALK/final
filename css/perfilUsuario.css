@@ -15,6 +15,11 @@ body{
   background-attachment: fixed;
 }
 
+#sinFondo{
+  background-image: none;
+  background-color: #f2efef;
+}
+
 input#subirImagen{
   position:absolute;
   top:0px;
