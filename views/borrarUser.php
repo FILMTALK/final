@@ -1,9 +1,13 @@
 <?php
 // Se requiere las sesiones para los mensajes flash
 if( !session_id() ) session_start();
-if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION['id_usuario']=='54b39057721880ef1d8b4568')){
+/*if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION['id_usuario']=='54b39057721880ef1d8b4568')){
     // Redirecciona a la página principal si no es administrador
-    header('Location: ../index.php');    
+    header('Location: ../index.php');
+}*/
+if(!(isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!='' && $_SESSION['id_usuario']=='5624b7798351ef4a39fae266')){
+    // Redirecciona a la página principal si no es administrador
+    header('Location: ../index.php');
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">

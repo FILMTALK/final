@@ -74,6 +74,7 @@
                     $collection=$bd->peliculas;
                     // Se obtiene sólo 5 registros que sean de cartelera
                     $cartelera=$collection->find(array("boxOffice" => "boxOffice"))->limit(5);
+                    
                     // Se recorre el array bidimensional de cartelera
                     foreach ($cartelera as $campo => $valor) {
 
