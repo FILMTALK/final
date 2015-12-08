@@ -244,7 +244,7 @@
                 <!-- Links -->
                 <a href="views/apiTutorial.php"> API </a>
                 <a href="#"> Política de privacidad </a>
-                <a href="#"> © CopyRight 2014 </a>
+                <a href="#"> © CopyRight 2015 </a>
             </footer>
 
             <!--Ventana Modal del Log In-->
