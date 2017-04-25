@@ -57,10 +57,10 @@ Esta app solicita la página de RottenTomatoes para guardar la lista de películ
 **Aparte de utilizar la libería de RottenTomatoes hay que instalar cURL.**
 
 - <h6>Instalar cURL para la API:</h6>
-    <h6>sudo apt-get install php5-curl</h6>
+    <strong>sudo apt-get install php5-curl</strong>
 
 - <h6>Reiniciar apache:</h6>
-    <h6>sudo /etc/init.d/apache2 restart</h6>
+    <strong>sudo /etc/init.d/apache2 restart</strong>
 
 <br>
 <h3>RESTful API</h3>
@@ -72,16 +72,16 @@ La filmdate ha creado su propia API para terceros.
 - <h6>Se descarga la libería a utilizar.</h6>
 
 - <h6>En el fichero que se crean las rutas requiere la libería.</h6>
-    <h6>require '../library/Slim/Slim.php';</h6>
+    <strong>require '../library/Slim/Slim.php';</strong>
 
 - <h6>Se accede a los métodos de la clase Slim:</h6>
-    <h6>\Slim\Slim::registerAutoloader();</h6>
+    <strong>\Slim\Slim::registerAutoloader();</strong>
 
 - <h6>Se crea el objeto de tipo Slim:</h6>
-    <h6>$app = new \Slim\Slim();</h6>
+    <strong>$app = new \Slim\Slim();</strong>
 
 - <h6>Se establecen las rutas:</h6>
-    <h6>$app->get('/getPeliculas', function () { jsonAmostrar });</h6>
+    <strong>$app->get('/getPeliculas', function () { jsonAmostrar });</strong>
 <br>
 
 <br>
