@@ -113,6 +113,22 @@ $msg = new Messages();
                         </div>
                     </div>
                     <br/>
+		<!--Input anio-->
+                    <div class="form-group">
+                        <label for="usr" style="color:#fff">Año</label>
+                        <div class="input-group"  style="width:330px;">
+                            <input  style="border-radius: 5px;" type="text" class="form-control" id="usr" placeholder="Año" name="year" required>
+                        </div>
+                    </div>
+                    <br/>
+                 <!--Radio tipo-->
+                    <div class="form-group">
+                        <label for="usr" style="color:#fff">Tipo de pelicula</label>
+                        <div class="input-group"  style="width:330px;margin-left:25px;">
+                            <label class="radio-inline"><input type="radio" name="tipoPeli" value="boxOffice" required><font color="#fff">Cartelera</font></label>
+                            <label class="radio-inline"><input type="radio" name="tipoPeli" value="upcoming"><font color="#fff">Próximamente</font></label>
+                        </div>
+                    </div>
 
                     <button name="anadir" type="submit" class="btn btn-primary" style="width:120px;background-color:#00B8E6;border:none;outline: none;"><span class="glyphicon glyphicon-plus"></span> Añadir</button>
                     <br/>
