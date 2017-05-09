@@ -42,14 +42,24 @@ if(isset($_POST['anadir'])){
 		else{ 			
 
 			try {
-
+				$tipoPeli='';
+				if($_POST['tipoPeli']=='boxOffice'){
+					$tipoPeli='boxOffice';
+				} else {
+					$tipoPeli='upcoming';
+				}
+				
 				// Se crea un array para guardar los datos del formulario
 				$document = array( 
 
 					"title" => $_POST['nombre'], 
+					"poster" => '',
+					"year" => ($_POST['year']),
+					$tipoPeli => ($_POST['tipoPeli']),
+					"runtime" => ($_POST['duracion']),
+					"trailer" => '',
 					"synopsis" => $_POST['descripcion'],
-					"duracion" => ($_POST['duracion']),
-					"reparto" => ($_POST['reparto'])
+					"cast" => ($_POST['reparto'])
 
 		    	);
 
