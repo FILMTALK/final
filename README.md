@@ -86,7 +86,7 @@ La filmdate ha creado su propia API para terceros.
 
 <br>
 <h3>Enlaces</h3>
-**Enlace OpenShift** (actualizado cada semana): http://filmdate-filmdate.rhcloud.com/
+**Enlace Heroku** (actualizado cada semana): https://filmdate.herokuapp.com
 
 **Email oficial**: filmdateee@gmail.com
 
